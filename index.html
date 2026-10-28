@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ホロライブ関連グッズの販売・受注期間を日付×商品のカレンダーで一覧できる非公式ファンメイドのページです。">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>ホロライブ グッズカレンダー</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a goods-sales Gantt board — sticky search bar, collapsible filter panel, sticky item column + day columns. */
+:root {
+  --bg: #F1F3F8;
+  --surface: #FFFFFF;
+  --surface-2: #F6F8FB;
+  --ink: #172030;
+  --muted: #5F6980;
+  --line: #DEE3EC;
+  --line-strong: #C3CBD9;
+  --accent: #2A74D6;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E2EDFB;
+  --weekend: #EDF0F6;
+  --sun: #D3445A;
+  --sat: #2D69C2;
+  --today: #E5484D;
+  --ok: #1D8A50;
+  --warn: #C2541A;
+  --dim: #8890A2;
+  --star: #E2A100;
+  --c-birthday: #D6508C;
+  --c-anniv: #7254E6;
+  --c-unit: #2F78D4;
+  --c-digital: #0E978C;
+  --c-collab: #D47F24;
+  --c-event: #C23C5E;
+  --c-other: #5A6882;
+  --c-hocg: #1B8BB8;
+  --c-prize: #B8860B;
+  --c-kuji: #C2410C;
+  --c-figure: #4F46E5;
+  --shadow: 0 10px 30px rgba(20, 30, 55, .16);
+  --f-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --labelW: 284px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #9AA3B6;
+    --line: #283041; --line-strong: #39435A; --accent: #5C9CEC; --accent-ink: #0C1320; --accent-soft: #1A2A42;
+    --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #6D778B; --star: #FFCB45;
+    --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #9AA3B6;
+  --line: #283041; --line-strong: #39435A; --accent: #5C9CEC; --accent-ink: #0C1320; --accent-soft: #1A2A42;
+  --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #6D778B; --star: #FFCB45;
+  --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .5);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.page {
+  max-width: 1480px; margin: 0 auto;
+  padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 12px;
+}
+
+/* ---------- header ---------- */
+.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; }
+.top h1 { font-family: var(--f-display); font-weight: 400; font-size: clamp(22px, 3.2vw, 32px); line-height: 1.15; margin: 0; letter-spacing: .02em; text-wrap: balance; }
+.top h1 small { display: block; font-family: var(--f-body); font-weight: 500; font-size: 13px; color: var(--muted); letter-spacing: .04em; margin-top: 6px; }
+.top .updated { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.testbanner { display: flex; gap: 10px; align-items: center; padding: 10px 14px; border-radius: 8px; border: 1px dashed var(--warn); color: var(--warn); background: color-mix(in srgb, var(--warn) 8%, var(--surface)); font-size: 13px; font-weight: 500; }
+.testbanner b { font-family: var(--f-num); letter-spacing: .08em; }
+
+/* ---------- summary ---------- */
+.summary { display: flex; flex-wrap: wrap; gap: 8px; }
+.stat { display: inline-flex; align-items: baseline; gap: 8px; padding: 5px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.stat strong { font-family: var(--f-num); font-size: 16px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat.s-open strong { color: var(--ok); }
+.stat.s-soon strong { color: var(--warn); }
+.stat.s-upcoming strong { color: var(--accent); }
+
+/* ---------- sticky search bar ---------- */
+.qbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 8; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 10px; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 10px; }
+.search { flex: 1 1 240px; min-width: 0; position: relative; }
+.search input { width: 100%; height: 38px; padding: 0 12px 0 34px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); }
+.search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--muted); }
+.toggle { height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; }
+.toggle .count { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-family: var(--f-num); font-size: 11px; display: inline-grid; place-items: center; }
+.toggle .chev { transition: transform .15s; display: inline-block; }
+.toggle[aria-expanded="false"] .chev { transform: rotate(-90deg); }
+.reset { height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font-size: 13px; color: var(--muted); }
+.reset:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ---------- filter panel ---------- */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 12px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.field { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.field select, .field input[type="date"] { height: 34px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); padding: 0 8px; font-size: 13px; color: var(--ink); }
+.nav { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.nav button { height: 34px; padding: 0 12px; border: 0; background: var(--surface-2); cursor: pointer; font-size: 13px; }
+.nav button + button { border-left: 1px solid var(--line-strong); }
+.nav button:hover { background: var(--accent-soft); }
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; user-select: none; }
+.check input { width: 16px; height: 16px; accent-color: var(--accent); }
+
+.filters { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
+.frow { display: grid; grid-template-columns: 76px 1fr; gap: 8px; align-items: start; }
+.frow > .flabel { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; padding-top: 5px; }
+.filters details > summary { cursor: pointer; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; list-style: none; display: flex; gap: 8px; align-items: center; }
+.filters details > summary::-webkit-details-marker { display: none; }
+.filters details > summary::before { content: "▸"; transition: transform .15s; }
+.filters details[open] > summary::before { transform: rotate(90deg); }
+.filters details > summary .hint { font-weight: 400; letter-spacing: 0; }
+.gens { display: grid; gap: 6px; margin-top: 8px; }
+.gen { display: grid; grid-template-columns: 150px 1fr; gap: 8px; align-items: start; }
+.gen-name { font-size: 12px; color: var(--muted); padding-top: 5px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.mchip { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.mchip button { border: 0; background: transparent; cursor: pointer; }
+.mchip-name { padding: 3px 4px 3px 10px; font-size: 13px; display: inline-flex; gap: 4px; align-items: center; }
+.mark { font-size: 13px; line-height: 1; }
+.mchip-star { padding: 3px 10px 3px 6px; color: var(--dim); font-size: 13px; }
+.mchip-star.fav { color: var(--star); }
+.mchip:hover { border-color: var(--accent); }
+.mchip.on { background: var(--accent); border-color: var(--accent); }
+.mchip.on .mchip-name { color: var(--accent-ink); font-weight: 700; }
+.mchip.on .mchip-star { color: var(--accent-ink); }
+.cchip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 12px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); cursor: pointer; font-size: 13px; --cat: var(--accent); }
+.cchip i { width: 10px; height: 10px; border-radius: 3px; background: var(--cat); }
+.cchip.on { border-color: var(--cat); background: color-mix(in srgb, var(--cat) 16%, var(--surface)); font-weight: 700; }
+
+/* ---------- badges ---------- */
+.pill, .badge { flex: none; display: inline-block; padding: 0 7px; border-radius: 999px; font-size: 10.5px; font-weight: 700; line-height: 18px; border: 1px solid currentColor; white-space: nowrap; }
+.pill.st-open { color: var(--ok); }
+.pill.st-soon { color: #FFFFFF; background: var(--warn); border-color: var(--warn); }
+.pill.st-upcoming { color: var(--accent); }
+.pill.st-ended, .pill.st-soldout { color: var(--dim); }
+.pill.st-soldout { border-style: dashed; }
+.badge { border-radius: 4px; }
+.badge.off { color: var(--accent); background: var(--accent-soft); border-color: transparent; }
+.badge.unoff { color: var(--warn); border-style: dashed; }
+.badge.ch { color: var(--muted); border-color: var(--line-strong); font-weight: 500; }
+.badge.new { color: #FFFFFF; background: var(--today); border-color: var(--today); letter-spacing: .04em; font-family: var(--f-num); }
+.badge.upd { color: var(--c-anniv); border-color: var(--c-anniv); }
+.badge.tg { color: var(--muted); border-color: transparent; background: var(--surface-2); font-weight: 500; }
+.ttl .badge { margin-right: 4px; vertical-align: 1px; }
+.cchip .n { font-family: var(--f-num); font-size: 11px; color: var(--muted); }
+.cchip.on .n { color: var(--ink); }
+button.stat { cursor: pointer; font: inherit; font-size: 13px; }
+button.stat:hover { border-color: var(--today); }
+button.stat.on { border-color: var(--today); background: color-mix(in srgb, var(--today) 10%, var(--surface)); }
+.stat.s-new strong { color: var(--today); }
+
+/* ---------- board ---------- */
+.board-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.board { overflow: auto; max-height: min(78vh, 920px); position: relative; overscroll-behavior: contain; }
+.grid { position: relative; width: calc(var(--labelW) + var(--trackW)); }
+.hd { position: sticky; top: 0; z-index: 6; display: grid; grid-template-columns: var(--labelW) var(--trackW); background: var(--surface); border-bottom: 1px solid var(--line-strong); }
+.corner { position: sticky; left: 0; z-index: 7; background: var(--surface); border-right: 1px solid var(--line); padding: 8px 12px; display: flex; align-items: flex-end; font-size: 12px; color: var(--muted); }
+.hd .trk { position: relative; height: 54px; }
+.mon { position: absolute; top: 0; height: 22px; border-left: 1px solid var(--line-strong); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.mon span { position: sticky; left: calc(var(--labelW) + 6px); display: inline-block; padding: 3px 6px; font-variant-numeric: tabular-nums; }
+.day { position: absolute; top: 22px; height: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--f-num); font-size: 11px; line-height: 1.1; color: var(--muted); border-top: 1px solid var(--line); }
+.day b { font-weight: 600; color: var(--ink); }
+.day i { font-style: normal; font-family: var(--f-body); font-size: 10px; }
+.day.sat b, .day.sat i { color: var(--sat); }
+.day.sun b, .day.sun i { color: var(--sun); }
+.day.today { background: var(--today); border-radius: 6px 6px 0 0; }
+.day.today b, .day.today i { color: #FFFFFF; }
+
+.body { position: relative; }
+.bg { position: absolute; top: 0; bottom: 0; left: var(--labelW); width: var(--trackW); pointer-events: none; z-index: 0; }
+.we { position: absolute; top: 0; bottom: 0; background: var(--weekend); }
+.mline { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--line-strong); }
+.tline { position: absolute; top: 0; bottom: 0; border-left: 2px solid var(--today); opacity: .75; }
+
+.row { display: grid; grid-template-columns: var(--labelW) var(--trackW); min-height: 60px; border-bottom: 1px solid var(--line); position: relative; z-index: 1; }
+.row:hover .trk { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+.lab { position: sticky; left: 0; z-index: 4; background: var(--surface); border-right: 1px solid var(--line); min-width: 0; }
+.lab button { width: 100%; height: 100%; border: 0; background: transparent; text-align: left; padding: 7px 12px; cursor: pointer; display: grid; gap: 3px; align-content: center; min-width: 0; }
+.row:hover .lab { background: var(--surface-2); }
+.ttl { font-size: 13px; font-weight: 700; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.meta { display: flex; gap: 5px; align-items: center; min-width: 0; font-size: 11.5px; color: var(--muted); overflow: hidden; }
+.meta .who { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.trk { position: relative; min-width: 0; }
+.bar { position: absolute; top: 50%; transform: translateY(-50%); height: 30px; border-radius: 6px; background: color-mix(in srgb, var(--cat) 20%, var(--surface)); border: 1px solid color-mix(in srgb, var(--cat) 50%, transparent); border-left: 4px solid var(--cat); padding: 0 8px; overflow: hidden; white-space: nowrap; cursor: pointer; text-align: left; font-size: 12px; font-family: var(--f-num); font-weight: 500; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+.bar em { font-style: normal; font-family: var(--f-body); color: var(--muted); font-size: 11.5px; }
+.bar:hover { background: color-mix(in srgb, var(--cat) 32%, var(--surface)); }
+.bar.cl { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left-style: dashed; }
+.bar.cr { border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: 2px dashed var(--cat); }
+.bar.unoff { border-style: dashed; border-left-style: solid; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--cat) 18%, var(--surface)) 0 6px, var(--surface) 6px 10px); }
+.bar.st-ended, .bar.st-soldout { opacity: .5; }
+.bar.st-soon { box-shadow: 0 0 0 2px color-mix(in srgb, var(--warn) 55%, transparent); }
+.bar-out { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--f-num); font-size: 11.5px; color: var(--muted); white-space: nowrap; pointer-events: none; }
+.bar-out em { font-style: normal; font-family: var(--f-body); }
+.offrange { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--f-num); font-size: 11.5px; color: var(--muted); white-space: nowrap; background: var(--surface-2); border: 1px dashed var(--line-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; }
+.offrange.l { left: 8px; }
+.offrange.r { right: 8px; }
+
+.grp { display: grid; grid-template-columns: var(--labelW) var(--trackW); position: relative; z-index: 2; background: var(--surface-2); border-bottom: 1px solid var(--line-strong); }
+.grp > div { position: sticky; left: 0; padding: 6px 12px; font-size: 12px; font-weight: 700; display: flex; gap: 8px; align-items: baseline; background: var(--surface-2); white-space: nowrap; }
+.grp em { font-style: normal; font-weight: 400; color: var(--muted); }
+
+.empty { padding: 48px 16px; text-align: center; color: var(--muted); display: grid; gap: 12px; justify-items: center; position: sticky; left: 0; width: min(100%, 100vw - 64px); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--muted); padding: 10px 14px; border-top: 1px solid var(--line); align-items: center; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.legend .sw { width: 22px; height: 10px; border-radius: 3px; }
+.legend .sw.hatch { background: repeating-linear-gradient(135deg, var(--dim) 0 3px, transparent 3px 6px); border: 1px dashed var(--dim); }
+.foot { font-size: 12px; color: var(--muted); margin: 0; }
+
+/* ---------- hover tooltip ---------- */
+.tip { position: fixed; z-index: 30; max-width: 340px; background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: var(--shadow); padding: 10px 12px; font-size: 12px; line-height: 1.5; pointer-events: none; display: grid; gap: 6px; }
+.tip h3 { margin: 0; font-size: 13px; line-height: 1.4; }
+.tip .tb { display: flex; flex-wrap: wrap; gap: 4px; }
+.tip dl { display: grid; grid-template-columns: 56px 1fr; gap: 2px 8px; margin: 0; }
+.tip dt { color: var(--muted); }
+.tip dd { margin: 0; }
+.tip .vn { display: block; }
+.tip .vn small { color: var(--muted); font-family: var(--f-num); }
+
+/* ---------- detail drawer ---------- */
+.scrim { position: fixed; inset: 0; background: rgba(10, 15, 25, .35); z-index: 20; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100%); z-index: 21; background: var(--surface); box-shadow: var(--shadow); display: flex; flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.drawer-hd { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 18px 20px 12px; border-bottom: 1px solid var(--line); }
+.drawer-hd h2 { margin: 6px 0 0; font-size: 18px; line-height: 1.4; text-wrap: balance; }
+.drawer-hd .tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.tag { font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 4px; background: color-mix(in srgb, var(--cat) 18%, var(--surface)); color: var(--ink); border-left: 3px solid var(--cat); }
+.close { flex: none; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font-size: 18px; line-height: 1; }
+.drawer-bd { padding: 16px 20px 24px; overflow: auto; display: grid; gap: 16px; align-content: start; }
+.period { border-radius: 8px; background: var(--surface-2); padding: 12px 14px; display: grid; gap: 4px; }
+.period .range { font-family: var(--f-num); font-weight: 600; font-size: 13px; }
+.period .left { font-size: 13px; font-weight: 700; }
+.period .left.st-open { color: var(--ok); } .period .left.st-soon { color: var(--warn); } .period .left.st-upcoming { color: var(--accent); } .period .left.st-ended { color: var(--dim); }
+dl.spec { display: grid; grid-template-columns: 88px 1fr; gap: 8px 12px; margin: 0; font-size: 13px; }
+dl.spec dt { color: var(--muted); }
+dl.spec dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+dl.spec .vn { display: block; }
+dl.spec .vn small { color: var(--muted); }
+.drawer a { color: var(--accent); }
+
+/* ---------- add / edit form ---------- */
+.addbtn { height: 38px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; font-size: 13px; font-weight: 700; }
+.addbtn:hover { filter: brightness(1.08); }
+.form { display: grid; gap: 12px; }
+.form label.f { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+.form label.f > span b { color: var(--warn); font-weight: 700; }
+.form input[type="text"], .form input[type="url"], .form input[type="date"], .form select, .form textarea { width: 100%; min-width: 0; height: 36px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); padding: 0 10px; font-size: 13px; color: var(--ink); }
+.form textarea { height: 64px; padding: 8px 10px; resize: vertical; }
+.form .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form fieldset { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px 10px; margin: 0; min-width: 0; }
+.form legend { font-size: 12px; color: var(--muted); padding: 0 4px; }
+.form .mlist { display: flex; flex-wrap: wrap; gap: 4px 10px; max-height: 160px; overflow: auto; }
+.form .mlist label { display: inline-flex; gap: 4px; align-items: center; font-size: 12.5px; color: var(--ink); cursor: pointer; }
+.form .vrow { display: grid; grid-template-columns: 96px 1fr 88px 28px; gap: 6px; margin-top: 6px; }
+.form .vrow button, .form .linkbtn { border: 1px solid var(--line-strong); background: transparent; border-radius: 6px; cursor: pointer; font-size: 12px; }
+.form .linkbtn { margin-top: 6px; padding: 4px 10px; }
+.form .err { color: var(--warn); font-size: 12.5px; font-weight: 700; }
+.form .actions, .danger-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.btn { height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); cursor: pointer; font-size: 13px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+.btn.danger { color: var(--warn); border-color: var(--warn); }
+.btn.danger.solid { background: var(--warn); color: #FFFFFF; }
+.note-sm { font-size: 12px; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .form .two { grid-template-columns: 1fr; }
+  .form .vrow { grid-template-columns: 1fr 1fr; }
+  :root { --labelW: 150px; }
+  .gen, .frow { grid-template-columns: 1fr; gap: 4px; }
+  .gen-name, .frow > .flabel { padding-top: 0; }
+  .ttl { font-size: 12px; }
+  .meta .who { display: none; }
+  .row { min-height: 64px; }
+  .toggle .lbl { display: none; }
+}
+@media (hover: none) { .tip { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="page">
+  <header class="top">
+    <h1>ホロライブ グッズカレンダー<small>販売・受注期間をメンバー別に一覧（ファンによる非公式ページ）</small></h1>
+    <div class="updated" id="updated"></div>
+  </header>
+
+  <div class="testbanner" id="testBanner" hidden><b>TEST</b><span>テストデータを表示しています。商品名・日程・価格・会場は架空で、実際の販売情報ではありません。</span></div>
+
+  <section class="summary" id="summary" aria-label="件数"></section>
+
+  <div class="qbar" role="search">
+    <label class="search" for="q">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="商品名・メンバー名・会場・タグで検索（ひらがな可）" autocomplete="off">
+    </label>
+    <button type="button" class="toggle" id="togglePanel" aria-expanded="true" aria-controls="filterPanel"><span class="chev">▾</span><span class="lbl">絞り込み・表示設定</span><span class="count" id="activeCount" hidden></span></button>
+    <button type="button" class="reset" id="resetBtn">条件をクリア</button>
+    <button type="button" class="addbtn" id="addBtn" hidden>＋ 商品を追加</button>
+    <a class="reset" id="submitLink" href="#" target="_blank" rel="noopener" hidden style="display:inline-flex;align-items:center;text-decoration:none">情報提供（Discord）</a>
+  </div>
+
+  <section class="panel" id="filterPanel" aria-label="絞り込みと表示設定">
+    <div class="controls">
+      <label class="field" for="sort">並び順
+        <select id="sort">
+          <option value="start">開始日順</option>
+          <option value="end">締切が近い順</option>
+          <option value="member">メンバー別</option>
+          <option value="title">商品名順</option>
+        </select>
+      </label>
+      <label class="field" for="span">表示期間
+        <select id="span">
+          <option value="31">1か月</option>
+          <option value="61">2か月</option>
+          <option value="92">3か月</option>
+          <option value="183">6か月</option>
+        </select>
+      </label>
+      <label class="field" for="zoom">日の幅
+        <select id="zoom">
+          <option value="14">狭い</option>
+          <option value="24">標準</option>
+          <option value="36">広い</option>
+        </select>
+      </label>
+      <div class="nav" role="group" aria-label="表示期間の移動">
+        <button type="button" data-shift="-30" title="1か月前へ">« 1か月</button>
+        <button type="button" data-shift="-7" title="1週間前へ">‹ 1週</button>
+        <button type="button" id="todayBtn" title="今日の1週間前から表示">今日</button>
+        <button type="button" data-shift="7" title="1週間後へ">1週 ›</button>
+        <button type="button" data-shift="30" title="1か月後へ">1か月 »</button>
+      </div>
+      <label class="field" for="startDate">開始日 <input type="date" id="startDate"></label>
+      <label class="check" for="hideEnded"><input type="checkbox" id="hideEnded">終了分を隠す</label>
+      <label class="check" for="oshiOnly"><input type="checkbox" id="oshiOnly">★推しのみ</label>
+      <label class="check" for="showOpen"><input type="checkbox" id="showOpen">終了日未定の商品も表示 <span class="note-sm" id="openCount"></span></label>
+    </div>
+    <div class="filters">
+      <div class="frow"><span class="flabel">タグ</span><div class="chips" id="tagChips"></div></div>
+      <div class="frow"><span class="flabel">期生</span><div class="chips" id="genChips"></div></div>
+      <details id="memberDetails">
+        <summary>メンバー<span class="hint">名前で絞り込み（複数選択可）・☆で推し登録</span></summary>
+        <div class="gens" id="memberChips"></div>
+      </details>
+      <div class="frow"><span class="flabel">種別</span><div class="chips" id="catChips"></div></div>
+      <div class="frow"><span class="flabel">販売方法</span><div class="chips" id="chChips"></div></div>
+      <div class="frow"><span class="flabel">販売元</span><div class="chips" id="orChips"></div></div>
+    </div>
+  </section>
+
+  <section class="board-wrap" aria-label="販売スケジュール">
+    <div class="board" id="board"></div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden></aside>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const D = window.HOLO_GOODS || { meta: {}, categories: {}, members: [], items: [] };
+  const MS = 86400000;
+  const WD = ['日', '月', '火', '水', '木', '金', '土'];
+  const CAT_KEYS = ['birthday', 'anniv', 'unit', 'digital', 'collab', 'event', 'hocg', 'prize', 'kuji', 'figure', 'other'];
+  const CH = { online: '通販のみ', venue: '現地のみ', both: '通販＋現地' };
+  const CH_SHORT = { online: '通販', venue: '現地', both: '通販＋現地' };
+  const NEW_DAYS = Number((D.meta || {}).newDays) || 7;
+  const labelOf = (it, s) => s === 'open' && it.category === 'prize' ? '登場中' : s === 'open' && it.release ? '発売中' : STATUS_LABEL[s];
+  const STATUS_LABEL = { upcoming: '予定', open: '受付中', soon: 'まもなく締切', ended: '終了', soldout: '完売' };
+
+  const toDay = s => { const [y, m, d] = String(s).split('-').map(Number); return Math.round(Date.UTC(y, m - 1, d) / MS); };
+  const now = new Date();
+  const TODAY = Math.round(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / MS);
+  const dt = n => new Date(n * MS);
+  const md = n => { const d = dt(n); return (d.getUTCMonth() + 1) + '/' + d.getUTCDate(); };
+  const ymd = n => { const d = dt(n); return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0'); };
+  const full = n => { const d = dt(n); return `${d.getUTCFullYear()}年${d.getUTCMonth() + 1}月${d.getUTCDate()}日（${WD[d.getUTCDay()]}）`; };
+  const norm = s => String(s || '').normalize('NFKC').toLowerCase()
+    .replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60)).replace(/\s+/g, '');
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const $ = id => document.getElementById(id);
+
+  /* ---------- data prep ---------- */
+  const members = D.members.map(m => ({ ...m, gens: m.gens || (m.gen ? [m.gen] : ['その他']) }));
+  const memberOrder = new Map(members.map((m, i) => [m.id, i]));
+  const memberById = new Map(members.map(m => [m.id, m]));
+  const GENS = [];
+  ((D.meta && D.meta.genOrder) || []).forEach(g => { if (!GENS.includes(g)) GENS.push(g); });
+  members.forEach(m => m.gens.forEach(g => { if (!GENS.includes(g)) GENS.push(g); }));
+
+  const catOf = key => {
+    const k = CAT_KEYS.includes(key) ? key : 'other';
+    return { key: k, label: (D.categories[key] || D.categories[k] || {}).label || 'その他' };
+  };
+  const ORIGIN = { shop: '公式ショップ', licensed: '企業・店舗', unofficial: '同人・ファンメイド' };
+  const ORIGIN_DESC = {
+    shop: '公式（hololive production OFFICIAL SHOP の商品）',
+    licensed: '企業・店舗の販売（コラボ先・取り扱い店・イベント物販など）',
+    unofficial: '非公式（同人・ファンメイドなど、公式の許諾がないと分かるもの）'
+  };
+  function prep(it) {
+    const s = toDay(it.start);
+    const openEnd = !it.end;
+    const e = openEnd ? s + 36500 : toDay(it.end);
+    const mem = (it.members || []).map(id => memberById.get(id)).filter(Boolean);
+    const cat = catOf(it.category);
+    const channel = CH[it.channel] ? it.channel : 'online';
+    const venues = Array.isArray(it.venues) ? it.venues : [];
+    const origin = ORIGIN[it.origin] ? it.origin : (it.official === false ? 'unofficial' : 'shop');
+    const gens = new Set(mem.flatMap(m => m.gens));
+    const firstSeen = it.firstSeen ? toDay(it.firstSeen) : null;
+    const changed = it.changed ? toDay(it.changed) : null;
+    const tagList = [];
+    if (firstSeen != null && TODAY - firstSeen < NEW_DAYS && TODAY >= firstSeen) tagList.push('NEW');
+    if (changed != null && TODAY - changed < NEW_DAYS && TODAY >= changed && !tagList.includes('NEW')) tagList.push('更新');
+    if (it.manual && !tagList.includes('手入力')) tagList.push('手入力');
+    (it.tags || []).forEach(t => { if (t && !tagList.includes(t)) tagList.push(t); });
+    const hay = norm([it.title, cat.label, ...tagList, it.changeNote, it.shop, it.sale, it.note, CH[channel], ORIGIN[origin], origin === 'shop' ? '公式' : origin === 'unofficial' ? '非公式' : '',
+      ...venues.flatMap(v => [v.pref, v.place]), ...mem.flatMap(m => [m.name, m.kana, ...m.gens])].join(' '));
+    return { ...it, s, e, openEnd, mem, cat, channel, venues, origin, gens, hay, tagList, firstSeen, changed };
+  }
+  const baseItems = D.items.map(prep);
+  let manualRaw = [];
+  let items = baseItems;
+  let itemById = new Map(items.map(it => [it.id, it]));
+  function rebuildItems() {
+    items = baseItems.concat(manualRaw.map(prep));
+    itemById = new Map(items.map(it => [it.id, it]));
+  }
+  const statusOf = it => it.soldOut ? 'soldout' : TODAY < it.s ? 'upcoming' : TODAY > it.e ? 'ended' : (it.e - TODAY <= 3 ? 'soon' : 'open');
+  const prefShort = it => !it.venues.length ? '' : it.venues[0].pref + (it.venues.length > 1 ? `ほか${it.venues.length - 1}` : '');
+  const nameWithMark = m => (m.mark ? m.mark + ' ' : '') + m.name;
+
+  /* ---------- state ---------- */
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem('hgc:' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem('hgc:' + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } }
+  };
+  const st = {
+    q: '',
+    gens: new Set(), members: new Set(), cats: new Set(), channels: new Set(), tags: new Set(),
+    oshi: new Set(store.get('oshi', [])),
+    oshiOnly: !!store.get('oshiOnly', false),
+    origins: new Set(),
+    hideEnded: !!store.get('hideEnded', false),
+    showOpen: !!store.get('showOpen', false),
+    panelOpen: store.get('panelOpen', true) !== false,
+    sort: store.get('sort', 'start'),
+    span: Number(store.get('span', 61)),
+    dayW: Number(store.get('dayW', 24)),
+    viewStart: TODAY - 7
+  };
+
+  /* ---------- chips ---------- */
+  function chip(attr, key, label, on, catVar) {
+    return `<button type="button" class="cchip${on ? ' on' : ''}" ${attr}="${esc(key)}" aria-pressed="${on}"${catVar ? ` style="--cat:${catVar}"` : ''}>${catVar ? '<i></i>' : ''}${esc(label)}</button>`;
+  }
+  function renderGenChips() {
+    $('genChips').innerHTML = GENS.map(g => chip('data-gen', g, g, st.gens.has(g))).join('');
+  }
+  function renderMemberChips() {
+    const groups = new Map();
+    for (const m of members) { const g = m.gens[0]; if (!groups.has(g)) groups.set(g, []); groups.get(g).push(m); }
+    let h = '';
+    for (const [g, ms] of groups) {
+      h += `<div class="gen"><span class="gen-name">${esc(g)}</span><div class="chips">`;
+      for (const m of ms) {
+        const on = st.members.has(m.id), fav = st.oshi.has(m.id);
+        h += `<span class="mchip${on ? ' on' : ''}"><button type="button" class="mchip-name" data-member="${esc(m.id)}" aria-pressed="${on}">${m.mark ? `<span class="mark" aria-hidden="true">${esc(m.mark)}</span>` : ''}${esc(m.name)}</button>`
+          + `<button type="button" class="mchip-star${fav ? ' fav' : ''}" data-oshi="${esc(m.id)}" aria-pressed="${fav}" aria-label="${esc(m.name)}を推しに登録">${fav ? '★' : '☆'}</button></span>`;
+      }
+      h += '</div></div>';
+    }
+    $('memberChips').innerHTML = h;
+  }
+  function renderCatChips() {
+    const used = CAT_KEYS.filter(k => D.categories[k]);
+    $('catChips').innerHTML = used.map(k => chip('data-cat', k, D.categories[k].label, st.cats.has(k), `var(--c-${k})`)).join('');
+    $('legend').innerHTML = used.map(k => `<span><i class="sw" style="background:var(--c-${k})"></i>${esc(D.categories[k].label)}</span>`).join('')
+      + `<span><span class="badge off">公式</span>公式オンラインショップ</span><span><i class="sw hatch"></i>非公式（同人・ファンメイド）</span><span><i class="sw" style="background:var(--today);width:2px"></i>今日</span><span>破線の端＝表示期間の外へ続く</span>`;
+  }
+  function renderChChips() {
+    $('chChips').innerHTML = Object.keys(CH).map(k => chip('data-ch', k, CH[k], st.channels.has(k))).join('');
+  }
+  function renderTagChips() {
+    const count = new Map();
+    items.forEach(it => it.tagList.forEach(t => count.set(t, (count.get(t) || 0) + 1)));
+    const fixed = ['NEW', '更新'];
+    const keys = [...count.keys()].sort((a, b) => (fixed.includes(b) - fixed.includes(a)) || fixed.indexOf(a) - fixed.indexOf(b) || count.get(b) - count.get(a) || a.localeCompare(b, 'ja'));
+    $('tagChips').innerHTML = keys.length
+      ? keys.map(t => `<button type="button" class="cchip${st.tags.has(t) ? ' on' : ''}" data-tag="${esc(t)}" aria-pressed="${st.tags.has(t)}"${t === 'NEW' ? ' style="--cat:var(--today)"' : t === '更新' ? ' style="--cat:var(--c-anniv)"' : ''}>${esc(t)} <span class="n">${count.get(t)}</span></button>`).join('')
+      : '<span style="font-size:12px;color:var(--muted)">タグの付いた商品はありません</span>';
+  }
+  function renderOrChips() {
+    $('orChips').innerHTML = Object.keys(ORIGIN).map(k => chip('data-or', k, ORIGIN[k], st.origins.has(k))).join('');
+  }
+  function renderAllChips() { renderOrChips(); renderTagChips(); renderGenChips(); renderMemberChips(); renderCatChips(); renderChChips(); }
+
+  /* ---------- filtering & sorting ---------- */
+  function activeCount() {
+    return (st.q.trim() ? 1 : 0) + st.tags.size + st.gens.size + st.members.size + st.cats.size + st.channels.size
+      + st.origins.size + (st.oshiOnly ? 1 : 0) + (st.hideEnded ? 1 : 0);
+  }
+  function visibleItems() {
+    const terms = st.q.split(/[\s　]+/).map(norm).filter(Boolean);
+    const who = st.gens.size || st.members.size;
+    const list = items.filter(it => {
+      if (st.hideEnded && statusOf(it) === 'ended') return false;
+      if (!st.showOpen && it.openEnd && !it.release) return false;
+      if (st.origins.size && !st.origins.has(it.origin)) return false;
+      if (st.cats.size && !st.cats.has(it.cat.key)) return false;
+      if (st.channels.size && !st.channels.has(it.channel)) return false;
+      if (st.tags.size && !it.tagList.some(t => st.tags.has(t))) return false;
+      if (who && !(it.members.some(id => st.members.has(id)) || [...it.gens].some(g => st.gens.has(g)))) return false;
+      if (st.oshiOnly && !it.members.some(id => st.oshi.has(id))) return false;
+      return terms.every(t => it.hay.includes(t));
+    });
+    if (st.sort === 'end') list.sort((a, b) => ((statusOf(a) === 'ended') - (statusOf(b) === 'ended')) || (statusOf(a) === 'ended' ? b.e - a.e : a.e - b.e));
+    if (st.sort === 'end') list.sort((a, b) => (a.openEnd - b.openEnd) || 0);
+    else if (st.sort === 'title') list.sort((a, b) => a.title.localeCompare(b.title, 'ja'));
+    else list.sort((a, b) => a.s - b.s || a.e - b.e);
+    return list;
+  }
+  function groupsForMember(list) {
+    const MULTI = '__multi';
+    const map = new Map();
+    for (const it of list) {
+      const key = it.members.length === 1 ? it.members[0] : MULTI;
+      if (!map.has(key)) map.set(key, []);
+      map.get(key).push(it);
+    }
+    const keys = [...map.keys()].sort((a, b) => (a === MULTI) - (b === MULTI) || (memberOrder.get(a) ?? 999) - (memberOrder.get(b) ?? 999));
+    return keys.map(k => {
+      const m = memberById.get(k);
+      return { name: k === MULTI ? '複数メンバー・ユニット' : (m ? nameWithMark(m) : k), gen: m ? m.gens[0] : '', items: map.get(k) };
+    });
+  }
+
+  /* ---------- board ---------- */
+  function whoText(it) {
+    const names = it.mem.map(nameWithMark);
+    return names.length > 3 ? names.slice(0, 3).join('、') + ` ほか${names.length - 3}名` : names.join('、');
+  }
+  const tagBadge = t => t === 'NEW' ? '<span class="badge new">NEW</span>' : t === '更新' ? '<span class="badge upd">更新</span>' : `<span class="badge tg">${esc(t)}</span>`;
+  const headBadges = it => it.tagList.filter(t => t === 'NEW' || t === '更新').map(tagBadge).join('');
+  const officialBadge = it => it.origin === 'shop' ? '<span class="badge off" title="公式オンラインショップの商品">公式</span>'
+    : it.origin === 'unofficial' ? '<span class="badge unoff" title="同人・ファンメイドなど">非公式</span>' : '';
+  const rangeText = it => it.startLabel ? it.startLabel : it.release ? `${md(it.s)} 発売` : it.openEnd ? `${md(it.s)}〜` : `${md(it.s)}–${md(it.e)}`;
+
+  function rowHTML(it, x0, n, w) {
+    const status = statusOf(it);
+    const a = Math.max(it.s, x0), b = Math.min(it.e, x0 + n - 1);
+    const range = rangeText(it);
+    const sub = CH_SHORT[it.channel] + (it.venues.length ? ` 📍${prefShort(it)}` : '');
+    let track;
+    if (b >= a) {
+      const left = (a - x0) * w, width = (b - a + 1) * w, W = n * w;
+      const inside = width >= 150;
+      const cls = `bar st-${status}${it.origin === 'unofficial' ? ' unoff' : ''}${it.s < x0 ? ' cl' : ''}${it.e > x0 + n - 1 ? ' cr' : ''}`;
+      track = `<button type="button" class="${cls}" data-open="${esc(it.id)}" data-tip="${esc(it.id)}" style="left:${left}px;width:${width}px;--cat:var(--c-${it.cat.key})" aria-label="${esc(it.title)} ${range} ${esc(CH[it.channel])}">`
+        + (inside ? `${range}<em>${esc(sub)}</em>` : '') + '</button>';
+      if (!inside) {
+        const label = `${range} <em>${esc(sub)}</em>`;
+        track += (left + width + 6 + 150 <= W)
+          ? `<span class="bar-out" style="left:${left + width + 6}px">${label}</span>`
+          : `<span class="bar-out" style="right:${W - left + 6}px">${label}</span>`;
+      }
+    } else {
+      const before = it.e < x0;
+      track = `<button type="button" class="offrange ${before ? 'l' : 'r'}" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">${before ? '◀ ' : ''}${range}${before ? '' : ' ▶'}</button>`;
+    }
+    return `<div class="row"><div class="lab"><button type="button" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">`
+      + `<span class="ttl">${headBadges(it)}${esc(it.title)}</span>`
+      + `<span class="meta"><span class="pill st-${status}">${labelOf(it, status)}</span>${officialBadge(it)}<span class="who">${esc(whoText(it))}</span></span>`
+      + `</button></div><div class="trk">${track}</div></div>`;
+  }
+
+  function renderBoard(list) {
+    const x0 = st.viewStart, n = st.span, w = st.dayW, W = n * w;
+    const board = $('board');
+    board.style.setProperty('--trackW', W + 'px');
+
+    let months = '';
+    for (let i = 0; i < n;) {
+      const d = dt(x0 + i), y = d.getUTCFullYear(), m = d.getUTCMonth();
+      const dim = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+      const len = Math.min(dim - d.getUTCDate() + 1, n - i);
+      months += `<div class="mon" style="left:${i * w}px;width:${len * w}px"><span>${y}年${m + 1}月</span></div>`;
+      i += len;
+    }
+    let days = '', bg = '';
+    for (let k = 0; k < n; k++) {
+      const d = dt(x0 + k), wd = d.getUTCDay(), dn = d.getUTCDate();
+      const cls = 'day' + (wd === 0 ? ' sun' : wd === 6 ? ' sat' : '') + (x0 + k === TODAY ? ' today' : '');
+      let label = '';
+      if (w >= 22) label = `<b>${dn}</b><i>${WD[wd]}</i>`;
+      else if (dn === 1 || wd === 1 || x0 + k === TODAY) label = `<b>${dn}</b>`;
+      days += `<div class="${cls}" style="left:${k * w}px;width:${w}px" title="${full(x0 + k)}">${label}</div>`;
+      if (wd === 0 || wd === 6) bg += `<div class="we" style="left:${k * w}px;width:${w}px"></div>`;
+      if (dn === 1 && k > 0) bg += `<div class="mline" style="left:${k * w}px"></div>`;
+    }
+    if (TODAY >= x0 && TODAY < x0 + n) bg += `<div class="tline" style="left:${(TODAY - x0) * w + w / 2 - 1}px"></div>`;
+
+    let rows = '';
+    if (!list.length) {
+      rows = `<div class="empty"><div>条件に合うグッズがありません。</div><button type="button" class="reset" data-reset>条件をクリア</button></div>`;
+    } else if (st.sort === 'member') {
+      for (const g of groupsForMember(list)) {
+        rows += `<div class="grp"><div>${esc(g.name)}<em>${esc(g.gen)}　${g.items.length}件</em></div></div>`;
+        rows += g.items.map(it => rowHTML(it, x0, n, w)).join('');
+      }
+    } else {
+      rows = list.map(it => rowHTML(it, x0, n, w)).join('');
+    }
+
+    board.innerHTML = `<div class="grid"><div class="hd"><div class="corner">${list.length}件 ／ ${md(x0)}〜${md(x0 + n - 1)}</div><div class="trk">${months}${days}</div></div>`
+      + `<div class="body"><div class="bg">${bg}</div>${rows}</div></div>`;
+  }
+
+  function renderSummary(list) {
+    const c = { open: 0, soon: 0, upcoming: 0, ended: 0, soldout: 0 };
+    list.forEach(it => c[statusOf(it)]++);
+    const nNew = items.filter(it => it.tagList.includes('NEW') && (st.showOpen || !it.openEnd || it.release)).length;
+    $('summary').innerHTML =
+      `<button type="button" class="stat s-new${st.tags.has('NEW') ? ' on' : ''}" data-newstat aria-pressed="${st.tags.has('NEW')}" title="初めて掲載されてから${NEW_DAYS}日以内の商品">NEW<small style="font-size:11px">（掲載${NEW_DAYS}日以内）</small><strong>${nNew}</strong></button>`
+      + `<span class="stat s-open">受付中<strong>${c.open}</strong></span>`
+      + `<span class="stat s-soon">3日以内に締切<strong>${c.soon}</strong></span>`
+      + `<span class="stat s-upcoming">予定<strong>${c.upcoming}</strong></span>`
+      + `<span class="stat">終了<strong>${c.ended}</strong></span>`
+      + `<span class="stat">表示中<strong>${list.length}</strong>／全${items.length}件</span>`;
+  }
+
+  function renderPanelState() {
+    $('filterPanel').hidden = !st.panelOpen;
+    $('togglePanel').setAttribute('aria-expanded', String(st.panelOpen));
+    const n = activeCount();
+    $('activeCount').hidden = n === 0;
+    $('activeCount').textContent = n;
+  }
+
+  function render() {
+    hideTip();
+    const list = visibleItems();
+    renderSummary(list);
+    renderBoard(list);
+    renderPanelState();
+    $('openCount').textContent = `（${items.filter(it => it.openEnd && !it.release).length}件）`;
+    $('startDate').value = ymd(st.viewStart);
+  }
+
+  /* ---------- shared detail text ---------- */
+  function remainText(it) {
+    const s = statusOf(it);
+    if (s === 'soldout') return '完売（販売元の在庫なし）';
+    if (it.category === 'prize') return TODAY < it.s ? `登場まであと約${it.s - TODAY}日` : '登場済み（店舗により終了している場合あり）';
+    if (it.release) return TODAY < it.s ? `発売まであと${it.s - TODAY}日` : '発売中';
+    if (s === 'upcoming') return `開始まであと${it.s - TODAY}日`;
+    if (s === 'ended') return `${TODAY - it.e}日前に終了`;
+    if (it.openEnd) return '販売中（終了日未定）';
+    const left = it.e - TODAY;
+    return left === 0 ? '本日締切' : `締切まであと${left}日`;
+  }
+  const venueLines = it => it.venues.map(v => `<span class="vn">📍${esc(v.pref)} ${esc(v.place)}${v.date ? ` <small>${esc(v.date)}</small>` : ''}</span>`).join('');
+
+  /* ---------- hover tooltip ---------- */
+  const tip = $('tip');
+  let tipId = null;
+  function showTip(id, x, y) {
+    const it = itemById.get(id); if (!it) return;
+    const s = statusOf(it);
+    tip.innerHTML = `<h3>${esc(it.title)}</h3>`
+      + `<div class="tb"><span class="pill st-${s}">${labelOf(it, s)}</span>${officialBadge(it)}<span class="badge ch">${esc(CH[it.channel])}</span>${it.tagList.map(tagBadge).join('')}</div>`
+      + (it.changeNote && it.tagList.includes('更新') ? `<div style="color:var(--c-anniv)">更新：${esc(it.changeNote)}</div>` : '')
+      + `<dl><dt>期間</dt><dd>${rangeText(it)}（${remainText(it)}）</dd>`
+      + `<dt>メンバー</dt><dd>${esc(it.mem.map(nameWithMark).join('、') || '—')}</dd>`
+      + (it.venues.length ? `<dt>会場</dt><dd>${venueLines(it)}</dd>` : '')
+      + `<dt>販売元</dt><dd>${esc(it.shop || '—')}</dd>`
+      + `<dt>出典</dt><dd>${esc(it.source || '—')}</dd></dl>`;
+    tip.hidden = false; tipId = id;
+    placeTip(x, y);
+  }
+  function placeTip(x, y) {
+    const pad = 14, r = tip.getBoundingClientRect();
+    let left = x + pad, top = y + pad;
+    if (left + r.width > innerWidth - 8) left = Math.max(8, x - r.width - pad);
+    if (top + r.height > innerHeight - 8) top = Math.max(8, y - r.height - pad);
+    tip.style.left = left + 'px'; tip.style.top = top + 'px';
+  }
+  function hideTip() { tip.hidden = true; tipId = null; }
+  document.addEventListener('pointerover', e => {
+    if (e.pointerType === 'touch') return;
+    const t = e.target.closest('[data-tip]');
+    if (!t) { if (tipId) hideTip(); return; }
+    if (t.dataset.tip !== tipId) showTip(t.dataset.tip, e.clientX, e.clientY);
+  });
+  document.addEventListener('pointermove', e => { if (tipId && e.pointerType !== 'touch') placeTip(e.clientX, e.clientY); });
+  document.addEventListener('focusin', e => {
+    const t = e.target.closest && e.target.closest('[data-tip]');
+    if (t) { const r = t.getBoundingClientRect(); showTip(t.dataset.tip, r.left + 20, r.bottom); } else if (tipId) hideTip();
+  });
+  $('board').addEventListener('scroll', hideTip, { passive: true });
+
+  /* ---------- detail drawer ---------- */
+  let lastFocus = null;
+  function openDetail(id) {
+    const it = itemById.get(id);
+    if (!it) return;
+    hideTip();
+    const s = statusOf(it);
+    const link = it.url
+      ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.url)}</a>`
+      : '<span style="color:var(--muted)">未登録</span>';
+    $('drawer').innerHTML = `
+      <div class="drawer-hd" style="--cat:var(--c-${it.cat.key})">
+        <div>
+          <div class="tags"><span class="tag">${esc(it.cat.label)}</span><span class="pill st-${s}">${labelOf(it, s)}</span>${officialBadge(it)}<span class="badge ch">${esc(CH[it.channel])}</span>${it.tagList.map(tagBadge).join('')}</div>
+          <h2 id="dTitle">${esc(it.title)}</h2>
+        </div>
+        <button type="button" class="close" id="dClose" aria-label="閉じる">×</button>
+      </div>
+      <div class="drawer-bd">
+        <div class="period">
+          <span style="font-size:12px;color:var(--muted)">販売・受注期間</span>
+          <span class="range">${it.startLabel ? esc(it.startLabel) : it.release ? full(it.s) + ' 発売' : full(it.s) + ' 〜 ' + (it.openEnd ? '終了日未定' : full(it.e))}${it.periodText ? `<br><small style="font-weight:500;color:var(--muted)">${esc(it.periodText)}</small>` : ''}</span>
+          <span class="left st-${s}">${remainText(it)}</span>
+        </div>
+        <dl class="spec">
+          <dt>メンバー</dt><dd>${esc(it.mem.map(nameWithMark).join('、') || '—')}</dd>
+          <dt>販売方法</dt><dd>${esc(CH[it.channel])}</dd>
+          ${it.venues.length ? `<dt>会場</dt><dd>${venueLines(it)}</dd>` : ''}
+          <dt>販売形式</dt><dd>${esc(it.sale || '—')}</dd>
+          <dt>価格</dt><dd>${esc(it.price || '—')}</dd>
+          <dt>発送予定</dt><dd>${esc(it.ship || '—')}</dd>
+          <dt>販売元</dt><dd>${esc(it.shop || '—')}</dd>
+          <dt>商品ページ</dt><dd>${link}</dd>
+          <dt>販売元区分</dt><dd>${ORIGIN_DESC[it.origin]}</dd>
+          <dt>出典</dt><dd>${esc(it.source || '—')}</dd>
+          <dt>初回掲載</dt><dd>${it.firstSeen != null ? full(it.firstSeen) : '—'}</dd>
+          ${it.changed != null ? `<dt>更新</dt><dd>${full(it.changed)}${it.changeNote ? '：' + esc(it.changeNote) : ''}</dd>` : ''}
+          ${it.note ? `<dt>備考</dt><dd>${esc(it.note)}</dd>` : ''}
+        </dl>
+        ${it.manual && canWrite ? `<div class="danger-row" id="manualActions"><button type="button" class="btn" data-edit="${esc(it.docId)}">編集</button><button type="button" class="btn danger" data-askdel="${esc(it.docId)}">削除</button></div>` : ''}
+      </div>`;
+    lastFocus = document.activeElement;
+    $('drawer').hidden = false; $('scrim').hidden = false;
+    $('dClose').focus();
+    hideTip();
+  }
+  function closeDetail() {
+    $('drawer').hidden = true; $('scrim').hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    hideTip();
+  }
+
+  /* ---------- events ---------- */
+  function resetFilters() {
+    st.q = ''; $('q').value = '';
+    st.gens.clear(); st.members.clear(); st.cats.clear(); st.channels.clear(); st.tags.clear();
+    st.oshiOnly = false; $('oshiOnly').checked = false; store.set('oshiOnly', false);
+    st.origins.clear();
+    st.hideEnded = false; $('hideEnded').checked = false; store.set('hideEnded', false);
+    renderAllChips(); render();
+  }
+  const toggleIn = (set, k) => { set.has(k) ? set.delete(k) : set.add(k); };
+
+  $('q').addEventListener('input', e => { st.q = e.target.value; render(); });
+  $('togglePanel').addEventListener('click', () => { st.panelOpen = !st.panelOpen; store.set('panelOpen', st.panelOpen); renderPanelState(); });
+  $('sort').addEventListener('change', e => { st.sort = e.target.value; store.set('sort', st.sort); render(); });
+  $('span').addEventListener('change', e => { st.span = Number(e.target.value); store.set('span', st.span); render(); });
+  $('zoom').addEventListener('change', e => { st.dayW = Number(e.target.value); store.set('dayW', st.dayW); render(); });
+  document.querySelector('.nav').addEventListener('click', e => { const b = e.target.closest('[data-shift]'); if (!b) return; st.viewStart += Number(b.dataset.shift); render(); });
+  $('todayBtn').addEventListener('click', () => { st.viewStart = TODAY - 7; render(); $('board').scrollLeft = 0; });
+  $('startDate').addEventListener('change', e => { if (e.target.value) { st.viewStart = toDay(e.target.value); render(); } });
+  $('showOpen').addEventListener('change', e => { st.showOpen = e.target.checked; store.set('showOpen', st.showOpen); render(); });
+  $('hideEnded').addEventListener('change', e => { st.hideEnded = e.target.checked; store.set('hideEnded', st.hideEnded); render(); });
+  $('oshiOnly').addEventListener('change', e => { st.oshiOnly = e.target.checked; store.set('oshiOnly', st.oshiOnly); render(); });
+  $('orChips').addEventListener('click', e => { const b = e.target.closest('[data-or]'); if (!b) return; toggleIn(st.origins, b.dataset.or); renderOrChips(); render(); });
+  $('resetBtn').addEventListener('click', resetFilters);
+
+  $('tagChips').addEventListener('click', e => { const b = e.target.closest('[data-tag]'); if (!b) return; toggleIn(st.tags, b.dataset.tag); renderTagChips(); render(); });
+  $('summary').addEventListener('click', e => { if (!e.target.closest('[data-newstat]')) return; toggleIn(st.tags, 'NEW'); renderTagChips(); render(); });
+  $('genChips').addEventListener('click', e => { const b = e.target.closest('[data-gen]'); if (!b) return; toggleIn(st.gens, b.dataset.gen); renderGenChips(); render(); });
+  $('catChips').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; toggleIn(st.cats, b.dataset.cat); renderCatChips(); render(); });
+  $('chChips').addEventListener('click', e => { const b = e.target.closest('[data-ch]'); if (!b) return; toggleIn(st.channels, b.dataset.ch); renderChChips(); render(); });
+  $('memberChips').addEventListener('click', e => {
+    const mb = e.target.closest('[data-member]'), ob = e.target.closest('[data-oshi]');
+    if (mb) toggleIn(st.members, mb.dataset.member);
+    else if (ob) { toggleIn(st.oshi, ob.dataset.oshi); store.set('oshi', [...st.oshi]); }
+    else return;
+    renderMemberChips(); render();
+  });
+  $('board').addEventListener('click', e => {
+    if (e.target.closest('[data-reset]')) { resetFilters(); return; }
+    const t = e.target.closest('[data-open]'); if (t) openDetail(t.dataset.open);
+  });
+  $('scrim').addEventListener('click', closeDetail);
+  $('drawer').addEventListener('click', e => { if (e.target.closest('#dClose')) closeDetail(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('drawer').hidden) closeDetail(); else hideTip(); } });
+
+  /* ---------- manual entries (shared store) ---------- */
+  const PREFS = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県','全国各地','海外'];
+  let db = null, canWrite = false;
+
+  function venueRow(v) {
+    v = v || {};
+    return `<div class="vrow"><select aria-label="都道府県">${PREFS.map(p => `<option${p === v.pref ? ' selected' : ''}>${p}</option>`).join('')}</select>`
+      + `<input type="text" placeholder="場所名" value="${esc(v.place || '')}" aria-label="場所名"><input type="text" placeholder="日程" value="${esc(v.date || '')}" aria-label="日程">`
+      + `<button type="button" data-delvenue aria-label="この会場を削除">×</button></div>`;
+  }
+  function openForm(docId) {
+    const cur = docId ? manualRaw.find(m => m.docId === docId) : null;
+    const v = cur || { category: 'collab', channel: 'online', origin: 'licensed', members: [], venues: [] };
+    const mlist = members.map(m => `<label><input type="checkbox" value="${esc(m.id)}"${(v.members || []).includes(m.id) ? ' checked' : ''}>${esc(nameWithMark(m))}</label>`).join('');
+    const opt = (obj, sel) => Object.keys(obj).map(k => `<option value="${k}"${k === sel ? ' selected' : ''}>${esc(typeof obj[k] === 'string' ? obj[k] : obj[k].label)}</option>`).join('');
+    $('drawer').innerHTML = `
+      <div class="drawer-hd"><div><h2 id="dTitle">${cur ? '商品を編集' : '商品を追加'}</h2><div class="note-sm">元の発表ページのURLを必ず入れてください。</div></div>
+        <button type="button" class="close" id="dClose" aria-label="閉じる">×</button></div>
+      <div class="drawer-bd"><form class="form" id="mForm" novalidate>
+        <label class="f"><span>商品・企画名 <b>必須</b></span><input type="text" id="f_title" value="${esc(v.title || '')}"></label>
+        <div class="two">
+          <label class="f"><span>開始日 <b>必須</b></span><input type="date" id="f_start" value="${esc(v.start || '')}"></label>
+          <label class="f"><span>終了日（未定なら空欄）</span><input type="date" id="f_end" value="${esc(v.end || '')}"></label>
+        </div>
+        <div class="two">
+          <label class="f"><span>種別</span><select id="f_cat">${opt(D.categories, v.category)}</select></label>
+          <label class="f"><span>販売方法</span><select id="f_ch">${opt(CH, v.channel)}</select></label>
+        </div>
+        <label class="f"><span>販売元区分</span><select id="f_or">${opt(ORIGIN, v.origin)}</select></label>
+        <fieldset><legend>メンバー</legend><div class="mlist" id="f_mem">${mlist}</div></fieldset>
+        <fieldset><legend>会場（現地販売がある場合）</legend><div id="f_venues">${(v.venues || []).map(venueRow).join('')}</div>
+          <button type="button" class="linkbtn" id="addVenue">＋ 会場を追加</button></fieldset>
+        <label class="f"><span>販売元・店舗名</span><input type="text" id="f_shop" value="${esc(v.shop || '')}" placeholder="例：アニメイト、ローソン"></label>
+        <label class="f"><span>元の発表ページURL <b>必須</b></span><input type="url" id="f_url" value="${esc(v.url || '')}" placeholder="https://"></label>
+        <div class="two">
+          <label class="f"><span>販売形式</span><input type="text" id="f_sale" value="${esc(v.sale || '')}" placeholder="受注生産・数量限定 など"></label>
+          <label class="f"><span>価格</span><input type="text" id="f_price" value="${esc(v.price || '')}"></label>
+        </div>
+        <label class="f"><span>発送予定</span><input type="text" id="f_ship" value="${esc(v.ship || '')}"></label>
+        <label class="f"><span>タグ（読点・カンマ区切り）</span><input type="text" id="f_tags" value="${esc((v.tags || []).join('、'))}" placeholder="再販売、会場限定"></label>
+        <label class="f"><span>備考</span><textarea id="f_note">${esc(v.note || '')}</textarea></label>
+        <div class="err" id="f_err" role="alert"></div>
+        <div class="actions"><button type="submit" class="btn primary" id="f_save">保存</button><button type="button" class="btn" id="f_cancel">やめる</button></div>
+      </form></div>`;
+    lastFocus = document.activeElement;
+    $('drawer').hidden = false; $('scrim').hidden = false;
+    $('f_title').focus();
+    $('addVenue').addEventListener('click', () => $('f_venues').insertAdjacentHTML('beforeend', venueRow()));
+    $('f_venues').addEventListener('click', e => { const b = e.target.closest('[data-delvenue]'); if (b) b.parentElement.remove(); });
+    $('f_cancel').addEventListener('click', closeDetail);
+    $('mForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const val = id => $(id).value.trim();
+      const err = msg => { $('f_err').textContent = msg; };
+      if (!val('f_title')) return err('商品・企画名を入れてください。');
+      if (!val('f_start')) return err('開始日を入れてください。');
+      if (val('f_end') && val('f_end') < val('f_start')) return err('終了日が開始日より前になっています。');
+      if (!/^https?:\/\/\S+$/.test(val('f_url'))) return err('元の発表ページのURL（https://〜）を入れてください。');
+      const today = ymd(TODAY);
+      const body = {
+        title: val('f_title'), start: val('f_start'), end: val('f_end'),
+        category: $('f_cat').value, channel: $('f_ch').value, origin: $('f_or').value,
+        members: [...$('f_mem').querySelectorAll('input:checked')].map(x => x.value),
+        venues: [...$('f_venues').querySelectorAll('.vrow')].map(r => { const f = r.querySelectorAll('select,input'); return { pref: f[0].value, place: f[1].value.trim(), date: f[2].value.trim() }; }).filter(x => x.place || x.date),
+        shop: val('f_shop'), url: val('f_url'), source: val('f_url'), sale: val('f_sale'), price: val('f_price'), ship: val('f_ship'),
+        tags: val('f_tags').split(/[、,，]/).map(t => t.trim()).filter(Boolean), note: val('f_note'),
+        firstSeen: cur ? (cur.firstSeen || today) : today
+      };
+      if (cur) { body.changed = today; body.changeNote = '手入力で修正'; }
+      $('f_save').disabled = true; err('');
+      try {
+        await (cur ? db.collection('manual').doc(cur.docId) : db.collection('manual').doc()).set(body);
+        closeDetail();
+      } catch (ex) {
+        $('f_save').disabled = false;
+        err(ex && ex.code === 'invalid_argument' ? '保存する権限がありません。' : ex && ex.code === 'quota_exceeded' ? '保存できる件数の上限に達しました。' : '保存できませんでした。時間をおいてもう一度お試しください。');
+      }
+    });
+  }
+
+  $('addBtn').addEventListener('click', () => openForm(null));
+  $('drawer').addEventListener('click', async e => {
+    const ed = e.target.closest('[data-edit]');
+    if (ed) { openForm(ed.dataset.edit); return; }
+    const ask = e.target.closest('[data-askdel]');
+    if (ask) {
+      $('manualActions').innerHTML = `<span class="note-sm">この商品を削除しますか？</span><button type="button" class="btn danger solid" data-del="${esc(ask.dataset.askdel)}">削除する</button><button type="button" class="btn" data-nodel>やめる</button>`;
+      return;
+    }
+    if (e.target.closest('[data-nodel]')) { const id = $('manualActions').querySelector('[data-del]').dataset.del; $('manualActions').innerHTML = `<button type="button" class="btn" data-edit="${esc(id)}">編集</button><button type="button" class="btn danger" data-askdel="${esc(id)}">削除</button>`; return; }
+    const del = e.target.closest('[data-del]');
+    if (del) {
+      try { await db.collection('manual').doc(del.dataset.del).delete(); closeDetail(); }
+      catch (ex) { $('manualActions').innerHTML = '<span class="note-sm">削除できませんでした。</span>'; }
+    }
+  });
+
+  (async () => {
+    const api = window.claude && typeof window.claude.use === 'function' ? window.claude : null;
+    if (!api) return;
+    try { db = await api.use('db'); } catch (e) { db = null; }
+    if (!db) return;
+    db.collection('manual').onSnapshot(snap => {
+      manualRaw = snap.docs.map(d => ({ ...d.data(), id: 'm_' + d.id, docId: d.id, manual: true }));
+      rebuildItems(); renderTagChips(); render();
+    }, () => {});
+    try {
+      const user = await api.use('user');
+      canWrite = !!(user && await user.canEdit());
+    } catch (e) { canWrite = false; }
+    $('addBtn').hidden = !canWrite;
+  })();
+
+  /* ---------- init ---------- */
+  $('sort').value = st.sort; $('span').value = String(st.span); $('zoom').value = String(st.dayW);
+  if (!$('sort').value) { st.sort = 'start'; $('sort').value = 'start'; }
+  if (!$('span').value) { st.span = 61; $('span').value = '61'; }
+  if (!$('zoom').value) { st.dayW = 24; $('zoom').value = '24'; }
+  $('hideEnded').checked = st.hideEnded; $('showOpen').checked = st.showOpen; $('oshiOnly').checked = st.oshiOnly;
+  $('testBanner').hidden = !D.meta.isTest;
+  if (D.meta.submitUrl) { $('submitLink').href = D.meta.submitUrl; $('submitLink').hidden = false; }
+  $('updated').textContent = D.meta.updated ? `データ更新日 ${D.meta.updated}` : '';
+  $('foot').textContent = D.meta.isTest
+    ? '表示中のデータはテスト用です（推しマークのみ実在の情報）。本番データでは各商品に出典（公式ショップ等）を記載します。'
+    : `収録範囲：${(D.meta && D.meta.scope) || ''} 各商品の出典は詳細に記載しています。購入前に必ず元の販売ページで最新情報を確認してください。抜けている商品や誤りに気づいたら、${D.meta.submitUrl ? '「情報提供（Discord）」から' : 'Discordサーバーで'}商品ページのURLを教えてください。`;
+  renderAllChips(); render();
+})();
+</script>
+</body></html>
