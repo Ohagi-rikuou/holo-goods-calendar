@@ -185,13 +185,15 @@
   "start": "2026-10-24",
   "end": "2026-11-24",
   "periodText": "受注受付期間 2026/10/24 20:00 〜 2026/11/24 18:00",
-  "ship": "",
+  "ship": "2027年03月下旬までに発送予定",
   "price": "¥1,540〜¥4,290",
   "shop": "hololive production OFFICIAL SHOP",
   "url": "https://shop.hololivepro.com/products/azki_memberexclusive_2026",
   "source": "公式ショップ 商品ページ（2026-10-28 確認）",
   "tags": [],
-  "firstSeen": "2026-10-24"
+  "firstSeen": "2026-10-24",
+  "changed": "2026-10-28",
+  "changeNote": "発送予定 2027年03月下旬までに発送予定"
  },
  {
   "id": "s_compasshorizon",
@@ -727,7 +729,10 @@
   "tags": [
    "再入荷予定"
   ],
-  "firstSeen": "2026-10-27"
+  "firstSeen": "2026-10-27",
+  "soldOut": true,
+  "changed": "2026-10-28",
+  "changeNote": "SOLD OUT"
  },
  {
   "id": "s_isakiriona_hololivefriendswithu",
