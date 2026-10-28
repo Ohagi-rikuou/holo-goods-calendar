@@ -1,5 +1,6 @@
 /* ホロライブ グッズカレンダー データ（2026-10-28 更新）
- * 出典：hololive production OFFICIAL SHOP 各商品ページ／PR TIMES 各社発表。推しマークはファンサイト3件で一致したもの（JP・DEV_IS・EN・ID）と公式タレントページ（アソビ★まわり隊！）。期生の並びは公式サイトに準拠。
+ * 出典：hololive production OFFICIAL SHOP 各商品ページ／PR TIMES 各社発表ほか（各商品の source・url を参照）。
+ * このファイルは scripts/build.py が data/*.json から自動で作ります。直接編集しないでください。
  */
 window.HOLO_GOODS = {
  "meta": {
@@ -4000,463 +4001,6 @@ window.HOLO_GOODS = {
    "firstSeen": "2026-07-24"
   },
   {
-   "id": "p_marion_flowglow",
-   "title": "FLOW GLOW × マリオンクレープ コラボグッズ",
-   "members": [
-    "響咲リオナ",
-    "虎金妃笑虎",
-    "水宮枢",
-    "輪堂千速",
-    "綺々羅々ヴィヴィ"
-   ],
-   "category": "collab",
-   "channel": "both",
-   "origin": "licensed",
-   "sale": "店舗販売＋通販予約",
-   "start": "2026-11-04",
-   "end": "2026-12-07",
-   "venues": [
-    {
-     "pref": "全国各地",
-     "place": "マリオンクレープ 全国31店舗",
-     "date": "11/4〜11/30（11/17は販売なし）"
-    }
-   ],
-   "ship": "",
-   "price": "¥550〜¥5,500",
-   "shop": "中外鉱業（マリオンクレープ店舗・Chugaionline）",
-   "url": "https://prtimes.jp/main/html/rd/p/000000893.000059072.html",
-   "source": "PR TIMES 2026-10-21 発表（中外鉱業）",
-   "note": "通販予約は11/4 10:00〜12/7 23:59。店舗の販売は11/30まで。",
-   "tags": [],
-   "firstSeen": "2026-10-21"
-  },
-  {
-   "id": "p_grapht_koshien",
-   "title": "ホロライブ甲子園2026 開催記念アイテム（GRAPHT）",
-   "members": [
-    "博衣こより",
-    "大神ミオ",
-    "宝鐘マリン",
-    "白銀ノエル",
-    "尾丸ポルカ",
-    "響咲リオナ"
-   ],
-   "category": "collab",
-   "channel": "online",
-   "origin": "licensed",
-   "sale": "受注生産",
-   "start": "2026-10-17",
-   "end": "2026-11-16",
-   "venues": [],
-   "ship": "",
-   "price": "¥2,420〜¥5,500",
-   "shop": "GRAPHT OFFICIAL STORE",
-   "url": "https://prtimes.jp/main/html/rd/p/000000142.000162957.html",
-   "source": "PR TIMES 2026-10-16 発表（GRAPHT OFFICIAL STORE）",
-   "note": "受注期間 10/17 15:00〜11/16 18:00",
-   "tags": [],
-   "firstSeen": "2026-10-16"
-  },
-  {
-   "id": "p_anymy_sweets",
-   "title": "エニマイくじ ホロライブ 〜スイーツパティシエ〜",
-   "members": [
-    "大神ミオ",
-    "角巻わため",
-    "姫森ルーナ",
-    "雪花ラミィ",
-    "桃鈴ねね",
-    "博衣こより"
-   ],
-   "category": "kuji",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "くじ（賞品がなくなり次第終了）",
-   "start": "2026-10-13",
-   "end": "",
-   "venues": [
-    {
-     "pref": "全国各地",
-     "place": "ローソン（取扱店舗）",
-     "date": "10/13から順次"
-    }
-   ],
-   "ship": "",
-   "price": "1回 ¥850",
-   "shop": "レッグス（エニマイくじ）",
-   "url": "https://prtimes.jp/main/html/rd/p/000000070.000138299.html",
-   "source": "PR TIMES 2026-10-07 発表（レッグス）／エニマイくじ公式サイト（2026-10-28 確認）",
-   "note": "店舗により発売日時が異なります。取扱店はエニマイくじ公式サイトで確認。",
-   "tags": [
-    "くじ"
-   ],
-   "firstSeen": "2026-10-07",
-   "startLabel": "10/13より順次発売",
-   "release": true
-  },
-  {
-   "id": "p_miko_daiba",
-   "title": "さくらみこ「えりーとえいぞーぱーく in お台場」イベントグッズ",
-   "members": [
-    "さくらみこ"
-   ],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（入場無料）",
-   "start": "2026-10-15",
-   "end": "2026-11-01",
-   "venues": [
-    {
-     "pref": "東京都",
-     "place": "LED DAIBA STUDIO（デックス東京ビーチ3F）",
-     "date": "10/15〜11/1"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "LED TOKYO・イーディス",
-   "url": "https://prtimes.jp/main/html/rd/p/000000451.000030501.html",
-   "source": "PR TIMES 2026-10-02 発表（LED TOKYO・イーディス）",
-   "note": "",
-   "tags": [],
-   "firstSeen": "2026-10-02"
-  },
-  {
-   "id": "p_strictg_gundam",
-   "title": "STRICT-G「GUNDAM」×「hololive production」コラボアイテム第1弾",
-   "members": [
-    "白上フブキ",
-    "さくらみこ",
-    "星街すいせい",
-    "宝鐘マリン",
-    "博衣こより",
-    "輪堂千速"
-   ],
-   "category": "collab",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "店頭一般販売",
-   "start": "2026-10-31",
-   "end": "",
-   "venues": [
-    {
-     "pref": "東京都",
-     "place": "STRICT-G ダイバーシティ東京 プラザ7F",
-     "date": "10/31〜"
-    },
-    {
-     "pref": "東京都",
-     "place": "STRICT-G 東京スカイツリータウン・ソラマチ4F",
-     "date": "10/31〜"
-    },
-    {
-     "pref": "静岡県",
-     "place": "STRICT-G NEOPASA静岡",
-     "date": "10/31〜"
-    },
-    {
-     "pref": "滋賀県",
-     "place": "STRICT-G 多賀SA（下り線）",
-     "date": "10/31〜"
-    }
-   ],
-   "ship": "",
-   "price": "¥1,320〜¥5,940",
-   "shop": "バンダイ（STRICT-G）",
-   "url": "https://prtimes.jp/main/html/rd/p/000000982.000055569.html",
-   "source": "PR TIMES 2026-09-30 発表（バンダイ）",
-   "note": "プレミアムバンダイの予約販売は10/12で終了。店頭一般販売は10/31から。",
-   "tags": [],
-   "firstSeen": "2026-09-30"
-  },
-  {
-   "id": "p_raden_genji",
-   "title": "源氏物語展 京都会場限定 儒烏風亭らでんコラボグッズ",
-   "members": [
-    "儒烏風亭らでん"
-   ],
-   "category": "collab",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場限定販売（観覧券が必要）",
-   "start": "2026-10-06",
-   "end": "2026-11-29",
-   "venues": [
-    {
-     "pref": "京都府",
-     "place": "京都国立博物館 平成知新館（会場内特設ショップ）",
-     "date": "10/6〜11/29"
-    }
-   ],
-   "ship": "",
-   "price": "¥880〜¥1,980",
-   "shop": "特別展「源氏物語 王朝のかがやき」",
-   "url": "https://prtimes.jp/main/html/rd/p/000000001.000191100.html",
-   "source": "PR TIMES 2026-09-30 発表（特別展「源氏物語 王朝のかがやき」）",
-   "note": "特設ショップの利用には観覧券が必要。休館日あり。",
-   "tags": [],
-   "firstSeen": "2026-09-30"
-  },
-  {
-   "id": "p_raden_tnm",
-   "title": "儒烏風亭らでん×東京国立博物館 イベントオリジナルグッズ（先行予約）",
-   "members": [
-    "儒烏風亭らでん"
-   ],
-   "category": "collab",
-   "channel": "online",
-   "origin": "licensed",
-   "sale": "オンライン先行予約",
-   "start": "2026-09-28",
-   "end": "",
-   "venues": [],
-   "ship": "",
-   "price": "¥770〜¥6,930",
-   "shop": "ClaN Entertainment（ClaN MARKET）",
-   "url": "https://prtimes.jp/main/html/rd/p/000000309.000100939.html",
-   "source": "PR TIMES 2026-09-28 発表（ClaN Entertainment）",
-   "note": "イベント本体は2027/1/13〜3/22 東京国立博物館（東京都台東区）で開催。予約の締切は発表に記載なし。",
-   "tags": [],
-   "firstSeen": "2026-09-28"
-  },
-  {
-   "id": "p_fubuki_miroku",
-   "title": "みろくの里×白上フブキ「フブキングダムの里」限定コラボグッズ",
-   "members": [
-    "白上フブキ"
-   ],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（全12種）",
-   "start": "2026-10-10",
-   "end": "2026-11-03",
-   "venues": [
-    {
-     "pref": "広島県",
-     "place": "みろくの里（福山市）ツネイシアリーナ内特設会場",
-     "date": "10/10〜11/3"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "ツネイシアミューズメントビレッジ",
-   "url": "https://prtimes.jp/main/html/rd/p/000000005.000181413.html",
-   "source": "PR TIMES 2026-09-15 発表（ツネイシアミューズメントビレッジ）",
-   "note": "期間中休園日あり。一部オフィシャルグッズも同時販売。",
-   "tags": [],
-   "firstSeen": "2026-09-15"
-  },
-  {
-   "id": "p_popup_tokyo",
-   "title": "hololive production official pop up shop in TOKYO",
-   "members": [],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（地域限定商品あり）",
-   "start": "2026-10-03",
-   "end": "2026-11-01",
-   "venues": [
-    {
-     "pref": "東京都",
-     "place": "池袋PACKS 2・3F",
-     "date": "10/3〜11/1"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "hololive production official pop up shop",
-   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
-   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
-   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
-   "tags": [],
-   "firstSeen": "2026-09-11"
-  },
-  {
-   "id": "p_popup_nagoya",
-   "title": "hololive production official pop up shop in NAGOYA",
-   "members": [],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（地域限定商品あり）",
-   "start": "2026-11-06",
-   "end": "2026-11-23",
-   "venues": [
-    {
-     "pref": "愛知県",
-     "place": "会場は特設ページで発表予定",
-     "date": "11/6〜11/23"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "hololive production official pop up shop",
-   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
-   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
-   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
-   "tags": [],
-   "firstSeen": "2026-09-11"
-  },
-  {
-   "id": "p_popup_fukuoka",
-   "title": "hololive production official pop up shop in FUKUOKA",
-   "members": [],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（地域限定商品あり）",
-   "start": "2026-12-11",
-   "end": "2026-12-20",
-   "venues": [
-    {
-     "pref": "福岡県",
-     "place": "会場は特設ページで発表予定",
-     "date": "12/11〜12/20"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "hololive production official pop up shop",
-   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
-   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
-   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
-   "tags": [],
-   "firstSeen": "2026-09-11"
-  },
-  {
-   "id": "p_popup_osaka",
-   "title": "hololive production official pop up shop in OSAKA",
-   "members": [],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（地域限定商品あり）",
-   "start": "2027-01-09",
-   "end": "2027-01-17",
-   "venues": [
-    {
-     "pref": "大阪府",
-     "place": "会場は特設ページで発表予定",
-     "date": "1/9〜1/17"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "hololive production official pop up shop",
-   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
-   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
-   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
-   "tags": [],
-   "firstSeen": "2026-09-11"
-  },
-  {
-   "id": "p_popup_sapporo",
-   "title": "hololive production official pop up shop in SAPPORO",
-   "members": [],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（地域限定商品あり）",
-   "start": "2027-03-19",
-   "end": "2027-03-28",
-   "venues": [
-    {
-     "pref": "北海道",
-     "place": "会場は特設ページで発表予定",
-     "date": "3/19〜3/28"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "hololive production official pop up shop",
-   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
-   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
-   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
-   "tags": [],
-   "firstSeen": "2026-09-11"
-  },
-  {
-   "id": "p_meet_tom",
-   "title": "hololive Meet 第三弾 オリジナルグッズ（Tokyo Otaku Mode）",
-   "members": [
-    "角巻わため",
-    "アイラニ・イオフィフティーン",
-    "ジジ・ムリン",
-    "輪堂千速"
-   ],
-   "category": "collab",
-   "channel": "online",
-   "origin": "licensed",
-   "sale": "受注販売",
-   "start": "2026-10-23",
-   "end": "",
-   "venues": [],
-   "ship": "",
-   "price": "販売ページで確認",
-   "shop": "Tokyo Otaku Mode",
-   "url": "https://prtimes.jp/main/html/rd/p/000000146.000016010.html",
-   "source": "PR TIMES 2026-10-23 発表（Tokyo Otaku Mode）",
-   "note": "アンバサダーほか。受注の締切は発表に記載なし。",
-   "tags": [],
-   "firstSeen": "2026-10-23"
-  },
-  {
-   "id": "p_grand_reception",
-   "title": "hololive Grand Reception 展覧会オリジナルグッズ（東京会場）",
-   "members": [],
-   "category": "event",
-   "channel": "venue",
-   "origin": "licensed",
-   "sale": "会場販売（入場券が必要）",
-   "start": "2026-10-10",
-   "end": "2026-11-23",
-   "venues": [
-    {
-     "pref": "東京都",
-     "place": "TOKYO DREAM PARK 7階（会場内 hololive SPECIAL STORE）",
-     "date": "前半10/10〜10/28・後半10/31〜11/23"
-    }
-   ],
-   "ship": "",
-   "price": "会場で確認",
-   "shop": "テレビ朝日（hololive Grand Reception）",
-   "url": "https://prtimes.jp/main/html/rd/p/000000535.000030888.html",
-   "source": "PR TIMES 2026-10-10 発表（テレビ朝日）",
-   "note": "10/29・10/30は会期外。大阪・名古屋・福岡でも順次開催予定。",
-   "tags": [],
-   "firstSeen": "2026-10-10"
-  },
-  {
-   "id": "p_figma_okayu",
-   "title": "figma ホロライブプロダクション 猫又おかゆ",
-   "members": [
-    "猫又おかゆ"
-   ],
-   "category": "figure",
-   "channel": "online",
-   "origin": "licensed",
-   "sale": "予約受付中",
-   "start": "2027-08-01",
-   "end": "",
-   "venues": [],
-   "ship": "2027年8月発売予定",
-   "price": "¥12,800（参考価格）",
-   "shop": "あみあみ ほか一部流通（マックスファクトリー）",
-   "url": "https://prtimes.jp/main/html/rd/p/000003774.000025615.html",
-   "source": "PR TIMES 2026-08-31 発表（あみあみ ほか一部流通）／あみあみ 商品ページ（2026-10-28 確認）",
-   "note": "",
-   "tags": [
-    "予約受付中"
-   ],
-   "firstSeen": "2026-08-31",
-   "release": true,
-   "startLabel": "2027年8月発売予定（予約受付中）"
-  },
-  {
    "id": "s_fuwamoco_anniversary_3rd",
    "title": "FUWAMOCO 活動3周年記念（ボイスのみ販売中）",
    "members": [
@@ -5024,6 +4568,463 @@ window.HOLO_GOODS = {
    ],
    "firstSeen": "2026-10-20",
    "note": "公式ショップの予約分は完売。一般発売は10/30（ホロカ取扱店）。"
+  },
+  {
+   "id": "p_marion_flowglow",
+   "title": "FLOW GLOW × マリオンクレープ コラボグッズ",
+   "members": [
+    "響咲リオナ",
+    "虎金妃笑虎",
+    "水宮枢",
+    "輪堂千速",
+    "綺々羅々ヴィヴィ"
+   ],
+   "category": "collab",
+   "channel": "both",
+   "origin": "licensed",
+   "sale": "店舗販売＋通販予約",
+   "start": "2026-11-04",
+   "end": "2026-12-07",
+   "venues": [
+    {
+     "pref": "全国各地",
+     "place": "マリオンクレープ 全国31店舗",
+     "date": "11/4〜11/30（11/17は販売なし）"
+    }
+   ],
+   "ship": "",
+   "price": "¥550〜¥5,500",
+   "shop": "中外鉱業（マリオンクレープ店舗・Chugaionline）",
+   "url": "https://prtimes.jp/main/html/rd/p/000000893.000059072.html",
+   "source": "PR TIMES 2026-10-21 発表（中外鉱業）",
+   "note": "通販予約は11/4 10:00〜12/7 23:59。店舗の販売は11/30まで。",
+   "tags": [],
+   "firstSeen": "2026-10-21"
+  },
+  {
+   "id": "p_grapht_koshien",
+   "title": "ホロライブ甲子園2026 開催記念アイテム（GRAPHT）",
+   "members": [
+    "博衣こより",
+    "大神ミオ",
+    "宝鐘マリン",
+    "白銀ノエル",
+    "尾丸ポルカ",
+    "響咲リオナ"
+   ],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "sale": "受注生産",
+   "start": "2026-10-17",
+   "end": "2026-11-16",
+   "venues": [],
+   "ship": "",
+   "price": "¥2,420〜¥5,500",
+   "shop": "GRAPHT OFFICIAL STORE",
+   "url": "https://prtimes.jp/main/html/rd/p/000000142.000162957.html",
+   "source": "PR TIMES 2026-10-16 発表（GRAPHT OFFICIAL STORE）",
+   "note": "受注期間 10/17 15:00〜11/16 18:00",
+   "tags": [],
+   "firstSeen": "2026-10-16"
+  },
+  {
+   "id": "p_anymy_sweets",
+   "title": "エニマイくじ ホロライブ 〜スイーツパティシエ〜",
+   "members": [
+    "大神ミオ",
+    "角巻わため",
+    "姫森ルーナ",
+    "雪花ラミィ",
+    "桃鈴ねね",
+    "博衣こより"
+   ],
+   "category": "kuji",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "くじ（賞品がなくなり次第終了）",
+   "start": "2026-10-13",
+   "end": "",
+   "venues": [
+    {
+     "pref": "全国各地",
+     "place": "ローソン（取扱店舗）",
+     "date": "10/13から順次"
+    }
+   ],
+   "ship": "",
+   "price": "1回 ¥850",
+   "shop": "レッグス（エニマイくじ）",
+   "url": "https://prtimes.jp/main/html/rd/p/000000070.000138299.html",
+   "source": "PR TIMES 2026-10-07 発表（レッグス）／エニマイくじ公式サイト（2026-10-28 確認）",
+   "note": "店舗により発売日時が異なります。取扱店はエニマイくじ公式サイトで確認。",
+   "tags": [
+    "くじ"
+   ],
+   "firstSeen": "2026-10-07",
+   "startLabel": "10/13より順次発売",
+   "release": true
+  },
+  {
+   "id": "p_miko_daiba",
+   "title": "さくらみこ「えりーとえいぞーぱーく in お台場」イベントグッズ",
+   "members": [
+    "さくらみこ"
+   ],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（入場無料）",
+   "start": "2026-10-15",
+   "end": "2026-11-01",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "LED DAIBA STUDIO（デックス東京ビーチ3F）",
+     "date": "10/15〜11/1"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "LED TOKYO・イーディス",
+   "url": "https://prtimes.jp/main/html/rd/p/000000451.000030501.html",
+   "source": "PR TIMES 2026-10-02 発表（LED TOKYO・イーディス）",
+   "note": "",
+   "tags": [],
+   "firstSeen": "2026-10-02"
+  },
+  {
+   "id": "p_strictg_gundam",
+   "title": "STRICT-G「GUNDAM」×「hololive production」コラボアイテム第1弾",
+   "members": [
+    "白上フブキ",
+    "さくらみこ",
+    "星街すいせい",
+    "宝鐘マリン",
+    "博衣こより",
+    "輪堂千速"
+   ],
+   "category": "collab",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "店頭一般販売",
+   "start": "2026-10-31",
+   "end": "",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "STRICT-G ダイバーシティ東京 プラザ7F",
+     "date": "10/31〜"
+    },
+    {
+     "pref": "東京都",
+     "place": "STRICT-G 東京スカイツリータウン・ソラマチ4F",
+     "date": "10/31〜"
+    },
+    {
+     "pref": "静岡県",
+     "place": "STRICT-G NEOPASA静岡",
+     "date": "10/31〜"
+    },
+    {
+     "pref": "滋賀県",
+     "place": "STRICT-G 多賀SA（下り線）",
+     "date": "10/31〜"
+    }
+   ],
+   "ship": "",
+   "price": "¥1,320〜¥5,940",
+   "shop": "バンダイ（STRICT-G）",
+   "url": "https://prtimes.jp/main/html/rd/p/000000982.000055569.html",
+   "source": "PR TIMES 2026-09-30 発表（バンダイ）",
+   "note": "プレミアムバンダイの予約販売は10/12で終了。店頭一般販売は10/31から。",
+   "tags": [],
+   "firstSeen": "2026-09-30"
+  },
+  {
+   "id": "p_raden_genji",
+   "title": "源氏物語展 京都会場限定 儒烏風亭らでんコラボグッズ",
+   "members": [
+    "儒烏風亭らでん"
+   ],
+   "category": "collab",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場限定販売（観覧券が必要）",
+   "start": "2026-10-06",
+   "end": "2026-11-29",
+   "venues": [
+    {
+     "pref": "京都府",
+     "place": "京都国立博物館 平成知新館（会場内特設ショップ）",
+     "date": "10/6〜11/29"
+    }
+   ],
+   "ship": "",
+   "price": "¥880〜¥1,980",
+   "shop": "特別展「源氏物語 王朝のかがやき」",
+   "url": "https://prtimes.jp/main/html/rd/p/000000001.000191100.html",
+   "source": "PR TIMES 2026-09-30 発表（特別展「源氏物語 王朝のかがやき」）",
+   "note": "特設ショップの利用には観覧券が必要。休館日あり。",
+   "tags": [],
+   "firstSeen": "2026-09-30"
+  },
+  {
+   "id": "p_raden_tnm",
+   "title": "儒烏風亭らでん×東京国立博物館 イベントオリジナルグッズ（先行予約）",
+   "members": [
+    "儒烏風亭らでん"
+   ],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "sale": "オンライン先行予約",
+   "start": "2026-09-28",
+   "end": "",
+   "venues": [],
+   "ship": "",
+   "price": "¥770〜¥6,930",
+   "shop": "ClaN Entertainment（ClaN MARKET）",
+   "url": "https://prtimes.jp/main/html/rd/p/000000309.000100939.html",
+   "source": "PR TIMES 2026-09-28 発表（ClaN Entertainment）",
+   "note": "イベント本体は2027/1/13〜3/22 東京国立博物館（東京都台東区）で開催。予約の締切は発表に記載なし。",
+   "tags": [],
+   "firstSeen": "2026-09-28"
+  },
+  {
+   "id": "p_fubuki_miroku",
+   "title": "みろくの里×白上フブキ「フブキングダムの里」限定コラボグッズ",
+   "members": [
+    "白上フブキ"
+   ],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（全12種）",
+   "start": "2026-10-10",
+   "end": "2026-11-03",
+   "venues": [
+    {
+     "pref": "広島県",
+     "place": "みろくの里（福山市）ツネイシアリーナ内特設会場",
+     "date": "10/10〜11/3"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "ツネイシアミューズメントビレッジ",
+   "url": "https://prtimes.jp/main/html/rd/p/000000005.000181413.html",
+   "source": "PR TIMES 2026-09-15 発表（ツネイシアミューズメントビレッジ）",
+   "note": "期間中休園日あり。一部オフィシャルグッズも同時販売。",
+   "tags": [],
+   "firstSeen": "2026-09-15"
+  },
+  {
+   "id": "p_popup_tokyo",
+   "title": "hololive production official pop up shop in TOKYO",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（地域限定商品あり）",
+   "start": "2026-10-03",
+   "end": "2026-11-01",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "池袋PACKS 2・3F",
+     "date": "10/3〜11/1"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "hololive production official pop up shop",
+   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
+   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
+   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
+   "tags": [],
+   "firstSeen": "2026-09-11"
+  },
+  {
+   "id": "p_popup_nagoya",
+   "title": "hololive production official pop up shop in NAGOYA",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（地域限定商品あり）",
+   "start": "2026-11-06",
+   "end": "2026-11-23",
+   "venues": [
+    {
+     "pref": "愛知県",
+     "place": "会場は特設ページで発表予定",
+     "date": "11/6〜11/23"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "hololive production official pop up shop",
+   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
+   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
+   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
+   "tags": [],
+   "firstSeen": "2026-09-11"
+  },
+  {
+   "id": "p_popup_fukuoka",
+   "title": "hololive production official pop up shop in FUKUOKA",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（地域限定商品あり）",
+   "start": "2026-12-11",
+   "end": "2026-12-20",
+   "venues": [
+    {
+     "pref": "福岡県",
+     "place": "会場は特設ページで発表予定",
+     "date": "12/11〜12/20"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "hololive production official pop up shop",
+   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
+   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
+   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
+   "tags": [],
+   "firstSeen": "2026-09-11"
+  },
+  {
+   "id": "p_popup_osaka",
+   "title": "hololive production official pop up shop in OSAKA",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（地域限定商品あり）",
+   "start": "2027-01-09",
+   "end": "2027-01-17",
+   "venues": [
+    {
+     "pref": "大阪府",
+     "place": "会場は特設ページで発表予定",
+     "date": "1/9〜1/17"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "hololive production official pop up shop",
+   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
+   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
+   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
+   "tags": [],
+   "firstSeen": "2026-09-11"
+  },
+  {
+   "id": "p_popup_sapporo",
+   "title": "hololive production official pop up shop in SAPPORO",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（地域限定商品あり）",
+   "start": "2027-03-19",
+   "end": "2027-03-28",
+   "venues": [
+    {
+     "pref": "北海道",
+     "place": "会場は特設ページで発表予定",
+     "date": "3/19〜3/28"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "hololive production official pop up shop",
+   "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
+   "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
+   "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
+   "tags": [],
+   "firstSeen": "2026-09-11"
+  },
+  {
+   "id": "p_meet_tom",
+   "title": "hololive Meet 第三弾 オリジナルグッズ（Tokyo Otaku Mode）",
+   "members": [
+    "角巻わため",
+    "アイラニ・イオフィフティーン",
+    "ジジ・ムリン",
+    "輪堂千速"
+   ],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "sale": "受注販売",
+   "start": "2026-10-23",
+   "end": "",
+   "venues": [],
+   "ship": "",
+   "price": "販売ページで確認",
+   "shop": "Tokyo Otaku Mode",
+   "url": "https://prtimes.jp/main/html/rd/p/000000146.000016010.html",
+   "source": "PR TIMES 2026-10-23 発表（Tokyo Otaku Mode）",
+   "note": "アンバサダーほか。受注の締切は発表に記載なし。",
+   "tags": [],
+   "firstSeen": "2026-10-23"
+  },
+  {
+   "id": "p_grand_reception",
+   "title": "hololive Grand Reception 展覧会オリジナルグッズ（東京会場）",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（入場券が必要）",
+   "start": "2026-10-10",
+   "end": "2026-11-23",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "TOKYO DREAM PARK 7階（会場内 hololive SPECIAL STORE）",
+     "date": "前半10/10〜10/28・後半10/31〜11/23"
+    }
+   ],
+   "ship": "",
+   "price": "会場で確認",
+   "shop": "テレビ朝日（hololive Grand Reception）",
+   "url": "https://prtimes.jp/main/html/rd/p/000000535.000030888.html",
+   "source": "PR TIMES 2026-10-10 発表（テレビ朝日）",
+   "note": "10/29・10/30は会期外。大阪・名古屋・福岡でも順次開催予定。",
+   "tags": [],
+   "firstSeen": "2026-10-10"
+  },
+  {
+   "id": "p_figma_okayu",
+   "title": "figma ホロライブプロダクション 猫又おかゆ",
+   "members": [
+    "猫又おかゆ"
+   ],
+   "category": "figure",
+   "channel": "online",
+   "origin": "licensed",
+   "sale": "予約受付中",
+   "start": "2027-08-01",
+   "end": "",
+   "venues": [],
+   "ship": "2027年8月発売予定",
+   "price": "¥12,800（参考価格）",
+   "shop": "あみあみ ほか一部流通（マックスファクトリー）",
+   "url": "https://prtimes.jp/main/html/rd/p/000003774.000025615.html",
+   "source": "PR TIMES 2026-08-31 発表（あみあみ ほか一部流通）／あみあみ 商品ページ（2026-10-28 確認）",
+   "note": "",
+   "tags": [
+    "予約受付中"
+   ],
+   "firstSeen": "2026-08-31",
+   "release": true,
+   "startLabel": "2027年8月発売予定（予約受付中）"
   },
   {
    "id": "h_sd_kyoko",

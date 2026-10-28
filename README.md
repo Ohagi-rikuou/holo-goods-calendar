@@ -4,7 +4,28 @@
 ファンが個人で作成している**非公式**のページで、カバー株式会社・ホロライブプロダクションとは関係ありません。
 
 - 公開ページ：https://ohagi-rikuou.github.io/holo-goods-calendar/
-- データ：`data.js`（各商品に出典URLを記載）
-- 情報の出典：hololive production OFFICIAL SHOP、各社の公式発表・公式サイトなど。購入前に必ず元の販売ページで最新情報を確認してください。
+- 情報の出典：hololive production OFFICIAL SHOP、各社の公式発表・公式サイトなど（各商品の出典URLはページの詳細欄に記載）。購入前に必ず元の販売ページで最新情報を確認してください。
 
-抜けている商品や誤りは、Discordサーバーで商品ページのURLを教えてください。
+抜けている商品や誤りは、Discordサーバーのスレッドで商品ページのURLを教えてください。
+
+## 更新のしくみ
+
+| 対象 | 更新方法 |
+|---|---|
+| 公式ショップの商品 | 毎日 0時ごろ（日本時間）に自動更新（GitHub Actions） |
+| 企業・店舗・プライズ・くじ など | 手動で `data/manual.json` を更新してアップロード |
+
+自動更新でやること：新しく掲載された商品の追加（NEWタグ）、販売期間・発送予定の変更の反映（更新タグ）、SOLD OUT の反映、ショップから消えた商品と終了から7日たった商品の削除。
+取得に失敗した日は、データを変えずに前回の内容のまま公開を続けます。
+
+## ファイル
+
+- `index.html` … ページ本体
+- `data.js` … ページが読むデータ（自動で作られるので直接編集しない）
+- `data/shop.json` … 公式ショップの商品（自動更新）
+- `data/manual.json` … 手動で追加した商品
+- `data/members.json` … メンバー・期生・推しマーク
+- `data/meta.json` … 種別名・掲載範囲の説明
+- `scripts/update_shop.py` … 公式ショップの取り込み
+- `scripts/build.py` … `data/*.json` から `data.js` を作る
+- `.github/workflows/update.yml` … 毎日の自動実行と公開の設定
