@@ -3,7 +3,7 @@
 ホロライブ関連グッズの販売・受注期間を、日付×商品のカレンダーで一覧できるページです。
 ファンが個人で作成している**非公式**のページで、カバー株式会社・ホロライブプロダクションとは関係ありません。
 
-- 公開ページ：https://atsushi-k62.github.io/holo-goods-calendar/
+- 公開ページ：https://ohagi-rikuou.github.io/holo-goods-calendar/
 - データ：`data.js`（各商品に出典URLを記載）
 - 情報の出典：hololive production OFFICIAL SHOP、各社の公式発表・公式サイトなど。購入前に必ず元の販売ページで最新情報を確認してください。
 
