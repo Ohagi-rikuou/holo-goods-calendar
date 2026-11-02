@@ -231,7 +231,14 @@ button.stat.on { border-color: var(--today); background: color-mix(in srgb, var(
 .bar.cr { border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: 2px dashed var(--cat); }
 .bar.unoff { border-style: dashed; border-left-style: solid; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--cat) 18%, var(--surface)) 0 6px, var(--surface) 6px 10px); }
 .bar.st-ended, .bar.st-soldout { opacity: .5; }
-.bar.st-soon { box-shadow: 0 0 0 2px color-mix(in srgb, var(--warn) 55%, transparent); }
+.bar.st-soon { box-shadow: 0 0 0 2px var(--warn); }
+/* 締切まで3日以内：行の左端にオレンジの線、背景をうっすらオレンジに */
+.row.is-soon .lab { background: color-mix(in srgb, var(--warn) 11%, var(--surface)); box-shadow: inset 4px 0 0 var(--warn); }
+.row.is-soon:hover .lab { background: color-mix(in srgb, var(--warn) 18%, var(--surface)); }
+.row.is-soon .trk { background: color-mix(in srgb, var(--warn) 6%, transparent); }
+.pill.st-soon { font-size: 11px; padding: 0 8px; }
+.pill.is-last { animation: lastday 1.6s ease-in-out infinite; }
+@keyframes lastday { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--warn) 70%, transparent); } 50% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--warn) 0%, transparent); } }
 .bar-out { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--f-num); font-size: 11.5px; color: var(--muted); white-space: nowrap; pointer-events: none; }
 .bar-out em { font-style: normal; font-family: var(--f-body); }
 .offrange { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--f-num); font-size: 11.5px; color: var(--muted); white-space: nowrap; background: var(--surface-2); border: 1px dashed var(--line-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; }
@@ -317,7 +324,7 @@ dl.spec .vn small { color: var(--muted); }
   .toggle .lbl { display: none; }
 }
 @media (hover: none) { .tip { display: none !important; } }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
 <div class="page">
@@ -420,7 +427,9 @@ dl.spec .vn small { color: var(--muted); }
   const CH = { online: '通販のみ', venue: '現地のみ', both: '通販＋現地' };
   const CH_SHORT = { online: '通販', venue: '現地', both: '通販＋現地' };
   const NEW_DAYS = Number((D.meta || {}).newDays) || 7;
-  const labelOf = (it, s) => s === 'open' && it.category === 'prize' ? '登場中' : s === 'open' && it.release ? '発売中' : STATUS_LABEL[s];
+  const labelOf = (it, s) => s === 'soon' ? (it.e - TODAY === 0 ? '本日締切' : `あと${it.e - TODAY}日`)
+    : s === 'open' && it.category === 'prize' ? '登場中' : s === 'open' && it.release ? '発売中' : STATUS_LABEL[s];
+  const pillCls = (it, s) => `pill st-${s}${s === 'soon' && it.e - TODAY === 0 ? ' is-last' : ''}`;
   const STATUS_LABEL = { upcoming: '予定', open: '受付中', soon: 'まもなく締切', ended: '終了', soldout: '完売' };
 
   const toDay = s => { const [y, m, d] = String(s).split('-').map(Number); return Math.round(Date.UTC(y, m - 1, d) / MS); };
@@ -644,9 +653,9 @@ dl.spec .vn small { color: var(--muted); }
       const before = it.e < x0;
       track = `<button type="button" class="offrange ${before ? 'l' : 'r'}" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">${before ? '◀ ' : ''}${range}${before ? '' : ' ▶'}</button>`;
     }
-    return `<div class="row"><div class="lab"><button type="button" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">`
+    return `<div class="row${status === 'soon' ? ' is-soon' : ''}"><div class="lab"><button type="button" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">`
       + `<span class="ttl">${headBadges(it)}${esc(it.title)}</span>`
-      + `<span class="meta"><span class="pill st-${status}">${labelOf(it, status)}</span>${officialBadge(it)}<span class="who">${esc(whoText(it))}</span></span>`
+      + `<span class="meta"><span class="${pillCls(it, status)}">${labelOf(it, status)}</span>${officialBadge(it)}<span class="who">${esc(whoText(it))}</span></span>`
       + `</button></div><div class="trk">${track}</div></div>`;
   }
 
@@ -744,7 +753,7 @@ dl.spec .vn small { color: var(--muted); }
     const it = itemById.get(id); if (!it) return;
     const s = statusOf(it);
     tip.innerHTML = `<h3>${esc(it.title)}</h3>`
-      + `<div class="tb"><span class="pill st-${s}">${labelOf(it, s)}</span>${officialBadge(it)}<span class="badge ch">${esc(CH[it.channel])}</span>${it.tagList.map(tagBadge).join('')}</div>`
+      + `<div class="tb"><span class="${pillCls(it, s)}">${labelOf(it, s)}</span>${officialBadge(it)}<span class="badge ch">${esc(CH[it.channel])}</span>${it.tagList.map(tagBadge).join('')}</div>`
       + (it.changeNote && it.tagList.includes('更新') ? `<div style="color:var(--c-anniv)">更新：${esc(it.changeNote)}</div>` : '')
       + `<dl><dt>期間</dt><dd>${rangeText(it)}（${remainText(it)}）</dd>`
       + `<dt>メンバー</dt><dd>${esc(it.mem.map(nameWithMark).join('、') || '—')}</dd>`
@@ -788,7 +797,7 @@ dl.spec .vn small { color: var(--muted); }
     $('drawer').innerHTML = `
       <div class="drawer-hd" style="--cat:var(--c-${it.cat.key})">
         <div>
-          <div class="tags"><span class="tag">${esc(it.cat.label)}</span><span class="pill st-${s}">${labelOf(it, s)}</span>${officialBadge(it)}<span class="badge ch">${esc(CH[it.channel])}</span>${it.tagList.map(tagBadge).join('')}</div>
+          <div class="tags"><span class="tag">${esc(it.cat.label)}</span><span class="${pillCls(it, s)}">${labelOf(it, s)}</span>${officialBadge(it)}<span class="badge ch">${esc(CH[it.channel])}</span>${it.tagList.map(tagBadge).join('')}</div>
           <h2 id="dTitle">${esc(it.title)}</h2>
         </div>
         <button type="button" class="close" id="dClose" aria-label="閉じる">×</button>
