@@ -1,5 +1,299 @@
 [
  {
+  "id": "c_sora_live_campaign",
+  "title": "ときのそら ライブ応援キャンペーン（公式店舗 購入特典ポストカード）",
+  "members": [
+   "ときのそら"
+  ],
+  "category": "campaign",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "購入特典（1会計2,200円以上でオリジナルポストカード1枚・先着）",
+  "start": "2026-10-31",
+  "end": "2026-11-08",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "hololive production official shop in Tokyo Station（東京駅一番街B1）",
+    "date": "10/31〜11/8"
+   },
+   {
+    "pref": "大阪府",
+    "place": "hololive production official shop in Osaka Umeda",
+    "date": "10/31〜11/8"
+   },
+   {
+    "pref": "東京都",
+    "place": "hololive production official shop in Harajuku",
+    "date": "10/31〜11/8"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "hololive production official shop（公式店舗）",
+  "url": "https://x.com/holopro_shopTYO",
+  "source": "公式店舗 hololive production official shop 公式X 2026-10-30 投稿（Discordでの情報提供）",
+  "note": "サインの展示もあり。特典はなくなり次第終了。",
+  "tags": [
+   "購入特典"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "p_holosynq_omokado",
+  "title": "hololive - holoSynQ ポップアップストア（FLOW GLOW コレクション先行販売）",
+  "members": [
+   "響咲リオナ",
+   "虎金妃笑虎",
+   "水宮枢",
+   "輪堂千速",
+   "綺々羅々ヴィヴィ"
+  ],
+  "category": "event",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "会場販売（オリジナルアパレルの先行販売）",
+  "start": "2026-11-06",
+  "end": "2027-01-14",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "キデイランド オモカド店「POP UP SHOP」（東急プラザ表参道「オモカド」4F）",
+    "date": "11/6〜2027/1/14"
+   }
+  ],
+  "price": "¥1,650〜¥22,000",
+  "ship": "",
+  "shop": "キデイランド（hololive - holoSynQ）",
+  "url": "https://prtimes.jp/main/html/rd/p/000001281.000030268.html",
+  "source": "PR TIMES 2026-10-30 発表（カバー）／holoSynQ公式サイト https://holosynq.hololivepro.com/（2026-11-02 確認）",
+  "note": "営業 11:00〜20:00（最終日は15:00まで）。5,500円以上でオリジナルショッパー（先着）。オンライン販売は未発表。",
+  "tags": [
+   "会場限定",
+   "購入特典"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "p_tokyostation_classical",
+  "title": "hololive production official shop in Tokyo Station リニューアル「hololive Station Classical Vol.1」",
+  "members": [
+   "さくらみこ",
+   "アキ・ローゼンタール",
+   "白上フブキ",
+   "猫又おかゆ",
+   "獅白ぼたん",
+   "アーニャ・メルフィッサ",
+   "カエラ・コヴァルスキア",
+   "オーロ・クロニー",
+   "古石ビジュー",
+   "エリザベス・ローズ・ブラッドフレイム",
+   "音乃瀬奏",
+   "一条莉々華"
+  ],
+  "category": "other",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "店舗販売（公式店舗・新商品）",
+  "start": "2026-11-13",
+  "end": "",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "東京キャラクターストリート（東京駅一番街B1）",
+    "date": "11/13〜"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "hololive production official shop in Tokyo Station（キデイランド運営協力）",
+  "url": "https://prtimes.jp/main/html/rd/p/000001280.000030268.html",
+  "source": "PR TIMES 2026-10-20 発表（カバー）／公式サイト 店舗ページ（2026-11-02 確認）",
+  "note": "現店舗は11/8で営業終了、11/9〜11/12は移転のため休業。購入特典（先着）：2,200円ごとにステッカー、5,500円ごとにアクリルキーチェーン、7,700円以上でビニールバッグ。会期後に事後販売の場合あり。",
+  "tags": [
+   "購入特典"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "p_x_monogatari",
+  "title": "〈物語〉シリーズ × 秘密結社holoX 体験型展示『X物語 -バツモノガタリ-』オリジナルグッズ",
+  "members": [
+   "ラプラス・ダークネス",
+   "鷹嶺ルイ",
+   "博衣こより",
+   "風真いろは"
+  ],
+  "category": "event",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "会場販売（有料チケット制）",
+  "start": "2027-01-03",
+  "end": "2027-01-22",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "BEAMギャラリー（渋谷BEAM 4F）",
+    "date": "2027/1/3〜1/22"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "X物語 展示会場",
+  "url": "https://prtimes.jp/main/html/rd/p/000000025.000030346.html",
+  "source": "PR TIMES 2026-10-08 発表",
+  "note": "チケットは2026年11月頃に発売予定。販売グッズのラインナップは今後発表。",
+  "tags": [
+   "会場限定"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "p_animate_raden_fukuoka",
+  "title": "アニメイトラシック福岡天神 宣伝大使 儒烏風亭らでん 描き下ろし限定グッズ",
+  "members": [
+   "儒烏風亭らでん"
+  ],
+  "category": "collab",
+  "channel": "both",
+  "origin": "licensed",
+  "sale": "店舗先行販売＋アニメイト通販で受注",
+  "start": "2026-10-24",
+  "end": "",
+  "venues": [
+   {
+    "pref": "福岡県",
+    "place": "アニメイトラシック福岡天神（福岡三越8階）",
+    "date": "10/24〜"
+   }
+  ],
+  "price": "¥715〜¥2,035",
+  "ship": "通販のお届けは12月下旬以降の予定",
+  "shop": "アニメイト（ラシック福岡天神店・アニメイト通販）",
+  "url": "https://prtimes.jp/main/html/rd/p/000009090.000016756.html",
+  "source": "PR TIMES 2026-10-14 発表（アニメイト）",
+  "note": "アクリルスタンド・缶バッジセット・店員名札風アクリルバッジ。通販の受注締切は発表に記載なし。",
+  "tags": [],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "b_watame_4th_book",
+  "title": "角巻わためのHave a nice day！ 4th anniversary BOOK",
+  "members": [
+   "角巻わため"
+  ],
+  "category": "other",
+  "channel": "both",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "12/16発売（予約受付中）",
+  "sale": "書籍（予約受付中）",
+  "start": "2026-12-16",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "書店・オンライン書店",
+    "date": "12/16 発売"
+   }
+  ],
+  "price": "¥4,950",
+  "ship": "",
+  "shop": "ポプラ社（書店・オンライン書店）",
+  "url": "https://prtimes.jp/main/html/rd/p/000001325.000031579.html",
+  "source": "PR TIMES 2026-11-02 発表（ポプラ社）",
+  "note": "Amazon・楽天ブックスで発売前に予約するとオリジナルポストカードの特典あり。",
+  "tags": [
+   "予約受付中"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "z_bsp2845832",
+  "title": "ホロライブ #hololive IF -Relax time- 儒烏風亭らでん",
+  "members": [
+   "儒烏風亭らでん"
+  ],
+  "category": "prize",
+  "channel": "venue",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "11/25より順次登場",
+  "sale": "プライズ（アミューズメント施設の景品）",
+  "start": "2026-11-25",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
+    "date": "11/25より順次登場"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "バンダイスピリッツ（バンプレスト）",
+  "url": "https://bsp-prize.jp/item/2845832/",
+  "source": "バンダイスピリッツ（バンプレスト） 公式プライズサイト（2026-11-02 確認）",
+  "note": "全1種・約12cm。プライズ初フィギュア化。",
+  "tags": [
+   "プライズ"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "a_FIGURE_169911",
+  "title": "ホロライブプロダクション 風真いろは 1/7 完成品フィギュア（再販）",
+  "members": [
+   "風真いろは"
+  ],
+  "category": "figure",
+  "channel": "online",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2026年12月発売予定",
+  "sale": "予約受付中",
+  "start": "2026-12-01",
+  "end": "",
+  "venues": [],
+  "price": "¥27,500（参考価格）",
+  "ship": "2026年12月発売予定",
+  "shop": "あみあみ（予約受付）／クレーネル",
+  "url": "https://www.amiami.jp/top/detail/detail?gcode=FIGURE-169911",
+  "source": "あみあみ 商品ページ（2026-11-02 確認、予約受付中）",
+  "note": "お一人様1個まで。発売時期は販売店の掲載による予定で、変更される場合があります。",
+  "tags": [
+   "予約受付中",
+   "再販売"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
+  "id": "a_GOODS_04806749",
+  "title": "HYTE × さくらみこ コラボ限定キーキャップ＆マウスパッド（ブラック／ホワイト）",
+  "members": [
+   "さくらみこ"
+  ],
+  "category": "collab",
+  "channel": "online",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2026年秋発売予定",
+  "sale": "予約受付中",
+  "start": "2026-11-01",
+  "end": "",
+  "venues": [],
+  "price": "各¥24,990",
+  "ship": "2026年秋発売予定",
+  "shop": "あみあみ（予約受付）／HYTE",
+  "url": "https://www.amiami.jp/top/detail/detail?gcode=GOODS-04806749",
+  "source": "あみあみ 商品ページ（2026-11-02 確認、予約受付中）",
+  "note": "ホワイトは GOODS-04806750。お一人様1個まで。",
+  "tags": [
+   "予約受付中"
+  ],
+  "firstSeen": "2026-11-02"
+ },
+ {
   "id": "p_marion_flowglow",
   "title": "FLOW GLOW × マリオンクレープ コラボグッズ",
   "members": [
@@ -439,7 +733,7 @@
   "category": "figure",
   "channel": "online",
   "origin": "licensed",
-  "sale": "予約受付中",
+  "sale": "予約受付中（あみあみ等の一部販売店のみ）",
   "start": "2027-08-01",
   "end": "",
   "venues": [],
@@ -447,14 +741,16 @@
   "price": "¥12,800（参考価格）",
   "shop": "あみあみ ほか一部流通（マックスファクトリー）",
   "url": "https://prtimes.jp/main/html/rd/p/000003774.000025615.html",
-  "source": "PR TIMES 2026-08-31 発表（あみあみ ほか一部流通）／あみあみ 商品ページ（2026-10-28 確認）",
-  "note": "",
+  "source": "PR TIMES 2026-08-31 発表／ホビージャパン 2026-08-20 記事／公式ショップ 商品ページ・あみあみ 商品ページ（2026-11-02 確認）",
+  "note": "公式ショップの受注は2026/9/28 18:00、グッドスマイルカンパニー公式ショップの予約は9/30で終了（グッスマ公式ショップは10/23からメンテナンス中）。あみあみでは11/2時点で予約受付中（締切の記載なし）。再販の発表はなし。",
   "tags": [
    "予約受付中"
   ],
   "firstSeen": "2026-08-31",
   "release": true,
-  "startLabel": "2027年8月発売予定（予約受付中）"
+  "startLabel": "2027年8月発売予定（一部販売店で予約受付中）",
+  "changed": "2026-11-02",
+  "changeNote": "公式ショップ・グッスマ公式の予約終了を反映（Discordでの指摘）"
  },
  {
   "id": "h_sd_kyoko",
@@ -927,165 +1223,6 @@
   "url": "https://furyuprize.com/item/22858",
   "source": "フリュー 公式プライズサイト（2026-10-28 確認）",
   "note": "全1種。週表記のため、カレンダー上の日付は目安です。",
-  "tags": [
-   "プライズ"
-  ],
-  "firstSeen": "2026-10-28"
- },
- {
-  "id": "z_fu21538",
-  "title": "ホロライブプロダクション 寝そべりミニマスコット②",
-  "members": [],
-  "category": "prize",
-  "channel": "venue",
-  "origin": "licensed",
-  "release": true,
-  "startLabel": "2026年9月4週 登場",
-  "sale": "プライズ（アミューズメント施設の景品）",
-  "start": "2026-09-22",
-  "end": "",
-  "venues": [
-   {
-    "pref": "全国各地",
-    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
-    "date": "2026年9月4週 登場"
-   }
-  ],
-  "price": "",
-  "ship": "",
-  "shop": "フリュー",
-  "url": "https://furyuprize.com/item/21538",
-  "source": "フリュー 公式プライズサイト（2026-10-28 確認）",
-  "note": "全3種（対象メンバーはメーカーサイトで確認）。週表記のため、カレンダー上の日付は目安です。",
-  "tags": [
-   "プライズ"
-  ],
-  "firstSeen": "2026-10-28"
- },
- {
-  "id": "z_fu21923",
-  "title": "ホロライブプロダクション もちぴこBIGぬいぐるみ ー姫森ルーナー",
-  "members": [
-   "姫森ルーナ"
-  ],
-  "category": "prize",
-  "channel": "venue",
-  "origin": "licensed",
-  "release": true,
-  "startLabel": "2026年9月2週 登場",
-  "sale": "プライズ（アミューズメント施設の景品）",
-  "start": "2026-09-08",
-  "end": "",
-  "venues": [
-   {
-    "pref": "全国各地",
-    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
-    "date": "2026年9月2週 登場"
-   }
-  ],
-  "price": "",
-  "ship": "",
-  "shop": "フリュー",
-  "url": "https://furyuprize.com/item/21923",
-  "source": "フリュー 公式プライズサイト（2026-10-28 確認）",
-  "note": "全1種。週表記のため、カレンダー上の日付は目安です。",
-  "tags": [
-   "プライズ"
-  ],
-  "firstSeen": "2026-10-28"
- },
- {
-  "id": "z_fu22838",
-  "title": "ホロライブプロダクション パペットぬいぐるみ ー輪堂千速・綺々羅々ヴィヴィー",
-  "members": [
-   "輪堂千速",
-   "綺々羅々ヴィヴィ"
-  ],
-  "category": "prize",
-  "channel": "venue",
-  "origin": "licensed",
-  "release": true,
-  "startLabel": "2026年9月4週 登場",
-  "sale": "プライズ（アミューズメント施設の景品）",
-  "start": "2026-09-22",
-  "end": "",
-  "venues": [
-   {
-    "pref": "全国各地",
-    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
-    "date": "2026年9月4週 登場"
-   }
-  ],
-  "price": "",
-  "ship": "",
-  "shop": "フリュー",
-  "url": "https://furyuprize.com/item/22838",
-  "source": "フリュー 公式プライズサイト（2026-10-28 確認）",
-  "note": "全2種。週表記のため、カレンダー上の日付は目安です。",
-  "tags": [
-   "プライズ"
-  ],
-  "firstSeen": "2026-10-28"
- },
- {
-  "id": "z_fu22841",
-  "title": "ホロライブプロダクション パペットぬいぐるみ ー響咲リオナ・虎金妃笑虎・水宮枢ー",
-  "members": [
-   "響咲リオナ",
-   "虎金妃笑虎",
-   "水宮枢"
-  ],
-  "category": "prize",
-  "channel": "venue",
-  "origin": "licensed",
-  "release": true,
-  "startLabel": "2026年9月4週 登場",
-  "sale": "プライズ（アミューズメント施設の景品）",
-  "start": "2026-09-22",
-  "end": "",
-  "venues": [
-   {
-    "pref": "全国各地",
-    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
-    "date": "2026年9月4週 登場"
-   }
-  ],
-  "price": "",
-  "ship": "",
-  "shop": "フリュー",
-  "url": "https://furyuprize.com/item/22841",
-  "source": "フリュー 公式プライズサイト（2026-10-28 確認）",
-  "note": "全3種。週表記のため、カレンダー上の日付は目安です。",
-  "tags": [
-   "プライズ"
-  ],
-  "firstSeen": "2026-10-28"
- },
- {
-  "id": "z_fu22845",
-  "title": "ホロライブプロダクション ひっかけフィギュアVol.10",
-  "members": [],
-  "category": "prize",
-  "channel": "venue",
-  "origin": "licensed",
-  "release": true,
-  "startLabel": "2026年9月4週 登場",
-  "sale": "プライズ（アミューズメント施設の景品）",
-  "start": "2026-09-22",
-  "end": "",
-  "venues": [
-   {
-    "pref": "全国各地",
-    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
-    "date": "2026年9月4週 登場"
-   }
-  ],
-  "price": "",
-  "ship": "",
-  "shop": "フリュー",
-  "url": "https://furyuprize.com/item/22845",
-  "source": "フリュー 公式プライズサイト（2026-10-28 確認）",
-  "note": "全3種（対象メンバーはメーカーサイトで確認）。週表記のため、カレンダー上の日付は目安です。",
   "tags": [
    "プライズ"
   ],

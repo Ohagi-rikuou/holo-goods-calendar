@@ -44,6 +44,7 @@
   --c-prize: #B8860B;
   --c-kuji: #C2410C;
   --c-figure: #4F46E5;
+  --c-campaign: #0F7B4F;
   --shadow: 0 10px 30px rgba(20, 30, 55, .16);
   --f-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
   --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
@@ -55,7 +56,7 @@
     --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #9AA3B6;
     --line: #283041; --line-strong: #39435A; --accent: #5C9CEC; --accent-ink: #0C1320; --accent-soft: #1A2A42;
     --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #6D778B; --star: #FFCB45;
-    --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5;
+    --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5; --c-campaign: #3CC98A;
     --shadow: 0 10px 30px rgba(0, 0, 0, .5);
     color-scheme: dark;
   }
@@ -64,7 +65,7 @@
   --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #9AA3B6;
   --line: #283041; --line-strong: #39435A; --accent: #5C9CEC; --accent-ink: #0C1320; --accent-soft: #1A2A42;
   --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #6D778B; --star: #FFCB45;
-  --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5;
+  --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5; --c-campaign: #3CC98A;
   --shadow: 0 10px 30px rgba(0, 0, 0, .5);
   color-scheme: dark;
 }
@@ -390,7 +391,7 @@ dl.spec .vn small { color: var(--muted); }
   const D = window.HOLO_GOODS || { meta: {}, categories: {}, members: [], items: [] };
   const MS = 86400000;
   const WD = ['日', '月', '火', '水', '木', '金', '土'];
-  const CAT_KEYS = ['birthday', 'anniv', 'unit', 'digital', 'collab', 'event', 'hocg', 'prize', 'kuji', 'figure', 'other'];
+  const CAT_KEYS = ['birthday', 'anniv', 'unit', 'digital', 'collab', 'event', 'hocg', 'prize', 'kuji', 'figure', 'campaign', 'other'];
   const CH = { online: '通販のみ', venue: '現地のみ', both: '通販＋現地' };
   const CH_SHORT = { online: '通販', venue: '現地', both: '通販＋現地' };
   const NEW_DAYS = Number((D.meta || {}).newDays) || 7;
