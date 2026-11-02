@@ -18,6 +18,8 @@
 自動更新でやること：新しく掲載された商品の追加（NEWタグ）、販売期間・発送予定の変更の反映（更新タグ）、SOLD OUT の反映、ショップから消えた商品と終了から7日たった商品の削除。
 取得に失敗した日は、データを変えずに前回の内容のまま公開を続けます。
 
+あわせて毎日、AIの読み取りを許可しているニュース・公式サイト（PR TIMES、公式ショップのお知らせ、インサイド、アニメ！アニメ！、ホロライビュアーズ、コラボカフェ）の新着から、まだ載っていない商品の候補を `data/candidates.json` に書き出します（カレンダーには自動では載りません）。手動更新のときに候補を確認し、販売元の情報で確かめてから `data/manual.json` に登録します。確認済みの候補は `data/candidates_reviewed.json` に記録します。
+
 ## ファイル
 
 - `index.html` … ページ本体
@@ -28,4 +30,5 @@
 - `data/meta.json` … 種別名・掲載範囲の説明
 - `scripts/update_shop.py` … 公式ショップの取り込み
 - `scripts/build.py` … `data/*.json` から `data.js` を作る
+- `scripts/find_candidates.py` … 漏れ候補リストの作成
 - `.github/workflows/update.yml` … 毎日の自動実行と公開の設定

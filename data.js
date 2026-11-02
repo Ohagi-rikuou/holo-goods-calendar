@@ -4778,6 +4778,210 @@ window.HOLO_GOODS = {
    "note": "公式ショップの予約分は完売。一般発売は10/30（ホロカ取扱店）。"
   },
   {
+   "id": "g_miko_nyahallo_world",
+   "title": "さくらみこ ノベルゲーム『にゃっはろーわーるど』",
+   "members": [
+    "さくらみこ"
+   ],
+   "category": "other",
+   "channel": "online",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2027/2/13発売予定",
+   "sale": "ゲーム（発売日決定・予約方法は未発表）",
+   "start": "2027-02-13",
+   "end": "",
+   "venues": [],
+   "price": "",
+   "ship": "",
+   "shop": "未発表",
+   "url": "https://x.com/sakuramiko35/status/2116074271537795338",
+   "source": "さくらみこ公式X 2026-10-30 投稿（内容は「おかあさんのおうち」2026-10-30 記事で確認。Xは直接読み取っていません）",
+   "note": "対応機種・価格・パッケージ版／ダウンロード版・予約方法は未発表。前作『さくら色Dreamer』ではBOOTHでグッズセットの受注あり。続報で更新します。",
+   "tags": [],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "z_furyu_miko_2ndlive",
+   "title": "さくらみこ 2nd Live 記念 プライズ（寝そべりぬいぐるみ・パペットぬいぐるみ 1st＆2ndライブ衣装）",
+   "members": [
+    "さくらみこ"
+   ],
+   "category": "prize",
+   "channel": "venue",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2027年3月下旬より展開予定",
+   "sale": "プライズ（アミューズメント施設の景品）",
+   "start": "2027-03-21",
+   "end": "",
+   "venues": [
+    {
+     "pref": "全国各地",
+     "place": "アミューズメント施設",
+     "date": "2027年3月下旬〜"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "フリュー",
+   "url": "https://x.com/FURYU_prize/status/2115790768619344186",
+   "source": "フリュープライズ公式Xの告知（検索エンジンの検索結果に表示された告知文で確認。フリューのサイトとXは直接読み取っていません）",
+   "note": "ライブ衣装を着たプライズ限定品。パペットは1st・2ndライブ衣装の2種類。詳細は今後の発表で確認。",
+   "tags": [
+    "プライズ"
+   ],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "c_tsutaya_autumnstreet",
+   "title": "hololive Seasonal Days オータムストリート フェア（TSUTAYA BOOKSTORE 購入特典ステッカー）",
+   "members": [
+    "大空スバル",
+    "尾丸ポルカ",
+    "鷹嶺ルイ",
+    "轟はじめ",
+    "水宮枢"
+   ],
+   "category": "campaign",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "購入特典（ホロライブ関連商品2,200円以上で限定ステッカー1枚・全5種ランダム・先着）",
+   "start": "2026-10-29",
+   "end": "2026-11-15",
+   "venues": [
+    {
+     "pref": "神奈川県",
+     "place": "TSUTAYA BOOKSTORE 川崎駅前店",
+     "date": "10/29〜11/15"
+    },
+    {
+     "pref": "神奈川県",
+     "place": "TSUTAYA BOOKSTORE 横須賀粟田店",
+     "date": "10/29〜11/15"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "TSUTAYA BOOKSTORE（川崎駅前店・横須賀粟田店）",
+   "url": "https://collabo-cafe.com/events/collabo/hololive-goods-seasonal-days-autumn-street-tsutaya-2026/",
+   "source": "コラボカフェ 2026-10-27 記事（TSUTAYA BOOKSTORE 川崎駅前店の公式X告知を紹介）",
+   "note": "オータムストリートの商品サンプル展示あり。特典はなくなり次第終了。",
+   "tags": [
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "c_hmv_regloss_arlive",
+   "title": "ReGLOSS AR LIVE「X-ReCHORD」開催記念 POP UP SHOP & フェア（HMV）",
+   "members": [
+    "音乃瀬奏",
+    "一条莉々華",
+    "儒烏風亭らでん",
+    "轟はじめ"
+   ],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（ARライブグッズ）＋購入特典",
+   "start": "2026-11-20",
+   "end": "2026-12-06",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "HMV&BOOKS SHIBUYA（POP UP SHOP）",
+     "date": "11/20〜12/6"
+    },
+    {
+     "pref": "大阪府",
+     "place": "HMV&BOOKS NAMBA（POP UP SHOP）",
+     "date": "11/20〜12/6"
+    },
+    {
+     "pref": "全国各地",
+     "place": "HMV・HMV&BOOKS 各店（フェア・一部店舗とオンラインは対象外）",
+     "date": "11/20〜12/6"
+    }
+   ],
+   "price": "¥660〜¥4,620",
+   "ship": "",
+   "shop": "HMV・HMV&BOOKS",
+   "url": "https://collabo-cafe.com/events/collabo/regloss-ar-live-hmv-popup-shop-fair-2026/",
+   "source": "コラボカフェ 2026-10-15 記事（HMV発表の紹介）",
+   "note": "ホロライブグッズ2,200円ごとにオリジナルクリアしおり（全4種ランダム・先着）。ARライブグッズ全9アイテム。",
+   "tags": [
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "g_gashapon_mofushippo",
+   "title": "ガシャポン ホロライブ カラフルカラビナもふしっぽマスコット（全5種）",
+   "members": [
+    "大神ミオ",
+    "兎田ぺこら",
+    "角巻わため",
+    "獅白ぼたん",
+    "尾丸ポルカ"
+   ],
+   "category": "figure",
+   "channel": "venue",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2026年11月発売予定",
+   "sale": "カプセルトイ",
+   "start": "2026-11-01",
+   "end": "",
+   "venues": [
+    {
+     "pref": "全国各地",
+     "place": "ガシャポン取扱店（取扱店はガシャポン公式サイトで検索）",
+     "date": "11月〜"
+    }
+   ],
+   "price": "1回 ¥500",
+   "ship": "",
+   "shop": "バンダイ（ガシャポン）",
+   "url": "https://collabo-cafe.com/events/collabo/hololive-capsule-toy-mofushippo-mascot-2026/",
+   "source": "コラボカフェ 2026-10-11 記事（ガシャポン公式の情報を紹介）",
+   "note": "発売時期は地域・店舗によって異なる場合あり。",
+   "tags": [],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "b_raden_art_book",
+   "title": "儒烏風亭らでん、芸術偏愛ことはじめ（初の書籍）",
+   "members": [
+    "儒烏風亭らでん"
+   ],
+   "category": "other",
+   "channel": "both",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2027/1/28発売（予約受付中）",
+   "sale": "書籍（予約受付中）",
+   "start": "2027-01-28",
+   "end": "",
+   "venues": [
+    {
+     "pref": "全国各地",
+     "place": "書店・オンライン書店",
+     "date": "2027/1/28 発売"
+    }
+   ],
+   "price": "¥1,980",
+   "ship": "",
+   "shop": "KADOKAWA（書店・Amazon・アニメイトほか）",
+   "url": "https://collabo-cafe.com/events/collabo/juufuutei-raden-first-book-release/",
+   "source": "コラボカフェ 2026-10-06 記事（KADOKAWA発表の紹介）",
+   "note": "美術・芸術を楽しむツボを解説する初の書籍。販売店によって購入特典あり。",
+   "tags": [
+    "予約受付中"
+   ],
+   "firstSeen": "2026-11-02"
+  },
+  {
    "id": "c_sora_live_campaign",
    "title": "ときのそら ライブ応援キャンペーン（公式店舗 購入特典ポストカード）",
    "members": [
