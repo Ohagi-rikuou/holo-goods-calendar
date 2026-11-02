@@ -11,7 +11,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Poppins:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
 /* Layout: a goods-sales Gantt board — sticky search bar, collapsible filter panel, sticky item column + day columns. */
 :root {
@@ -46,7 +46,7 @@
   --c-figure: #4F46E5;
   --c-campaign: #0F7B4F;
   --shadow: 0 10px 30px rgba(20, 30, 55, .16);
-  --f-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --f-display: "Poppins", "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
   --f-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --labelW: 284px;
@@ -87,7 +87,7 @@ button, input, select { font: inherit; color: inherit; }
 
 /* ---------- header ---------- */
 .top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; }
-.top h1 { font-family: var(--f-display); font-weight: 400; font-size: clamp(22px, 3.2vw, 32px); line-height: 1.15; margin: 0; letter-spacing: .02em; text-wrap: balance; }
+.top h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(22px, 3.2vw, 32px); line-height: 1.2; margin: 0; letter-spacing: .04em; text-wrap: balance; }
 .top h1 small { display: block; font-family: var(--f-body); font-weight: 500; font-size: 13px; color: var(--muted); letter-spacing: .04em; margin-top: 6px; }
 .top .updated { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
@@ -129,11 +129,21 @@ button, input, select { font: inherit; color: inherit; }
 .filters { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
 .frow { display: grid; grid-template-columns: 76px 1fr; gap: 8px; align-items: start; }
 .frow > .flabel { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; padding-top: 5px; }
-.filters details > summary { cursor: pointer; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; list-style: none; display: flex; gap: 8px; align-items: center; }
+.filters details > summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 76px auto 1fr; gap: 8px; align-items: center; }
 .filters details > summary::-webkit-details-marker { display: none; }
-.filters details > summary::before { content: "▸"; transition: transform .15s; }
-.filters details[open] > summary::before { transform: rotate(90deg); }
-.filters details > summary .hint { font-weight: 400; letter-spacing: 0; }
+.filters details > summary .flabel { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; }
+.mem-btn { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 700; justify-self: start; }
+.filters details > summary:hover .mem-btn { background: var(--accent); color: var(--accent-ink); }
+.mem-btn .arrow { display: inline-block; transition: transform .15s; }
+.filters details[open] > summary .arrow { transform: rotate(180deg); }
+.mem-btn .when-open { display: none; }
+.filters details[open] > summary .when-open { display: inline; }
+.filters details[open] > summary .when-closed { display: none; }
+.mem-btn .count { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-family: var(--f-num); font-size: 11px; display: inline-grid; place-items: center; }
+.mem-btn .count:empty { display: none; }
+.filters details > summary:hover .mem-btn .count { background: var(--accent-ink); color: var(--accent); }
+.filters details > summary .hint { font-size: 12px; color: var(--muted); }
+@media (max-width: 640px) { .filters details > summary { grid-template-columns: 1fr; gap: 6px; } }
 .gens { display: grid; gap: 6px; margin-top: 8px; }
 .gen { display: grid; grid-template-columns: 150px 1fr; gap: 8px; align-items: start; }
 .gen-name { font-size: 12px; color: var(--muted); padding-top: 5px; }
@@ -364,7 +374,7 @@ dl.spec .vn small { color: var(--muted); }
       <div class="frow"><span class="flabel">タグ</span><div class="chips" id="tagChips"></div></div>
       <div class="frow"><span class="flabel">期生</span><div class="chips" id="genChips"></div></div>
       <details id="memberDetails">
-        <summary>メンバー<span class="hint">名前で絞り込み（複数選択可）・☆で推し登録</span></summary>
+        <summary><span class="flabel">メンバー</span><span class="mem-btn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">メンバー一覧を開く</span><span class="when-open">メンバー一覧を閉じる</span><span class="count" id="memSelCount" title="選択中のメンバー数"></span></span><span class="hint">名前で絞り込み（複数選択可）・☆で推し登録</span></summary>
         <div class="gens" id="memberChips"></div>
       </details>
       <div class="frow"><span class="flabel">種別</span><div class="chips" id="catChips"></div></div>
@@ -502,6 +512,7 @@ dl.spec .vn small { color: var(--muted); }
       h += '</div></div>';
     }
     $('memberChips').innerHTML = h;
+    $('memSelCount').textContent = st.members.size ? `${st.members.size}名選択中` : '';
   }
   function renderCatChips() {
     const used = CAT_KEYS.filter(k => D.categories[k]);
