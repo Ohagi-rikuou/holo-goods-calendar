@@ -4900,6 +4900,106 @@ window.HOLO_GOODS = {
    "note": "公式ショップの予約分は完売。一般発売は10/30（ホロカ取扱店）。"
   },
   {
+   "id": "g_wafer_vol7",
+   "title": "ホロライブプロダクション ウエハースvol.7（カード付・全32種）",
+   "members": [],
+   "category": "figure",
+   "channel": "venue",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "11/16発売",
+   "sale": "食玩（全国量販店の菓子売場など）",
+   "start": "2026-11-16",
+   "end": "",
+   "venues": [
+    {
+     "pref": "全国各地",
+     "place": "量販店の菓子売場など",
+     "date": "11/16 発売"
+    }
+   ],
+   "price": "1個 ¥176",
+   "ship": "",
+   "shop": "バンダイ（キャンディ事業部）",
+   "url": "https://www.inside-games.jp/article/2026/11/02/190222.html",
+   "source": "インサイド 2026-11-02 記事（バンダイ発表の紹介）",
+   "note": "兎田ぺこら・宝鐘マリン・ラプラス・ダークネスほか計32名。全種メタリックプラカードで、裏面に手書きコメント。ココアクリーム味ウエハース1枚。",
+   "tags": [],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "a_GOODS_04896023",
+   "title": "HYTE Y70 TI 一伊那尓栖（Ninomae Ina’nis）コラボPCケース",
+   "members": [
+    "一伊那尓栖"
+   ],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2026年冬以降発売予定",
+   "sale": "予約受付中",
+   "start": "2026-12-01",
+   "end": "",
+   "venues": [],
+   "price": "¥92,600",
+   "ship": "2026年冬以降発売予定",
+   "shop": "リンクスインターナショナル取扱店（あみあみ ほか）",
+   "url": "https://www.links.co.jp/item/hyte-ninomae-inanis-y70ti/",
+   "source": "リンクスインターナショナル 製品ページ 2026-11-02／あみあみ 商品ページ（2026-11-02 確認、予約受付中）",
+   "note": "タッチパネル液晶搭載。本人・Rosuuri氏のイラスト、シリアルナンバー入りタコダチプレート付き。価格はあみあみの販売価格。お一人様1個まで。",
+   "tags": [
+    "予約受付中"
+   ],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "a_GOODS_04896024",
+   "title": "HYTE 一伊那尓栖（Ninomae Ina’nis）キーキャップ＋マウスパッド",
+   "members": [
+    "一伊那尓栖"
+   ],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2026年冬以降発売予定",
+   "sale": "予約受付中",
+   "start": "2026-12-01",
+   "end": "",
+   "venues": [],
+   "price": "¥23,990",
+   "ship": "2026年冬以降発売予定",
+   "shop": "リンクスインターナショナル取扱店（あみあみ ほか）",
+   "url": "https://www.links.co.jp/item/hyte-ninomae-inanis-keycap-mouse-pad/",
+   "source": "リンクスインターナショナル 製品ページ 2026-11-02／あみあみ 商品ページ（2026-11-02 確認、予約受付中）",
+   "note": "JIS・UK・ISO・ANSI配列対応、マウスパッドは900mm幅。価格はあみあみの販売価格。",
+   "tags": [
+    "予約受付中"
+   ],
+   "firstSeen": "2026-11-02"
+  },
+  {
+   "id": "a_GOODS_04853614",
+   "title": "HYTE hololive English 3rd Concert -All for One- デスクパッド",
+   "members": [],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "sale": "在庫販売",
+   "start": "2026-11-02",
+   "end": "",
+   "venues": [],
+   "price": "¥5,840",
+   "ship": "発売済・在庫品",
+   "shop": "あみあみ（HYTE）",
+   "url": "https://www.amiami.jp/top/detail/detail?gcode=GOODS-04853614",
+   "source": "あみあみ 商品ページ（2026-11-02 確認、在庫あり）",
+   "note": "900×400mm。hololive English 3rd Concertのコラボ商品。",
+   "tags": [],
+   "firstSeen": "2026-11-02"
+  },
+  {
    "id": "g_miko_nyahallo_world",
    "title": "さくらみこ ノベルゲーム『にゃっはろーわーるど』",
    "members": [

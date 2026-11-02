@@ -7,6 +7,7 @@ data/candidates.json に「未確認の候補」として保存する。
 確認済み（登録した・対象外と判断した）の記事URLは data/candidates_reviewed.json に入れると、次から出なくなる。
 data/watchlist.json の「注目キーワード」に合う記事は、グッズ用の絞り込みに関係なく【注目】として必ず候補に入れる
 （PR TIMES のキーワード検索も注目キーワードごとに行う）。
+注目キーワードの mode：until_found（見つかったら、登録後に外すか残すかを依頼者に確認する）／ permanent（ずっと監視する）。
 
 各サイトの robots.txt で許可されていることを確認済み。読み取りは1日1回・各サイト1〜2回のみ。
 """
@@ -44,9 +45,13 @@ SOURCES = [
 
 HOLO = re.compile(r'ホロライブ|hololive|ホロカ|ホロスターズ|holostars|holoX|ReGLOSS|FLOW GLOW|アソビ★まわり隊', re.I)
 GOODS = re.compile(r'グッズ|コラボ|発売|予約|販売|受注|キャンペーン|特典|ノベルティ|フェア|ポップアップ|POP ?UP|くじ|プライズ|'
-                   r'フィギュア|ねんどろいど|figma|ぬいぐるみ|カフェ|展示|ストア|ショップ|景品|限定|再販|入荷|CD|アルバム|BOOK|書籍|ゲーム', re.I)
+                   r'フィギュア|ねんどろいど|figma|ぬいぐるみ|カフェ|展示|ストア|ショップ|景品|限定|再販|入荷|CD|アルバム|BOOK|書籍|ゲーム|'
+                   r'ウエハース|カード|食玩|ガシャポン|ガチャ|カプセル|アクリル|アクスタ|缶バッジ|Tシャツ|アパレル|ラインナップ|第\d+弾|'
+                   r'PCケース|キーキャップ|マウスパッド|香水|フレグランス|ブルーレイ|Blu-ray|写真集|画集|コミック', re.I)
+# ホロライブ専門の情報源（ここの記事はグッズらしい言葉がなくても候補にする）
+HOLO_ONLY = ('PR TIMES（カバー株式会社）', '公式ショップ お知らせ', 'ホロライビュアーズ', 'コラボカフェ（ホロライブの記事一覧）')
 SKIP = re.compile(r'配信開始|視聴|再生数|登録者|出演|ゲスト|インタビュー|ランキング|アンケート|求人|採用|決算|ライブ配信のお知らせ|不具合|'
-                  r'メンテナンス|配送|ペイディ|キャッシュバック|関税|お詫び|不備|発送に関する|オフィシャルレポート|事前登録|ゲームジャム|スポンサー|【終了】')
+                  r'メンテナンス|配送|ペイディ|キャッシュバック|関税|お詫び|不備|発送に関する|オフィシャルレポート|事前登録|ゲームジャム|スポンサー|【終了】|開催終了|ログイン|確認画面|引くべき')
 GENERIC = re.compile(r'ホロライブプロダクション|ホロライブ|hololive|production|プロダクション|オフィシャル|公式|グッズ|コラボ(レーション)?|'
                      r'発売|決定|開催|販売|予約|受付|開始|登場|商品|限定|新作|情報|記念|第\d+弾|の|が|を|に|と|で|\s|[!！?？「」『』【】（）()・,、。:：/／-]', re.I)
 
@@ -184,7 +189,8 @@ def main():
         if u in seen or u in reviewed_urls or e['url'] in known_urls or u in known_urls:
             continue
         w = e.get('watch') or watched(blob)
-        if not w and (not holo.search(blob) or not GOODS.search(blob) or SKIP.search(e['title'])):
+        need_goods = e['source'] not in HOLO_ONLY
+        if not w and (not holo.search(blob) or (need_goods and not GOODS.search(blob)) or SKIP.search(e['title'])):
             continue
         ad = article_date(e)
         if ad and ad < TODAY - datetime.timedelta(days=RECENT_DAYS):
@@ -225,8 +231,11 @@ def main():
                 f.write(f'- **【注目：{c["watch"]}】** [{c["title"]}]({c["url"]})（{c["source"]}・{c["firstSeen"]}）\n')
             for c in [c for c in new if 'watch' not in c][:30]:
                 f.write(f'- [{c["title"]}]({c["url"]})（{c["source"]}）\n')
+            hit = {c['watch'] for c in out if 'watch' in c}
             for w in watch:
-                f.write(f'- 注目キーワード監視中：{w["name"]}（{w["added"]}〜）\n')
+                mode = 'ずっと監視' if w.get('mode') == 'permanent' else '見つかるまで'
+                extra = '　→ 情報あり：登録後、このキーワードを外すか残すかを確認' if w['name'] in hit and mode == '見つかるまで' else ''
+                f.write(f'- 注目キーワード監視中：{w["name"]}（{w["added"]}〜・{mode}）{extra}\n')
             for er in errors:
                 f.write(f'- 取得失敗: {er}\n')
 
