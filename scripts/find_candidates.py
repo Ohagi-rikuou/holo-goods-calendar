@@ -5,6 +5,8 @@ AIの読み取りを許可しているニュース・公式サイトの新着か
 data/candidates.json に「未確認の候補」として保存する。
 「更新して」のときに候補を確認し、販売元の公式情報で確かめてから data/manual.json に登録する。
 確認済み（登録した・対象外と判断した）の記事URLは data/candidates_reviewed.json に入れると、次から出なくなる。
+data/watchlist.json の「注目キーワード」に合う記事は、グッズ用の絞り込みに関係なく【注目】として必ず候補に入れる
+（PR TIMES のキーワード検索も注目キーワードごとに行う）。
 
 各サイトの robots.txt で許可されていることを確認済み。読み取りは1日1回・各サイト1〜2回のみ。
 """
@@ -16,6 +18,8 @@ import os
 import re
 import sys
 import time
+import urllib.error
+import urllib.parse
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -128,8 +132,22 @@ def main():
     old = json.load(open(cand_path, encoding='utf-8')) if os.path.exists(cand_path) else []
     first_seen = {c['url']: c['firstSeen'] for c in old}
 
+    watch_path = os.path.join(DATA, 'watchlist.json')
+    watch = json.load(open(watch_path, encoding='utf-8')) if os.path.exists(watch_path) else []
+    sources = list(SOURCES)
+    for w in watch:
+        for q in w.get('search', []):
+            sources.append((f'PR TIMES（注目：{q}）', 'https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word='
+                            + urllib.parse.quote(q), 'prtimes', w['name']))
+
+    def watched(text):
+        for w in watch:
+            if all(re.search(a, text, re.I) for a in w.get('all', [])) and any(re.search(a, text, re.I) for a in w.get('any', ['.'])):
+                return w['name']
+        return None
+
     found, errors = [], []
-    for name, url, kind in SOURCES:
+    for name, url, kind, *wname in sources:
         try:
             text = get(url)
             if kind == 'feed':
@@ -140,8 +158,16 @@ def main():
                 entries = parse_collabo(text)
             for e in entries:
                 e['source'] = name
+                if wname:
+                    e['watch'] = wname[0]  # 注目キーワードの検索で見つかった記事（本文に一致）
             found += entries
             print(f'{name}: {len(entries)} 件')
+        except urllib.error.HTTPError as ex:
+            if kind == 'prtimes' and ex.code == 404:  # PR TIMES は検索結果が0件のとき 404 を返す
+                print(f'{name}: 0 件')
+            else:
+                errors.append(f'{name}: {ex}')
+                print(f'::warning::{name} を取得できませんでした: {ex}')
         except Exception as ex:  # noqa: BLE001
             errors.append(f'{name}: {ex}')
             print(f'::warning::{name} を取得できませんでした: {ex}')
@@ -157,7 +183,8 @@ def main():
         blob = e['title'] + ' ' + e['text']
         if u in seen or u in reviewed_urls or e['url'] in known_urls or u in known_urls:
             continue
-        if not holo.search(blob) or not GOODS.search(blob) or SKIP.search(e['title']):
+        w = e.get('watch') or watched(blob)
+        if not w and (not holo.search(blob) or not GOODS.search(blob) or SKIP.search(e['title'])):
             continue
         ad = article_date(e)
         if ad and ad < TODAY - datetime.timedelta(days=RECENT_DAYS):
@@ -174,6 +201,8 @@ def main():
                 best, score = it, s
         c = {'firstSeen': first_seen.get(u, TODAY.isoformat()), 'source': e['source'], 'title': e['title'],
              'url': u, 'date': e['date']}
+        if w:
+            c['watch'] = w
         if best and score >= 0.45:
             c['similar'] = {'id': best['id'], 'title': best['title'], 'score': round(score, 2)}
         result.append(c)
@@ -182,7 +211,7 @@ def main():
     keep = {c['url']: c for c in old if c['firstSeen'] >= limit and c['url'] not in reviewed_urls}
     for c in result:
         keep[c['url']] = c
-    out = sorted(keep.values(), key=lambda c: (c['firstSeen'], c['source']), reverse=True)
+    out = sorted(keep.values(), key=lambda c: ('watch' in c, c['firstSeen'], c['source']), reverse=True)
     with open(cand_path, 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     new = [c for c in out if c['firstSeen'] == TODAY.isoformat()]
@@ -192,8 +221,12 @@ def main():
     if summary:
         with open(summary, 'a', encoding='utf-8') as f:
             f.write(f'\n## 漏れ候補（{TODAY}）\n\n候補 {len(out)} 件・今日の新規 {len(new)} 件\n\n')
-            for c in new[:30]:
+            for c in [c for c in out if 'watch' in c]:
+                f.write(f'- **【注目：{c["watch"]}】** [{c["title"]}]({c["url"]})（{c["source"]}・{c["firstSeen"]}）\n')
+            for c in [c for c in new if 'watch' not in c][:30]:
                 f.write(f'- [{c["title"]}]({c["url"]})（{c["source"]}）\n')
+            for w in watch:
+                f.write(f'- 注目キーワード監視中：{w["name"]}（{w["added"]}〜）\n')
             for er in errors:
                 f.write(f'- 取得失敗: {er}\n')
 
