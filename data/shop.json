@@ -1,5 +1,35 @@
 [
  {
+  "id": "s_holostarsenglish_firstconcert_firstlight",
+  "title": "HOLOSTARS English First Concert “First Light” ライブグッズ",
+  "members": [
+   "アクセル・シリオス",
+   "オクタビオ",
+   "ガビス・ベッテル",
+   "クリムゾン・ルーズ",
+   "ゴールドブレット",
+   "ジュラルド・ティー・レクスフォード",
+   "マキナ・X・フレオン",
+   "リージス・アルテア",
+   "万象院ハッカ",
+   "定水寺シンリ"
+  ],
+  "category": "event",
+  "channel": "online",
+  "origin": "shop",
+  "sale": "受注生産",
+  "start": "2026-11-02",
+  "end": "2026-12-07",
+  "periodText": "受注受付期間 2026/11/02 12:30 〜 2026/12/07 18:00",
+  "ship": "2027年02月上旬までに発送予定",
+  "price": "¥550〜¥2,500",
+  "shop": "hololive production OFFICIAL SHOP",
+  "url": "https://shop.hololivepro.com/products/holostarsenglish_firstconcert_firstlight",
+  "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+  "tags": [],
+  "firstSeen": "2026-11-02"
+ },
+ {
   "id": "s_natsuiromatsuri_birthday_2026",
   "title": "夏色まつり 誕生日記念2026",
   "members": [

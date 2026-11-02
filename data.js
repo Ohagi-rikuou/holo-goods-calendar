@@ -28,7 +28,9 @@ window.HOLO_GOODS = {
    "ReGLOSS",
    "FLOW GLOW",
    "アソビ★まわり隊！",
-   "holoAN"
+   "holoAN",
+   "ホロスターズEN TEMPUS",
+   "その他"
   ],
   "scope": "公式ショップ：販売期間中の商品と、2026年7月以降に掲載された在庫・予約販売の商品。企業・店舗：PR TIMESの発表（2026年8月〜10月）のうち、販売中・販売予定のもの。ホロカ：公式サイトの商品情報のうち発売前のもの。プライズ：バンダイスピリッツ・フリューの公式プライズサイトとタイトー店舗の入荷予定（9月以降の登場分）。くじ・フィギュア：エニマイ公式、一番くじは報道、あみあみの予約受付中商品。コラボ：ローソン・ジョイポリス・カプコンの公式情報。"
  },
@@ -704,9 +706,129 @@ window.HOLO_GOODS = {
    "gens": [
     "holoAN"
    ]
+  },
+  {
+   "id": "リージス・アルテア",
+   "name": "リージス・アルテア",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "ホロスターズEN TEMPUS"
+   ]
+  },
+  {
+   "id": "マキナ・X・フレオン",
+   "name": "マキナ・X・フレオン",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "ホロスターズEN TEMPUS"
+   ]
+  },
+  {
+   "id": "ガビス・ベッテル",
+   "name": "ガビス・ベッテル",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "ホロスターズEN TEMPUS"
+   ]
+  },
+  {
+   "id": "アクセル・シリオス",
+   "name": "アクセル・シリオス",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "ホロスターズEN TEMPUS"
+   ]
+  },
+  {
+   "id": "万象院ハッカ",
+   "name": "万象院ハッカ",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "ホロスターズEN TEMPUS"
+   ]
+  },
+  {
+   "id": "定水寺シンリ",
+   "name": "定水寺シンリ",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "ホロスターズEN TEMPUS"
+   ]
+  },
+  {
+   "id": "オクタビオ",
+   "name": "オクタビオ",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "その他"
+   ]
+  },
+  {
+   "id": "クリムゾン・ルーズ",
+   "name": "クリムゾン・ルーズ",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "その他"
+   ]
+  },
+  {
+   "id": "ゴールドブレット",
+   "name": "ゴールドブレット",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "その他"
+   ]
+  },
+  {
+   "id": "ジュラルド・ティー・レクスフォード",
+   "name": "ジュラルド・ティー・レクスフォード",
+   "kana": "",
+   "mark": "",
+   "gens": [
+    "その他"
+   ]
   }
  ],
  "items": [
+  {
+   "id": "s_holostarsenglish_firstconcert_firstlight",
+   "title": "HOLOSTARS English First Concert “First Light” ライブグッズ",
+   "members": [
+    "アクセル・シリオス",
+    "オクタビオ",
+    "ガビス・ベッテル",
+    "クリムゾン・ルーズ",
+    "ゴールドブレット",
+    "ジュラルド・ティー・レクスフォード",
+    "マキナ・X・フレオン",
+    "リージス・アルテア",
+    "万象院ハッカ",
+    "定水寺シンリ"
+   ],
+   "category": "event",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "受注生産",
+   "start": "2026-11-02",
+   "end": "2026-12-07",
+   "periodText": "受注受付期間 2026/11/02 12:30 〜 2026/12/07 18:00",
+   "ship": "2027年02月上旬までに発送予定",
+   "price": "¥550〜¥2,500",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/holostarsenglish_firstconcert_firstlight",
+   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-02"
+  },
   {
    "id": "s_natsuiromatsuri_birthday_2026",
    "title": "夏色まつり 誕生日記念2026",
