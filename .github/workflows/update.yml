@@ -34,6 +34,11 @@ jobs:
         continue-on-error: true
         run: python3 scripts/update_shop.py
 
+      - name: 漏れ候補リストを作成（カレンダーには載せない）
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: python3 scripts/find_candidates.py
+
       - name: data.js を作成
         run: python3 scripts/build.py
 
@@ -41,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/shop.json data.js
+          git add data/shop.json data/candidates.json data.js
           if git diff --cached --quiet; then
             echo "変更なし"
           else
