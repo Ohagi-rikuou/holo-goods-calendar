@@ -1,11 +1,11 @@
-/* ホロライブ グッズカレンダー データ（2026-11-02 更新）
+/* ホロライブ グッズカレンダー データ（2026-11-03 更新）
  * 出典：hololive production OFFICIAL SHOP 各商品ページ／PR TIMES 各社発表ほか（各商品の source・url を参照）。
  * このファイルは scripts/build.py が data/*.json から自動で作ります。直接編集しないでください。
  */
 window.HOLO_GOODS = {
  "meta": {
   "isTest": false,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "newDays": 7,
   "genOrder": [
    "0期生",
@@ -800,6 +800,27 @@ window.HOLO_GOODS = {
  ],
  "items": [
   {
+   "id": "s_nekomataokayu_anniversary_7th",
+   "title": "猫又おかゆ 活動7周年記念",
+   "members": [
+    "猫又おかゆ"
+   ],
+   "category": "anniv",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "受注生産",
+   "start": "2026-11-02",
+   "end": "2026-12-07",
+   "periodText": "受注受付期間 2026/11/02 21:00 〜 2026/12/07 18:00",
+   "ship": "2027年06月中旬までに発送予定",
+   "price": "¥1,100〜¥15,180",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/nekomataokayu_anniversary_7th",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-03"
+  },
+  {
    "id": "s_holostarsenglish_firstconcert_firstlight",
    "title": "HOLOSTARS English First Concert “First Light” ライブグッズ",
    "members": [
@@ -825,7 +846,7 @@ window.HOLO_GOODS = {
    "price": "¥550〜¥2,500",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/holostarsenglish_firstconcert_firstlight",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-11-02"
   },
@@ -846,7 +867,7 @@ window.HOLO_GOODS = {
    "price": "¥2,200〜¥15,950",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/natsuiromatsuri_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-11-02"
   },
@@ -867,7 +888,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100〜¥17,600",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/airaniiofifteen_holoctober_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-11-01"
   },
@@ -893,7 +914,7 @@ window.HOLO_GOODS = {
    "price": "¥1,320〜¥4,180",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/holokitchen_cookingproject",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-11-01"
   },
@@ -914,7 +935,7 @@ window.HOLO_GOODS = {
    "price": "¥2,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/robocosan_1stalbum_jewelmemory_ponalbum",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-10-31"
   },
@@ -938,7 +959,7 @@ window.HOLO_GOODS = {
    "price": "¥660〜¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/asobimawari-tai_gurugroove_01",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-10-31"
   },
@@ -959,7 +980,7 @@ window.HOLO_GOODS = {
    "price": "¥550〜¥5,500",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/yuzukichoco_artselection",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-10-31"
   },
@@ -980,7 +1001,7 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥12,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/sakuramiko_2ndlive_bloomingparade_secondaryorder",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-10-30"
   },
@@ -1001,7 +1022,7 @@ window.HOLO_GOODS = {
    "price": "¥2,750〜¥14,630",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/sakuramiko_anniversary_8th",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-10-30"
   },
@@ -1022,7 +1043,7 @@ window.HOLO_GOODS = {
    "price": "¥7,700",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/sakuramiko_lp_flowerrhapsody",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認・自動取得）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認・自動取得）",
    "tags": [],
    "firstSeen": "2026-10-30"
   },
@@ -1045,7 +1066,7 @@ window.HOLO_GOODS = {
    "price": "¥1,980〜¥18,480",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_holokatsu_forbusiness_vol2",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-27"
   },
@@ -1066,7 +1087,7 @@ window.HOLO_GOODS = {
    "price": "¥1,650〜¥21,450",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/omarupolka_anniversary_6th_circusdaycommemoration",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-26"
   },
@@ -1088,7 +1109,7 @@ window.HOLO_GOODS = {
    "price": "¥5,500〜¥22,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololounge_vol1",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-26"
   },
@@ -1109,7 +1130,7 @@ window.HOLO_GOODS = {
    "price": "¥72,600",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololounge_vol1_gamingchair_kazamairoha",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-26"
   },
@@ -1130,7 +1151,7 @@ window.HOLO_GOODS = {
    "price": "¥9,900",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololounge_vol1_chairmat_kazamairoha",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-26"
   },
@@ -1151,7 +1172,7 @@ window.HOLO_GOODS = {
    "price": "¥72,600",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololounge_vol1_gamingchair_la-darknesss",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-26"
   },
@@ -1172,7 +1193,7 @@ window.HOLO_GOODS = {
    "price": "¥9,900",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololounge_vol1_chairmat_la-darknesss",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-26"
   },
@@ -1195,7 +1216,7 @@ window.HOLO_GOODS = {
    "price": "¥550〜¥9,900",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_lovelyokaburimascot_vol5",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-26"
   },
@@ -1216,7 +1237,7 @@ window.HOLO_GOODS = {
    "price": "¥1,540〜¥4,290",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/azki_memberexclusive_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-24",
    "changed": "2026-10-28",
@@ -1247,7 +1268,7 @@ window.HOLO_GOODS = {
    "price": "¥1,650〜¥4,950",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/compasshorizon",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-23"
   },
@@ -1266,9 +1287,12 @@ window.HOLO_GOODS = {
    "price": "¥8,800",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_christmasspecialset2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
-   "firstSeen": "2026-10-22"
+   "firstSeen": "2026-10-22",
+   "soldOut": true,
+   "changed": "2026-11-03",
+   "changeNote": "SOLD OUT"
   },
   {
    "id": "s_gigimurin_birthday_2026",
@@ -1287,7 +1311,7 @@ window.HOLO_GOODS = {
    "price": "¥3,850〜¥16,500",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/gigimurin_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-19"
   },
@@ -1308,7 +1332,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100〜¥14,300",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/kureijiollie_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -1331,7 +1355,7 @@ window.HOLO_GOODS = {
    "price": "¥9,900",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hoshimachisuisei_live_supernovareboot_bluray",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-13"
   },
@@ -1352,7 +1376,7 @@ window.HOLO_GOODS = {
    "price": "¥3,520〜¥21,120",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/otonosekanade_athomeconcert",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-12"
   },
@@ -1373,7 +1397,7 @@ window.HOLO_GOODS = {
    "price": "¥3,300〜¥3,630",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hakuikoyori_1stlive_dreamspark_madetoorder",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-11"
   },
@@ -1394,7 +1418,7 @@ window.HOLO_GOODS = {
    "price": "¥600〜¥13,800",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hakuikoyori_1stlive_dreamspark_advancedshipping",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "先行発送"
    ],
@@ -1417,7 +1441,7 @@ window.HOLO_GOODS = {
    "price": "¥1,650〜¥22,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/himemoriluna_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-10"
   },
@@ -1438,7 +1462,7 @@ window.HOLO_GOODS = {
    "price": "¥3,850〜¥13,750",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/tokoyamitowa_towadaycommemorativemerch",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-08"
   },
@@ -1462,7 +1486,7 @@ window.HOLO_GOODS = {
    "price": "¥12,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive3rdgen_live_operationheartfulcuties_bluray",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-07"
   },
@@ -1483,7 +1507,7 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥10,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/irys_1stconcert_hopebeyondthestars_secondaryorder",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-06"
   },
@@ -1504,7 +1528,7 @@ window.HOLO_GOODS = {
    "price": "¥660〜¥21,560",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/shirakamifubuki_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-05"
   },
@@ -1525,7 +1549,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/ceciliaimmergreen_hololivecloset_spoiledvillainessoutfit",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-05"
   },
@@ -1546,7 +1570,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/elizabethrosebloodflame_hololivecloset_sleepymintygameroutfit",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-05"
   },
@@ -1567,7 +1591,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/raorapanthera_hololivecloset_nerdyschooluniformoutfit",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-05"
   },
@@ -1588,7 +1612,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/gigimurin_hololivecloset_playfuloutfit",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-05"
   },
@@ -1609,9 +1633,12 @@ window.HOLO_GOODS = {
    "price": "¥3,300〜¥3,520",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/takanelui_1stlive_rebellion_madetoorder",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
-   "firstSeen": "2026-10-04"
+   "firstSeen": "2026-10-04",
+   "soldOut": true,
+   "changed": "2026-11-03",
+   "changeNote": "SOLD OUT"
   },
   {
    "id": "s_takanelui_1stlive_rebellion_advancedshipping",
@@ -1630,11 +1657,14 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥10,300",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/takanelui_1stlive_rebellion_advancedshipping",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "先行発送"
    ],
-   "firstSeen": "2026-10-04"
+   "firstSeen": "2026-10-04",
+   "soldOut": true,
+   "changed": "2026-11-03",
+   "changeNote": "SOLD OUT"
   },
   {
    "id": "s_hololive_halloween2026_sevensweetsins",
@@ -1685,7 +1715,7 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥28,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_halloween2026_sevensweetsins",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -1708,9 +1738,12 @@ window.HOLO_GOODS = {
    "price": "¥3,850〜¥21,450",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/inugamikorone_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
-   "firstSeen": "2026-10-01"
+   "firstSeen": "2026-10-01",
+   "soldOut": true,
+   "changed": "2026-11-03",
+   "changeNote": "SOLD OUT"
   },
   {
    "id": "s_hololivefriendswithu_kosekibijou",
@@ -1729,7 +1762,7 @@ window.HOLO_GOODS = {
    "price": "¥3,740",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololivefriendswithu_kosekibijou",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再入荷予定"
    ],
@@ -1752,7 +1785,7 @@ window.HOLO_GOODS = {
    "price": "¥3,740",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololivefriendswithu_shiorinovella",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再入荷予定"
    ],
@@ -1778,7 +1811,7 @@ window.HOLO_GOODS = {
    "price": "¥3,740",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/isakiriona_hololivefriendswithu",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再入荷予定"
    ],
@@ -1801,7 +1834,7 @@ window.HOLO_GOODS = {
    "price": "¥3,740",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/kikiraravivi_hololivefriendswithu",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再入荷予定"
    ],
@@ -1824,7 +1857,7 @@ window.HOLO_GOODS = {
    "price": "¥3,740",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololivefriendswithu_mococoabyssgard",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再入荷予定"
    ],
@@ -1847,7 +1880,7 @@ window.HOLO_GOODS = {
    "price": "¥3,740",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/rindochihaya_hololivefriendswithu",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再入荷予定"
    ],
@@ -1878,7 +1911,7 @@ window.HOLO_GOODS = {
    "price": "¥1,500〜¥4,500",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_audiodrama_traveltoindonesia",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -1905,7 +1938,7 @@ window.HOLO_GOODS = {
    "price": "¥400〜¥8,800",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveseasonaldays_autumnstreet",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-23"
   },
@@ -1929,7 +1962,7 @@ window.HOLO_GOODS = {
    "price": "¥660〜¥4,620",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/regloss_arlive_xrechord",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -1954,7 +1987,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/holoan_regularoutfit_acrylicstand",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-10-16"
   },
@@ -1975,7 +2008,7 @@ window.HOLO_GOODS = {
    "price": "¥3,000〜¥6,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/takanelui_1stlive_rebellion_digitalmessageboard",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -1999,7 +2032,7 @@ window.HOLO_GOODS = {
    "price": "¥300",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_secretspace_novembercalendar",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2036,7 +2069,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000〜¥15,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_asmr_secretspace",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2061,7 +2094,7 @@ window.HOLO_GOODS = {
    "price": "¥2,500〜¥5,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/promise_3rdanniversaryaudiostory",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2087,7 +2120,7 @@ window.HOLO_GOODS = {
    "price": "¥2,400〜¥5,500",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive3rdgen_live_operationheartfulcuties_resale",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再販売"
    ],
@@ -2112,7 +2145,7 @@ window.HOLO_GOODS = {
    "price": "無料（ホロプラス特典）",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/holoplus_holocagrandstage2026_osakadreamdatecampaign",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2138,7 +2171,7 @@ window.HOLO_GOODS = {
    "price": "無料（ホロプラス特典）",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/holoplus_nepolabo_6thanniversary",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2162,7 +2195,7 @@ window.HOLO_GOODS = {
    "price": "¥2,000〜¥8,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_asmr_imusttendtoyou",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2190,7 +2223,7 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥9,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_audiostory_autumnsbounties",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2216,7 +2249,7 @@ window.HOLO_GOODS = {
    "price": "¥550〜¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/asobimawari-tai_regularoutfit",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-25"
   },
@@ -2237,7 +2270,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_sorashinasopia",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2263,7 +2296,7 @@ window.HOLO_GOODS = {
    "price": "¥880〜¥4,620",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/asobimawari-tai_debut",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-25"
   },
@@ -2287,7 +2320,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/asobimawari-tai_pclivewallpaper",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2310,7 +2343,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_hyakutokyoko",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2333,7 +2366,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_suzunatsuzuri",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2356,7 +2389,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_achichimela",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2379,7 +2412,7 @@ window.HOLO_GOODS = {
    "price": "¥1,650",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/tsunomakiwatame_respawn",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-24"
   },
@@ -2400,7 +2433,7 @@ window.HOLO_GOODS = {
    "price": "¥14,300",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/shishirobotan_1stalbum_botanexe",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-19"
   },
@@ -2421,7 +2454,7 @@ window.HOLO_GOODS = {
    "price": "¥3,850",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/sakuramiko_flowerrhapsody",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-18"
   },
@@ -2448,7 +2481,7 @@ window.HOLO_GOODS = {
    "price": "無料（ホロプラス特典）",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/holoplus_umeda_digitalphotoframe",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2493,7 +2526,7 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥21,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_imnotyouroshianymore",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2516,7 +2549,7 @@ window.HOLO_GOODS = {
    "price": "¥15,400",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/irys_1stalbum_dangerys_lp_secondaryorder",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-14"
   },
@@ -2537,7 +2570,7 @@ window.HOLO_GOODS = {
    "price": "¥3,850",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hakuikoyori_2ndalbum_chemicalspark_regular",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-12"
   },
@@ -2558,7 +2591,7 @@ window.HOLO_GOODS = {
    "price": "¥13,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hakuikoyori_2ndalbum_chemicalspark_limited",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-12"
   },
@@ -2582,7 +2615,7 @@ window.HOLO_GOODS = {
    "price": "¥550〜¥3,300",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/regloss_anniversary_3rd",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-12"
   },
@@ -2616,7 +2649,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000〜¥14,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_asmr_tooclingy",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2640,7 +2673,7 @@ window.HOLO_GOODS = {
    "price": "¥300",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_tooclingy_octobercalendar",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2663,7 +2696,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_gigimurin",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2689,7 +2722,7 @@ window.HOLO_GOODS = {
    "price": "¥2,000〜¥4,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/regloss_anniversary_3rd_voicepack",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2712,7 +2745,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_kikiraravivi",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2735,7 +2768,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_rindochihaya",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2758,7 +2791,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_mizumiyasu",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2781,7 +2814,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_koganeiniko",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2804,7 +2837,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_isakiriona",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2827,7 +2860,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_todorokihajime",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2850,7 +2883,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_juufuuteiraden",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2873,7 +2906,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_ichijouririka",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2896,7 +2929,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_ceciliaimmergreen",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2919,7 +2952,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_raorapanthera",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2942,7 +2975,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_otonosekanade",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2965,7 +2998,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_elizabethrosebloodflame",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -2988,7 +3021,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_nerissaravencroft",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3011,7 +3044,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_hakosbaelz",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3034,7 +3067,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_mococoabyssgard",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3057,7 +3090,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_ninomaeinanis",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3080,7 +3113,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_fuwawaabyssgard",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3103,7 +3136,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_ourokronii",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3126,7 +3159,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_takanashikiara",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3149,7 +3182,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_shiorinovella",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3172,7 +3205,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_moricalliope",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3195,7 +3228,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_kosekibijou",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3218,7 +3251,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_kobokanaeru",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3241,7 +3274,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_kaelakovalskia",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3264,7 +3297,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_irys",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3287,7 +3320,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_vestiazeta",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3310,7 +3343,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_pavoliareine",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3333,7 +3366,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_anyamelfissa",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3356,7 +3389,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_kureijiollie",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3379,7 +3412,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_airaniiofifteen",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3402,7 +3435,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_moonahoshinova",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3425,7 +3458,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/startingvoice_ayundarisu",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3446,7 +3479,7 @@ window.HOLO_GOODS = {
    "price": "¥2,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_sleeveex_vol8",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3465,7 +3498,7 @@ window.HOLO_GOODS = {
    "price": "¥4,400",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_livestartdeckdebutset",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3486,7 +3519,7 @@ window.HOLO_GOODS = {
    "price": "¥1,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/tokoyamitowa_hololivefriendspoutique_funhat",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3507,7 +3540,7 @@ window.HOLO_GOODS = {
    "price": "¥1,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/yukihanalamy_hololivefriendspoutique_funhat",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3528,7 +3561,7 @@ window.HOLO_GOODS = {
    "price": "¥1,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/tsunomakiwatame_hololivefriendspoutique_funhat",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3549,7 +3582,7 @@ window.HOLO_GOODS = {
    "price": "¥1,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/inugamikorone_hololivefriendspoutique_funhat",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3570,7 +3603,7 @@ window.HOLO_GOODS = {
    "price": "¥1,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/oozorasubaru_hololivefriendspoutique_funhat",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3591,7 +3624,7 @@ window.HOLO_GOODS = {
    "price": "¥1,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/natsuiromatsuri_hololivefriendspoutique_funhat",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3612,7 +3645,7 @@ window.HOLO_GOODS = {
    "price": "¥1,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/robocosan_hololivefriendspoutique_funhat",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-09-07"
   },
@@ -3639,7 +3672,7 @@ window.HOLO_GOODS = {
    "price": "¥660〜¥11,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_hololivesplashtparty",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再入荷予定"
    ],
@@ -3663,7 +3696,7 @@ window.HOLO_GOODS = {
    "price": "¥300〜¥8,600",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_asmr_youmayhaveagirlfriend",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3687,7 +3720,7 @@ window.HOLO_GOODS = {
    "price": "¥15,400",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/fuwamoco_1stalbum_fuwamocoalamode",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-29"
   },
@@ -3709,7 +3742,7 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥7,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveen_audiobook_hatchingfromthehaze",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3732,7 +3765,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100〜¥6,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/tokoyamitowa_2ndlive_shinier_resale",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再販売"
    ],
@@ -3755,7 +3788,7 @@ window.HOLO_GOODS = {
    "price": "¥3,850",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/shirakamifubuki_fbkingdomblessing",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-24"
   },
@@ -3776,7 +3809,7 @@ window.HOLO_GOODS = {
    "price": "¥12,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hakosbaelz_2ndalbum_mirrormirror",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-23"
   },
@@ -3800,7 +3833,7 @@ window.HOLO_GOODS = {
    "price": "¥2,500〜¥4,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveregloss_1stlive_flashpoint_resale",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再販売"
    ],
@@ -3821,7 +3854,7 @@ window.HOLO_GOODS = {
    "price": "¥5,280",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_hbp09",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-19"
   },
@@ -3840,7 +3873,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_acrylicframe_vol3-4",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-19"
   },
@@ -3859,7 +3892,7 @@ window.HOLO_GOODS = {
    "price": "¥3,300",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_holocardbinder_vol2",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-19",
    "soldOut": true,
@@ -3881,7 +3914,7 @@ window.HOLO_GOODS = {
    "price": "¥880",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_cardcase_vol35-39",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-19"
   },
@@ -3900,7 +3933,7 @@ window.HOLO_GOODS = {
    "price": "¥990",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_cardsleeve_vol52-56",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-19"
   },
@@ -3935,7 +3968,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000〜¥15,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_asmr_worriedaboutyou",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -3958,7 +3991,7 @@ window.HOLO_GOODS = {
    "price": "¥3,850",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/yukihanalamy_1stalbum_fleurdeneige_regular",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-15"
   },
@@ -3979,7 +4012,7 @@ window.HOLO_GOODS = {
    "price": "¥11,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/yukihanalamy_1stalbum_fleurdeneige_limited",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-15"
   },
@@ -4022,7 +4055,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000〜¥16,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_makingyourheartracevoice",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -4045,7 +4078,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000〜¥7,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/nakiriayame_asmr_yourneighborayamechan",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -4068,7 +4101,7 @@ window.HOLO_GOODS = {
    "price": "¥19,800",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/robocosan_1stalbum_jewelmemory",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-02"
   },
@@ -4089,7 +4122,7 @@ window.HOLO_GOODS = {
    "price": "¥3,850",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/sakuramiko_2ndalbum_bloomingcinderella_regular",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-01"
   },
@@ -4110,7 +4143,7 @@ window.HOLO_GOODS = {
    "price": "¥13,200",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/sakuramiko_2ndalbum_bloomingcinderella_limited",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-08-01"
   },
@@ -4139,7 +4172,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololivedevis_regularoutfit_acrylicstand",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-24"
   },
@@ -4168,7 +4201,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveid_regularoutfit_acrylicstand",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-24"
   },
@@ -4218,7 +4251,7 @@ window.HOLO_GOODS = {
    "price": "¥1,760",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_regularoutfit_acrylicstand",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-24"
   },
@@ -4247,7 +4280,7 @@ window.HOLO_GOODS = {
    "price": "¥550",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveid_regularoutfit_buttonbadge",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-24"
   },
@@ -4297,7 +4330,7 @@ window.HOLO_GOODS = {
    "price": "¥550",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_regularoutfit_buttonbadge",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-24"
   },
@@ -4326,7 +4359,7 @@ window.HOLO_GOODS = {
    "price": "¥550",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololivedevis_regularoutfit_buttonbadge",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-24"
   },
@@ -4347,7 +4380,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/fuwamoco_anniversary_3rd",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4371,7 +4404,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/aziro_commemorativemerch",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4394,7 +4427,7 @@ window.HOLO_GOODS = {
    "price": "¥1,210",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/pavoliareine_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4417,7 +4450,7 @@ window.HOLO_GOODS = {
    "price": "¥1,870",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/tokinosora_anniversary_9th",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4440,7 +4473,7 @@ window.HOLO_GOODS = {
    "price": "¥2,090",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/moricalliope_anniversary_6th",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4464,7 +4497,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/greyscalex_purrfectpairmerch",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4487,7 +4520,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/nakiriayame_anniversary_8th",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4510,7 +4543,7 @@ window.HOLO_GOODS = {
    "price": "¥1,210",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/ourokronii_anniversary_5th",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4533,7 +4566,7 @@ window.HOLO_GOODS = {
    "price": "¥1,870",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/houshoumarine_anniversary_7th",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4556,7 +4589,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/nerissaravencrofta_anniversary_3rd",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4594,7 +4627,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000〜¥16,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_asmr_coworkingwithyou",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -4619,7 +4652,7 @@ window.HOLO_GOODS = {
    "price": "¥440〜¥3,850",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/regloss_vacationmerch",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-20"
   },
@@ -4639,7 +4672,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/airaniiofifteen_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4662,7 +4695,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/yukihanalamy_newoutfit_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4685,7 +4718,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/rindochihaya_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4710,7 +4743,7 @@ window.HOLO_GOODS = {
    "price": "¥1,000〜¥4,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveenmyth_audiodrama_thephantomthievesandtheauctiongetaway",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -4757,7 +4790,7 @@ window.HOLO_GOODS = {
    "price": "¥500〜¥21,000",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololive_simmeringsummersentiments",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル"
    ],
@@ -4779,7 +4812,7 @@ window.HOLO_GOODS = {
    "price": "¥1,100",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/takanashikiara_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4802,7 +4835,7 @@ window.HOLO_GOODS = {
    "price": "¥4,000〜¥7,500",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/azki_sololive2025_departure_resale",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "再販売"
    ],
@@ -4824,7 +4857,7 @@ window.HOLO_GOODS = {
    "price": "¥1,650",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/azki_birthday_2026",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [
     "デジタル",
     "ボイスのみ"
@@ -4847,7 +4880,7 @@ window.HOLO_GOODS = {
    "price": "¥3,740",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/akaihaato_hololivefriendswithu_gothiclolitaoutfit",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認）",
    "tags": [],
    "firstSeen": "2026-07-01"
   },
@@ -4868,7 +4901,7 @@ window.HOLO_GOODS = {
    "price": "¥1,980",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_hsd20",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認：SOLD OUT）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認：SOLD OUT）",
    "tags": [
     "完売"
    ],
@@ -4892,7 +4925,7 @@ window.HOLO_GOODS = {
    "price": "¥1,980",
    "shop": "hololive production OFFICIAL SHOP",
    "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_hsd21",
-   "source": "公式ショップ 商品ページ（2026-11-02 確認：SOLD OUT）",
+   "source": "公式ショップ 商品ページ（2026-11-03 確認：SOLD OUT）",
    "tags": [
     "完売"
    ],
