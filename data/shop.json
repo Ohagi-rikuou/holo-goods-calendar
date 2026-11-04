@@ -835,10 +835,7 @@
   "url": "https://shop.hololivepro.com/products/takanelui_1stlive_rebellion_madetoorder",
   "source": "公式ショップ 商品ページ（2026-11-04 確認）",
   "tags": [],
-  "firstSeen": "2026-10-04",
-  "soldOut": true,
-  "changed": "2026-11-03",
-  "changeNote": "SOLD OUT"
+  "firstSeen": "2026-10-04"
  },
  {
   "id": "s_takanelui_1stlive_rebellion_advancedshipping",
@@ -861,10 +858,7 @@
   "tags": [
    "先行発送"
   ],
-  "firstSeen": "2026-10-04",
-  "soldOut": true,
-  "changed": "2026-11-03",
-  "changeNote": "SOLD OUT"
+  "firstSeen": "2026-10-04"
  },
  {
   "id": "s_hololive_halloween2026_sevensweetsins",
@@ -940,10 +934,7 @@
   "url": "https://shop.hololivepro.com/products/inugamikorone_birthday_2026",
   "source": "公式ショップ 商品ページ（2026-11-04 確認）",
   "tags": [],
-  "firstSeen": "2026-10-01",
-  "soldOut": true,
-  "changed": "2026-11-03",
-  "changeNote": "SOLD OUT"
+  "firstSeen": "2026-10-01"
  },
  {
   "id": "s_hololivefriendswithu_kosekibijou",

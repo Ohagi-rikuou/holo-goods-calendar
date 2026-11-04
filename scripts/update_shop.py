@@ -245,7 +245,12 @@ def main():
     for it in kept:
         p = products[it['id'][2:]]
         sold = not available(p)
-        if sold != bool(it.get('soldOut')):
+        if it.get('end') and datetime.date.fromisoformat(it['end']) < TODAY:
+            # 期間が終わって買えなくなったものは「完売」ではなく「終了」として表示する（更新タグも付けない）
+            if it.pop('soldOut', None) and it.get('changeNote') == 'SOLD OUT':
+                it.pop('changed', None)
+                it.pop('changeNote', None)
+        elif sold != bool(it.get('soldOut')):
             if sold:
                 it['soldOut'] = True
                 mark_changed(it, 'SOLD OUT')

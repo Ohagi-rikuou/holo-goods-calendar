@@ -1,5 +1,321 @@
 [
  {
+  "id": "c_suisei_kabukicho",
+  "title": "星街すいせい × 東急歌舞伎町タワー「KABUKICHO STELLAR TOWER」限定グッズ",
+  "members": [
+   "星街すいせい"
+  ],
+  "category": "collab",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "会場販売（全日程事前予約制）",
+  "start": "2026-10-23",
+  "end": "2026-11-08",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "東急歌舞伎町タワー（namco TOKYO 3F ほか）",
+    "date": "10/23〜11/8"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "東急歌舞伎町タワー・namco TOKYO",
+  "url": "https://bandainamco-am.co.jp/namco_tokyo/news/topics/20261023.html",
+  "source": "バンダイナムコアミューズメント namco TOKYO お知らせ（2026-11-04 確認）",
+  "note": "新曲「ゾンビゾンビゾンビ」がテーマ。混雑のため全日程事前予約制（当日券は状況により販売）。購入制限は1会計につき各商品4点まで。",
+  "tags": [
+   "会場限定"
+  ],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "c_suisei_zone",
+  "title": "星街すいせい × ZONe ENERGY 超特大デスクマット＆ZONeエナジーセット（受注生産）",
+  "members": [
+   "星街すいせい"
+  ],
+  "category": "collab",
+  "channel": "online",
+  "origin": "licensed",
+  "sale": "受注生産",
+  "start": "2026-10-13",
+  "end": "2026-11-08",
+  "periodText": "受注期間 2026/10/13 10:00 〜 2026/11/08 23:59",
+  "venues": [],
+  "price": "各¥8,900（送料込）",
+  "ship": "10/18までの注文は12月下旬、10/19以降は2027年1月上旬から順次",
+  "shop": "ZONe オンラインストア（サントリー食品オンラインストア）",
+  "url": "https://zone-energy.jp/campaign/2026/10/4099/",
+  "source": "ZONe ENERGY 公式キャンペーンページ／HoloIndex 2026-10-12 記事（内容は画像のため記事で確認）",
+  "note": "デスクマットは横90cm（Type A・B）。ZONe 1ケース（24本）付き。",
+  "tags": [],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "c_suisei_fukuya4",
+  "title": "ふくや × 星街すいせい コラボ第4弾（星街かんかん・めんツナかんかん ほか）",
+  "members": [
+   "星街すいせい"
+  ],
+  "category": "collab",
+  "channel": "both",
+  "origin": "licensed",
+  "sale": "通信販売＋直営店・ライブ会場で販売（数量限定）",
+  "start": "2026-10-05",
+  "end": "",
+  "venues": [
+   {
+    "pref": "福岡県",
+    "place": "ふくや直営店（中洲本店・博多デイトス売店・博多駅地下街店 ほか）",
+    "date": "11/10〜11/16"
+   },
+   {
+    "pref": "福岡県",
+    "place": "マリンメッセ福岡A館 敷地内",
+    "date": "11/12（ライブ当日のみ）"
+   }
+  ],
+  "price": "¥1,250〜¥5,370",
+  "ship": "",
+  "shop": "ふくや（オフィシャルサイト・直営店）",
+  "url": "https://prtimes.jp/main/html/rd/p/000000077.000136251.html",
+  "source": "PR TIMES 2026-09-30 発表（ふくや）",
+  "note": "アリーナツアー協賛記念。福岡限定パッケージ（星街かんかん2缶セット福岡ver）は直営店のみ。予定数量に達し次第終了。",
+  "tags": [],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "c_qtta_hololive",
+  "title": "MARUCHAN QTTA × ホロライブ 限定パッケージ＆レシート応募キャンペーン",
+  "members": [
+   "白上フブキ",
+   "ときのそら",
+   "夏色まつり",
+   "癒月ちょこ",
+   "尾丸ポルカ",
+   "風真いろは",
+   "音乃瀬奏"
+  ],
+  "category": "campaign",
+  "channel": "both",
+  "origin": "licensed",
+  "sale": "購入キャンペーン（対象商品のレシートでLINE応募・抽選で計1,000名）",
+  "start": "2026-10-01",
+  "end": "2026-12-31",
+  "periodText": "応募期間 2026/10/01 00:00 〜 2026/12/31 23:59",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "QTTA取扱店（スーパー・コンビニなど）",
+    "date": "10/1〜12/31"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "東洋水産（MARUCHAN QTTA）",
+  "url": "https://www.maruchan.co.jp/news_topics/entry/2026/09/1000_1.html",
+  "source": "東洋水産 ニュースリリース 2026-09-17",
+  "note": "描き下ろし7名のオリジナルアイテムやQUOカードが当たる（コース別にQTTA 1〜7個購入で応募）。応募者全員にデジタル壁紙。限定デザインパッケージは数量限定。",
+  "tags": [
+   "購入特典"
+  ],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "c_suisei_niceghostclub",
+  "title": "星街すいせい × niceghostclub コラボグッズ（WONDERLIVET 2026 出演記念）",
+  "members": [
+   "星街すいせい"
+  ],
+  "category": "collab",
+  "channel": "both",
+  "origin": "licensed",
+  "sale": "店舗・通販・フェス会場で販売",
+  "start": "2026-11-05",
+  "end": "",
+  "venues": [
+   {
+    "pref": "海外（韓国）",
+    "place": "niceghostclub ソンス旗艦店／WONDERLIVET 2026 会場（KINTEX）",
+    "date": "11/5〜（フェスは11/20・21）"
+   }
+  ],
+  "price": "未発表",
+  "ship": "",
+  "shop": "niceghostclub（公式オンラインストア・旗艦店）／WONDERLIVET 2026 公式EC",
+  "url": "https://holoindex.com/articles/hoshimachi-suisei-niceghostclub-wonderlivet-2026",
+  "source": "HoloIndex 2026-11-03 記事（Studio STELLAR公式Xの告知を紹介）",
+  "note": "パーカー・タオル・Tシャツ・メタルキーホルダー・缶バッジセット・ステッカーの6アイテム。韓国のアパレルブランドとのコラボ。",
+  "tags": [],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "e_wachawacha_gakuensai",
+  "title": "ホロライブわちゃわちゃ学園祭 会場グッズ・アニメイトカフェ出張版",
+  "members": [
+   "癒月ちょこ",
+   "白銀ノエル",
+   "雪花ラミィ",
+   "桃鈴ねね",
+   "尾丸ポルカ",
+   "響咲リオナ",
+   "輪堂千速",
+   "綺々羅々ヴィヴィ",
+   "ロボ子さん",
+   "アキ・ローゼンタール",
+   "夏色まつり",
+   "角巻わため",
+   "ラプラス・ダークネス",
+   "博衣こより",
+   "一条莉々華",
+   "儒烏風亭らでん"
+  ],
+  "category": "event",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "会場販売（オリジナルグッズ・キッチンカー）＋アニメイトカフェ出張版",
+  "start": "2026-11-14",
+  "end": "2026-11-15",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "京王アリーナTOKYO（旧・武蔵野の森総合スポーツプラザ）",
+    "date": "11/14（Day1）・11/15（Day2）"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "ホロライブわちゃわちゃ学園祭（カバー）／アニメイトカフェ",
+  "url": "https://hololive.hololivepro.com/news/20260815-01-399/",
+  "source": "ホロライブ公式サイト ニュース 2026-08-15／アニメイトカフェ 特設ページ（2026-11-04 確認）",
+  "note": "Day1・Day2で出演メンバーが異なる（各日8名）。アニメイトカフェ出張版は抽選受付終了、一般受付は11/7 18:00〜。先行通販は9/28で終了済み。",
+  "tags": [
+   "会場限定"
+  ],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "e_flowglow_2nd_tower",
+  "title": "FLOW GLOW 2nd Anniversary POP UP SHOP in TOWER RECORDS（全国27店舗）",
+  "members": [
+   "響咲リオナ",
+   "虎金妃笑虎",
+   "水宮枢",
+   "輪堂千速",
+   "綺々羅々ヴィヴィ"
+  ],
+  "category": "event",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "店舗販売（2周年記念グッズの一般先行販売）＋購入特典",
+  "start": "2026-11-10",
+  "end": "2026-11-23",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "タワーレコード27店舗（渋谷店・池袋店・梅田NU茶屋町店・なんばパークス店・アミュプラザ博多店 ほか）",
+    "date": "11/10〜11/23"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "タワーレコード",
+  "url": "https://holoindex.com/articles/flow-glow-2nd-anniversary-announcements",
+  "source": "HoloIndex 記事（2026-10-29 追記、タワーレコードの告知ページを紹介）",
+  "note": "hololiveグッズ1会計2,200円ごとにポストカード（全6種ランダム・先着）。取扱商品は後日案内。予約・取り置き不可。2周年記念グッズ（アクリルパネル・Tシャツ等）の詳細は後日発表。",
+  "tags": [
+   "購入特典"
+  ],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "c_gundam_kurusta",
+  "title": "ガンダム×ホロライブプロダクション くるスタ vol.1・ロゴTシャツ・トートバッグ（プレミアムバンダイ）",
+  "members": [
+   "白上フブキ",
+   "さくらみこ",
+   "星街すいせい",
+   "宝鐘マリン",
+   "博衣こより",
+   "輪堂千速"
+  ],
+  "category": "collab",
+  "channel": "online",
+  "origin": "licensed",
+  "sale": "予約販売（準備数に達し次第終了）",
+  "start": "2026-10-30",
+  "end": "2026-11-15",
+  "periodText": "予約受付 2026/10/30 〜 2026/11/15 23:00",
+  "venues": [],
+  "price": "¥1,980〜¥4,400",
+  "ship": "2026年12月発送予定",
+  "shop": "プレミアムバンダイ（バンコレ！）",
+  "url": "https://holoindex.com/articles/gundam-hololive-mobile-suit-ensemble-vol1",
+  "source": "HoloIndex 記事（2026-11-01 追記、プレミアムバンダイの商品ページを紹介）",
+  "note": "くるスタ（回転アクリルスタンド）全6種 各1,980円、ロゴTシャツ4,400円、ロゴトートバッグ3,850円。",
+  "tags": [],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "c_gundam_mse_vol1",
+  "title": "機動戦士ガンダム MOBILE SUIT ENSEMBLE ホロライブプロダクションコラボVol.1（ガシャポンオンライン）",
+  "members": [
+   "宝鐘マリン"
+  ],
+  "category": "figure",
+  "channel": "online",
+  "origin": "licensed",
+  "sale": "予約販売（ガシャポンオンライン・準備数に達し次第終了）",
+  "start": "2026-10-27",
+  "end": "2026-11-24",
+  "periodText": "予約受付 2026/10/27 11:00 〜 2026/11/24 23:59",
+  "venues": [],
+  "price": "1回 ¥1,000",
+  "ship": "2027年3月下旬ごろ",
+  "shop": "バンダイ（ガシャポンオンライン）",
+  "url": "https://www.inside-games.jp/article/2026/11/01/190162.html",
+  "source": "インサイド 2026-11-01 記事／HoloIndex 2026-10-27 記事（バンダイ発表の紹介）",
+  "note": "全2種（ガンダム【ホロライブプロダクションVer.】・クロスボーン・ガンダムX1【宝鐘マリンVer.】）、全高約6.5cm。先行して全国のカプセル自販機で販売される可能性あり。",
+  "tags": [
+   "予約受付中"
+  ],
+  "firstSeen": "2026-11-04"
+ },
+ {
+  "id": "z_bsp_gundam_nuiarmor",
+  "title": "#hololive IF ぬいアーマー Ver.（ユニコーンガンダム×兎田ぺこら／クロスボーン・ガンダムX1×宝鐘マリン）",
+  "members": [
+   "兎田ぺこら",
+   "宝鐘マリン"
+  ],
+  "category": "prize",
+  "channel": "venue",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2027年2月登場予定",
+  "sale": "プライズ（アミューズメント施設の景品）",
+  "start": "2027-02-01",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "アミューズメント施設",
+    "date": "2027年2月〜"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "バンダイスピリッツ（バンプレスト）",
+  "url": "https://holoindex.com/articles/hololive-if-gundam-nui-armor",
+  "source": "HoloIndex 記事（バンプレスト プライズ公式Xの発表を紹介）",
+  "note": "サイズ・取扱店は今後発表。",
+  "tags": [
+   "プライズ"
+  ],
+  "firstSeen": "2026-11-04"
+ },
+ {
   "id": "g_wafer_vol7",
   "title": "ホロライブプロダクション ウエハースvol.7（カード付・全32種）",
   "members": [],
@@ -554,8 +870,8 @@
   "channel": "online",
   "origin": "licensed",
   "release": true,
-  "startLabel": "2026年12月発売予定",
-  "sale": "予約受付中",
+  "startLabel": "2026年12月発売予定（予約受付は終了）",
+  "sale": "予約受付終了（あみあみ）",
   "start": "2026-12-01",
   "end": "",
   "venues": [],
@@ -563,13 +879,14 @@
   "ship": "2026年12月発売予定",
   "shop": "あみあみ（予約受付）／クレーネル",
   "url": "https://www.amiami.jp/top/detail/detail?gcode=FIGURE-169911",
-  "source": "あみあみ 商品ページ（2026-11-02 確認、予約受付中）",
+  "source": "あみあみ 商品ページ（2026-11-04 確認、予約ボタンなし）",
   "note": "お一人様1個まで。発売時期は販売店の掲載による予定で、変更される場合があります。",
   "tags": [
-   "予約受付中",
    "再販売"
   ],
-  "firstSeen": "2026-11-02"
+  "firstSeen": "2026-11-02",
+  "changed": "2026-11-04",
+  "changeNote": "あみあみの予約受付が終了"
  },
  {
   "id": "a_GOODS_04806749",

@@ -41,6 +41,7 @@ SOURCES = [
     ('アニメ！アニメ！', 'https://animeanime.jp/rss/index.rdf', 'feed'),
     ('ホロライビュアーズ', 'https://holoviewers.net/feed/', 'feed'),
     ('コラボカフェ（ホロライブの記事一覧）', 'https://collabo-cafe.com/events/category/hololive/', 'collabo'),
+    ('HoloIndex（記事一覧）', 'https://holoindex.com/articles', 'holoindex'),
 ]
 
 HOLO = re.compile(r'ホロライブ|hololive|ホロカ|ホロスターズ|holostars|holoX|ReGLOSS|FLOW GLOW|アソビ★まわり隊', re.I)
@@ -50,6 +51,7 @@ GOODS = re.compile(r'グッズ|コラボ|発売|予約|販売|受注|キャン�
                    r'PCケース|キーキャップ|マウスパッド|香水|フレグランス|ブルーレイ|Blu-ray|写真集|画集|コミック', re.I)
 # ホロライブ専門の情報源（ここの記事はグッズらしい言葉がなくても候補にする）
 HOLO_ONLY = ('PR TIMES（カバー株式会社）', '公式ショップ お知らせ', 'ホロライビュアーズ', 'コラボカフェ（ホロライブの記事一覧）')
+# HoloIndex は配信の話題も多いので、グッズらしい言葉がある記事だけを候補にする（HOLO_ONLY には入れない）
 SKIP = re.compile(r'配信開始|視聴|再生数|登録者|出演|ゲスト|インタビュー|ランキング|アンケート|求人|採用|決算|ライブ配信のお知らせ|不具合|'
                   r'メンテナンス|配送|ペイディ|キャッシュバック|関税|お詫び|不備|発送に関する|オフィシャルレポート|事前登録|ゲームジャム|スポンサー|【終了】|開催終了|ログイン|確認画面|引くべき')
 GENERIC = re.compile(r'ホロライブプロダクション|ホロライブ|hololive|production|プロダクション|オフィシャル|公式|グッズ|コラボ(レーション)?|'
@@ -117,6 +119,18 @@ def parse_collabo(text):
     return out
 
 
+def parse_holoindex(text):
+    """HoloIndex の記事一覧からタイトルとURLを取る（タイトル末尾の「ニュース 11/3(火)」などは除く）。"""
+    out, seen = [], set()
+    for m in re.finditer(r'<a[^>]+href="(/articles/[^"]+)"[^>]*>([\s\S]{0,1500}?)</a>', text):
+        url = 'https://holoindex.com' + m.group(1)
+        title = re.sub(r'\s*(ニュース|まとめ|ゲーム|ホロカ)?\s*\d{1,2}/\d{1,2}\([^)]*\).*$', '', clean(m.group(2)))
+        if len(title) > 10 and url not in seen:
+            seen.add(url)
+            out.append({'title': title[:160], 'url': url, 'date': '', 'text': ''})
+    return out
+
+
 def key(s):
     return GENERIC.sub('', s.lower())
 
@@ -159,6 +173,8 @@ def main():
                 entries = parse_feed(text)
             elif kind == 'prtimes':
                 entries = parse_links(text, r'/main/html/rd/p/[0-9.]+\.html')
+            elif kind == 'holoindex':
+                entries = parse_holoindex(text)
             else:
                 entries = parse_collabo(text)
             for e in entries:
