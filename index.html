@@ -170,6 +170,13 @@ details[open] > summary > .fbtn .when-closed { display: none; }
 .fall-body .controls { gap: 8px 14px; }
 .fd > summary { min-height: 32px; }
 .fbody { padding: 8px 0 2px 72px; }
+.apply-bar { position: sticky; bottom: 0; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; justify-content: flex-end; padding: 10px 0 8px; margin-top: 2px; border-top: 1px solid var(--line); background: var(--surface); z-index: 2; }
+.apply { height: 40px; padding: 0 20px; border-radius: 999px; border: 0; background: var(--accent); color: var(--accent-ink); font-size: 14px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 2px; box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 35%, transparent); }
+.apply:hover { filter: brightness(1.08); }
+.apply:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.apply.ready { animation: applyPulse 1.6s ease-in-out infinite; }
+@keyframes applyPulse { 50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 28%, transparent); } }
+#applyCount { font-family: var(--f-num); font-size: 12.5px; }
 .fbody .hint { font-size: 12px; color: var(--muted); margin: 0 0 6px; }
 @media (max-width: 640px) {
   .fall > summary, .fd > summary { grid-template-columns: 1fr auto; grid-template-areas: "lab btn" "sel sel"; gap: 4px 8px; }
@@ -181,6 +188,9 @@ details[open] > summary > .fbtn .when-closed { display: none; }
   .fall-body .frow > .flabel { padding-top: 0; }
   .fbody { padding-left: 0; }
   .qbar .navrow > .flabel { display: none; }
+  .apply-bar { justify-content: stretch; }
+  .apply { flex: 1 1 100%; justify-content: center; }
+  .apply-bar .note-sm { order: 2; width: 100%; text-align: center; }
   .qbar { gap: 6px; padding: 6px 8px; }
   .qbar .search { order: 1; flex: 1 1 0; }
   .qbar #resetBtn { order: 2; padding: 0 10px; }
@@ -450,6 +460,7 @@ dl.spec .vn small { color: var(--muted); }
         <div class="frow"><span class="flabel">種別</span><div class="chips" id="catChips"></div></div>
         <div class="frow"><span class="flabel">販売方法</span><div class="chips" id="chChips"></div></div>
         <div class="frow"><span class="flabel">販売元</span><div class="chips" id="orChips"></div></div>
+        <div class="apply-bar"><span class="note-sm">選び終わったら押すと、カレンダーに反映して閉じます</span><button type="button" class="apply" id="applyBtn">この条件で表示する<span id="applyCount"></span></button></div>
       </div>
     </details>
   </section>
@@ -918,9 +929,9 @@ dl.spec .vn small { color: var(--muted); }
   const toggleIn = (set, k) => { set.has(k) ? set.delete(k) : set.add(k); };
 
   $('q').addEventListener('input', e => { st.q = e.target.value; render(); });
-  $('sort').addEventListener('change', e => { st.sort = e.target.value; store.set('sort', st.sort); render(); foldSoon(true); });
-  $('span').addEventListener('change', e => { st.span = Number(e.target.value); store.set('span', st.span); render(); foldSoon(true); });
-  $('zoom').addEventListener('change', e => { st.dayW = Number(e.target.value); store.set('dayW', st.dayW); render(); foldSoon(true); });
+  $('sort').addEventListener('change', e => { st.sort = e.target.value; store.set('sort', st.sort); panelChanged(); });
+  $('span').addEventListener('change', e => { st.span = Number(e.target.value); store.set('span', st.span); panelChanged(); });
+  $('zoom').addEventListener('change', e => { st.dayW = Number(e.target.value); store.set('dayW', st.dayW); panelChanged(); });
   document.querySelector('.nav').addEventListener('click', e => { const b = e.target.closest('[data-shift]'); if (!b) return; st.viewStart += Number(b.dataset.shift); render(); });
   $('todayBtn').addEventListener('click', () => { st.viewStart = TODAY - 7; render(); $('board').scrollLeft = 0; });
   // スマホでは検索バーを低く保つため、開始日の入力を「条件」の表示の行へ移す
@@ -933,26 +944,32 @@ dl.spec .vn small { color: var(--muted); }
   placeStartDate();
   if (phoneMQ && phoneMQ.addEventListener) phoneMQ.addEventListener('change', placeStartDate);
   $('startDate').addEventListener('change', e => { if (e.target.value) { st.viewStart = toDay(e.target.value); render(); } });
-  $('showOpen').addEventListener('change', e => { st.showOpen = e.target.checked; store.set('showOpen', st.showOpen); render(); });
-  $('hideEnded').addEventListener('change', e => { st.hideEnded = e.target.checked; store.set('hideEnded', st.hideEnded); render(); });
-  $('oshiOnly').addEventListener('change', e => { st.oshiOnly = e.target.checked; store.set('oshiOnly', st.oshiOnly); render(); });
-  $('orChips').addEventListener('click', e => { const b = e.target.closest('[data-or]'); if (!b) return; toggleIn(st.origins, b.dataset.or); renderOrChips(); render(); });
+  $('showOpen').addEventListener('change', e => { st.showOpen = e.target.checked; store.set('showOpen', st.showOpen); panelChanged(); });
+  $('hideEnded').addEventListener('change', e => { st.hideEnded = e.target.checked; store.set('hideEnded', st.hideEnded); panelChanged(); });
+  $('oshiOnly').addEventListener('change', e => { st.oshiOnly = e.target.checked; store.set('oshiOnly', st.oshiOnly); panelChanged(); });
+  $('orChips').addEventListener('click', e => { const b = e.target.closest('[data-or]'); if (!b) return; toggleIn(st.origins, b.dataset.or); renderOrChips(); panelChanged(); });
   $('resetBtn').addEventListener('click', resetFilters);
 
-  /* 折りたたみ：最初は開いておき、並び順などを選んだら自動で閉じる。
-     チップ（複数選べる項目）は続けて選べるよう、選んだあとマウスがパネルから出たとき・パネルの外を押したときに閉じる */
-  let picked = false, foldTimer = 0;
-  function foldSoon(now) {
-    if (now) { picked = false; clearTimeout(foldTimer); foldTimer = setTimeout(() => { $('fdAll').open = false; }, 250); }
-    else picked = true;
+  /* 条件パネル：最初は開いておく。中で選んだものは「この条件で表示する」を押したとき（または閉じたとき）にまとめてカレンダーへ反映 */
+  let pending = false;
+  function panelChanged() {
+    pending = true;
+    renderSel();
+    $('applyCount').textContent = `（${visibleItems().length}件）`;
+    $('applyBtn').classList.add('ready');
   }
-  $('filterPanel').addEventListener('change', e => { if (e.target.matches('input[type="checkbox"]')) foldSoon(false); });
-  $('filterPanel').addEventListener('click', e => {
-    // チップは押すと描き直されて文書から外れるので、押した時点の経路で判定する
-    if (e.target.closest('[data-gen],[data-tag],[data-cat],[data-ch],[data-or],[data-member]')
-      && e.composedPath().some(n => n.classList && n.classList.contains('fall-body'))) foldSoon(false);
+  function applyPanel() {
+    if (pending) { pending = false; render(); }
+    $('applyCount').textContent = '';
+    $('applyBtn').classList.remove('ready');
+  }
+  $('applyBtn').addEventListener('click', () => {
+    applyPanel();
+    $('fdAll').open = false;
+    const top = $('filterPanel').getBoundingClientRect().top;
+    if (top < 0) window.scrollBy({ top: top - 80, behavior: 'smooth' });
   });
-  $('filterPanel').addEventListener('mouseleave', () => { if (picked && $('fdAll').open) { picked = false; $('fdAll').open = false; } });
+  $('fdAll').addEventListener('toggle', () => { if (!$('fdAll').open) applyPanel(); });
   /* パネルの外（カレンダーなど）を押すと閉じる・選択中の × で解除 */
   // pointerdown で閉じると押した瞬間に表がずれて押し間違えるので、クリックが終わってから閉じる
   document.addEventListener('click', e => {
@@ -972,17 +989,17 @@ dl.spec .vn small { color: var(--muted); }
     renderAllChips(); render();
   });
 
-  $('tagChips').addEventListener('click', e => { const b = e.target.closest('[data-tag]'); if (!b) return; toggleIn(st.tags, b.dataset.tag); renderTagChips(); render(); });
+  $('tagChips').addEventListener('click', e => { const b = e.target.closest('[data-tag]'); if (!b) return; toggleIn(st.tags, b.dataset.tag); renderTagChips(); panelChanged(); });
   $('summary').addEventListener('click', e => { if (!e.target.closest('[data-newstat]')) return; toggleIn(st.tags, 'NEW'); renderTagChips(); render(); });
-  $('genChips').addEventListener('click', e => { const b = e.target.closest('[data-gen]'); if (!b) return; toggleIn(st.gens, b.dataset.gen); renderGenChips(); render(); });
-  $('catChips').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; toggleIn(st.cats, b.dataset.cat); renderCatChips(); render(); });
-  $('chChips').addEventListener('click', e => { const b = e.target.closest('[data-ch]'); if (!b) return; toggleIn(st.channels, b.dataset.ch); renderChChips(); render(); });
+  $('genChips').addEventListener('click', e => { const b = e.target.closest('[data-gen]'); if (!b) return; toggleIn(st.gens, b.dataset.gen); renderGenChips(); panelChanged(); });
+  $('catChips').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; toggleIn(st.cats, b.dataset.cat); renderCatChips(); panelChanged(); });
+  $('chChips').addEventListener('click', e => { const b = e.target.closest('[data-ch]'); if (!b) return; toggleIn(st.channels, b.dataset.ch); renderChChips(); panelChanged(); });
   $('memberChips').addEventListener('click', e => {
     const mb = e.target.closest('[data-member]'), ob = e.target.closest('[data-oshi]');
     if (mb) toggleIn(st.members, mb.dataset.member);
     else if (ob) { toggleIn(st.oshi, ob.dataset.oshi); store.set('oshi', [...st.oshi]); }
     else return;
-    renderMemberChips(); render();
+    renderMemberChips(); panelChanged();
   });
   $('board').addEventListener('click', e => {
     if (e.target.closest('[data-reset]')) { resetFilters(); return; }
