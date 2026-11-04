@@ -55,24 +55,27 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #9AA3B6;
+    --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #B9C1D0;
     --line: #283041; --line-strong: #39435A; --accent: #5C9CEC; --accent-ink: #0C1320; --accent-soft: #1A2A42;
-    --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #6D778B; --star: #FFCB45;
+    --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #8E98AC; --star: #FFCB45;
     --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5; --c-campaign: #3CC98A; --soon: #FFD23F; --soon-ink: #1A1600; --soon-tint: 16%;
     --shadow: 0 10px 30px rgba(0, 0, 0, .5);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #9AA3B6;
+  --bg: #0F131B; --surface: #161B25; --surface-2: #1B2130; --ink: #E6EAF2; --muted: #B9C1D0;
   --line: #283041; --line-strong: #39435A; --accent: #5C9CEC; --accent-ink: #0C1320; --accent-soft: #1A2A42;
-  --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #6D778B; --star: #FFCB45;
+  --weekend: #131824; --sun: #F07D8C; --sat: #7EA9F2; --today: #FF6B6E; --ok: #4CC384; --warn: #F08C57; --dim: #8E98AC; --star: #FFCB45;
   --c-birthday: #EC78AC; --c-anniv: #9882F6; --c-unit: #6A9DEB; --c-digital: #2DBFB3; --c-collab: #EBA556; --c-event: #EE6F8D; --c-other: #8794AD; --c-hocg: #4DB8E4; --c-prize: #E0B040; --c-kuji: #F08A4B; --c-figure: #8B87F5; --c-campaign: #3CC98A; --soon: #FFD23F; --soon-ink: #1A1600; --soon-tint: 16%;
   --shadow: 0 10px 30px rgba(0, 0, 0, .5);
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
+::placeholder { color: var(--dim); opacity: 1; }
+:root[data-theme="dark"] .flabel, :root[data-theme="dark"] .fsel .val, :root[data-theme="dark"] .meta, :root[data-theme="dark"] .day, :root[data-theme="dark"] .gen-name { font-weight: 500; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .fsel .val, :root:not([data-theme="light"]) .meta, :root:not([data-theme="light"]) .day, :root:not([data-theme="light"]) .gen-name { font-weight: 500; } }
 [hidden] { display: none !important; }
 body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.55; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
@@ -113,7 +116,7 @@ button, input, select { font: inherit; color: inherit; }
 
 /* ---------- sticky search bar ---------- */
 .qbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 8; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 10px; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 10px; }
-.search { flex: 1 1 240px; min-width: 0; position: relative; }
+.search { flex: 1 1 260px; min-width: 0; position: relative; }
 .search input { width: 100%; height: 38px; padding: 0 12px 0 34px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); }
 .search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--muted); }
 .toggle { height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; }
@@ -124,9 +127,9 @@ button, input, select { font: inherit; color: inherit; }
 .reset:hover { color: var(--ink); border-color: var(--ink); }
 
 /* ---------- filter panel ---------- */
-.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 12px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; display: grid; gap: 12px; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
-.field { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.field { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; color: var(--muted); }
 .field select, .field input[type="date"] { height: 34px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); padding: 0 8px; font-size: 13px; color: var(--ink); }
 .nav { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
 .nav button { height: 34px; padding: 0 12px; border: 0; background: var(--surface-2); cursor: pointer; font-size: 13px; }
@@ -135,13 +138,11 @@ button, input, select { font: inherit; color: inherit; }
 .check { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; user-select: none; }
 .check input { width: 16px; height: 16px; accent-color: var(--accent); }
 
-.navrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.navrow > .field { margin-left: 6px; }
+.qbar .navrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; flex: 0 1 auto; }
+.qbar .navrow > .flabel { padding: 0 2px 0 6px; }
 .flabel { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; }
-.navrow > .flabel { width: 64px; }
-.fall { border-top: 1px solid var(--line); }
 .fall > summary, .fd > summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 64px 1fr auto; gap: 8px; align-items: center; }
-.fall > summary { min-height: 40px; padding-top: 8px; }
+.fall > summary { min-height: 32px; }
 .fall > summary::-webkit-details-marker, .fd > summary::-webkit-details-marker { display: none; }
 .fall > summary:focus-visible, .fd > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
 .fsel { display: flex; flex-wrap: wrap; gap: 4px 6px; min-width: 0; align-items: center; }
@@ -179,7 +180,17 @@ details[open] > summary > .fbtn .when-closed { display: none; }
   .fall-body .frow { grid-template-columns: 1fr; gap: 4px; }
   .fall-body .frow > .flabel { padding-top: 0; }
   .fbody { padding-left: 0; }
-  .navrow > .flabel { width: auto; }
+  .qbar .navrow > .flabel { display: none; }
+  .qbar { gap: 6px; padding: 6px 8px; }
+  .qbar .search { order: 1; flex: 1 1 0; }
+  .qbar #resetBtn { order: 2; padding: 0 10px; }
+  .qbar .navrow { order: 3; flex: 1 1 100%; }
+  .qbar .nav { display: flex; width: 100%; }
+  .qbar .nav button { flex: 1 1 0; padding: 0 4px; }
+  .qbar #addBtn, .qbar #submitLink { order: 4; }
+  /* 帯の見方はスマホでは1行にして横にスクロール */
+  .board-wrap .legend { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; }
+  .board-wrap .legend span, .board-wrap .legend b { flex: none; }
 }
 .gens { display: grid; gap: 6px; margin-top: 8px; }
 .gen { display: grid; grid-template-columns: 150px 1fr; gap: 8px; align-items: start; }
@@ -280,9 +291,13 @@ button.stat.on { border-color: var(--today); background: color-mix(in srgb, var(
 
 .empty { padding: 48px 16px; text-align: center; color: var(--muted); display: grid; gap: 12px; justify-items: center; position: sticky; left: 0; width: min(100%, 100vw - 64px); }
 
-.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--muted); padding: 10px 14px; border-top: 1px solid var(--line); align-items: center; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11.5px; color: var(--muted); padding: 7px 12px; border-bottom: 1px solid var(--line); align-items: center; line-height: 1.4; }
+.legend b { color: var(--ink); font-weight: 700; margin-right: -4px; }
+.legend .sep { width: 1px; height: 12px; background: var(--line-strong); }
+.legend .sw.soon { background: transparent; border: 2px solid var(--soon); }
+.legend .sw.fade { background: var(--dim); opacity: .45; }
 .legend span { display: inline-flex; gap: 6px; align-items: center; }
-.legend .sw { width: 22px; height: 10px; border-radius: 3px; }
+.legend .sw { width: 18px; height: 10px; border-radius: 3px; flex: none; }
 .legend .sw.hatch { background: repeating-linear-gradient(135deg, var(--dim) 0 3px, transparent 3px 6px); border: 1px dashed var(--dim); }
 .foot { font-size: 12px; color: var(--muted); margin: 0; }
 
@@ -350,7 +365,7 @@ dl.spec .vn small { color: var(--muted); }
   .ttl { font-size: 12px; }
   .meta .who { display: none; }
   .row { min-height: 64px; }
-  .toggle .lbl { display: none; }
+  
 }
 @media (hover: none) { .tip { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
@@ -378,14 +393,7 @@ dl.spec .vn small { color: var(--muted); }
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input id="q" type="search" placeholder="商品名・メンバー名・会場・タグで検索（ひらがな可）" autocomplete="off">
     </label>
-    <button type="button" class="toggle" id="togglePanel" aria-expanded="true" aria-controls="filterPanel"><span class="chev">▾</span><span class="lbl">絞り込み・表示設定</span><span class="count" id="activeCount" hidden></span></button>
-    <button type="button" class="reset" id="resetBtn">条件をクリア</button>
-    <button type="button" class="addbtn" id="addBtn" hidden>＋ 商品を追加</button>
-    <a class="reset" id="submitLink" href="#" target="_blank" rel="noopener" hidden style="display:inline-flex;align-items:center;text-decoration:none">情報提供（Discord）</a>
-  </div>
-
-  <section class="panel" id="filterPanel" aria-label="絞り込みと表示設定">
-    <div class="navrow" role="group" aria-label="表示期間">
+    <div class="navrow" id="navrow" role="group" aria-label="表示期間">
       <span class="flabel">期間</span>
       <div class="nav" role="group" aria-label="表示期間の移動">
         <button type="button" data-shift="-30" title="1か月前へ">« 1か月</button>
@@ -396,10 +404,16 @@ dl.spec .vn small { color: var(--muted); }
       </div>
       <label class="field" for="startDate">開始日 <input type="date" id="startDate"></label>
     </div>
-    <details class="fall" id="fdAll">
+    <button type="button" class="reset" id="resetBtn">条件をクリア</button>
+    <button type="button" class="addbtn" id="addBtn" hidden>＋ 商品を追加</button>
+    <a class="reset" id="submitLink" href="#" target="_blank" rel="noopener" hidden style="display:inline-flex;align-items:center;text-decoration:none">情報提供（Discord）</a>
+  </div>
+
+  <section class="panel" id="filterPanel" aria-label="絞り込みと表示設定">
+    <details class="fall" id="fdAll" open>
       <summary><span class="flabel">条件</span><span class="fsel" id="selAll"></span><span class="fbtn"><svg class="chev" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="when-closed">開く</span><span class="when-open">閉じる</span></span></summary>
       <div class="fall-body">
-        <div class="frow"><span class="flabel">表示</span><div class="controls">
+        <div class="frow"><span class="flabel">表示</span><div class="controls" id="viewControls">
       <label class="field" for="sort">並び順
         <select id="sort">
           <option value="start">開始日順</option>
@@ -441,8 +455,8 @@ dl.spec .vn small { color: var(--muted); }
   </section>
 
   <section class="board-wrap" aria-label="販売スケジュール">
+    <div class="legend" id="legend" aria-label="帯の見方"></div>
     <div class="board" id="board"></div>
-    <div class="legend" id="legend"></div>
   </section>
 
   <p class="foot" id="foot"></p>
@@ -543,7 +557,6 @@ dl.spec .vn small { color: var(--muted); }
     origins: new Set(),
     hideEnded: !!store.get('hideEnded', false),
     showOpen: !!store.get('showOpen', false),
-    panelOpen: store.get('panelOpen', true) !== false,
     sort: store.get('sort', 'start'),
     span: Number(store.get('span', 61)),
     dayW: Number(store.get('dayW', 24)),
@@ -594,8 +607,9 @@ dl.spec .vn small { color: var(--muted); }
   function renderCatChips() {
     const used = CAT_KEYS.filter(k => D.categories[k]);
     $('catChips').innerHTML = used.map(k => chip('data-cat', k, D.categories[k].label, st.cats.has(k), `var(--c-${k})`)).join('');
-    $('legend').innerHTML = used.map(k => `<span><i class="sw" style="background:var(--c-${k})"></i>${esc(D.categories[k].label)}</span>`).join('')
-      + `<span><span class="badge off">公式</span>公式オンラインショップ</span><span><i class="sw hatch"></i>非公式（同人・ファンメイド）</span><span><i class="sw" style="background:var(--today);width:2px"></i>今日</span><span>破線の端＝表示期間の外へ続く</span>`;
+    $('legend').innerHTML = '<b>帯の色＝種別</b>' + used.map(k => `<span><i class="sw" style="background:var(--c-${k})"></i>${esc(D.categories[k].label)}</span>`).join('')
+      + '<i class="sep" aria-hidden="true"></i><span><i class="sw soon"></i>黄色の枠＝3日以内に締切</span><span><i class="sw fade"></i>薄い帯＝終了・完売</span>'
+      + '<span><i class="sw hatch"></i>斜線＝非公式</span><span><i class="sw" style="background:var(--today);width:2px"></i>今日</span><span>端が点線＝表示期間の外へ続く</span>';
   }
   function renderChChips() {
     $('chChips').innerHTML = Object.keys(CH).map(k => chip('data-ch', k, CH[k], st.channels.has(k))).join('');
@@ -777,13 +791,6 @@ dl.spec .vn small { color: var(--muted); }
       + `<span class="stat">表示中<strong>${list.length}</strong>／全${items.length}件</span>`;
   }
 
-  function renderPanelState() {
-    $('filterPanel').hidden = !st.panelOpen;
-    $('togglePanel').setAttribute('aria-expanded', String(st.panelOpen));
-    const n = activeCount();
-    $('activeCount').hidden = n === 0;
-    $('activeCount').textContent = n;
-  }
 
   function render() {
     hideTip();
@@ -791,7 +798,6 @@ dl.spec .vn small { color: var(--muted); }
     const list = visibleItems();
     renderSummary(list);
     renderBoard(list);
-    renderPanelState();
     $('openCount').textContent = `（${items.filter(it => it.openEnd && !it.release).length}件）`;
     $('startDate').value = ymd(st.viewStart);
   }
@@ -912,12 +918,20 @@ dl.spec .vn small { color: var(--muted); }
   const toggleIn = (set, k) => { set.has(k) ? set.delete(k) : set.add(k); };
 
   $('q').addEventListener('input', e => { st.q = e.target.value; render(); });
-  $('togglePanel').addEventListener('click', () => { st.panelOpen = !st.panelOpen; store.set('panelOpen', st.panelOpen); renderPanelState(); });
-  $('sort').addEventListener('change', e => { st.sort = e.target.value; store.set('sort', st.sort); render(); });
-  $('span').addEventListener('change', e => { st.span = Number(e.target.value); store.set('span', st.span); render(); });
-  $('zoom').addEventListener('change', e => { st.dayW = Number(e.target.value); store.set('dayW', st.dayW); render(); });
+  $('sort').addEventListener('change', e => { st.sort = e.target.value; store.set('sort', st.sort); render(); foldSoon(true); });
+  $('span').addEventListener('change', e => { st.span = Number(e.target.value); store.set('span', st.span); render(); foldSoon(true); });
+  $('zoom').addEventListener('change', e => { st.dayW = Number(e.target.value); store.set('dayW', st.dayW); render(); foldSoon(true); });
   document.querySelector('.nav').addEventListener('click', e => { const b = e.target.closest('[data-shift]'); if (!b) return; st.viewStart += Number(b.dataset.shift); render(); });
   $('todayBtn').addEventListener('click', () => { st.viewStart = TODAY - 7; render(); $('board').scrollLeft = 0; });
+  // スマホでは検索バーを低く保つため、開始日の入力を「条件」の表示の行へ移す
+  const phoneMQ = window.matchMedia ? matchMedia('(max-width: 640px)') : null;
+  function placeStartDate() {
+    const f = $('startDate').closest('label');
+    const to = phoneMQ && phoneMQ.matches ? $('viewControls') : $('navrow');
+    if (f.parentElement !== to) to.appendChild(f);
+  }
+  placeStartDate();
+  if (phoneMQ && phoneMQ.addEventListener) phoneMQ.addEventListener('change', placeStartDate);
   $('startDate').addEventListener('change', e => { if (e.target.value) { st.viewStart = toDay(e.target.value); render(); } });
   $('showOpen').addEventListener('change', e => { st.showOpen = e.target.checked; store.set('showOpen', st.showOpen); render(); });
   $('hideEnded').addEventListener('change', e => { st.hideEnded = e.target.checked; store.set('hideEnded', st.hideEnded); render(); });
@@ -925,7 +939,21 @@ dl.spec .vn small { color: var(--muted); }
   $('orChips').addEventListener('click', e => { const b = e.target.closest('[data-or]'); if (!b) return; toggleIn(st.origins, b.dataset.or); renderOrChips(); render(); });
   $('resetBtn').addEventListener('click', resetFilters);
 
-  /* 折りたたみ：パネルの外（カレンダーなど）を押すと閉じる・選択中の × で解除 */
+  /* 折りたたみ：最初は開いておき、並び順などを選んだら自動で閉じる。
+     チップ（複数選べる項目）は続けて選べるよう、選んだあとマウスがパネルから出たとき・パネルの外を押したときに閉じる */
+  let picked = false, foldTimer = 0;
+  function foldSoon(now) {
+    if (now) { picked = false; clearTimeout(foldTimer); foldTimer = setTimeout(() => { $('fdAll').open = false; }, 250); }
+    else picked = true;
+  }
+  $('filterPanel').addEventListener('change', e => { if (e.target.matches('input[type="checkbox"]')) foldSoon(false); });
+  $('filterPanel').addEventListener('click', e => {
+    // チップは押すと描き直されて文書から外れるので、押した時点の経路で判定する
+    if (e.target.closest('[data-gen],[data-tag],[data-cat],[data-ch],[data-or],[data-member]')
+      && e.composedPath().some(n => n.classList && n.classList.contains('fall-body'))) foldSoon(false);
+  });
+  $('filterPanel').addEventListener('mouseleave', () => { if (picked && $('fdAll').open) { picked = false; $('fdAll').open = false; } });
+  /* パネルの外（カレンダーなど）を押すと閉じる・選択中の × で解除 */
   // pointerdown で閉じると押した瞬間に表がずれて押し間違えるので、クリックが終わってから閉じる
   document.addEventListener('click', e => {
     // チップは押すと描き直されて文書から外れるので、押した時点の経路で判定する
