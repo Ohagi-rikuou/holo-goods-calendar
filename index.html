@@ -240,6 +240,8 @@ details[open] > summary > .fbtn .when-closed { display: none; }
 .pill.st-upcoming { color: var(--accent); }
 .pill.st-ended, .pill.st-soldout { color: var(--dim); }
 .pill.st-soldout { border-style: dashed; }
+.pill.st-restock { color: var(--accent); border-style: dashed; }
+.pill.st-resumed { color: var(--ok); }
 .badge { border-radius: 4px; }
 .badge.off { color: var(--accent); background: var(--accent-soft); border-color: transparent; }
 .badge.unoff { color: var(--warn); border-style: dashed; }
@@ -503,7 +505,7 @@ dl.spec .vn small { color: var(--muted); }
   const labelOf = (it, s) => s === 'soon' ? (it.e - TODAY === 0 ? '本日締切' : `あと${it.e - TODAY}日`)
     : s === 'open' && it.category === 'prize' ? '登場中' : s === 'open' && it.release ? '発売中' : STATUS_LABEL[s];
   const pillCls = (it, s) => `pill st-${s}${s === 'soon' && it.e - TODAY === 0 ? ' is-last' : ''}`;
-  const STATUS_LABEL = { upcoming: '予定', open: '受付中', soon: 'まもなく締切', ended: '終了', soldout: '完売' };
+  const STATUS_LABEL = { upcoming: '予定', open: '受付中', soon: 'まもなく締切', ended: '終了', soldout: '完売', restock: '再入荷予定', resumed: '販売再開' };
 
   const toDay = s => { const [y, m, d] = String(s).split('-').map(Number); return Math.round(Date.UTC(y, m - 1, d) / MS); };
   const now = new Date();
@@ -564,7 +566,7 @@ dl.spec .vn small { color: var(--muted); }
     items = baseItems.concat(manualRaw.map(prep));
     itemById = new Map(items.map(it => [it.id, it]));
   }
-  const statusOf = it => it.soldOut ? 'soldout' : TODAY < it.s ? 'upcoming' : TODAY > it.e ? 'ended' : (it.e - TODAY <= 3 ? 'soon' : 'open');
+  const statusOf = it => it.status === 'restock' ? 'restock' : it.status === 'resumed' ? 'resumed' : it.soldOut ? 'soldout' : TODAY < it.s ? 'upcoming' : TODAY > it.e ? 'ended' : (it.e - TODAY <= 3 ? 'soon' : 'open');
   const prefShort = it => !it.venues.length ? '' : it.venues[0].pref + (it.venues.length > 1 ? `ほか${it.venues.length - 1}` : '');
   const nameWithMark = m => (m.mark ? m.mark + ' ' : '') + m.name;
 
@@ -698,7 +700,7 @@ dl.spec .vn small { color: var(--muted); }
     const who = st.gens.size || st.members.size;
     const list = items.filter(it => {
       if (st.hideEnded && statusOf(it) === 'ended') return false;
-      if (!st.showOpen && it.openEnd && !it.release) return false;
+      if (!st.showOpen && it.openEnd && !it.release && !it.status) return false;
       if (st.origins.size && !st.origins.has(it.origin)) return false;
       if (st.cats.size && !st.cats.has(it.cat.key)) return false;
       if (st.channels.size && !st.channels.has(it.channel)) return false;
@@ -737,7 +739,8 @@ dl.spec .vn small { color: var(--muted); }
   const headBadges = it => it.tagList.filter(t => t === 'NEW' || t === '更新').map(tagBadge).join('');
   const officialBadge = it => it.origin === 'shop' ? '<span class="badge off" title="公式オンラインショップの商品">公式</span>'
     : it.origin === 'unofficial' ? '<span class="badge unoff" title="同人・ファンメイドなど">非公式</span>' : '';
-  const rangeText = it => it.startLabel ? it.startLabel : it.release ? `${md(it.s)} 発売` : it.openEnd ? `${md(it.s)}〜` : `${md(it.s)}–${md(it.e)}`;
+  const STATUS_RANGE = { soldout: '売り切れ', restock: '〜 再入荷予定', resumed: '販売再開' };
+  const rangeText = it => it.status ? `${md(it.s)} ${STATUS_RANGE[it.status]}` : it.startLabel ? it.startLabel : it.release ? `${md(it.s)} 発売` : it.openEnd ? `${md(it.s)}〜` : `${md(it.s)}–${md(it.e)}`;
 
   function rowHTML(it, x0, n, w) {
     const status = statusOf(it);
@@ -810,9 +813,9 @@ dl.spec .vn small { color: var(--muted); }
   }
 
   function renderSummary(list) {
-    const c = { open: 0, soon: 0, upcoming: 0, ended: 0, soldout: 0 };
+    const c = { open: 0, soon: 0, upcoming: 0, ended: 0, soldout: 0, restock: 0, resumed: 0 };
     list.forEach(it => c[statusOf(it)]++);
-    const nNew = items.filter(it => it.tagList.includes('NEW') && (st.showOpen || !it.openEnd || it.release)).length;
+    const nNew = items.filter(it => it.tagList.includes('NEW') && (st.showOpen || !it.openEnd || it.release || it.status)).length;
     $('summary').innerHTML =
       `<button type="button" class="stat s-new${st.tags.has('NEW') ? ' on' : ''}" data-newstat aria-pressed="${st.tags.has('NEW')}" title="初めて掲載されてから${NEW_DAYS}日以内の商品">NEW<small style="font-size:11px">（掲載${NEW_DAYS}日以内）</small><strong>${nNew}</strong></button>`
       + `<span class="stat s-open">受付中<strong>${c.open}</strong></span>`
@@ -829,14 +832,16 @@ dl.spec .vn small { color: var(--muted); }
     const list = visibleItems();
     renderSummary(list);
     renderBoard(list);
-    $('openCount').textContent = `（${items.filter(it => it.openEnd && !it.release).length}件）`;
+    $('openCount').textContent = `（${items.filter(it => it.openEnd && !it.release && !it.status).length}件）`;
     $('startDate').value = ymd(st.viewStart);
   }
 
   /* ---------- shared detail text ---------- */
   function remainText(it) {
     const s = statusOf(it);
-    if (s === 'soldout') return '完売（販売元の在庫なし）';
+    if (s === 'restock') return '売り切れ中・再入荷予定（入荷日は販売ページで確認）';
+    if (s === 'resumed') return '在庫が戻り、販売中';
+    if (s === 'soldout') return it.status ? '売り切れ（通常販売の商品）' : '完売（販売元の在庫なし）';
     if (it.category === 'prize') return TODAY < it.s ? `登場まであと約${it.s - TODAY}日` : '登場済み（店舗により終了している場合あり）';
     if (it.release) return TODAY < it.s ? `発売まであと${it.s - TODAY}日` : '発売中';
     if (s === 'upcoming') return `開始まであと${it.s - TODAY}日`;
@@ -906,7 +911,7 @@ dl.spec .vn small { color: var(--muted); }
       <div class="drawer-bd">
         <div class="period">
           <span style="font-size:12px;color:var(--muted)">販売・受注期間</span>
-          <span class="range">${it.startLabel ? esc(it.startLabel) : it.release ? full(it.s) + ' 発売' : full(it.s) + ' 〜 ' + (it.openEnd ? '終了日未定' : full(it.e))}${it.periodText ? `<br><small style="font-weight:500;color:var(--muted)">${esc(it.periodText)}</small>` : ''}</span>
+          <span class="range">${it.status ? full(it.s) + ' ' + { soldout: '売り切れを確認', restock: '再入荷予定の表示を確認', resumed: '販売再開を確認' }[it.status] : it.startLabel ? esc(it.startLabel) : it.release ? full(it.s) + ' 発売' : full(it.s) + ' 〜 ' + (it.openEnd ? '終了日未定' : full(it.e))}${it.periodText ? `<br><small style="font-weight:500;color:var(--muted)">${esc(it.periodText)}</small>` : ''}</span>
           <span class="left st-${s}">${remainText(it)}</span>
         </div>
         <dl class="spec">

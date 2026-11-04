@@ -32,6 +32,8 @@ KEEP_ENDED_DAYS = 7      # 期間終了後もこの日数は「終了」とし�
 WAIT = 1.5               # 商品ページ取得の間隔（秒）
 SKIP_TAGS = {'hololiveofficialcardgame_Englishedition'}   # 日本の公式ショップでは買えない英語版
 SKIP_HANDLES = set()
+# 通常販売（期限なし）の定番商品。ショップ全体から在庫の変化（売り切れ・再入荷予定・販売再開）だけを見張る
+REGULAR_LINES = re.compile(r'hololive friends|Regular Outfit', re.I)
 
 log = print
 
@@ -209,6 +211,29 @@ def new_item(product, info):
     return item
 
 
+def watch_item(product):
+    """通常販売の定番商品を見張り用に登録する（商品ページは読まない）。"""
+    handle, title = product['handle'], product['title'].strip()
+    tags = tags_of(product)
+    talents = [t[len('Talent_'):] for t in tags if t.startswith('Talent_')]
+    digital = is_digital(product)
+    published = jst_date(product['published_at'])
+    item = {
+        'id': 's_' + handle, 'title': title, 'members': talents,
+        'category': category(title, handle, talents, digital), 'channel': 'online', 'origin': 'shop',
+        'sale': '在庫販売', 'start': published, 'end': '', 'periodText': '', 'ship': '', 'price': yen(product),
+        'shop': 'hololive production OFFICIAL SHOP', 'url': f'{BASE}/products/{handle}',
+        'source': f'公式ショップ 商品ページ（{TODAY.isoformat()} 確認・自動取得）',
+        'tags': (['デジタル'] if digital else []) + (['再入荷予定'] if 'restock-soon' in tags else []),
+        'firstSeen': published, 'watch': True,
+    }
+    if 'restock-soon' in tags:
+        item['restockSince'] = TODAY.isoformat()
+    if not available(product):
+        item['soldOut'] = True   # 売り切れた日は不明（soldOutSince なし）なので、再入荷予定でなければ表示しない
+    return item
+
+
 def ended_long_ago(item):
     if not item.get('end'):
         return False
@@ -251,12 +276,29 @@ def main():
                 it.pop('changed', None)
                 it.pop('changeNote', None)
         elif sold != bool(it.get('soldOut')):
+            regular = not it.get('end')   # 期限なしの通常販売（カレンダーには在庫の変化だけ載せる）
             if sold:
                 it['soldOut'] = True
+                if regular:
+                    it['soldOutSince'] = TODAY.isoformat()
+                    it.pop('resumedAt', None)
                 mark_changed(it, 'SOLD OUT')
             else:
                 it.pop('soldOut', None)
+                it.pop('soldOutSince', None)
+                if regular:
+                    it['resumedAt'] = TODAY.isoformat()
                 mark_changed(it, '販売再開')
+        # 再入荷予定の印（ショップのタグ restock-soon）を毎日付け直す
+        restock = 'restock-soon' in tags_of(p)
+        tags = it.setdefault('tags', [])
+        if restock and '再入荷予定' not in tags:
+            tags.append('再入荷予定')
+            it['restockSince'] = TODAY.isoformat()
+            mark_changed(it, '再入荷予定')
+        elif not restock and '再入荷予定' in tags:
+            tags.remove('再入荷予定')
+            it.pop('restockSince', None)
         if not (it.get('end') or it.get('sale') in ('受注生産', '予約販売')):
             continue
         text = page_text(p['handle'])
@@ -303,11 +345,25 @@ def main():
         added.append(item)
         log(f'  追加: {item["title"]}（{item["sale"]}・{item["category"]}）')
 
+    # 通常販売の定番商品（ぬいぐるみ・アクスタなど）と再入荷予定の商品を見張りリストに入れる。
+    # 入れた時点で売り切れのものは、いつ売り切れたか分からないので表示しない（再入荷予定の印があるものは表示）
+    have |= {it['id'][2:] for it in added}
+    watched = []
+    for handle, p in products.items():
+        tg = tags_of(p)
+        if handle in have or handle in SKIP_HANDLES or SKIP_TAGS & set(tg):
+            continue
+        if not (REGULAR_LINES.search(p['title']) or 'restock-soon' in tg):
+            continue
+        watched.append(watch_item(p))
+    if watched:
+        log(f'  見張りに追加: {len(watched)} 件（通常販売の定番商品・再入荷予定）')
+
     for it in kept:
         if it['source'].startswith('公式ショップ 商品ページ（'):
             it['source'] = re.sub(r'（\d{4}-\d{2}-\d{2}', f'（{TODAY.isoformat()}', it['source'], count=1)
 
-    result = added[::-1] + kept
+    result = added[::-1] + kept + watched
     with open(SHOP_JSON, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=1)
     log(f'結果: 追加 {len(added)}・削除 {len(removed)}・掲載 {len(result)} 件')

@@ -12,6 +12,38 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JST = datetime.timezone(datetime.timedelta(hours=9))
+SOLDOUT_DAYS = 30   # 通常販売の商品が売り切れてから、この日数は「完売」として表示する（再入荷予定の印があれば入荷まで）
+RESUMED_DAYS = 7    # 通常販売の商品の販売再開を表示する日数
+
+
+def regular_status(it, today):
+    """公式ショップの通常販売（期限なし）の商品は、在庫の変化があるときだけ載せる。(状態, その日) を返す。"""
+    d = lambda s: datetime.date.fromisoformat(s)
+    if '再入荷予定' in it.get('tags', []):
+        return 'restock', it.get('restockSince') or it.get('changed') or it.get('firstSeen')
+    if it.get('soldOut'):
+        since = it.get('soldOutSince') or (it.get('changed') if it.get('changeNote') == 'SOLD OUT' else None) \
+            or (None if it.get('watch') else it.get('firstSeen'))
+        if since and d(since) >= today - datetime.timedelta(days=SOLDOUT_DAYS):
+            return 'soldout', since
+        return None, None
+    if it.get('resumedAt') and d(it['resumedAt']) >= today - datetime.timedelta(days=RESUMED_DAYS):
+        return 'resumed', it['resumedAt']
+    return None, None
+
+
+def publish_shop(shop, today):
+    out, hidden = [], 0
+    for it in shop:
+        if it.get('end'):
+            out.append(it)
+            continue
+        status, since = regular_status(it, today)
+        if not status:
+            hidden += 1
+            continue
+        out.append(dict(it, status=status, start=min(since, today.isoformat())))
+    return out, hidden
 
 
 def load(name):
@@ -21,7 +53,8 @@ def load(name):
 
 def build(updated=None):
     updated = updated or datetime.datetime.now(JST).date().isoformat()
-    shop, manual = load('shop.json'), load('manual.json')
+    shop_all, manual = load('shop.json'), load('manual.json')
+    shop, hidden = publish_shop(shop_all, datetime.date.fromisoformat(updated))
     master, base = load('members.json'), load('meta.json')
     items = shop + manual
 
@@ -60,7 +93,8 @@ def build(updated=None):
           ' */\nwindow.HOLO_GOODS = ' + json.dumps(data, ensure_ascii=False, indent=1) + ';\n')
     with open(os.path.join(ROOT, 'data.js'), 'w', encoding='utf-8') as f:
         f.write(js)
-    print(f'data.js: 商品 {len(items)} 件（公式ショップ {len(shop)}・その他 {len(manual)}）、メンバー {len(members)} 名')
+    print(f'data.js: 商品 {len(items)} 件（公式ショップ {len(shop)}・その他 {len(manual)}）、メンバー {len(members)} 名'
+          f'／通常販売で在庫の変化がない {hidden} 件は非表示')
 
 
 if __name__ == '__main__':
