@@ -135,24 +135,41 @@ button, input, select { font: inherit; color: inherit; }
 .check { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; user-select: none; }
 .check input { width: 16px; height: 16px; accent-color: var(--accent); }
 
-.filters { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
-.frow { display: grid; grid-template-columns: 76px 1fr; gap: 8px; align-items: start; }
-.frow > .flabel { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; padding-top: 5px; }
-.filters details > summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 76px auto 1fr; gap: 8px; align-items: center; }
-.filters details > summary::-webkit-details-marker { display: none; }
-.filters details > summary .flabel { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; }
-.mem-btn { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 700; justify-self: start; }
-.filters details > summary:hover .mem-btn { background: var(--accent); color: var(--accent-ink); }
-.mem-btn .arrow { display: inline-block; transition: transform .15s; }
-.filters details[open] > summary .arrow { transform: rotate(180deg); }
-.mem-btn .when-open { display: none; }
-.filters details[open] > summary .when-open { display: inline; }
-.filters details[open] > summary .when-closed { display: none; }
-.mem-btn .count { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-family: var(--f-num); font-size: 11px; display: inline-grid; place-items: center; }
-.mem-btn .count:empty { display: none; }
-.filters details > summary:hover .mem-btn .count { background: var(--accent-ink); color: var(--accent); }
-.filters details > summary .hint { font-size: 12px; color: var(--muted); }
-@media (max-width: 640px) { .filters details > summary { grid-template-columns: 1fr; gap: 6px; } }
+.filters { display: grid; gap: 0; }
+.navrow { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.navrow > .flabel, .fd > summary .flabel { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .06em; }
+.navrow > .flabel { width: 76px; }
+.fd { border-bottom: 1px solid var(--line); }
+.fd:last-child { border-bottom: 0; }
+.fd > summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 76px 1fr auto; gap: 8px; align-items: center; min-height: 40px; padding: 4px 0; }
+.fd > summary::-webkit-details-marker { display: none; }
+.fd > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.fsel { display: flex; flex-wrap: wrap; gap: 4px 6px; min-width: 0; align-items: center; }
+.fsel .none { font-size: 12.5px; color: var(--dim); }
+.fsel .val { font-size: 12.5px; color: var(--ink); }
+.spill { display: inline-flex; align-items: center; gap: 4px; padding: 1px 4px 1px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; border: 1px solid var(--cat, var(--accent)); background: color-mix(in srgb, var(--cat, var(--accent)) 14%, var(--surface)); color: var(--ink); --cat: var(--accent); }
+.spill i { width: 9px; height: 9px; border-radius: 3px; background: var(--cat); }
+.spill button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; line-height: 1; padding: 2px 5px; border-radius: 999px; }
+.spill button:hover { color: var(--ink); background: color-mix(in srgb, var(--cat) 25%, transparent); }
+.fd[open] > summary .fsel { visibility: hidden; }
+.fbtn { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent-soft); color: var(--accent); font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+.fd > summary:hover .fbtn { background: var(--accent); color: var(--accent-ink); }
+.fbtn .arrow { display: inline-block; transition: transform .15s; font-size: 10px; }
+.fd[open] > summary .arrow { transform: rotate(180deg); }
+.fbtn .when-open { display: none; }
+.fd[open] > summary .when-open { display: inline; }
+.fd[open] > summary .when-closed { display: none; }
+.fbody { padding: 2px 0 12px 84px; }
+.fbody .hint { font-size: 12px; color: var(--muted); margin: 0 0 6px; }
+@media (max-width: 640px) {
+  .fd > summary { grid-template-columns: 1fr auto; grid-template-areas: "lab btn" "sel sel"; gap: 4px 8px; }
+  .fd > summary .flabel { grid-area: lab; }
+  .fd > summary .fsel { grid-area: sel; }
+  .fd > summary .fbtn { grid-area: btn; }
+  .fd[open] > summary .fsel { display: none; }
+  .fbody { padding-left: 0; }
+  .navrow > .flabel { width: auto; }
+}
 .gens { display: grid; gap: 6px; margin-top: 8px; }
 .gen { display: grid; grid-template-columns: 150px 1fr; gap: 8px; align-items: start; }
 .gen-name { font-size: 12px; color: var(--muted); padding-top: 5px; }
@@ -357,7 +374,21 @@ dl.spec .vn small { color: var(--muted); }
   </div>
 
   <section class="panel" id="filterPanel" aria-label="絞り込みと表示設定">
-    <div class="controls">
+    <div class="navrow" role="group" aria-label="表示期間">
+      <span class="flabel">期間</span>
+      <div class="nav" role="group" aria-label="表示期間の移動">
+        <button type="button" data-shift="-30" title="1か月前へ">« 1か月</button>
+        <button type="button" data-shift="-7" title="1週間前へ">‹ 1週</button>
+        <button type="button" id="todayBtn" title="今日の1週間前から表示">今日</button>
+        <button type="button" data-shift="7" title="1週間後へ">1週 ›</button>
+        <button type="button" data-shift="30" title="1か月後へ">1か月 »</button>
+      </div>
+      <label class="field" for="startDate">開始日 <input type="date" id="startDate"></label>
+    </div>
+    <div class="filters">
+      <details class="fd" id="fdView">
+        <summary><span class="flabel">表示</span><span class="fsel" id="selView"></span><span class="fbtn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">変更</span><span class="when-open">閉じる</span></span></summary>
+        <div class="fbody"><div class="controls">
       <label class="field" for="sort">並び順
         <select id="sort">
           <option value="start">開始日順</option>
@@ -381,28 +412,35 @@ dl.spec .vn small { color: var(--muted); }
           <option value="36">広い</option>
         </select>
       </label>
-      <div class="nav" role="group" aria-label="表示期間の移動">
-        <button type="button" data-shift="-30" title="1か月前へ">« 1か月</button>
-        <button type="button" data-shift="-7" title="1週間前へ">‹ 1週</button>
-        <button type="button" id="todayBtn" title="今日の1週間前から表示">今日</button>
-        <button type="button" data-shift="7" title="1週間後へ">1週 ›</button>
-        <button type="button" data-shift="30" title="1か月後へ">1か月 »</button>
-      </div>
-      <label class="field" for="startDate">開始日 <input type="date" id="startDate"></label>
       <label class="check" for="hideEnded"><input type="checkbox" id="hideEnded">終了分を隠す</label>
       <label class="check" for="oshiOnly"><input type="checkbox" id="oshiOnly">★推しのみ</label>
       <label class="check" for="showOpen"><input type="checkbox" id="showOpen">終了日未定の商品も表示 <span class="note-sm" id="openCount"></span></label>
-    </div>
-    <div class="filters">
-      <div class="frow"><span class="flabel">タグ</span><div class="chips" id="tagChips"></div></div>
-      <div class="frow"><span class="flabel">期生</span><div class="chips" id="genChips"></div></div>
-      <details id="memberDetails">
-        <summary><span class="flabel">メンバー</span><span class="mem-btn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">メンバー一覧を開く</span><span class="when-open">メンバー一覧を閉じる</span><span class="count" id="memSelCount" title="選択中のメンバー数"></span></span><span class="hint">名前で絞り込み（複数選択可）・☆で推し登録</span></summary>
-        <div class="gens" id="memberChips"></div>
+        </div></div>
       </details>
-      <div class="frow"><span class="flabel">種別</span><div class="chips" id="catChips"></div></div>
-      <div class="frow"><span class="flabel">販売方法</span><div class="chips" id="chChips"></div></div>
-      <div class="frow"><span class="flabel">販売元</span><div class="chips" id="orChips"></div></div>
+      <details class="fd" id="fdTag">
+        <summary><span class="flabel">タグ</span><span class="fsel" id="selTag"></span><span class="fbtn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">変更</span><span class="when-open">閉じる</span></span></summary>
+        <div class="fbody"><div class="chips" id="tagChips"></div></div>
+      </details>
+      <details class="fd" id="fdGen">
+        <summary><span class="flabel">期生</span><span class="fsel" id="selGen"></span><span class="fbtn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">変更</span><span class="when-open">閉じる</span></span></summary>
+        <div class="fbody"><div class="chips" id="genChips"></div></div>
+      </details>
+      <details class="fd" id="memberDetails">
+        <summary><span class="flabel">メンバー</span><span class="fsel" id="selMem"></span><span class="fbtn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">変更</span><span class="when-open">閉じる</span></span></summary>
+        <div class="fbody"><p class="hint">名前で絞り込み（複数選択可）・☆で推し登録</p><div class="gens" id="memberChips"></div></div>
+      </details>
+      <details class="fd" id="fdCat">
+        <summary><span class="flabel">種別</span><span class="fsel" id="selCat"></span><span class="fbtn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">変更</span><span class="when-open">閉じる</span></span></summary>
+        <div class="fbody"><div class="chips" id="catChips"></div></div>
+      </details>
+      <details class="fd" id="fdCh">
+        <summary><span class="flabel">販売方法</span><span class="fsel" id="selCh"></span><span class="fbtn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">変更</span><span class="when-open">閉じる</span></span></summary>
+        <div class="fbody"><div class="chips" id="chChips"></div></div>
+      </details>
+      <details class="fd" id="fdOr">
+        <summary><span class="flabel">販売元</span><span class="fsel" id="selOr"></span><span class="fbtn"><span class="arrow" aria-hidden="true">▼</span><span class="when-closed">変更</span><span class="when-open">閉じる</span></span></summary>
+        <div class="fbody"><div class="chips" id="orChips"></div></div>
+      </details>
     </div>
   </section>
 
@@ -556,7 +594,6 @@ dl.spec .vn small { color: var(--muted); }
       h += '</div></div>';
     }
     $('memberChips').innerHTML = h;
-    $('memSelCount').textContent = st.members.size ? `${st.members.size}名選択中` : '';
   }
   function renderCatChips() {
     const used = CAT_KEYS.filter(k => D.categories[k]);
@@ -578,6 +615,32 @@ dl.spec .vn small { color: var(--muted); }
   }
   function renderOrChips() {
     $('orChips').innerHTML = Object.keys(ORIGIN).map(k => chip('data-or', k, ORIGIN[k], st.origins.has(k))).join('');
+  }
+  /* 折りたたんだ行に「いま選んでいるもの」だけを表示する */
+  const SORT_LBL = { start: '開始日順', end: '締切が近い順', member: 'メンバー別', title: '商品名順' };
+  const SPAN_LBL = { 31: '1か月', 61: '2か月', 92: '3か月', 183: '6か月' };
+  const ZOOM_LBL = { 14: '狭い', 24: '標準', 36: '広い' };
+  const NONE = '<span class="none">すべて</span>';
+  function spill(set, key, label, cat, mark) {
+    return `<span class="spill"${cat ? ` style="--cat:${cat}"` : ''}>${cat && set === 'cats' ? '<i></i>' : ''}${mark ? `<span aria-hidden="true">${esc(mark)}</span>` : ''}${esc(label)}`
+      + `<button type="button" data-unsel="${set}" data-k="${esc(key)}" aria-label="${esc(label)}の選択を外す" title="選択を外す">×</button></span>`;
+  }
+  function renderSel() {
+    const flags = [];
+    if (st.hideEnded) flags.push(spill('flag', 'hideEnded', '終了分を隠す'));
+    if (st.oshiOnly) flags.push(spill('flag', 'oshiOnly', '★推しのみ', 'var(--star)'));
+    if (st.showOpen) flags.push(spill('flag', 'showOpen', '終了日未定も表示'));
+    $('selView').innerHTML = `<span class="val">${SORT_LBL[st.sort] || ''}・${SPAN_LBL[st.span] || ''}表示・日の幅 ${ZOOM_LBL[st.dayW] || ''}</span>` + flags.join('');
+    const tagCat = t => t === 'NEW' ? 'var(--today)' : t === '更新' ? 'var(--c-anniv)' : '';
+    $('selTag').innerHTML = st.tags.size ? [...st.tags].map(t => spill('tags', t, t, tagCat(t))).join('') : NONE;
+    $('selGen').innerHTML = st.gens.size ? GENS.filter(g => st.gens.has(g)).map(g => spill('gens', g, g)).join('') : NONE;
+    const ms = members.filter(m => st.members.has(m.id));
+    $('selMem').innerHTML = ms.length
+      ? ms.slice(0, 8).map(m => spill('members', m.id, m.name, '', m.mark)).join('') + (ms.length > 8 ? `<span class="val">ほか${ms.length - 8}名</span>` : '')
+      : NONE;
+    $('selCat').innerHTML = st.cats.size ? CAT_KEYS.filter(k => st.cats.has(k) && D.categories[k]).map(k => spill('cats', k, D.categories[k].label, `var(--c-${k})`)).join('') : NONE;
+    $('selCh').innerHTML = st.channels.size ? Object.keys(CH).filter(k => st.channels.has(k)).map(k => spill('channels', k, CH[k])).join('') : NONE;
+    $('selOr').innerHTML = st.origins.size ? Object.keys(ORIGIN).filter(k => st.origins.has(k)).map(k => spill('origins', k, ORIGIN[k])).join('') : NONE;
   }
   function renderAllChips() { renderOrChips(); renderTagChips(); renderGenChips(); renderMemberChips(); renderCatChips(); renderChChips(); }
 
@@ -725,6 +788,7 @@ dl.spec .vn small { color: var(--muted); }
 
   function render() {
     hideTip();
+    renderSel();
     const list = visibleItems();
     renderSummary(list);
     renderBoard(list);
@@ -850,9 +914,9 @@ dl.spec .vn small { color: var(--muted); }
 
   $('q').addEventListener('input', e => { st.q = e.target.value; render(); });
   $('togglePanel').addEventListener('click', () => { st.panelOpen = !st.panelOpen; store.set('panelOpen', st.panelOpen); renderPanelState(); });
-  $('sort').addEventListener('change', e => { st.sort = e.target.value; store.set('sort', st.sort); render(); });
-  $('span').addEventListener('change', e => { st.span = Number(e.target.value); store.set('span', st.span); render(); });
-  $('zoom').addEventListener('change', e => { st.dayW = Number(e.target.value); store.set('dayW', st.dayW); render(); });
+  $('sort').addEventListener('change', e => { st.sort = e.target.value; store.set('sort', st.sort); render(); $('fdView').open = false; });
+  $('span').addEventListener('change', e => { st.span = Number(e.target.value); store.set('span', st.span); render(); $('fdView').open = false; });
+  $('zoom').addEventListener('change', e => { st.dayW = Number(e.target.value); store.set('dayW', st.dayW); render(); $('fdView').open = false; });
   document.querySelector('.nav').addEventListener('click', e => { const b = e.target.closest('[data-shift]'); if (!b) return; st.viewStart += Number(b.dataset.shift); render(); });
   $('todayBtn').addEventListener('click', () => { st.viewStart = TODAY - 7; render(); $('board').scrollLeft = 0; });
   $('startDate').addEventListener('change', e => { if (e.target.value) { st.viewStart = toDay(e.target.value); render(); } });
@@ -861,6 +925,27 @@ dl.spec .vn small { color: var(--muted); }
   $('oshiOnly').addEventListener('change', e => { st.oshiOnly = e.target.checked; store.set('oshiOnly', st.oshiOnly); render(); });
   $('orChips').addEventListener('click', e => { const b = e.target.closest('[data-or]'); if (!b) return; toggleIn(st.origins, b.dataset.or); renderOrChips(); render(); });
   $('resetBtn').addEventListener('click', resetFilters);
+
+  /* 折りたたみ：1つ開くと他は閉じる・パネルの外を触ると閉じる・選択中の × で解除 */
+  const fds = [...document.querySelectorAll('#filterPanel .fd')];
+  fds.forEach(d => d.addEventListener('toggle', () => { if (d.open) fds.forEach(o => { if (o !== d) o.open = false; }); }));
+  // pointerdown で閉じると押した瞬間に表がずれて押し間違えるので、クリックが終わってから閉じる
+  document.addEventListener('click', e => {
+    // チップは押すと描き直されて文書から外れるので、押した時点の経路で判定する
+    if (e.composedPath().some(n => n.id === 'filterPanel' || n.id === 'drawer')) return;
+    fds.forEach(d => { d.open = false; });
+  });
+  $('filterPanel').addEventListener('click', e => {
+    const b = e.target.closest('[data-unsel]'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    const k = b.dataset.k;
+    if (b.dataset.unsel === 'flag') {
+      st[k] = false; $(k).checked = false; store.set(k, false);
+    } else {
+      st[b.dataset.unsel].delete(k);
+    }
+    renderAllChips(); render();
+  });
 
   $('tagChips').addEventListener('click', e => { const b = e.target.closest('[data-tag]'); if (!b) return; toggleIn(st.tags, b.dataset.tag); renderTagChips(); render(); });
   $('summary').addEventListener('click', e => { if (!e.target.closest('[data-newstat]')) return; toggleIn(st.tags, 'NEW'); renderTagChips(); render(); });
