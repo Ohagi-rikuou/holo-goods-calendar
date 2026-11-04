@@ -125,6 +125,17 @@ button, input, select { font: inherit; color: inherit; }
 .toggle[aria-expanded="false"] .chev { transform: rotate(-90deg); }
 .reset { height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font-size: 13px; color: var(--muted); }
 .reset:hover { color: var(--ink); border-color: var(--ink); }
+/* 検索・絞り込みのクリア：何か選んでいるときは色付きで件数を表示、何もないときは控えめ */
+.clearbtn { height: 38px; padding: 0 12px; border-radius: 8px; border: 1.5px solid var(--warn); background: color-mix(in srgb, var(--warn) 10%, var(--surface)); color: var(--warn); cursor: pointer; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.clearbtn:hover { background: var(--warn); color: var(--surface); }
+.clearbtn .cnt { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--warn); color: var(--surface); font-family: var(--f-num); font-size: 11px; display: inline-grid; place-items: center; }
+.clearbtn:hover .cnt { background: var(--surface); color: var(--warn); }
+.clearbtn.idle { border: 1px solid var(--line-strong); background: transparent; color: var(--muted); font-weight: 500; }
+.clearbtn.idle:hover { color: var(--ink); border-color: var(--ink); background: transparent; }
+.clearbtn .lbl-s { display: none; }
+/* 検索の行と条件の行を1つの枠に見せる */
+.qbar { border-radius: 10px 10px 0 0; }
+.qbar + .panel { margin-top: -12px; border-top: 0; border-radius: 0 0 10px 10px; }
 
 /* ---------- filter panel ---------- */
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; display: grid; gap: 12px; }
@@ -194,6 +205,8 @@ details[open] > summary > .fbtn .when-closed { display: none; }
   .qbar { gap: 6px; padding: 6px 8px; }
   .qbar .search { order: 1; flex: 1 1 0; }
   .qbar #resetBtn { order: 2; padding: 0 10px; }
+  .clearbtn .lbl-l { display: none; }
+  .clearbtn .lbl-s { display: inline; }
   .qbar .navrow { order: 3; flex: 1 1 100%; }
   .qbar .nav { display: flex; width: 100%; }
   .qbar .nav button { flex: 1 1 0; padding: 0 4px; }
@@ -414,7 +427,7 @@ dl.spec .vn small { color: var(--muted); }
       </div>
       <label class="field" for="startDate">開始日 <input type="date" id="startDate"></label>
     </div>
-    <button type="button" class="reset" id="resetBtn">条件をクリア</button>
+    <button type="button" class="clearbtn" id="resetBtn" title="検索ワードと、タグ・期生・メンバー・種別・販売方法・販売元・推しのみ・終了分を隠すの選択をすべて外します（並び順・表示期間・日の幅はそのまま）"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.6-3.7M3 2.5v2.8h2.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl-l">検索・絞り込みをクリア</span><span class="lbl-s">クリア</span><span class="cnt" id="clearCount" hidden></span></button>
     <button type="button" class="addbtn" id="addBtn" hidden>＋ 商品を追加</button>
     <a class="reset" id="submitLink" href="#" target="_blank" rel="noopener" hidden style="display:inline-flex;align-items:center;text-decoration:none">情報提供（Discord）</a>
   </div>
@@ -646,7 +659,14 @@ dl.spec .vn small { color: var(--muted); }
     return `<span class="spill"${cat ? ` style="--cat:${cat}"` : ''}>${cat && set === 'cats' ? '<i></i>' : ''}${mark ? `<span aria-hidden="true">${esc(mark)}</span>` : ''}${esc(label)}`
       + `<button type="button" data-unsel="${set}" data-k="${esc(key)}" aria-label="${esc(label)}の選択を外す" title="選択を外す">×</button></span>`;
   }
+  function renderClear() {
+    const n = activeCount();
+    $('clearCount').textContent = n; $('clearCount').hidden = !n;
+    $('resetBtn').classList.toggle('idle', !n);
+    $('resetBtn').setAttribute('aria-label', n ? `検索・絞り込みをクリア（${n}件選択中）` : '検索・絞り込みをクリア');
+  }
   function renderSel() {
+    renderClear();
     const tagCat = t => t === 'NEW' ? 'var(--today)' : t === '更新' ? 'var(--c-anniv)' : '';
     const ms = members.filter(m => st.members.has(m.id));
     const memPills = ms.slice(0, 8).map(m => spill('members', m.id, m.name, '', m.mark)).join('') + (ms.length > 8 ? `<span class="val">ほか${ms.length - 8}名</span>` : '');
