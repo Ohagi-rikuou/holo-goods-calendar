@@ -1,5 +1,76 @@
 [
  {
+  "id": "c_sf6_hololive3_prize",
+  "title": "ストリートファイター6 × ホロライブ コラボ第3弾 プライズ景品",
+  "members": [
+   "百鬼あやめ",
+   "AZKi",
+   "博衣こより",
+   "一条莉々華"
+  ],
+  "category": "prize",
+  "channel": "both",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "11/28より順次展開",
+  "sale": "プライズ（カプコン直営アミューズメント施設・オンラインクレーン）",
+  "start": "2026-11-28",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "カプコン直営アミューズメント施設（一部店舗を除く）",
+    "date": "11/28より順次"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "カプコン（カプコンネットキャッチャー カプとれ でも展開）",
+  "url": "https://prtimes.jp/main/html/rd/p/000006144.000013450.html",
+  "source": "PR TIMES 2026-11-06 発表（カプコン）／インサイド 2026-11-06 記事",
+  "note": "描き下ろしコラボイラスト：百鬼あやめ×豪鬼、AZKi×JP、博衣こより×ブランカ、一条莉々華×エドモンド本田。景品ラインナップは続報で発表。なくなり次第終了。",
+  "tags": [
+   "プライズ"
+  ],
+  "firstSeen": "2026-11-06"
+ },
+ {
+  "id": "c_sf6_hololive3_cafe",
+  "title": "ストリートファイター6 × ホロライブ コラボカフェ第3弾（カプコンカフェ池袋店・梅田店）",
+  "members": [
+   "百鬼あやめ",
+   "AZKi",
+   "博衣こより",
+   "一条莉々華"
+  ],
+  "category": "collab",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "コラボカフェ（コラボメニュー・コラボグッズ）",
+  "start": "2026-11-28",
+  "end": "2026-12-17",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "カプコンカフェ 池袋店（グランドスケープ池袋 3F）",
+    "date": "11/28〜12/17"
+   },
+   {
+    "pref": "大阪府",
+    "place": "カプコンストア＆カフェ 梅田店（ルクア サウス 13F）",
+    "date": "11/28〜12/17"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "カプコン（カプコンカフェ）",
+  "url": "https://prtimes.jp/main/html/rd/p/000006144.000013450.html",
+  "source": "PR TIMES 2026-11-06 発表（カプコン）／インサイド 2026-11-06 記事",
+  "note": "コラボメニュー・コラボグッズは制作中で詳細は続報。ネット予約（席）は11/6から受付中。梅田店の入る「ルクア サウス」はリニューアルに伴う入場規制あり。",
+  "tags": [],
+  "firstSeen": "2026-11-06"
+ },
+ {
   "id": "c_suisei_kabukicho",
   "title": "星街すいせい × 東急歌舞伎町タワー「KABUKICHO STELLAR TOWER」限定グッズ",
   "members": [
@@ -1193,7 +1264,10 @@
  {
   "id": "p_popup_nagoya",
   "title": "hololive production official pop up shop in NAGOYA",
-  "members": [],
+  "members": [
+   "夏色まつり",
+   "宝鐘マリン"
+  ],
   "category": "event",
   "channel": "venue",
   "origin": "licensed",
@@ -1203,18 +1277,20 @@
   "venues": [
    {
     "pref": "愛知県",
-    "place": "会場は特設ページで発表予定",
-    "date": "11/6〜11/23"
+    "place": "名古屋PARCO 南館10F EVENT SPACE（名古屋市中区栄3-29-1）",
+    "date": "11/6〜11/23 10:00〜20:00（最終日18:00閉場）"
    }
   ],
   "ship": "",
   "price": "会場で確認",
   "shop": "hololive production official pop up shop",
-  "url": "https://prtimes.jp/main/html/rd/p/000001265.000030268.html",
-  "source": "PR TIMES 2026-09-11 発表（hololive production official pop up shop）",
-  "note": "描き下ろしバスガイド衣装の新商品。会期後に事後販売を行う場合あり。",
+  "url": "https://hololive.hololivepro.com/events/popup-2610/",
+  "source": "ホロライブ公式サイト 特設ページ（2026-11-06 確認、10/28更新分）／PR TIMES 2026-09-11 発表（カバー）",
+  "note": "描き下ろしバスガイド衣装の新商品。名古屋の地域限定グッズは夏色まつり・宝鐘マリン。購入特典（先着）：会場限定ミニフラッグ（5,500円ごと）ほか。会期後に事後販売を行う場合あり。",
   "tags": [],
-  "firstSeen": "2026-09-11"
+  "firstSeen": "2026-09-11",
+  "changed": "2026-11-06",
+  "changeNote": "会場・地域限定メンバーが決定"
  },
  {
   "id": "p_popup_fukuoka",

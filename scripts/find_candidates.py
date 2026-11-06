@@ -41,7 +41,7 @@ SOURCES = [
     ('アニメ！アニメ！', 'https://animeanime.jp/rss/index.rdf', 'feed'),
     ('ホロライビュアーズ', 'https://holoviewers.net/feed/', 'feed'),
     ('コラボカフェ（ホロライブの記事一覧）', 'https://collabo-cafe.com/events/category/hololive/', 'collabo'),
-    ('HoloIndex（記事一覧）', 'https://holoindex.com/articles', 'holoindex'),
+    # HoloIndex は robots.txt で ClaudeBot などAIの読み取りを拒否しているため、2026-11-06 に情報源から外した
 ]
 
 HOLO = re.compile(r'ホロライブ|hololive|ホロカ|ホロスターズ|holostars|holoX|ReGLOSS|FLOW GLOW|アソビ★まわり隊', re.I)
@@ -51,7 +51,6 @@ GOODS = re.compile(r'グッズ|コラボ|発売|予約|販売|受注|キャン�
                    r'PCケース|キーキャップ|マウスパッド|香水|フレグランス|ブルーレイ|Blu-ray|写真集|画集|コミック', re.I)
 # ホロライブ専門の情報源（ここの記事はグッズらしい言葉がなくても候補にする）
 HOLO_ONLY = ('PR TIMES（カバー株式会社）', '公式ショップ お知らせ', 'ホロライビュアーズ', 'コラボカフェ（ホロライブの記事一覧）')
-# HoloIndex は配信の話題も多いので、グッズらしい言葉がある記事だけを候補にする（HOLO_ONLY には入れない）
 SKIP = re.compile(r'配信開始|視聴|再生数|登録者|出演|ゲスト|インタビュー|ランキング|アンケート|求人|採用|決算|ライブ配信のお知らせ|不具合|'
                   r'メンテナンス|配送|ペイディ|キャッシュバック|関税|お詫び|不備|発送に関する|オフィシャルレポート|事前登録|ゲームジャム|スポンサー|【終了】|開催終了|ログイン|確認画面|引くべき')
 GENERIC = re.compile(r'ホロライブプロダクション|ホロライブ|hololive|production|プロダクション|オフィシャル|公式|グッズ|コラボ(レーション)?|'
