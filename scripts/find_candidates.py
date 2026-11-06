@@ -41,6 +41,7 @@ SOURCES = [
     ('アニメ！アニメ！', 'https://animeanime.jp/rss/index.rdf', 'feed'),
     ('ホロライビュアーズ', 'https://holoviewers.net/feed/', 'feed'),
     ('コラボカフェ（ホロライブの記事一覧）', 'https://collabo-cafe.com/events/category/hololive/', 'collabo'),
+    ('ホロライブ公式サイト 英語版ニュース（海外の展開）', 'https://hololive.hololivepro.com/en/news/', 'holoen'),
     # HoloIndex は robots.txt で ClaudeBot などAIの読み取りを拒否しているため、2026-11-06 に情報源から外した
 ]
 
@@ -50,7 +51,7 @@ GOODS = re.compile(r'グッズ|コラボ|発売|予約|販売|受注|キャン�
                    r'ウエハース|カード|食玩|ガシャポン|ガチャ|カプセル|アクリル|アクスタ|缶バッジ|Tシャツ|アパレル|ラインナップ|第\d+弾|'
                    r'PCケース|キーキャップ|マウスパッド|香水|フレグランス|ブルーレイ|Blu-ray|写真集|画集|コミック', re.I)
 # ホロライブ専門の情報源（ここの記事はグッズらしい言葉がなくても候補にする）
-HOLO_ONLY = ('PR TIMES（カバー株式会社）', '公式ショップ お知らせ', 'ホロライビュアーズ', 'コラボカフェ（ホロライブの記事一覧）')
+HOLO_ONLY = ('PR TIMES（カバー株式会社）', '公式ショップ お知らせ', 'ホロライブ公式サイト 英語版ニュース（海外の展開）', 'ホロライビュアーズ', 'コラボカフェ（ホロライブの記事一覧）')
 SKIP = re.compile(r'配信開始|視聴|再生数|登録者|出演|ゲスト|インタビュー|ランキング|アンケート|求人|採用|決算|ライブ配信のお知らせ|不具合|'
                   r'メンテナンス|配送|ペイディ|キャッシュバック|関税|お詫び|不備|発送に関する|オフィシャルレポート|事前登録|ゲームジャム|スポンサー|【終了】|開催終了|ログイン|確認画面|引くべき')
 GENERIC = re.compile(r'ホロライブプロダクション|ホロライブ|hololive|production|プロダクション|オフィシャル|公式|グッズ|コラボ(レーション)?|'
@@ -106,6 +107,19 @@ def article_date(e):
     if m:
         return datetime.date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
     return None
+
+
+def parse_holoen(text):
+    """ホロライブ公式サイト（英語版）ニュース一覧から、記事URL・タイトル・日付を取る（海外のポップアップ・コラボの把握用）。"""
+    out = []
+    for block in re.split(r'(?=href="https://hololive\.hololivepro\.com/en/news/\d{8})', text)[1:]:
+        u = re.match(r'href="([^"]+)"', block).group(1)
+        s = clean(block[:1500])
+        m = re.search(r'(20\d\d)\.(\d\d)\.(\d\d)\s+(.+)', s)
+        if m:
+            title = re.split(r'\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},|\s+N$', m.group(4))[0]
+            out.append({'title': title[:160], 'url': u, 'date': f'{m.group(1)}-{m.group(2)}-{m.group(3)}', 'text': ''})
+    return out
 
 
 def parse_collabo(text):
@@ -174,6 +188,8 @@ def main():
                 entries = parse_links(text, r'/main/html/rd/p/[0-9.]+\.html')
             elif kind == 'holoindex':
                 entries = parse_holoindex(text)
+            elif kind == 'holoen':
+                entries = parse_holoen(text)
             else:
                 entries = parse_collabo(text)
             for e in entries:

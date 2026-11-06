@@ -32,7 +32,7 @@ window.HOLO_GOODS = {
    "ホロスターズEN TEMPUS",
    "その他"
   ],
-  "scope": "公式ショップ：販売期間・受注期間のある商品。期限のない通常販売（在庫販売・予約販売、hololive friends や Regular Outfit などの定番商品を含む）は、売り切れ（30日間）・再入荷予定・販売再開（7日間）のときだけ掲載。企業・店舗：PR TIMESの発表（2026年8月〜10月）のうち、販売中・販売予定のもの。ホロカ：公式サイトの商品情報のうち発売前のもの。プライズ：バンダイスピリッツ・フリューの公式プライズサイトとタイトー店舗の入荷予定（9月以降の登場分）。くじ・フィギュア：エニマイ公式、一番くじは報道、あみあみの予約受付中商品。コラボ：ローソン・ジョイポリス・カプコンの公式情報。"
+  "scope": "公式ショップ：販売期間・受注期間のある商品。期限のない通常販売（在庫販売・予約販売、hololive friends や Regular Outfit などの定番商品を含む）は、売り切れ（30日間）・再入荷予定・販売再開（7日間）のときだけ掲載。企業・店舗：PR TIMESの発表（2026年8月〜10月）のうち、販売中・販売予定のもの。ホロカ：公式サイトの商品情報のうち発売前のもの。プライズ：バンダイスピリッツ・フリューの公式プライズサイトとタイトー店舗の入荷予定（9月以降の登場分）。くじ・フィギュア：エニマイ公式、一番くじは報道、あみあみの予約受付中商品。コラボ：ローソン・ジョイポリス・カプコンの公式情報。海外：ホロライブ公式サイト（英語版）ニュースと各社の発表から、海外で開催・販売されるもの（「海外」タグ付き）。"
  },
  "categories": {
   "birthday": {
@@ -2500,6 +2500,439 @@ window.HOLO_GOODS = {
    "watch": true,
    "restockSince": "2026-11-04",
    "status": "restock"
+  },
+  {
+   "id": "w_horizon_collection_id",
+   "title": "hololive Indonesia「HORIZON COLLECTION」（Gramedia 指定店舗・オンライン）",
+   "members": [
+    "アユンダ・リス",
+    "ムーナ・ホシノヴァ",
+    "アイラニ・イオフィフティーン",
+    "クレイジー・オリー",
+    "アーニャ・メルフィッサ",
+    "パヴォリア・レイネ",
+    "ベスティア・ゼータ",
+    "カエラ・コヴァルスキア",
+    "こぼ・かなえる"
+   ],
+   "category": "other",
+   "channel": "both",
+   "origin": "licensed",
+   "sale": "販売中（Gramedia 指定店舗・オンラインストア）",
+   "start": "2026-10-30",
+   "end": "",
+   "venues": [
+    {
+     "pref": "インドネシア（ジャカルタ首都圏）",
+     "place": "Gramedia 指定店舗（Mall Central Park、Grand Indonesia、Pondok Indah Mall など）",
+     "date": "販売中"
+    },
+    {
+     "pref": "インドネシア（各地）",
+     "place": "Gramedia 指定店舗（バンドン、ジョグジャカルタ、スラバヤ、メダン、マカッサルなど順次）",
+     "date": "順次"
+    }
+   ],
+   "price": "缶バッジ・ステッカー 各IDR 30,000／クリアファイル IDR 49,900／アクリルキーホルダー IDR 50,000／アクリルスタンド IDR 130,000",
+   "ship": "",
+   "shop": "PHOENIX Gramedia Indonesia",
+   "url": "https://x.com/hololive_Id/status/2110943879616749938",
+   "source": "PHOENIX Gramedia Indonesia の告知画像（おはぎさん提供、2026-11-06）／ホロライブID公式X（オンライン販売は10/30から）",
+   "note": "ホロライブID全9名の描き下ろし（2Dイラスト）グッズ。ジャカルタ首都圏（Jabodetabek）の店舗から販売開始、ほかの都市も順次。Comic Frontier 23（10/29〜11/1）でも販売。",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06"
+  },
+  {
+   "members": [
+    "シオリ・ノヴェラ",
+    "古石ビジュー",
+    "ネリッサ・レイヴンクロフト",
+    "フワワ・アビスガード",
+    "モココ・アビスガード",
+    "森カリオペ",
+    "オーロ・クロニー"
+   ],
+   "origin": "licensed",
+   "price": "会場で確認（米ドル）",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_diner_caravan_sf",
+   "title": "hololive「Diner Caravan」紀伊國屋書店フェア in サンフランシスコ（描き下ろしグッズ）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "会場販売（描き下ろしグッズ）",
+   "start": "2026-11-20",
+   "end": "2026-12-31",
+   "venues": [
+    {
+     "pref": "アメリカ（サンフランシスコ）",
+     "place": "Kinokuniya Pop-Up Shop",
+     "date": "11/20〜12/13（11/26休業）"
+    },
+    {
+     "pref": "アメリカ（サンフランシスコ）",
+     "place": "Kinokuniya Bookstore – San Francisco",
+     "date": "12/14〜12/31（12/25休業）"
+    }
+   ],
+   "shop": "Anique（紀伊國屋書店 サンフランシスコ）",
+   "url": "https://hololive-diner-caravan.anique.jp/",
+   "source": "PR TIMES 2026-11-06 発表（Anique）",
+   "note": "アメリカンダイナーがテーマの描き下ろし。購入特典：20米ドルごとに限定ポストカード（全7種ランダム）1枚。営業時間は現地時間。"
+  },
+  {
+   "members": [
+    "白上フブキ",
+    "宝鐘マリン",
+    "角巻わため",
+    "こぼ・かなえる",
+    "ハコス・ベールズ",
+    "儒烏風亭らでん"
+   ],
+   "origin": "licensed",
+   "price": "会場で確認（台湾ドル）",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_kaohsiung_london",
+   "title": "hololive production「秋色｜倫敦旅行日記」ポップアップストア（台湾・高雄）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "会場販売（描き下ろしグッズ）",
+   "start": "2026-10-23",
+   "end": "2026-11-30",
+   "venues": [
+    {
+     "pref": "台湾（高雄）",
+     "place": "夢時代（Dream Mall）1F",
+     "date": "10/23〜11/30"
+    }
+   ],
+   "shop": "NoonX",
+   "url": "https://hololive.hololivepro.com/en/news/20261006-01-237/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-10-06 発表（2026-11-06 確認）",
+   "note": "「旅行日記」シリーズ第3弾（秋のロンドン）。アクリルスタンド、箔押しサイン色紙、バイク用泥除け、スタンプ帳、ラバーマット、A3ポスター、缶バッジ（全12種ランダム）など。"
+  },
+  {
+   "members": [
+    "エリザベス・ローズ・ブラッドフレイム",
+    "ジジ・ムリン",
+    "セシリア・イマーグリーン",
+    "ラオーラ・パンテーラ"
+   ],
+   "origin": "licensed",
+   "price": "会場で確認（米ドル）",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_citygroove_sanjose",
+   "title": "hololive English -Justice- POP-UP STORE -City Groove（サンノゼ会場）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "会場販売（会場限定グッズ）",
+   "start": "2026-10-06",
+   "end": "2026-11-10",
+   "venues": [
+    {
+     "pref": "アメリカ（カリフォルニア州サンノゼ）",
+     "place": "Mitsuwa Marketplace San Jose",
+     "date": "10/6〜11/10"
+    }
+   ],
+   "shop": "Bandai Namco Amusement America",
+   "url": "https://hololive.hololivepro.com/en/news/20260827-01-231/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-08-27 発表（2026-11-06 確認）",
+   "note": "バンダイナムコアミューズメントアメリカ主催。シティポップ風の描き下ろしイラストを使った会場限定グッズ、ミニゲーム、フォトスポットあり。全5会場を2027年3月まで巡回（最初のコスタメサ会場は10/1で終了）。"
+  },
+  {
+   "members": [
+    "エリザベス・ローズ・ブラッドフレイム",
+    "ジジ・ムリン",
+    "セシリア・イマーグリーン",
+    "ラオーラ・パンテーラ"
+   ],
+   "origin": "licensed",
+   "price": "会場で確認（米ドル）",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_citygroove_plano",
+   "title": "hololive English -Justice- POP-UP STORE -City Groove（プレイノ会場）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "会場販売（会場限定グッズ）",
+   "start": "2026-11-20",
+   "end": "2026-12-06",
+   "venues": [
+    {
+     "pref": "アメリカ（テキサス州プレイノ）",
+     "place": "Mitsuwa Marketplace Plano",
+     "date": "11/20〜12/6"
+    }
+   ],
+   "shop": "Bandai Namco Amusement America",
+   "url": "https://hololive.hololivepro.com/en/news/20260827-01-231/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-08-27 発表（2026-11-06 確認）",
+   "note": "バンダイナムコアミューズメントアメリカ主催。シティポップ風の描き下ろしイラストを使った会場限定グッズ、ミニゲーム、フォトスポットあり。全5会場を2027年3月まで巡回（最初のコスタメサ会場は10/1で終了）。"
+  },
+  {
+   "members": [
+    "エリザベス・ローズ・ブラッドフレイム",
+    "ジジ・ムリン",
+    "セシリア・イマーグリーン",
+    "ラオーラ・パンテーラ"
+   ],
+   "origin": "licensed",
+   "price": "会場で確認（米ドル）",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_citygroove_brooklyn",
+   "title": "hololive English -Justice- POP-UP STORE -City Groove（ブルックリン会場）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "会場販売（会場限定グッズ）",
+   "start": "2026-12-16",
+   "end": "2027-01-17",
+   "venues": [
+    {
+     "pref": "アメリカ（ニューヨーク州ブルックリン）",
+     "place": "Japan Village",
+     "date": "12/16〜1/17"
+    }
+   ],
+   "shop": "Bandai Namco Amusement America",
+   "url": "https://hololive.hololivepro.com/en/news/20260827-01-231/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-08-27 発表（2026-11-06 確認）",
+   "note": "バンダイナムコアミューズメントアメリカ主催。シティポップ風の描き下ろしイラストを使った会場限定グッズ、ミニゲーム、フォトスポットあり。全5会場を2027年3月まで巡回（最初のコスタメサ会場は10/1で終了）。"
+  },
+  {
+   "members": [
+    "エリザベス・ローズ・ブラッドフレイム",
+    "ジジ・ムリン",
+    "セシリア・イマーグリーン",
+    "ラオーラ・パンテーラ"
+   ],
+   "origin": "licensed",
+   "price": "会場で確認（米ドル）",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_citygroove_arlington",
+   "title": "hololive English -Justice- POP-UP STORE -City Groove（アーリントンハイツ会場）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "会場販売（会場限定グッズ）",
+   "start": "2027-01-23",
+   "end": "2027-03-07",
+   "venues": [
+    {
+     "pref": "アメリカ（イリノイ州アーリントンハイツ）",
+     "place": "Mitsuwa Marketplace Arlington Heights",
+     "date": "1/23〜3/7"
+    }
+   ],
+   "shop": "Bandai Namco Amusement America",
+   "url": "https://hololive.hololivepro.com/en/news/20260827-01-231/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-08-27 発表（2026-11-06 確認）",
+   "note": "バンダイナムコアミューズメントアメリカ主催。シティポップ風の描き下ろしイラストを使った会場限定グッズ、ミニゲーム、フォトスポットあり。全5会場を2027年3月まで巡回（最初のコスタメサ会場は10/1で終了）。"
+  },
+  {
+   "members": [
+    "ハコス・ベールズ"
+   ],
+   "origin": "licensed",
+   "price": "",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_vortex_baelz",
+   "title": "Vortex × hololive ハコス・ベールズ コラボコレクション（ワイヤレスキーボード・ガラスマウスパッド・キーキャップ）",
+   "category": "collab",
+   "channel": "online",
+   "sale": "予約受付（海外のキーボードブランド）",
+   "start": "2026-11-11",
+   "end": "2027-01-11",
+   "shop": "Vortex 公式サイト（台湾）ほか世界の取扱店（後日発表）",
+   "url": "https://hololive.hololivepro.com/en/news/20261106-02-24/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-06 発表",
+   "note": "予約開始は11/11 18:00（台湾時間＝日本時間19:00）。キーボードは赤・黒の2色、Vortex公式サイト限定のWKL配列あり。価格は販売ページで確認。"
+  },
+  {
+   "members": [
+    "獅白ぼたん",
+    "兎田ぺこら"
+   ],
+   "origin": "licensed",
+   "price": "ファンゾーン席 NT$2,680",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_seibu_lions_taiwan",
+   "title": "SEIBU LIONS TAIWAN SERIES – LEGENDS GAME × ホロライブ（ファンゾーン席の限定法被・コラボグッズ）",
+   "category": "collab",
+   "channel": "venue",
+   "sale": "観戦チケット特典・コラボグッズ",
+   "start": "2027-02-27",
+   "end": "2027-02-28",
+   "venues": [
+    {
+     "pref": "台湾（台北）",
+     "place": "台北ドーム（Taipei Dome）",
+     "date": "2/27・2/28"
+    }
+   ],
+   "shop": "udnFunLife（チケット：udn售票網）",
+   "url": "https://hololive.hololivepro.com/en/news/20261104-01-242/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-04 発表",
+   "note": "イラストはLOIZA氏の描き下ろし。hololiveファンゾーン席（11/4からudn售票網で発売）の購入者は当日会場で限定法被を1着受け取り。描き下ろしを使った限定グッズも制作予定（詳細は続報）。"
+  },
+  {
+   "members": [],
+   "origin": "licensed",
+   "price": "",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_anime_frontier",
+   "title": "Anime Frontier 2026 ホロライブプロダクション ブース（参加特典キーホルダー・うちわ配布）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "イベント出展（参加・ダウンロード特典の配布）",
+   "start": "2026-12-04",
+   "end": "2026-12-06",
+   "venues": [
+    {
+     "pref": "アメリカ（テキサス州フォートワース）",
+     "place": "Fort Worth Convention Center（ブース1204・ホロカ1215）",
+     "date": "12/4〜12/6"
+    }
+   ],
+   "shop": "hololive Meet（カバー）",
+   "url": "https://hololive.hololivepro.com/en/news/20261106-01-243/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-06 発表",
+   "note": "ホロカ英語版の体験会参加者に「SP推しスキルマーカー」キーホルダー、ホロドリのダウンロード特典にうちわ（全54種ランダム）。ブース限定配信あり。キャンペーンの詳細は続報。"
+  },
+  {
+   "members": [],
+   "origin": "licensed",
+   "price": "",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_agf_korea_dreams",
+   "title": "AGF 2026（韓国）hololive Dreams ブース（来場者特典の配布）",
+   "category": "event",
+   "channel": "venue",
+   "sale": "イベント出展（来場者特典の配布）",
+   "start": "2026-12-04",
+   "end": "2026-12-06",
+   "venues": [
+    {
+     "pref": "韓国（高陽市）",
+     "place": "KINTEX（一山）",
+     "date": "12/4〜12/6"
+    }
+   ],
+   "shop": "hololive Dreams（カバー）",
+   "url": "https://hololive.hololivepro.com/en/news/20261102-01-241/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-02 発表",
+   "note": "ブース来場者にhololive Dreamsの限定特典を配布。ミニゲームステージ・タレント出演ステージあり。"
+  },
+  {
+   "members": [
+    "エリザベス・ローズ・ブラッドフレイム",
+    "ジジ・ムリン",
+    "セシリア・イマーグリーン",
+    "ラオーラ・パンテーラ"
+   ],
+   "origin": "licensed",
+   "price": "",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_pinfinity_justice",
+   "title": "Pinfinity × hololive -Justice- ARピンズ（個別4種・2,024セット限定のLimited Edition Set）",
+   "category": "other",
+   "channel": "online",
+   "sale": "在庫販売（なくなり次第終了）",
+   "start": "2026-09-30",
+   "end": "",
+   "shop": "Pinfinity（アメリカ）",
+   "url": "https://pins.ar/hololive",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-09-30 発表（2026-11-06 確認）",
+   "note": "アプリで読み取るとアニメーションと音声が再生されるARピンズ。Limited Edition Setは4人分＋シリアル入りロゴピン。"
+  },
+  {
+   "members": [
+    "さくらみこ",
+    "宝鐘マリン"
+   ],
+   "origin": "licensed",
+   "price": "",
+   "ship": "",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-06",
+   "id": "w_xrage_mikomari",
+   "title": "XRAGE × hololive「MikoMari」コラボコレクション（タクティカルバッグ・法被・Tシャツ）",
+   "category": "other",
+   "channel": "both",
+   "sale": "販売中（公式通販・台湾/香港の店舗）",
+   "start": "2026-09-09",
+   "end": "",
+   "venues": [
+    {
+     "pref": "台湾（台北）",
+     "place": "誠品生活武昌 3F／新光三越 A11 3F",
+     "date": "9/9〜"
+    },
+    {
+     "pref": "台湾（台中）",
+     "place": "新光三越 6F",
+     "date": "9/9〜"
+    },
+    {
+     "pref": "台湾（高雄）",
+     "place": "駁二芸術特区 大義倉庫 C6-3",
+     "date": "9/9〜"
+    },
+    {
+     "pref": "香港",
+     "place": "K11 Art Mall 3F",
+     "date": "9/9〜"
+    }
+   ],
+   "shop": "XRAGE仲間",
+   "url": "https://www.xrage-nakama.com",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-09-01 発表（2026-11-06 確認）",
+   "note": "日本と台湾のデザイナーによるアパレルブランド。"
   },
   {
    "id": "c_sf6_hololive3_prize",
