@@ -1,5 +1,227 @@
 [
  {
+  "id": "c_hitsuji_watame2",
+  "title": "ヒツジのいらない枕® × 角巻わため コラボ第2弾（購入特典 描き下ろしピローバッグ・缶バッジ）",
+  "members": [
+   "角巻わため"
+  ],
+  "category": "campaign",
+  "channel": "online",
+  "origin": "licensed",
+  "sale": "購入特典キャンペーン（対象寝具の購入）",
+  "start": "2026-11-06",
+  "end": "2026-12-25",
+  "venues": [],
+  "price": "対象商品の価格（枕シリーズ・毛布・敷きパッド・わためぇあったかセットなど）",
+  "ship": "",
+  "shop": "ヒツジのいらない枕® 公式オンラインストア（MOON-X）",
+  "url": "https://hitsuji-zzz.com/blogs/topics/tsunomakiwatame-nov-campaign2026",
+  "source": "PR TIMES 2026-11-06 発表（MOON-X）",
+  "note": "購入時期で特典デザインが変わる：11/6〜11/30「羊飼いわためとヒツジたち」、12/1〜12/25「角巻わためとクリスマスパーティー」（12月分のイラストは12/1公開）。購入者から抽選100名に描き下ろしアクリルパネル。会員登録で「わためぇ羊飼いボイス」、特設サイトのクイズ全問正解で「わためぇご褒美ボイス」。期間は11/6 20:00〜12/25 23:59。",
+  "tags": [
+   "購入特典"
+  ],
+  "firstSeen": "2026-11-09"
+ },
+ {
+  "id": "z_fu_mochipiko_botan",
+  "title": "ホロライブプロダクション もちぴこBIGぬいぐるみ ー獅白ぼたんー",
+  "members": [
+   "獅白ぼたん"
+  ],
+  "category": "prize",
+  "channel": "venue",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2026年11月3週 登場",
+  "sale": "プライズ（アミューズメント施設の景品）",
+  "start": "2026-11-15",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
+    "date": "2026年11月3週 登場"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "フリュー",
+  "url": "https://prize-lab.com/calendar/calendar-hololive/",
+  "source": "プライズラボ・ゲームペディア プライズ入荷予定（フリュー公式プライズサイトの情報をもとにしたまとめ、2026-11-09 確認）※フリュー公式サイトはAIの読み取りを断っているため直接は未確認",
+  "note": "全1種・約30cm。週表記のため、カレンダー上の日付は目安です。",
+  "tags": [
+   "プライズ"
+  ],
+  "firstSeen": "2026-11-09"
+ },
+ {
+  "id": "z_fu_mochipiko_polka",
+  "title": "ホロライブプロダクション もちぴこBIGぬいぐるみ ー尾丸ポルカー",
+  "members": [
+   "尾丸ポルカ"
+  ],
+  "category": "prize",
+  "channel": "venue",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2026年11月3週 登場",
+  "sale": "プライズ（アミューズメント施設の景品）",
+  "start": "2026-11-15",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
+    "date": "2026年11月3週 登場"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "フリュー",
+  "url": "https://prize-lab.com/calendar/calendar-hololive/",
+  "source": "プライズラボ・ゲームペディア プライズ入荷予定（フリュー公式プライズサイトの情報をもとにしたまとめ、2026-11-09 確認）※フリュー公式サイトはAIの読み取りを断っているため直接は未確認",
+  "note": "全1種・約31cm。週表記のため、カレンダー上の日付は目安です。",
+  "tags": [
+   "プライズ"
+  ],
+  "firstSeen": "2026-11-09"
+ },
+ {
+  "id": "z_fu_nesoberi_mini3",
+  "title": "ホロライブプロダクション 寝そべりミニマスコット③",
+  "members": [
+   "ラプラス・ダークネス",
+   "鷹嶺ルイ",
+   "博衣こより",
+   "風真いろは"
+  ],
+  "category": "prize",
+  "channel": "venue",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2026年11月3週 登場",
+  "sale": "プライズ（アミューズメント施設の景品）",
+  "start": "2026-11-15",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
+    "date": "2026年11月3週 登場"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "フリュー",
+  "url": "https://prize-lab.com/calendar/calendar-hololive/",
+  "source": "プライズラボ・ゲームペディア プライズ入荷予定（フリュー公式プライズサイトの情報をもとにしたまとめ、2026-11-09 確認）※フリュー公式サイトはAIの読み取りを断っているため直接は未確認",
+  "note": "全4種（秘密結社holoXの4名。フリュー公式Xの告知より）・約15cm。週表記のため、カレンダー上の日付は目安です。",
+  "tags": [
+   "プライズ"
+  ],
+  "firstSeen": "2026-11-09"
+ },
+ {
+  "id": "z_fu_hikkake5",
+  "title": "ホロライブプロダクション ひっかけフィギュアVol.5",
+  "members": [],
+  "category": "prize",
+  "channel": "venue",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2026年11月4週 登場",
+  "sale": "プライズ（アミューズメント施設の景品）",
+  "start": "2026-11-22",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "アミューズメント施設（取扱店はメーカーサイトで検索）",
+    "date": "2026年11月4週 登場"
+   }
+  ],
+  "price": "",
+  "ship": "",
+  "shop": "フリュー",
+  "url": "https://prize-lab.com/calendar/calendar-hololive/",
+  "source": "プライズラボ・ゲームペディア プライズ入荷予定（フリュー公式プライズサイトの情報をもとにしたまとめ、2026-11-09 確認）※フリュー公式サイトはAIの読み取りを断っているため直接は未確認",
+  "note": "全2種（対象メンバーは未確認）・約10cm。週表記のため、カレンダー上の日付は目安です。",
+  "tags": [
+   "プライズ"
+  ],
+  "firstSeen": "2026-11-09"
+ },
+ {
+  "id": "p_harajuku_display_ticket",
+  "title": "公式ショップ原宿店「空間再現ディスプレイ」リニューアル（オリジナルクリアしおり付き視聴券）",
+  "members": [
+   "白上フブキ",
+   "猫又おかゆ",
+   "兎田ぺこら",
+   "綺々羅々ヴィヴィ",
+   "フワワ・アビスガード",
+   "モココ・アビスガード",
+   "夏色まつり",
+   "響咲リオナ"
+  ],
+  "category": "other",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "店頭販売（視聴券・ノベルティ付き）",
+  "start": "2026-11-13",
+  "end": "",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "hololive production official shop 原宿店",
+    "date": "11/13〜"
+   }
+  ],
+  "price": "視聴券 ¥1,100（クリアしおり1枚付き）",
+  "ship": "",
+  "shop": "ホロライブ公式ショップ 原宿店",
+  "url": "https://hololive.hololivepro.com/news/20261030-02-86/",
+  "source": "ホロライブ公式サイト ニュース 2026-10-30",
+  "note": "裸眼で見られる立体映像（約3分）。白上フブキ・猫又おかゆの新作4本を追加し全16パターンに。視聴券に付くクリアしおりは全16種から好きなタレントペアを選べる。11/12までは従来どおり無料視聴（しおりなし）。",
+  "tags": [],
+  "firstSeen": "2026-11-09"
+ },
+ {
+  "id": "g_gashapon_palette_fairy2",
+  "title": "ガシャポン ホロライブ ガシャポンパレット フェアリースイング2（全5種）",
+  "members": [
+   "星街すいせい",
+   "大空スバル",
+   "宝鐘マリン",
+   "常闇トワ",
+   "博衣こより"
+  ],
+  "category": "figure",
+  "channel": "venue",
+  "origin": "licensed",
+  "release": true,
+  "startLabel": "2026年9月第3週より順次発売",
+  "sale": "カプセルトイ",
+  "start": "2026-09-14",
+  "end": "",
+  "venues": [
+   {
+    "pref": "全国各地",
+    "place": "ガシャポン取扱店（取扱店はガシャポン公式サイトで検索）",
+    "date": "9月第3週〜"
+   }
+  ],
+  "price": "1回 ¥500",
+  "ship": "",
+  "shop": "バンダイ（ガシャポン）",
+  "url": "https://collabo-cafe.com/events/collabo/hololive-capsule-toy-gashapon-palette-2026/",
+  "source": "コラボカフェ 2026-09-17 記事（ガシャポン公式の情報を紹介、2026-11-09 確認）",
+  "note": "新シリーズ「ガシャポンパレット」第1弾。妖精姿のスイングマスコット。発売時期は地域・店舗によって異なり、なくなり次第終了。",
+  "tags": [],
+  "firstSeen": "2026-11-09"
+ },
+ {
   "id": "w_horizon_collection_id",
   "title": "hololive Indonesia「HORIZON COLLECTION」（Gramedia 指定店舗・オンライン）",
   "members": [

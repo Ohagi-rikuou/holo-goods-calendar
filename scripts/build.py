@@ -12,14 +12,16 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JST = datetime.timezone(datetime.timedelta(hours=9))
-SOLDOUT_DAYS = 30   # 通常販売の商品が売り切れてから、この日数は「完売」として表示する（再入荷予定の印があれば入荷まで）
+SOLDOUT_DAYS = 30   # 通常販売の商品が売り切れてから、この日数は「完売」として表示する（全体が売り切れで再入荷予定の印があれば入荷まで）
 RESUMED_DAYS = 7    # 通常販売の商品の販売再開を表示する日数
 
 
 def regular_status(it, today):
     """公式ショップの通常販売（期限なし）の商品は、在庫の変化があるときだけ載せる。(状態, その日) を返す。"""
     d = lambda s: datetime.date.fromisoformat(s)
-    if '再入荷予定' in it.get('tags', []):
+    # 再入荷予定は、商品全体が売り切れているときだけ載せる
+    # （ショップの「再入荷予定」の印は、一部の種類だけ品切れの商品や、すでに在庫が戻った商品にも残っていることがあるため）
+    if '再入荷予定' in it.get('tags', []) and it.get('soldOut'):
         return 'restock', it.get('restockSince') or it.get('changed') or it.get('firstSeen')
     if it.get('soldOut'):
         since = it.get('soldOutSince') or (it.get('changed') if it.get('changeNote') == 'SOLD OUT' else None) \
