@@ -1,59 +1,33 @@
 [
  {
-  "firstSeen": "2026-11-08",
+  "firstSeen": "2026-11-10",
+  "source": "ホロライブ公式サイト 英語版ニュース（海外の展開）",
+  "title": "hololive ReGLOSS Member Juufuutei Raden Collaborates with Taiwan’s 2026 GOOD OLD LIVING FESTIVAL LIFE “Zuoying in the Light”!",
+  "url": "https://hololive.hololivepro.com/en/news/20261109-01-244/",
+  "date": "2026-11-09",
+  "similar": {
+   "id": "s_regloss_anniversary_3rd",
+   "title": "ReGLOSS 3周年記念",
+   "score": 0.7
+  }
+ },
+ {
+  "firstSeen": "2026-11-10",
   "source": "ホロライビュアーズ",
-  "title": "博衣こより『Chemical Spark』どこで買う？店舗特典・限定盤と1stライブ”Dream Spark”チケットまとめ【12/2発売】",
-  "url": "https://holoviewers.net/koyori-chemical-spark-guide/",
-  "date": "Sat, 07 Nov 2026 15:18:31",
+  "title": "【開催中】FLOW GLOW×マリオンクレープ全31店舗一覧｜クレープ5種・コースター特典・グッズ通販まとめ【11/30まで】",
+  "url": "https://holoviewers.net/flowglow-marion-crepe/",
+  "date": "Mon, 09 Nov 2026 14:44:36",
   "similar": {
-   "id": "s_hakuikoyori_2ndalbum_chemicalspark_regular",
-   "title": "博衣こより 2nd Album『Chemical Spark』通常盤",
-   "score": 0.46
+   "id": "p_marion_flowglow",
+   "title": "FLOW GLOW × マリオンクレープ コラボグッズ",
+   "score": 1.0
   }
  },
  {
-  "firstSeen": "2026-11-07",
-  "source": "公式ショップ お知らせ",
-  "title": "ボイス商品「日本語セットA」「日本語セットB」の内容変更に関するお知らせ",
-  "url": "https://shop.hololivepro.com/blogs/news/voice_japaneseset_change_20261106",
-  "date": "2026-11-06T18:30:04+09:00"
- },
- {
-  "firstSeen": "2026-11-07",
-  "source": "ホロライビュアーズ",
-  "title": "わちゃわちゃ学園祭 グッズ全品目と価格まとめ｜配信チケット・会場物販の買い方ガイド【11/14-15】",
-  "url": "https://holoviewers.net/wachawacha-gakuensai-goods-guide/",
-  "date": "Fri, 06 Nov 2026 03:26:20"
- },
- {
-  "firstSeen": "2026-11-07",
-  "source": "インサイド",
-  "title": "『スト6』×「ホロライブ」コラボ第3弾が11月28日開催！百鬼あやめと豪鬼、一条莉々華と本田など4組の描き下ろしプライズ＆カフェを展開",
-  "url": "https://www.inside-games.jp/article/2026/11/06/190448.html",
-  "date": "2026-11-06T03:45:02Z"
- },
- {
-  "firstSeen": "2026-11-07",
-  "source": "PR TIMES（キーワード：ホロライブ）",
-  "title": "ヒツジのいらない枕® × VTuber角巻わためコラボ第2弾 11月6日よりスタート！2種類の書き下… 2026年11月6日 21時00分",
-  "url": "https://prtimes.jp/main/html/rd/p/000000088.000053318.html",
-  "date": "",
-  "similar": {
-   "id": "s_tsunomakiwatame_respawn",
-   "title": "角巻わため 『リスポーン!!』",
-   "score": 0.5
-  }
- },
- {
-  "firstSeen": "2026-11-07",
-  "source": "PR TIMES（キーワード：ホロライブ）",
-  "title": "『hololive』新規描き下ろしグッズ企画「Diner Caravan」サンフランシスコの紀伊國屋… 2026年11月6日 10時00分",
-  "url": "https://prtimes.jp/main/html/rd/p/000000382.000048489.html",
-  "date": "",
-  "similar": {
-   "id": "w_diner_caravan_sf",
-   "title": "hololive「Diner Caravan」紀伊國屋書店フェア in サンフランシスコ（描き下ろしグッズ）",
-   "score": 0.47
-  }
+  "firstSeen": "2026-11-10",
+  "source": "アニメ！アニメ！",
+  "title": "新アプリ「ディズニー スパリク」ホロカード入りウエハースが早速登場！ イケメンたちの輝きが眩しい…!!",
+  "url": "https://animeanime.jp/article/2026/11/09/104637.html",
+  "date": "2026-11-09T10:00:03Z"
  }
 ]
