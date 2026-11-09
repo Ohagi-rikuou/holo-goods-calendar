@@ -115,7 +115,7 @@ button, input, select { font: inherit; color: inherit; }
 .stat.s-upcoming strong { color: var(--accent); }
 
 /* ---------- sticky search bar ---------- */
-.qbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 8; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 10px; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 10px; }
+.qbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 8; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 6px 12px -10px rgba(0,0,0,.25); }
 .search { flex: 1 1 260px; min-width: 0; position: relative; }
 .search input { width: 100%; height: 38px; padding: 0 12px 0 34px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface-2); }
 .search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--muted); }
@@ -171,6 +171,10 @@ button, input, select { font: inherit; color: inherit; }
 .fbtn { display: inline-flex; align-items: center; gap: 4px; height: 28px; padding: 0 10px 0 8px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink); font-size: 12.5px; font-weight: 700; white-space: nowrap; }
 summary:hover > .fbtn { border-color: var(--accent); color: var(--accent); }
 .fbtn .chev { transition: transform .15s; }
+/* 条件欄を開くボタンは、並び替え・絞り込みができることが分かるよう目立たせる */
+.fbtn-main { height: 34px; padding: 0 14px 0 10px; border-color: var(--accent); background: var(--accent); color: var(--accent-ink); font-size: 13px; }
+summary:hover > .fbtn-main { background: color-mix(in srgb, var(--accent) 88%, #000); color: var(--accent-ink); border-color: var(--accent); }
+details[open] > summary > .fbtn-main { background: var(--surface-2); color: var(--ink); border-color: var(--line-strong); }
 details[open] > summary > .fbtn .chev { transform: rotate(180deg); }
 .fbtn .when-open { display: none; }
 details[open] > summary > .fbtn .when-open { display: inline; }
@@ -211,6 +215,17 @@ details[open] > summary > .fbtn .when-closed { display: none; }
   .qbar .nav { display: flex; width: 100%; }
   .qbar .nav button { flex: 1 1 0; padding: 0 4px; }
   .qbar #addBtn, .qbar #submitLink { order: 4; }
+  /* 件数表示は1行にして横にスクロール */
+  .summary { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; margin-right: -16px; padding-right: 16px; }
+  .summary::-webkit-scrollbar { display: none; }
+  .stat { flex: none; padding: 6px 12px; }
+  /* 指で押しやすい大きさに */
+  .cchip, .mchip button, .spill { min-height: 36px; }
+  .cchip { padding: 6px 14px; }
+  .check { min-height: 40px; }
+  .check input { width: 20px; height: 20px; }
+  .fbtn { height: 36px; }
+  .spill button { padding: 6px 8px; }
   /* 帯の見方はスマホでは1行にして横にスクロール */
   .board-wrap .legend { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; }
   .board-wrap .legend span, .board-wrap .legend b { flex: none; }
@@ -253,9 +268,13 @@ details[open] > summary > .fbtn .when-closed { display: none; }
 .cchip .n { font-family: var(--f-num); font-size: 11px; color: var(--muted); }
 .cchip.on .n { color: var(--ink); }
 button.stat { cursor: pointer; font: inherit; font-size: 13px; }
-button.stat:hover { border-color: var(--today); }
+button.stat { cursor: pointer; font: inherit; }
+button.stat:hover { border-color: var(--accent); }
+button.stat.s-new:hover { border-color: var(--today); }
+button.stat.on:not(.s-new) { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); font-weight: 700; }
 button.stat.on { border-color: var(--today); background: color-mix(in srgb, var(--today) 10%, var(--surface)); }
 .stat.s-new strong { color: var(--today); }
+#tip .more { color: var(--muted); white-space: nowrap; }
 
 /* ---------- board ---------- */
 .board-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -416,7 +435,7 @@ dl.spec .vn small { color: var(--muted); }
   <div class="qbar" role="search">
     <label class="search" for="q">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="商品名・メンバー名・会場・タグで検索（ひらがな可）" autocomplete="off">
+      <input id="q" type="search" placeholder="商品名・メンバー名・会場・タグで検索（ひらがな・ローマ字・愛称も可）" autocomplete="off">
     </label>
     <div class="navrow" id="navrow" role="group" aria-label="表示期間">
       <span class="flabel">期間</span>
@@ -435,8 +454,8 @@ dl.spec .vn small { color: var(--muted); }
   </div>
 
   <section class="panel" id="filterPanel" aria-label="絞り込みと表示設定">
-    <details class="fall" id="fdAll" open>
-      <summary><span class="flabel">条件</span><span class="fsel" id="selAll"></span><span class="fbtn"><svg class="chev" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="when-closed">開く</span><span class="when-open">閉じる</span></span></summary>
+    <details class="fall" id="fdAll">
+      <summary><span class="flabel">条件</span><span class="fsel" id="selAll"></span><span class="fbtn fbtn-main"><svg class="chev" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="when-closed">並び替え・絞り込み</span><span class="when-open">閉じる</span></span></summary>
       <div class="fall-body">
         <div class="frow"><span class="flabel">表示</span><div class="controls" id="viewControls">
       <label class="field" for="sort">並び順
@@ -514,8 +533,24 @@ dl.spec .vn small { color: var(--muted); }
   const md = n => { const d = dt(n); return (d.getUTCMonth() + 1) + '/' + d.getUTCDate(); };
   const ymd = n => { const d = dt(n); return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0'); };
   const full = n => { const d = dt(n); return `${d.getUTCFullYear()}年${d.getUTCMonth() + 1}月${d.getUTCDate()}日（${WD[d.getUTCDay()]}）`; };
+  // 検索用に文字をそろえる：全角半角・大文字小文字・カタカナ/ひらがなの違いと、「・」や記号・空白を無視する
   const norm = s => String(s || '').normalize('NFKC').toLowerCase()
-    .replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60)).replace(/\s+/g, '');
+    .replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60))
+    .replace(/[\s・･·.,、。!?！？'"“”‘’「」『』【】()（）\[\]［］〜~～\-‐－―_/／:：;；★☆♡♥*＊#＆&+＋]+/g, '');
+  // 言いかえ表：どれか1つで検索すると、同じ組のほかの言葉でも探す
+  const SYNONYMS = [
+    ['アクスタ', 'アクリルスタンド'], ['アクキー', 'アクリルキーホルダー', 'アクリルキーチェーン'], ['缶バ', '缶バッジ', '缶バッチ'],
+    ['ぬいぐるみ', 'ぬい', 'もちぴこ', 'パペット'], ['ガチャ', 'ガシャポン', 'ガチャガチャ', 'カプセルトイ'],
+    ['ホロックス', 'holox', '秘密結社holox'], ['リグロス', 'regloss'], ['フロウグロウ', 'フローグロー', 'flowglow'],
+    ['ホロライブenglish', 'hololiveenglish', 'ホロen', 'holoen', 'ホロライブen', 'myth', 'council', 'promise', 'advent', 'justice', 'projecthope'],
+    ['ホロライブインドネシア', 'hololiveindonesia', 'ホロid', 'holoid', 'インドネシア', 'area15', 'holoro', 'holoh3ro'],
+    ['ホロスターズ', 'holostars', 'uproar', 'tempus'],
+    ['ホロカ', 'hocg', 'ホロライブオフィシャルカードゲーム', 'officialcardgame'], ['一番くじ', 'いちばんくじ', '1番くじ'],
+    ['プライズ', 'クレーンゲーム', 'ufoキャッチャー', 'オンクレ'], ['ポップアップ', 'popup', 'ポップアップストア', 'ポップアップショップ'],
+    ['誕生日', 'バースデー', 'birthday'], ['フィギュア', 'figure', 'ねんどろいど', 'figma', 'ソフビ'], ['ボイス', 'voice'],
+  ].map(g => g.map(norm));
+  const SYN = new Map(); SYNONYMS.forEach(g => g.forEach(w => SYN.set(w, g)));
+  const expandTerm = t => SYN.get(t) || [t];
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const $ = id => document.getElementById(id);
 
@@ -555,7 +590,7 @@ dl.spec .vn small { color: var(--muted); }
     if (it.manual && !tagList.includes('手入力')) tagList.push('手入力');
     (it.tags || []).forEach(t => { if (t && !tagList.includes(t)) tagList.push(t); });
     const hay = norm([it.title, cat.label, ...tagList, it.changeNote, it.shop, it.sale, it.note, CH[channel], ORIGIN[origin], origin === 'shop' ? '公式' : origin === 'unofficial' ? '非公式' : '',
-      ...venues.flatMap(v => [v.pref, v.place]), ...mem.flatMap(m => [m.name, m.kana, ...m.gens])].join(' '));
+      ...venues.flatMap(v => [v.pref, v.place]), ...mem.flatMap(m => [m.name, m.kana, ...m.gens, ...(m.aliases || [])])].join(' '));
     return { ...it, s, e, openEnd, mem, cat, channel, venues, origin, gens, hay, tagList, firstSeen, changed };
   }
   const baseItems = D.items.map(prep);
@@ -581,9 +616,10 @@ dl.spec .vn small { color: var(--muted); }
     oshi: new Set(store.get('oshi', [])),
     oshiOnly: !!store.get('oshiOnly', false),
     origins: new Set(),
-    hideEnded: !!store.get('hideEnded', false),
+    hideEnded: !!store.get('hideEnded', true),
+    stat: '',
     showOpen: !!store.get('showOpen', false),
-    sort: store.get('sort', 'start'),
+    sort: store.get('sort', 'end'),
     span: Number(store.get('span', 61)),
     dayW: Number(store.get('dayW', 24)),
     viewStart: TODAY - 7
@@ -681,6 +717,7 @@ dl.spec .vn small { color: var(--muted); }
       ['販売元', Object.keys(ORIGIN).filter(k => st.origins.has(k)).map(k => spill('origins', k, ORIGIN[k]))],
     ].filter(g => g[1].length);
     const flags = [];
+    if (st.stat) flags.push(spill('stat', st.stat, { open: '受付中', soon: '3日以内に締切', upcoming: '予定', ended: '終了' }[st.stat], 'var(--accent)'));
     if (st.hideEnded) flags.push(spill('flag', 'hideEnded', '終了分を隠す'));
     if (st.oshiOnly) flags.push(spill('flag', 'oshiOnly', '★推しのみ', 'var(--star)'));
     if (st.showOpen) flags.push(spill('flag', 'showOpen', '終了日未定も表示'));
@@ -692,14 +729,19 @@ dl.spec .vn small { color: var(--muted); }
 
   /* ---------- filtering & sorting ---------- */
   function activeCount() {
-    return (st.q.trim() ? 1 : 0) + st.tags.size + st.gens.size + st.members.size + st.cats.size + st.channels.size
-      + st.origins.size + (st.oshiOnly ? 1 : 0) + (st.hideEnded ? 1 : 0);
+    return (st.q.trim() ? 1 : 0) + (st.stat ? 1 : 0) + st.tags.size + st.gens.size + st.members.size + st.cats.size + st.channels.size
+      + st.origins.size + (st.oshiOnly ? 1 : 0);
   }
-  function visibleItems() {
-    const terms = st.q.split(/[\s　]+/).map(norm).filter(Boolean);
+  // 件数表示の「受付中」は、3日以内に締切のものも含める
+  const statGroup = it => { const s = statusOf(it); return s === 'soon' ? 'open' : s; };
+  function visibleItems(forCount) {
+    const terms = st.q.split(/[\s　]+/).map(norm).filter(Boolean).map(expandTerm);
     const who = st.gens.size || st.members.size;
     const list = items.filter(it => {
-      if (st.hideEnded && statusOf(it) === 'ended') return false;
+      if (!forCount) {
+        if (st.stat === 'soon' ? statusOf(it) !== 'soon' : st.stat && statGroup(it) !== st.stat) return false;
+        if (st.hideEnded && st.stat !== 'ended' && statusOf(it) === 'ended') return false;
+      }
       if (!st.showOpen && it.openEnd && !it.release && !it.status) return false;
       if (st.origins.size && !st.origins.has(it.origin)) return false;
       if (st.cats.size && !st.cats.has(it.cat.key)) return false;
@@ -707,7 +749,7 @@ dl.spec .vn small { color: var(--muted); }
       if (st.tags.size && !it.tagList.some(t => st.tags.has(t))) return false;
       if (who && !(it.members.some(id => st.members.has(id)) || [...it.gens].some(g => st.gens.has(g)))) return false;
       if (st.oshiOnly && !it.members.some(id => st.oshi.has(id))) return false;
-      return terms.every(t => it.hay.includes(t));
+      return terms.every(alts => alts.some(t => it.hay.includes(t)));
     });
     if (st.sort === 'end') list.sort((a, b) => ((statusOf(a) === 'ended') - (statusOf(b) === 'ended')) || (statusOf(a) === 'ended' ? b.e - a.e : a.e - b.e));
     if (st.sort === 'end') list.sort((a, b) => (a.openEnd - b.openEnd) || 0);
@@ -814,14 +856,15 @@ dl.spec .vn small { color: var(--muted); }
 
   function renderSummary(list) {
     const c = { open: 0, soon: 0, upcoming: 0, ended: 0, soldout: 0, restock: 0, resumed: 0 };
-    list.forEach(it => c[statusOf(it)]++);
+    visibleItems(true).forEach(it => { const s = statusOf(it); c[s]++; if (s === 'soon') c.open++; });
+    const sb = (key, cls, label, title) => `<button type="button" class="stat ${cls}${st.stat === key ? ' on' : ''}" data-stat="${key}" aria-pressed="${st.stat === key}" title="${title}">${label}<strong>${c[key]}</strong></button>`;
     const nNew = items.filter(it => it.tagList.includes('NEW') && (st.showOpen || !it.openEnd || it.release || it.status)).length;
     $('summary').innerHTML =
       `<button type="button" class="stat s-new${st.tags.has('NEW') ? ' on' : ''}" data-newstat aria-pressed="${st.tags.has('NEW')}" title="初めて掲載されてから${NEW_DAYS}日以内の商品">NEW<small style="font-size:11px">（掲載${NEW_DAYS}日以内）</small><strong>${nNew}</strong></button>`
-      + `<span class="stat s-open">受付中<strong>${c.open}</strong></span>`
-      + `<span class="stat s-soon">3日以内に締切<strong>${c.soon}</strong></span>`
-      + `<span class="stat s-upcoming">予定<strong>${c.upcoming}</strong></span>`
-      + `<span class="stat">終了<strong>${c.ended}</strong></span>`
+      + sb('open', 's-open', '受付中', '販売・受付中の商品だけを表示（3日以内に締切のものを含む）')
+      + sb('soon', 's-soon', '3日以内に締切', '締切が3日以内の商品だけを表示')
+      + sb('upcoming', 's-upcoming', '予定', 'これから始まる商品だけを表示')
+      + sb('ended', 's-ended', '終了', '終了した商品だけを表示')
       + `<span class="stat">表示中<strong>${list.length}</strong>／全${items.length}件</span>`;
   }
 
@@ -862,7 +905,7 @@ dl.spec .vn small { color: var(--muted); }
       + `<div class="tb"><span class="${pillCls(it, s)}">${labelOf(it, s)}</span>${officialBadge(it)}<span class="badge ch">${esc(CH[it.channel])}</span>${it.tagList.map(tagBadge).join('')}</div>`
       + (it.changeNote && it.tagList.includes('更新') ? `<div style="color:var(--c-anniv)">更新：${esc(it.changeNote)}</div>` : '')
       + `<dl><dt>期間</dt><dd>${rangeText(it)}（${remainText(it)}）</dd>`
-      + `<dt>メンバー</dt><dd>${esc(it.mem.map(nameWithMark).join('、') || '—')}</dd>`
+      + `<dt>メンバー</dt><dd>${esc(it.mem.slice(0, 8).map(nameWithMark).join('、') || '—')}${it.mem.length > 8 ? `<span class="more"> ほか${it.mem.length - 8}名（全員は詳細で表示）</span>` : ''}</dd>`
       + (it.venues.length ? `<dt>会場</dt><dd>${venueLines(it)}</dd>` : '')
       + `<dt>販売元</dt><dd>${esc(it.shop || '—')}</dd>`
       + `<dt>出典</dt><dd>${esc(it.source || '—')}</dd></dl>`;
@@ -948,7 +991,7 @@ dl.spec .vn small { color: var(--muted); }
     st.gens.clear(); st.members.clear(); st.cats.clear(); st.channels.clear(); st.tags.clear();
     st.oshiOnly = false; $('oshiOnly').checked = false; store.set('oshiOnly', false);
     st.origins.clear();
-    st.hideEnded = false; $('hideEnded').checked = false; store.set('hideEnded', false);
+    st.stat = '';
     renderAllChips(); render();
   }
   const toggleIn = (set, k) => { set.has(k) ? set.delete(k) : set.add(k); };
@@ -1006,7 +1049,9 @@ dl.spec .vn small { color: var(--muted); }
     const b = e.target.closest('[data-unsel]'); if (!b) return;
     e.preventDefault(); e.stopPropagation();
     const k = b.dataset.k;
-    if (b.dataset.unsel === 'flag') {
+    if (b.dataset.unsel === 'stat') {
+      st.stat = '';
+    } else if (b.dataset.unsel === 'flag') {
       st[k] = false; $(k).checked = false; store.set(k, false);
     } else {
       st[b.dataset.unsel].delete(k);
@@ -1015,7 +1060,11 @@ dl.spec .vn small { color: var(--muted); }
   });
 
   $('tagChips').addEventListener('click', e => { const b = e.target.closest('[data-tag]'); if (!b) return; toggleIn(st.tags, b.dataset.tag); renderTagChips(); panelChanged(); });
-  $('summary').addEventListener('click', e => { if (!e.target.closest('[data-newstat]')) return; toggleIn(st.tags, 'NEW'); renderTagChips(); render(); });
+  $('summary').addEventListener('click', e => {
+    const sb = e.target.closest('[data-stat]');
+    if (sb) { st.stat = st.stat === sb.dataset.stat ? '' : sb.dataset.stat; render(); return; }
+    if (!e.target.closest('[data-newstat]')) return; toggleIn(st.tags, 'NEW'); renderTagChips(); render();
+  });
   $('genChips').addEventListener('click', e => { const b = e.target.closest('[data-gen]'); if (!b) return; toggleIn(st.gens, b.dataset.gen); renderGenChips(); panelChanged(); });
   $('catChips').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; toggleIn(st.cats, b.dataset.cat); renderCatChips(); panelChanged(); });
   $('chChips').addEventListener('click', e => { const b = e.target.closest('[data-ch]'); if (!b) return; toggleIn(st.channels, b.dataset.ch); renderChChips(); panelChanged(); });

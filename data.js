@@ -79,6 +79,10 @@ window.HOLO_GOODS = {
    "mark": "🐻💿",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Tokino Sora",
+    "そらちゃん"
    ]
   },
   {
@@ -88,6 +92,10 @@ window.HOLO_GOODS = {
    "mark": "🤖",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Roboco",
+    "ロボ子"
    ]
   },
   {
@@ -97,6 +105,9 @@ window.HOLO_GOODS = {
    "mark": "⚒️",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "あずき"
    ]
   },
   {
@@ -106,6 +117,11 @@ window.HOLO_GOODS = {
    "mark": "🌸",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Sakura Miko",
+    "みこち",
+    "エリート"
    ]
   },
   {
@@ -115,6 +131,10 @@ window.HOLO_GOODS = {
    "mark": "☄️",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Hoshimachi Suisei",
+    "すいちゃん"
    ]
   },
   {
@@ -124,6 +144,10 @@ window.HOLO_GOODS = {
    "mark": "🍎",
    "gens": [
     "1期生"
+   ],
+   "aliases": [
+    "Aki Rosenthal",
+    "アキロゼ"
    ]
   },
   {
@@ -133,6 +157,11 @@ window.HOLO_GOODS = {
    "mark": "❤️",
    "gens": [
     "1期生"
+   ],
+   "aliases": [
+    "Akai Haato",
+    "Haachama",
+    "はあちゃま"
    ]
   },
   {
@@ -143,6 +172,10 @@ window.HOLO_GOODS = {
    "gens": [
     "1期生",
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Shirakami Fubuki",
+    "フブちゃん"
    ]
   },
   {
@@ -152,6 +185,10 @@ window.HOLO_GOODS = {
    "mark": "🏮",
    "gens": [
     "1期生"
+   ],
+   "aliases": [
+    "Natsuiro Matsuri",
+    "まつりちゃん"
    ]
   },
   {
@@ -161,6 +198,10 @@ window.HOLO_GOODS = {
    "mark": "😈",
    "gens": [
     "2期生"
+   ],
+   "aliases": [
+    "Nakiri Ayame",
+    "お嬢"
    ]
   },
   {
@@ -170,6 +211,10 @@ window.HOLO_GOODS = {
    "mark": "💋",
    "gens": [
     "2期生"
+   ],
+   "aliases": [
+    "Yuzuki Choco",
+    "ちょこ先生"
    ]
   },
   {
@@ -179,6 +224,10 @@ window.HOLO_GOODS = {
    "mark": "🚑",
    "gens": [
     "2期生"
+   ],
+   "aliases": [
+    "Oozora Subaru",
+    "スバルちゃん"
    ]
   },
   {
@@ -188,6 +237,10 @@ window.HOLO_GOODS = {
    "mark": "🌲",
    "gens": [
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Ookami Mio",
+    "ミオしゃ"
    ]
   },
   {
@@ -197,6 +250,10 @@ window.HOLO_GOODS = {
    "mark": "🍙",
    "gens": [
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Nekomata Okayu",
+    "おかゆん"
    ]
   },
   {
@@ -206,6 +263,10 @@ window.HOLO_GOODS = {
    "mark": "🥐",
    "gens": [
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Inugami Korone",
+    "ころさん"
    ]
   },
   {
@@ -215,6 +276,11 @@ window.HOLO_GOODS = {
    "mark": "👯‍♀️",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Usada Pekora",
+    "ぺこちゃん",
+    "ぺこーら"
    ]
   },
   {
@@ -224,6 +290,9 @@ window.HOLO_GOODS = {
    "mark": "🔥",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Shiranui Flare"
    ]
   },
   {
@@ -233,6 +302,10 @@ window.HOLO_GOODS = {
    "mark": "⚔️",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Shirogane Noel",
+    "団長"
    ]
   },
   {
@@ -242,6 +315,10 @@ window.HOLO_GOODS = {
    "mark": "🏴‍☠️",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Houshou Marine",
+    "船長"
    ]
   },
   {
@@ -251,6 +328,10 @@ window.HOLO_GOODS = {
    "mark": "🐏",
    "gens": [
     "4期生"
+   ],
+   "aliases": [
+    "Tsunomaki Watame",
+    "わためぇ"
    ]
   },
   {
@@ -260,6 +341,10 @@ window.HOLO_GOODS = {
    "mark": "👾",
    "gens": [
     "4期生"
+   ],
+   "aliases": [
+    "Tokoyami Towa",
+    "トワ様"
    ]
   },
   {
@@ -269,6 +354,10 @@ window.HOLO_GOODS = {
    "mark": "🍬",
    "gens": [
     "4期生"
+   ],
+   "aliases": [
+    "Himemori Luna",
+    "ルーナ姫"
    ]
   },
   {
@@ -278,6 +367,9 @@ window.HOLO_GOODS = {
    "mark": "☃️",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Yukihana Lamy"
    ]
   },
   {
@@ -287,6 +379,10 @@ window.HOLO_GOODS = {
    "mark": "🍑🥟",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Momosuzu Nene",
+    "ねねち"
    ]
   },
   {
@@ -296,6 +392,10 @@ window.HOLO_GOODS = {
    "mark": "♌",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Shishiro Botan",
+    "ししろん"
    ]
   },
   {
@@ -305,6 +405,10 @@ window.HOLO_GOODS = {
    "mark": "🎪",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Omaru Polka",
+    "座長"
    ]
   },
   {
@@ -314,6 +418,12 @@ window.HOLO_GOODS = {
    "mark": "🛸💜",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "La+ Darknesss",
+    "Laplus",
+    "ラプ様",
+    "ラプちゃん"
    ]
   },
   {
@@ -323,6 +433,10 @@ window.HOLO_GOODS = {
    "mark": "🥀",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "Takane Lui",
+    "ルイ姉"
    ]
   },
   {
@@ -332,6 +446,11 @@ window.HOLO_GOODS = {
    "mark": "🧪",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "Hakui Koyori",
+    "こよ",
+    "こよちゃん"
    ]
   },
   {
@@ -341,6 +460,10 @@ window.HOLO_GOODS = {
    "mark": "🍃",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "Kazama Iroha",
+    "ござる"
    ]
   },
   {
@@ -350,6 +473,9 @@ window.HOLO_GOODS = {
    "mark": "🐿️",
    "gens": [
     "AREA15"
+   ],
+   "aliases": [
+    "Ayunda Risu"
    ]
   },
   {
@@ -359,6 +485,9 @@ window.HOLO_GOODS = {
    "mark": "🔮",
    "gens": [
     "AREA15"
+   ],
+   "aliases": [
+    "Moona Hoshinova"
    ]
   },
   {
@@ -368,6 +497,10 @@ window.HOLO_GOODS = {
    "mark": "🎨",
    "gens": [
     "AREA15"
+   ],
+   "aliases": [
+    "Airani Iofifteen",
+    "イオフィ"
    ]
   },
   {
@@ -377,6 +510,9 @@ window.HOLO_GOODS = {
    "mark": "🧟‍♀️",
    "gens": [
     "holoro"
+   ],
+   "aliases": [
+    "Kureiji Ollie"
    ]
   },
   {
@@ -386,6 +522,9 @@ window.HOLO_GOODS = {
    "mark": "🍂",
    "gens": [
     "holoro"
+   ],
+   "aliases": [
+    "Anya Melfissa"
    ]
   },
   {
@@ -395,6 +534,9 @@ window.HOLO_GOODS = {
    "mark": "🦚",
    "gens": [
     "holoro"
+   ],
+   "aliases": [
+    "Pavolia Reine"
    ]
   },
   {
@@ -404,6 +546,9 @@ window.HOLO_GOODS = {
    "mark": "📜",
    "gens": [
     "holoh3ro"
+   ],
+   "aliases": [
+    "Vestia Zeta"
    ]
   },
   {
@@ -413,6 +558,9 @@ window.HOLO_GOODS = {
    "mark": "🔨",
    "gens": [
     "holoh3ro"
+   ],
+   "aliases": [
+    "Kaela Kovalskia"
    ]
   },
   {
@@ -422,6 +570,9 @@ window.HOLO_GOODS = {
    "mark": "☔",
    "gens": [
     "holoh3ro"
+   ],
+   "aliases": [
+    "Kobo Kanaeru"
    ]
   },
   {
@@ -431,6 +582,11 @@ window.HOLO_GOODS = {
    "mark": "💀",
    "gens": [
     "Myth"
+   ],
+   "aliases": [
+    "Mori Calliope",
+    "Calli",
+    "カリ"
    ]
   },
   {
@@ -440,6 +596,11 @@ window.HOLO_GOODS = {
    "mark": "🐙",
    "gens": [
     "Myth"
+   ],
+   "aliases": [
+    "Ninomae Inanis",
+    "Ina",
+    "イナ"
    ]
   },
   {
@@ -450,6 +611,9 @@ window.HOLO_GOODS = {
    "gens": [
     "Project: HOPE",
     "Promise"
+   ],
+   "aliases": [
+    "アイリス"
    ]
   },
   {
@@ -460,6 +624,9 @@ window.HOLO_GOODS = {
    "gens": [
     "Council",
     "Promise"
+   ],
+   "aliases": [
+    "Ouro Kronii"
    ]
   },
   {
@@ -470,6 +637,10 @@ window.HOLO_GOODS = {
    "gens": [
     "Council",
     "Promise"
+   ],
+   "aliases": [
+    "Hakos Baelz",
+    "Bae"
    ]
   },
   {
@@ -479,6 +650,9 @@ window.HOLO_GOODS = {
    "mark": "👁️‍🗨️",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Shiori Novella"
    ]
   },
   {
@@ -488,6 +662,9 @@ window.HOLO_GOODS = {
    "mark": "🗿",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Koseki Bijou"
    ]
   },
   {
@@ -497,6 +674,9 @@ window.HOLO_GOODS = {
    "mark": "🎼",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Nerissa Ravencroft"
    ]
   },
   {
@@ -506,6 +686,11 @@ window.HOLO_GOODS = {
    "mark": "🐾🩵",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Fuwawa Abyssgard",
+    "FUWAMOCO",
+    "フワモコ"
    ]
   },
   {
@@ -515,6 +700,11 @@ window.HOLO_GOODS = {
    "mark": "🐾🩷",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Mococo Abyssgard",
+    "FUWAMOCO",
+    "フワモコ"
    ]
   },
   {
@@ -524,6 +714,10 @@ window.HOLO_GOODS = {
    "mark": "💄",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Elizabeth Rose Bloodflame",
+    "ERB"
    ]
   },
   {
@@ -533,6 +727,9 @@ window.HOLO_GOODS = {
    "mark": "👧",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Gigi Murin"
    ]
   },
   {
@@ -542,6 +739,9 @@ window.HOLO_GOODS = {
    "mark": "🍵",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Cecilia Immergreen"
    ]
   },
   {
@@ -551,6 +751,9 @@ window.HOLO_GOODS = {
    "mark": "🐱",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Raora Panthera"
    ]
   },
   {
@@ -560,6 +763,9 @@ window.HOLO_GOODS = {
    "mark": "🎹✨",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Otonose Kanade"
    ]
   },
   {
@@ -569,6 +775,9 @@ window.HOLO_GOODS = {
    "mark": "🌃",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Ichijou Ririka"
    ]
   },
   {
@@ -578,6 +787,9 @@ window.HOLO_GOODS = {
    "mark": "🐚",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Juufuutei Raden"
    ]
   },
   {
@@ -587,6 +799,10 @@ window.HOLO_GOODS = {
    "mark": "🐧⚡",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Todoroki Hajime",
+    "ばんちょー"
    ]
   },
   {
@@ -596,6 +812,9 @@ window.HOLO_GOODS = {
    "mark": "🎤👑",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Isaki Riona"
    ]
   },
   {
@@ -605,6 +824,9 @@ window.HOLO_GOODS = {
    "mark": "☺️🐅",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Koganei Niko"
    ]
   },
   {
@@ -614,6 +836,9 @@ window.HOLO_GOODS = {
    "mark": "💬🔁💙",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Mizumiya Su"
    ]
   },
   {
@@ -623,6 +848,9 @@ window.HOLO_GOODS = {
    "mark": "🎧🔧",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Rindo Chihaya"
    ]
   },
   {
@@ -632,6 +860,9 @@ window.HOLO_GOODS = {
    "mark": "💅✨",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Kikirara Vivi"
    ]
   },
   {
@@ -641,7 +872,8 @@ window.HOLO_GOODS = {
    "mark": "🧯",
    "gens": [
     "アソビ★まわり隊！"
-   ]
+   ],
+   "aliases": []
   },
   {
    "id": "宙科そぴあ",
@@ -650,7 +882,8 @@ window.HOLO_GOODS = {
    "mark": "📡",
    "gens": [
     "アソビ★まわり隊！"
-   ]
+   ],
+   "aliases": []
   },
   {
    "id": "鈴鳴つづり",
@@ -659,7 +892,8 @@ window.HOLO_GOODS = {
    "mark": "🐐💌",
    "gens": [
     "アソビ★まわり隊！"
-   ]
+   ],
+   "aliases": []
   },
   {
    "id": "百灯キョーコ",
@@ -668,7 +902,8 @@ window.HOLO_GOODS = {
    "mark": "👮📢",
    "gens": [
     "アソビ★まわり隊！"
-   ]
+   ],
+   "aliases": []
   },
   {
    "id": "リージス・アルテア",
@@ -677,6 +912,9 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Regis Altare"
    ]
   },
   {
@@ -686,6 +924,9 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Machina X Flayon"
    ]
   },
   {
@@ -695,6 +936,9 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Gavis Bettel"
    ]
   },
   {
@@ -704,6 +948,9 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Axel Syrios"
    ]
   },
   {
@@ -713,6 +960,9 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Banzoin Hakka"
    ]
   },
   {
@@ -722,6 +972,9 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Josuiji Shinri"
    ]
   },
   {
@@ -731,7 +984,8 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "その他"
-   ]
+   ],
+   "aliases": []
   },
   {
    "id": "クリムゾン・ルーズ",
@@ -740,7 +994,8 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "その他"
-   ]
+   ],
+   "aliases": []
   },
   {
    "id": "ゴールドブレット",
@@ -749,7 +1004,8 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "その他"
-   ]
+   ],
+   "aliases": []
   },
   {
    "id": "ジュラルド・ティー・レクスフォード",
@@ -758,7 +1014,8 @@ window.HOLO_GOODS = {
    "mark": "",
    "gens": [
     "その他"
-   ]
+   ],
+   "aliases": []
   }
  ],
  "items": [

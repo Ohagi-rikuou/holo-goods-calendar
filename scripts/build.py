@@ -80,7 +80,7 @@ def build(updated=None):
 
     used.sort(key=lambda n: (order.index(info(n)[1]['gens'][0]), info(n)[0]))
     members = [{'id': n, 'name': n, 'kana': info(n)[1]['kana'], 'mark': info(n)[1]['mark'],
-                'gens': info(n)[1]['gens']} for n in used]
+                'gens': info(n)[1]['gens'], 'aliases': info(n)[1].get('aliases', [])} for n in used]
 
     meta = dict(base['meta'])
     meta['updated'] = updated

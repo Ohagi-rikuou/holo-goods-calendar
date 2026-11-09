@@ -36,6 +36,10 @@
    "mark": "🐻💿",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Tokino Sora",
+    "そらちゃん"
    ]
   },
   {
@@ -44,6 +48,10 @@
    "mark": "🤖",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Roboco",
+    "ロボ子"
    ]
   },
   {
@@ -52,6 +60,9 @@
    "mark": "⚒️",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "あずき"
    ]
   },
   {
@@ -60,6 +71,11 @@
    "mark": "🌸",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Sakura Miko",
+    "みこち",
+    "エリート"
    ]
   },
   {
@@ -68,6 +84,10 @@
    "mark": "☄️",
    "gens": [
     "0期生"
+   ],
+   "aliases": [
+    "Hoshimachi Suisei",
+    "すいちゃん"
    ]
   },
   {
@@ -76,6 +96,10 @@
    "mark": "🍎",
    "gens": [
     "1期生"
+   ],
+   "aliases": [
+    "Aki Rosenthal",
+    "アキロゼ"
    ]
   },
   {
@@ -84,6 +108,11 @@
    "mark": "❤️",
    "gens": [
     "1期生"
+   ],
+   "aliases": [
+    "Akai Haato",
+    "Haachama",
+    "はあちゃま"
    ]
   },
   {
@@ -93,6 +122,10 @@
    "gens": [
     "1期生",
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Shirakami Fubuki",
+    "フブちゃん"
    ]
   },
   {
@@ -101,6 +134,10 @@
    "mark": "🏮",
    "gens": [
     "1期生"
+   ],
+   "aliases": [
+    "Natsuiro Matsuri",
+    "まつりちゃん"
    ]
   },
   {
@@ -109,6 +146,10 @@
    "mark": "😈",
    "gens": [
     "2期生"
+   ],
+   "aliases": [
+    "Nakiri Ayame",
+    "お嬢"
    ]
   },
   {
@@ -117,6 +158,10 @@
    "mark": "💋",
    "gens": [
     "2期生"
+   ],
+   "aliases": [
+    "Yuzuki Choco",
+    "ちょこ先生"
    ]
   },
   {
@@ -125,6 +170,10 @@
    "mark": "🚑",
    "gens": [
     "2期生"
+   ],
+   "aliases": [
+    "Oozora Subaru",
+    "スバルちゃん"
    ]
   },
   {
@@ -134,6 +183,10 @@
    "gens": [
     "2期生",
     "卒業生"
+   ],
+   "aliases": [
+    "Minato Aqua",
+    "あくたん"
    ]
   },
   {
@@ -143,6 +196,9 @@
    "gens": [
     "2期生",
     "卒業生"
+   ],
+   "aliases": [
+    "Murasaki Shion"
    ]
   },
   {
@@ -151,6 +207,10 @@
    "mark": "🌲",
    "gens": [
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Ookami Mio",
+    "ミオしゃ"
    ]
   },
   {
@@ -159,6 +219,10 @@
    "mark": "🍙",
    "gens": [
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Nekomata Okayu",
+    "おかゆん"
    ]
   },
   {
@@ -167,6 +231,10 @@
    "mark": "🥐",
    "gens": [
     "ホロライブゲーマーズ"
+   ],
+   "aliases": [
+    "Inugami Korone",
+    "ころさん"
    ]
   },
   {
@@ -175,6 +243,11 @@
    "mark": "👯‍♀️",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Usada Pekora",
+    "ぺこちゃん",
+    "ぺこーら"
    ]
   },
   {
@@ -183,6 +256,9 @@
    "mark": "🔥",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Shiranui Flare"
    ]
   },
   {
@@ -191,6 +267,10 @@
    "mark": "⚔️",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Shirogane Noel",
+    "団長"
    ]
   },
   {
@@ -199,6 +279,10 @@
    "mark": "🏴‍☠️",
    "gens": [
     "3期生"
+   ],
+   "aliases": [
+    "Houshou Marine",
+    "船長"
    ]
   },
   {
@@ -207,6 +291,10 @@
    "mark": "🐏",
    "gens": [
     "4期生"
+   ],
+   "aliases": [
+    "Tsunomaki Watame",
+    "わためぇ"
    ]
   },
   {
@@ -215,6 +303,10 @@
    "mark": "👾",
    "gens": [
     "4期生"
+   ],
+   "aliases": [
+    "Tokoyami Towa",
+    "トワ様"
    ]
   },
   {
@@ -223,6 +315,10 @@
    "mark": "🍬",
    "gens": [
     "4期生"
+   ],
+   "aliases": [
+    "Himemori Luna",
+    "ルーナ姫"
    ]
   },
   {
@@ -232,6 +328,10 @@
    "gens": [
     "4期生",
     "卒業生"
+   ],
+   "aliases": [
+    "Amane Kanata",
+    "かなたそ"
    ]
   },
   {
@@ -241,6 +341,10 @@
    "gens": [
     "4期生",
     "卒業生"
+   ],
+   "aliases": [
+    "Kiryu Coco",
+    "会長"
    ]
   },
   {
@@ -249,6 +353,9 @@
    "mark": "☃️",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Yukihana Lamy"
    ]
   },
   {
@@ -257,6 +364,10 @@
    "mark": "🍑🥟",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Momosuzu Nene",
+    "ねねち"
    ]
   },
   {
@@ -265,6 +376,10 @@
    "mark": "♌",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Shishiro Botan",
+    "ししろん"
    ]
   },
   {
@@ -273,6 +388,10 @@
    "mark": "🎪",
    "gens": [
     "5期生"
+   ],
+   "aliases": [
+    "Omaru Polka",
+    "座長"
    ]
   },
   {
@@ -281,6 +400,12 @@
    "mark": "🛸💜",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "La+ Darknesss",
+    "Laplus",
+    "ラプ様",
+    "ラプちゃん"
    ]
   },
   {
@@ -289,6 +414,10 @@
    "mark": "🥀",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "Takane Lui",
+    "ルイ姉"
    ]
   },
   {
@@ -297,6 +426,11 @@
    "mark": "🧪",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "Hakui Koyori",
+    "こよ",
+    "こよちゃん"
    ]
   },
   {
@@ -305,6 +439,10 @@
    "mark": "🍃",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "Kazama Iroha",
+    "ござる"
    ]
   },
   {
@@ -313,6 +451,10 @@
    "mark": "🎣",
    "gens": [
     "秘密結社holoX"
+   ],
+   "aliases": [
+    "Sakamata Chloe",
+    "さかまた"
    ]
   },
   {
@@ -321,6 +463,9 @@
    "mark": "🐿️",
    "gens": [
     "AREA15"
+   ],
+   "aliases": [
+    "Ayunda Risu"
    ]
   },
   {
@@ -329,6 +474,9 @@
    "mark": "🔮",
    "gens": [
     "AREA15"
+   ],
+   "aliases": [
+    "Moona Hoshinova"
    ]
   },
   {
@@ -337,6 +485,10 @@
    "mark": "🎨",
    "gens": [
     "AREA15"
+   ],
+   "aliases": [
+    "Airani Iofifteen",
+    "イオフィ"
    ]
   },
   {
@@ -345,6 +497,9 @@
    "mark": "🧟‍♀️",
    "gens": [
     "holoro"
+   ],
+   "aliases": [
+    "Kureiji Ollie"
    ]
   },
   {
@@ -353,6 +508,9 @@
    "mark": "🍂",
    "gens": [
     "holoro"
+   ],
+   "aliases": [
+    "Anya Melfissa"
    ]
   },
   {
@@ -361,6 +519,9 @@
    "mark": "🦚",
    "gens": [
     "holoro"
+   ],
+   "aliases": [
+    "Pavolia Reine"
    ]
   },
   {
@@ -369,6 +530,9 @@
    "mark": "📜",
    "gens": [
     "holoh3ro"
+   ],
+   "aliases": [
+    "Vestia Zeta"
    ]
   },
   {
@@ -377,6 +541,9 @@
    "mark": "🔨",
    "gens": [
     "holoh3ro"
+   ],
+   "aliases": [
+    "Kaela Kovalskia"
    ]
   },
   {
@@ -385,6 +552,9 @@
    "mark": "☔",
    "gens": [
     "holoh3ro"
+   ],
+   "aliases": [
+    "Kobo Kanaeru"
    ]
   },
   {
@@ -393,6 +563,11 @@
    "mark": "💀",
    "gens": [
     "Myth"
+   ],
+   "aliases": [
+    "Mori Calliope",
+    "Calli",
+    "カリ"
    ]
   },
   {
@@ -401,6 +576,9 @@
    "mark": "🐔",
    "gens": [
     "Myth"
+   ],
+   "aliases": [
+    "Takanashi Kiara"
    ]
   },
   {
@@ -409,6 +587,11 @@
    "mark": "🐙",
    "gens": [
     "Myth"
+   ],
+   "aliases": [
+    "Ninomae Inanis",
+    "Ina",
+    "イナ"
    ]
   },
   {
@@ -417,6 +600,11 @@
    "mark": "🔎",
    "gens": [
     "Myth"
+   ],
+   "aliases": [
+    "Watson Amelia",
+    "Ame",
+    "アメ"
    ]
   },
   {
@@ -426,6 +614,10 @@
    "gens": [
     "Myth",
     "卒業生"
+   ],
+   "aliases": [
+    "Gawr Gura",
+    "Gura"
    ]
   },
   {
@@ -435,6 +627,9 @@
    "gens": [
     "Project: HOPE",
     "Promise"
+   ],
+   "aliases": [
+    "アイリス"
    ]
   },
   {
@@ -444,6 +639,9 @@
    "gens": [
     "Council",
     "Promise"
+   ],
+   "aliases": [
+    "Ouro Kronii"
    ]
   },
   {
@@ -453,6 +651,10 @@
    "gens": [
     "Council",
     "Promise"
+   ],
+   "aliases": [
+    "Hakos Baelz",
+    "Bae"
    ]
   },
   {
@@ -462,6 +664,9 @@
    "gens": [
     "Council",
     "卒業生"
+   ],
+   "aliases": [
+    "Tsukumo Sana"
    ]
   },
   {
@@ -472,6 +677,9 @@
     "Council",
     "Promise",
     "卒業生"
+   ],
+   "aliases": [
+    "Ceres Fauna"
    ]
   },
   {
@@ -482,6 +690,9 @@
     "Council",
     "Promise",
     "卒業生"
+   ],
+   "aliases": [
+    "Nanashi Mumei"
    ]
   },
   {
@@ -490,6 +701,9 @@
    "mark": "👁️‍🗨️",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Shiori Novella"
    ]
   },
   {
@@ -498,6 +712,9 @@
    "mark": "🗿",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Koseki Bijou"
    ]
   },
   {
@@ -506,6 +723,9 @@
    "mark": "🎼",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Nerissa Ravencroft"
    ]
   },
   {
@@ -514,6 +734,11 @@
    "mark": "🐾🩵",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Fuwawa Abyssgard",
+    "FUWAMOCO",
+    "フワモコ"
    ]
   },
   {
@@ -522,6 +747,11 @@
    "mark": "🐾🩷",
    "gens": [
     "Advent"
+   ],
+   "aliases": [
+    "Mococo Abyssgard",
+    "FUWAMOCO",
+    "フワモコ"
    ]
   },
   {
@@ -530,6 +760,10 @@
    "mark": "💄",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Elizabeth Rose Bloodflame",
+    "ERB"
    ]
   },
   {
@@ -538,6 +772,9 @@
    "mark": "👧",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Gigi Murin"
    ]
   },
   {
@@ -546,6 +783,9 @@
    "mark": "🍵",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Cecilia Immergreen"
    ]
   },
   {
@@ -554,6 +794,9 @@
    "mark": "🐱",
    "gens": [
     "Justice"
+   ],
+   "aliases": [
+    "Raora Panthera"
    ]
   },
   {
@@ -562,6 +805,9 @@
    "mark": "🎹✨",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Otonose Kanade"
    ]
   },
   {
@@ -570,6 +816,9 @@
    "mark": "🌃",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Ichijou Ririka"
    ]
   },
   {
@@ -578,6 +827,9 @@
    "mark": "🐚",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Juufuutei Raden"
    ]
   },
   {
@@ -586,6 +838,10 @@
    "mark": "🐧⚡",
    "gens": [
     "ReGLOSS"
+   ],
+   "aliases": [
+    "Todoroki Hajime",
+    "ばんちょー"
    ]
   },
   {
@@ -595,6 +851,9 @@
    "gens": [
     "ReGLOSS",
     "卒業生"
+   ],
+   "aliases": [
+    "Hiodoshi Ao"
    ]
   },
   {
@@ -603,6 +862,9 @@
    "mark": "🎤👑",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Isaki Riona"
    ]
   },
   {
@@ -611,6 +873,9 @@
    "mark": "☺️🐅",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Koganei Niko"
    ]
   },
   {
@@ -619,6 +884,9 @@
    "mark": "💬🔁💙",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Mizumiya Su"
    ]
   },
   {
@@ -627,6 +895,9 @@
    "mark": "🎧🔧",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Rindo Chihaya"
    ]
   },
   {
@@ -635,6 +906,9 @@
    "mark": "💅✨",
    "gens": [
     "FLOW GLOW"
+   ],
+   "aliases": [
+    "Kikirara Vivi"
    ]
   },
   {
@@ -699,6 +973,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ1期生"
+   ],
+   "aliases": [
+    "Hanasaki Miyabi"
    ]
   },
   {
@@ -707,6 +984,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ1期生"
+   ],
+   "aliases": [
+    "Kanade Izuru"
    ]
   },
   {
@@ -715,6 +995,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ1期生"
+   ],
+   "aliases": [
+    "Arurandeisu"
    ]
   },
   {
@@ -723,6 +1006,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ1期生"
+   ],
+   "aliases": [
+    "Rikka"
    ]
   },
   {
@@ -731,6 +1017,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ2期生"
+   ],
+   "aliases": [
+    "Astel Leda"
    ]
   },
   {
@@ -739,6 +1028,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ2期生"
+   ],
+   "aliases": [
+    "Kishido Temma"
    ]
   },
   {
@@ -747,6 +1039,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ2期生"
+   ],
+   "aliases": [
+    "Yukoku Roberu"
    ]
   },
   {
@@ -755,6 +1050,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ3期生"
+   ],
+   "aliases": [
+    "Kageyama Shien"
    ]
   },
   {
@@ -763,6 +1061,9 @@
    "mark": "",
    "gens": [
     "ホロスターズ3期生"
+   ],
+   "aliases": [
+    "Aragami Oga"
    ]
   },
   {
@@ -771,6 +1072,9 @@
    "mark": "",
    "gens": [
     "UPROAR!!"
+   ],
+   "aliases": [
+    "Yatogami Fuma"
    ]
   },
   {
@@ -779,6 +1083,9 @@
    "mark": "",
    "gens": [
     "UPROAR!!"
+   ],
+   "aliases": [
+    "Utsugi Uyu"
    ]
   },
   {
@@ -787,6 +1094,9 @@
    "mark": "",
    "gens": [
     "UPROAR!!"
+   ],
+   "aliases": [
+    "Minase Rio"
    ]
   },
   {
@@ -795,6 +1105,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Regis Altare"
    ]
   },
   {
@@ -803,6 +1116,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Machina X Flayon"
    ]
   },
   {
@@ -811,6 +1127,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Gavis Bettel"
    ]
   },
   {
@@ -819,6 +1138,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Axel Syrios"
    ]
   },
   {
@@ -827,6 +1149,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Banzoin Hakka"
    ]
   },
   {
@@ -835,6 +1160,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Josuiji Shinri"
    ]
   },
   {
@@ -843,6 +1171,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Noir Vesper"
    ]
   },
   {
@@ -851,6 +1182,9 @@
    "mark": "",
    "gens": [
     "ホロスターズEN TEMPUS"
+   ],
+   "aliases": [
+    "Magni Dezmond"
    ]
   },
   {
@@ -859,6 +1193,9 @@
    "mark": "",
    "gens": [
     "その他"
+   ],
+   "aliases": [
+    "Yozora Mel"
    ]
   }
  ]
