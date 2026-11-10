@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JST = datetime.timezone(datetime.timedelta(hours=9))
 SOLDOUT_DAYS = 30   # 通常販売の商品が売り切れてから、この日数は「完売」として表示する（全体が売り切れで再入荷予定の印があれば入荷まで）
 RESUMED_DAYS = 7    # 通常販売の商品の販売再開を表示する日数
+NEW_DAYS = 7        # 新しく出た通常販売の商品を表示する日数（初めて見つけた日から。ページの NEW の印と同じ日数）
 
 
 def regular_status(it, today):
@@ -42,6 +43,11 @@ def publish_shop(shop, today):
             continue
         status, since = regular_status(it, today)
         if not status:
+            first = it.get('firstSeen')
+            if not it.get('watch') and not it.get('soldOut') and first and \
+                    today - datetime.timedelta(days=NEW_DAYS) < datetime.date.fromisoformat(first) <= today:
+                out.append(dict(it, regularNew=True))   # 新商品：期限なしでも NEW の間は載せる
+                continue
             hidden += 1
             continue
         out.append(dict(it, status=status, start=min(since, today.isoformat())))

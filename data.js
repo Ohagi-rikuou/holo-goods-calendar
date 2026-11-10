@@ -31,7 +31,7 @@ window.HOLO_GOODS = {
    "ホロスターズEN TEMPUS",
    "その他"
   ],
-  "scope": "公式ショップ：販売期間・受注期間のある商品。期限のない通常販売（在庫販売・予約販売、hololive friends や Regular Outfit などの定番商品を含む）は、売り切れ（30日間）・再入荷予定・販売再開（7日間）のときだけ掲載。企業・店舗：PR TIMESの発表（2026年8月〜10月）のうち、販売中・販売予定のもの。ホロカ：公式サイトの商品情報のうち発売前のもの。プライズ：バンダイスピリッツ・フリューの公式プライズサイトとタイトー店舗の入荷予定（9月以降の登場分）。くじ・フィギュア：エニマイ公式、一番くじは報道、あみあみの予約受付中商品。コラボ：ローソン・ジョイポリス・カプコンの公式情報。海外：ホロライブ公式サイト（英語版）ニュースと各社の発表から、海外で開催・販売されるもの（「海外」タグ付き）。"
+  "scope": "公式ショップ：販売期間・受注期間のある商品。期限のない通常販売（在庫販売・予約販売、hololive friends や Regular Outfit などの定番商品を含む）は、新商品として出たとき（7日間）と、売り切れ（30日間）・再入荷予定・販売再開（7日間）のときだけ掲載。企業・店舗：PR TIMESの発表（2026年8月〜10月）のうち、販売中・販売予定のもの。ホロカ：公式サイトの商品情報のうち発売前のもの。プライズ：バンダイスピリッツ・フリューの公式プライズサイトとタイトー店舗の入荷予定（9月以降の登場分）。くじ・フィギュア：エニマイ公式、一番くじは報道、あみあみの予約受付中商品。コラボ：ローソン・ジョイポリス・カプコンの公式情報。海外：ホロライブ公式サイト（英語版）ニュースと各社の発表から、海外で開催・販売されるもの（「海外」タグ付き）。"
  },
  "categories": {
   "birthday": {
@@ -590,6 +590,18 @@ window.HOLO_GOODS = {
    ]
   },
   {
+   "id": "小鳥遊キアラ",
+   "name": "小鳥遊キアラ",
+   "kana": "たかなしきあら",
+   "mark": "🐔",
+   "gens": [
+    "Myth"
+   ],
+   "aliases": [
+    "Takanashi Kiara"
+   ]
+  },
+  {
    "id": "一伊那尓栖",
    "name": "一伊那尓栖",
    "kana": "にのまえいなにす",
@@ -1020,6 +1032,111 @@ window.HOLO_GOODS = {
  ],
  "items": [
   {
+   "id": "s_flowglow_anniversary_2nd",
+   "title": "FLOW GLOW 2周年記念",
+   "members": [
+    "水宮枢",
+    "綺々羅々ヴィヴィ",
+    "虎金妃笑虎",
+    "輪堂千速",
+    "響咲リオナ"
+   ],
+   "category": "anniv",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-09",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥440〜¥6,600",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/flowglow_anniversary_2nd",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-10",
+   "regularNew": true
+  },
+  {
+   "id": "s_flowglow_anniversary_2nd_audiostory",
+   "title": "FLOW GLOW 2周年記念ボイス",
+   "members": [
+    "水宮枢",
+    "綺々羅々ヴィヴィ",
+    "虎金妃笑虎",
+    "輪堂千速",
+    "響咲リオナ"
+   ],
+   "category": "anniv",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-09",
+   "end": "",
+   "periodText": "",
+   "ship": "デジタル商品（購入後すぐ利用可）",
+   "price": "¥1,000〜¥6,500",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/flowglow_anniversary_2nd_audiostory",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [
+    "デジタル"
+   ],
+   "firstSeen": "2026-11-10",
+   "regularNew": true
+  },
+  {
+   "id": "s_holokitchen_cookingproject_audiostory_whatcouldpossiblygowrong",
+   "title": "ホロキッチン「どたばたクッキング！」ボイス",
+   "members": [
+    "オーロ・クロニー",
+    "セシリア・イマーグリーン",
+    "ネリッサ・レイヴンクロフト",
+    "ハコス・ベールズ",
+    "ラオーラ・パンテーラ",
+    "森カリオペ"
+   ],
+   "category": "digital",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-09",
+   "end": "",
+   "periodText": "",
+   "ship": "デジタル商品（購入後すぐ利用可）",
+   "price": "¥1,000〜¥6,000",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/holokitchen_cookingproject_audiostory_whatcouldpossiblygowrong",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [
+    "デジタル"
+   ],
+   "firstSeen": "2026-11-10",
+   "regularNew": true
+  },
+  {
+   "id": "s_vestiazeta_1step_vz",
+   "title": "ベスティア・ゼータ 1st EP 『V/Z』",
+   "members": [
+    "ベスティア・ゼータ"
+   ],
+   "category": "other",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "予約販売",
+   "start": "2026-11-07",
+   "end": "",
+   "periodText": "",
+   "ship": "2027年03月中旬までに発送予定",
+   "price": "¥9,900",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/vestiazeta_1step_vz",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-08",
+   "regularNew": true
+  },
+  {
    "id": "s_vestiazeta_birthday_2026",
    "title": "ベスティア・ゼータ 誕生日記念2026",
    "members": [
@@ -1069,6 +1186,194 @@ window.HOLO_GOODS = {
    "status": "soldout"
   },
   {
+   "id": "s_hololive_audiostory_whenwefirstmet",
+   "title": "ホロライブ ユーミートガールボイス",
+   "members": [
+    "AZKi",
+    "こぼ・かなえる",
+    "ときのそら",
+    "アユンダ・リス",
+    "アーニャ・メルフィッサ",
+    "オーロ・クロニー",
+    "クレイジー・オリー",
+    "フワワ・アビスガード",
+    "モココ・アビスガード",
+    "ロボ子さん",
+    "一条莉々華",
+    "博衣こより",
+    "夏色まつり",
+    "宙科そぴあ",
+    "尾丸ポルカ",
+    "桃鈴ねね",
+    "水宮枢",
+    "熱千めら",
+    "猫又おかゆ",
+    "癒月ちょこ",
+    "白銀ノエル",
+    "綺々羅々ヴィヴィ",
+    "赤井はあと",
+    "輪堂千速",
+    "雪花ラミィ"
+   ],
+   "category": "digital",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-06",
+   "end": "",
+   "periodText": "",
+   "ship": "デジタル商品（購入後すぐ利用可）",
+   "price": "¥500〜¥17,500",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololive_audiostory_whenwefirstmet",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [
+    "デジタル"
+   ],
+   "firstSeen": "2026-11-07",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_storagebox",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final オフィシャルホロカストレージボックス",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥880",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_storagebox",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_doubleholocacase",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final オフィシャルダブルホロカケース",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥2,200",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_doubleholocacase",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_t-shirt",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final Tシャツ",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥4,000",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_t-shirt",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_towel",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final タオル",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥3,300",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_towel",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_pinbadgeset",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final ピンバッジセット",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥14,300",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_pinbadgeset",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_holocacollection",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final オフィシャルホロカコレクション",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥4,500",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_holocacollection",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_rubbermat",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final オフィシャルホロカラバーマット",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥3,850",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_rubbermat",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
    "id": "s_hololiveofficialcardgame_exstreamercup25-26_diceandsposhiskillmarkerset",
    "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final オフィシャルホロカサイコロ・SP推しスキルマーカーセット",
    "members": [],
@@ -1091,6 +1396,46 @@ window.HOLO_GOODS = {
    "changed": "2026-11-06",
    "changeNote": "SOLD OUT",
    "status": "soldout"
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_sleeveset",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final オフィシャルホロカスリーブセット",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥1,500",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_sleeveset",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
+  },
+  {
+   "id": "s_hololiveofficialcardgame_exstreamercup25-26_acryliccardstand",
+   "title": "hololive OFFICIAL CARD GAME エクストリーマーカップ25-26 Final オフィシャルホロカアクリルカードスタンド",
+   "members": [],
+   "category": "hocg",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-04",
+   "end": "",
+   "periodText": "",
+   "ship": "在庫商品（決済確認後10営業日以内に発送）",
+   "price": "¥2,200",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/hololiveofficialcardgame_exstreamercup25-26_acryliccardstand",
+   "source": "公式ショップ 商品ページ（2026-11-11 確認・自動取得）",
+   "tags": [],
+   "firstSeen": "2026-11-05",
+   "regularNew": true
   },
   {
    "id": "s_hakuikoyori_1stlive_dreamspark_digitalmessageboard",
@@ -5420,6 +5765,246 @@ window.HOLO_GOODS = {
    "note": "プライズはオンラインクレーン「カプとれ」でも展開。CAPCOM STORE TAIPEIは11月下旬頃発売予定。",
    "tags": [],
    "firstSeen": "2026-08-17"
+  },
+  {
+   "id": "p_flowglow_2nd_tower",
+   "title": "FLOW GLOW 2nd Anniversary POP UP SHOP in TOWER RECORDS（2周年記念グッズ 一般先行販売・特典ポストカード）",
+   "members": [
+    "響咲リオナ",
+    "虎金妃笑虎",
+    "水宮枢",
+    "輪堂千速",
+    "綺々羅々ヴィヴィ"
+   ],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "店頭販売（2周年記念グッズの一般先行販売、予約・取り置き不可）",
+   "start": "2026-11-10",
+   "end": "2026-11-23",
+   "venues": [
+    {
+     "pref": "北海道",
+     "place": "タワーレコード 札幌パルコ店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "北海道",
+     "place": "タワーレコード アリオ札幌店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "宮城県",
+     "place": "タワーレコード 仙台パルコ店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "岩手県",
+     "place": "タワーレコード 盛岡店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "東京都",
+     "place": "タワーレコード 渋谷店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "東京都",
+     "place": "タワーレコード 池袋店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "東京都",
+     "place": "タワーレコード アリオ亀有店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "神奈川県",
+     "place": "タワーレコード 横浜ビブレ店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "埼玉県",
+     "place": "タワーレコード イオンレイクタウン店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "千葉県",
+     "place": "タワーレコード アリオモール蘇我店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "千葉県",
+     "place": "タワーレコード ららぽーとTOKYO-BAY店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "埼玉県",
+     "place": "タワーレコード アリオ上尾店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "群馬県",
+     "place": "タワーレコード 高崎オーパ店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "石川県",
+     "place": "タワーレコード 金沢フォーラス店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "長野県",
+     "place": "タワーレコード 上田店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "静岡県",
+     "place": "タワーレコード 静岡店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "静岡県",
+     "place": "タワーレコード ららぽーと磐田店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "愛知県",
+     "place": "タワーレコード 東浦店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "愛知県",
+     "place": "タワーレコード 大高店（スタンディパネル設置）",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "三重県",
+     "place": "タワーレコード 鈴鹿店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "岐阜県",
+     "place": "タワーレコード モレラ岐阜店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "大阪府",
+     "place": "タワーレコード なんばパークス店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "大阪府",
+     "place": "タワーレコード 梅田NU茶屋町店（スタンディパネル設置）",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "大阪府",
+     "place": "タワーレコード あべのHoop店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "兵庫県",
+     "place": "タワーレコード 明石店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "福岡県",
+     "place": "タワーレコード アミュプラザ博多店",
+     "date": "11/10〜11/23"
+    },
+    {
+     "pref": "沖縄県",
+     "place": "タワーレコード 那覇店",
+     "date": "11/10〜11/23"
+    }
+   ],
+   "price": "2周年記念グッズ ¥440〜¥6,600（アクリルパネル¥3,300・アクスタ各¥1,980・ロングTシャツ¥6,600 ほか）",
+   "ship": "",
+   "shop": "タワーレコード（全国27店舗）",
+   "url": "https://collabo-cafe.com/events/collabo/flow-glow-2nd-anniv-popup-tower-records-2026/",
+   "source": "コラボカフェ 2026-11-10 記事（タワーレコードの告知の紹介）",
+   "note": "hololiveグッズを1会計2,200円（税込）ごとに特典ポストカード（全6種ランダム）を先着で1枚（CDは対象外）。FLOW GLOW's MIXTAPE 03グッズ、Regular Outfit hololive DEV_IS アクスタ、hololive friends with u も販売。なくなり次第終了。",
+   "tags": [
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-11"
+  },
+  {
+   "id": "b_flowglow_comic",
+   "title": "コミックス『FLOW GLOW -MAKE IT GLOW-』（紙版はステッカーシールつき）",
+   "members": [
+    "響咲リオナ",
+    "虎金妃笑虎",
+    "水宮枢",
+    "輪堂千速",
+    "綺々羅々ヴィヴィ"
+   ],
+   "category": "other",
+   "channel": "both",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2026/11/26発売",
+   "sale": "書籍（コミックス）",
+   "start": "2026-11-26",
+   "end": "",
+   "venues": [
+    {
+     "pref": "全国各地",
+     "place": "書店・オンライン書店",
+     "date": "2026/11/26 発売"
+    }
+   ],
+   "price": "¥1,320",
+   "ship": "",
+   "shop": "小学館（書店・オンライン書店）",
+   "url": "https://prtimes.jp/main/html/rd/p/000003959.000013640.html",
+   "source": "PR TIMES 2026-11-10 発表（小学館）",
+   "note": "Sho-Comi連載の本編に、描きおろしまんが・インタビュー・Q＆Aを収録。紙のコミックス限定でミニキャラの「ステッカーシール」つき（電子版はなし）。原作：花まみも／まんが：きみど莉央。",
+   "tags": [],
+   "firstSeen": "2026-11-11"
+  },
+  {
+   "id": "w_dreamhack_stockholm",
+   "title": "DreamHack Stockholm 2026 hololive Meet ブース（スウェーデン初出展・ミート＆グリート・SUPER KARAOKE PARTY）",
+   "members": [
+    "ムーナ・ホシノヴァ",
+    "アイラニ・イオフィフティーン",
+    "クレイジー・オリー",
+    "パヴォリア・レイネ",
+    "ベスティア・ゼータ",
+    "カエラ・コヴァルスキア",
+    "こぼ・かなえる",
+    "小鳥遊キアラ",
+    "シオリ・ノヴェラ",
+    "ラオーラ・パンテーラ",
+    "森カリオペ",
+    "ネリッサ・レイヴンクロフト",
+    "エリザベス・ローズ・ブラッドフレイム"
+   ],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "イベント出展（グッズの詳細は後日発表）",
+   "start": "2026-11-27",
+   "end": "2026-11-29",
+   "venues": [
+    {
+     "pref": "スウェーデン（ストックホルム）",
+     "place": "Stockholmsmässan（カラオケはVictoriahallen）",
+     "date": "11/27〜11/29"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "hololive Meet（カバー）",
+   "url": "https://hololive.hololivepro.com/en/news/20261019-01-239/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-10-19 発表",
+   "note": "北欧で初の出展。限定グッズは「今後公式SNSで紹介」とされ、内容は未発表。ミート＆グリートのチケットはDreamHack公式サイトで販売。HOLOSTARS Englishのジュラルド、オクタビオも参加。SUPER KARAOKE PARTYは11/28 13:00（現地時間）、森カリオペ・ネリッサ・エリザベス出演。",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-11"
   }
  ]
 };
