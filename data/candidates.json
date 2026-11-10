@@ -1,33 +1,26 @@
 [
  {
-  "firstSeen": "2026-11-10",
-  "source": "ホロライブ公式サイト 英語版ニュース（海外の展開）",
-  "title": "hololive ReGLOSS Member Juufuutei Raden Collaborates with Taiwan’s 2026 GOOD OLD LIVING FESTIVAL LIFE “Zuoying in the Light”!",
-  "url": "https://hololive.hololivepro.com/en/news/20261109-01-244/",
-  "date": "2026-11-09",
+  "firstSeen": "2026-11-11",
+  "source": "コラボカフェ（ホロライブの記事一覧）",
+  "title": "FLOW GLOW 2周年記念 POP UP in タワレコ 11月10日より開催!",
+  "url": "https://collabo-cafe.com/events/collabo/flow-glow-2nd-anniv-popup-tower-records-2026/",
+  "date": "2026-11-10",
   "similar": {
-   "id": "s_regloss_anniversary_3rd",
-   "title": "ReGLOSS 3周年記念",
-   "score": 0.7
-  }
- },
- {
-  "firstSeen": "2026-11-10",
-  "source": "ホロライビュアーズ",
-  "title": "【開催中】FLOW GLOW×マリオンクレープ全31店舗一覧｜クレープ5種・コースター特典・グッズ通販まとめ【11/30まで】",
-  "url": "https://holoviewers.net/flowglow-marion-crepe/",
-  "date": "Mon, 09 Nov 2026 14:44:36",
-  "similar": {
-   "id": "p_marion_flowglow",
-   "title": "FLOW GLOW × マリオンクレープ コラボグッズ",
+   "id": "s_flowglow_anniversary_2nd",
+   "title": "FLOW GLOW 2周年記念",
    "score": 1.0
   }
  },
  {
-  "firstSeen": "2026-11-10",
-  "source": "アニメ！アニメ！",
-  "title": "新アプリ「ディズニー スパリク」ホロカード入りウエハースが早速登場！ イケメンたちの輝きが眩しい…!!",
-  "url": "https://animeanime.jp/article/2026/11/09/104637.html",
-  "date": "2026-11-09T10:00:03Z"
+  "firstSeen": "2026-11-11",
+  "source": "PR TIMES（キーワード：ホロライブ）",
+  "title": "ホロライブ所属のVTuberユニットFLOW GLOWのコミックス『FLOW GLOW -MAKE … 18時間前",
+  "url": "https://prtimes.jp/main/html/rd/p/000003959.000013640.html",
+  "date": "",
+  "similar": {
+   "id": "s_flowglow_anniversary_2nd",
+   "title": "FLOW GLOW 2周年記念",
+   "score": 0.73
+  }
  }
 ]
