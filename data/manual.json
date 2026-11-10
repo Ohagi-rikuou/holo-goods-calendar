@@ -1,5 +1,63 @@
 [
  {
+  "id": "w_raden_zuoying",
+  "title": "儒烏風亭らでん × 2026 GOOD OLD LIVING FESTIVAL LIFE「Zuoying in the Light」（台湾・高雄 左營）コラボグッズ・チケット",
+  "members": [
+   "儒烏風亭らでん"
+  ],
+  "category": "collab",
+  "channel": "venue",
+  "origin": "licensed",
+  "sale": "イベント会場（コラボグッズ・コラボチケット）",
+  "start": "2026-12-12",
+  "end": "2026-12-12",
+  "venues": [
+   {
+    "pref": "台湾（高雄）",
+    "place": "廖家古厝（Liao Family Historic Residence）と左營の旧市街一帯",
+    "date": "12/12 12:00〜20:00（台湾時間）"
+   }
+  ],
+  "price": "チケットA NT$899（スタンプラリー・チェキ風カード・特典）／B NT$2,290（台湾式宴会「辦桌」の席付き・150席限定）",
+  "ship": "",
+  "shop": "Reuse New Life（舊好生活）",
+  "url": "https://hololive.hololivepro.com/en/news/20261109-01-244/",
+  "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-09 発表",
+  "note": "グッズ：アクリルスタンド、左營文化案内人の名札バッジ、再生素材のトートバッグ、A4クリアファイル、チェキ風カード。会場限定のフォトブース。詳細・チケットはReuse New Life公式サイト。",
+  "tags": [
+   "海外"
+  ],
+  "firstSeen": "2026-11-10"
+ },
+ {
+  "id": "c_grapht_botan_xmas3",
+  "title": "獅白ぼたんとクリスマス闘nightⅢ × GRAPHT 開催記念アイテム（アグリーセーター・マフラータオル・アケコンボタン・刺繍ステッカー）",
+  "members": [
+   "獅白ぼたん"
+  ],
+  "category": "collab",
+  "channel": "both",
+  "origin": "licensed",
+  "sale": "受注・在庫販売（なくなり次第終了、イベント会場でも販売予定）",
+  "start": "2026-11-09",
+  "end": "",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "esports Style UENO（イベント当日の会場販売・在庫がある場合）",
+    "date": "12/24"
+   }
+  ],
+  "price": "アグリーセーター ¥14,960／マフラータオル ¥3,300／アケコンボタン 各¥1,650／刺繍ステッカー 各¥2,420",
+  "ship": "12/11から順次発送",
+  "shop": "GRAPHT OFFICIAL STORE",
+  "url": "https://store.grapht.tokyo/blogs/events/shishiroxmas2026",
+  "source": "PR TIMES 2026-11-09 発表（MSY株式会社 GRAPHT）",
+  "note": "獅白ぼたんのクリスマスイベント（12/24 21時〜29時、esports Style UENO）の協賛アイテム。在庫に限りあり、再販の可能性あり。",
+  "tags": [],
+  "firstSeen": "2026-11-10"
+ },
+ {
   "id": "c_hitsuji_watame2",
   "title": "ヒツジのいらない枕® × 角巻わため コラボ第2弾（購入特典 描き下ろしピローバッグ・缶バッジ）",
   "members": [
