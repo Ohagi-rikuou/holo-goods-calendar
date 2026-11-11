@@ -1,26 +1,33 @@
 [
  {
-  "firstSeen": "2026-11-11",
-  "source": "コラボカフェ（ホロライブの記事一覧）",
-  "title": "FLOW GLOW 2周年記念 POP UP in タワレコ 11月10日より開催!",
-  "url": "https://collabo-cafe.com/events/collabo/flow-glow-2nd-anniv-popup-tower-records-2026/",
-  "date": "2026-11-10",
+  "firstSeen": "2026-11-12",
+  "source": "ホロライブ公式サイト 英語版ニュース（海外の展開）",
+  "title": "COVER Corporation Announces “EstarEgg × ReGLOSS” Collaboration, Debuting at AGF 2026 Korea November 11th, 2026, Tokyo, JAPAN – COVER Corporation (Minato-ku, Tok",
+  "url": "https://hololive.hololivepro.com/en/news/20261111-02-25/",
+  "date": "2026-11-11",
   "similar": {
-   "id": "s_flowglow_anniversary_2nd",
-   "title": "FLOW GLOW 2周年記念",
-   "score": 1.0
+   "id": "s_regloss_anniversary_3rd",
+   "title": "ReGLOSS 3周年記念",
+   "score": 0.7
   }
  },
  {
-  "firstSeen": "2026-11-11",
+  "firstSeen": "2026-11-12",
+  "source": "ホロライブ公式サイト 英語版ニュース（海外の展開）",
+  "title": "hololive production x FiGGYZ Pop Magnet Collectibles Open for Pre-Orders from November 25!",
+  "url": "https://hololive.hololivepro.com/en/news/20261111-01-245/",
+  "date": "2026-11-11"
+ },
+ {
+  "firstSeen": "2026-11-12",
   "source": "PR TIMES（キーワード：ホロライブ）",
-  "title": "ホロライブ所属のVTuberユニットFLOW GLOWのコミックス『FLOW GLOW -MAKE … 18時間前",
-  "url": "https://prtimes.jp/main/html/rd/p/000003959.000013640.html",
+  "title": "「〈物語〉シリーズ」×「秘密結社holoX」体験型展示『X物語 -バツモノガタリ-』SHAFT描き下… 11時間前",
+  "url": "https://prtimes.jp/main/html/rd/p/000000029.000030346.html",
   "date": "",
   "similar": {
-   "id": "s_flowglow_anniversary_2nd",
-   "title": "FLOW GLOW 2周年記念",
-   "score": 0.73
+   "id": "p_x_monogatari",
+   "title": "〈物語〉シリーズ × 秘密結社holoX 体験型展示『X物語 -バツモノガタリ-』オリジナルグッズ",
+   "score": 0.87
   }
  }
 ]
