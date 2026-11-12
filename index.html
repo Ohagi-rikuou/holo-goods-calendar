@@ -294,6 +294,17 @@ button.stat.s-new:hover { border-color: var(--today); }
 button.stat.on:not(.s-new) { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); font-weight: 700; }
 button.stat.on { border-color: var(--today); background: color-mix(in srgb, var(--today) 10%, var(--surface)); }
 .stat.s-new strong { color: var(--today); }
+/* 印（♡気になる・✓購入済み）：端末にだけ保存される自分用の目印 */
+.stat.s-want strong { color: var(--c-birthday); }
+button.stat.s-want.on { border-color: var(--c-birthday); background: color-mix(in srgb, var(--c-birthday) 12%, var(--surface)); color: var(--ink); font-weight: 700; }
+.mk { display: inline-block; margin-right: 4px; font-weight: 900; }
+.mk.want { color: var(--c-birthday); } .mk.bought { color: var(--ok); }
+.row.is-bought .lab .ttl { opacity: .6; }
+.markrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.markrow .btn { display: inline-flex; align-items: center; gap: 6px; height: 40px; }
+.markrow .btn.on.want { border-color: var(--c-birthday); background: color-mix(in srgb, var(--c-birthday) 14%, var(--surface)); font-weight: 700; }
+.markrow .btn.on.bought { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, var(--surface)); font-weight: 700; }
+.markrow .note-sm { flex-basis: 100%; }
 #tip .more { color: var(--muted); white-space: nowrap; }
 
 /* ---------- board ---------- */
@@ -470,7 +481,7 @@ dl.spec .vn small { color: var(--muted); }
     </div>
     <button type="button" class="clearbtn" id="resetBtn" title="検索ワードと、タグ・期生・メンバー・種別・販売方法・販売元・推しのみ・終了分を隠すの選択をすべて外します（並び順・表示期間・日の幅はそのまま）"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.6-3.7M3 2.5v2.8h2.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl-l">検索・絞り込みをクリア</span><span class="lbl-s">クリア</span><span class="cnt" id="clearCount" hidden></span></button>
     <button type="button" class="addbtn" id="addBtn" hidden>＋ 商品を追加</button>
-    <a class="reset" id="submitLink" href="#" target="_blank" rel="noopener" hidden style="display:inline-flex;align-items:center;text-decoration:none">情報提供（Discord）</a>
+    <a class="reset" id="submitLink" href="#" target="_blank" rel="noopener" hidden style="display:inline-flex;align-items:center;text-decoration:none">情報提供</a>
   </div>
 
   <section class="panel" id="filterPanel" aria-label="絞り込みと表示設定">
@@ -503,6 +514,8 @@ dl.spec .vn small { color: var(--muted); }
       </label>
       <label class="check" for="hideEnded"><input type="checkbox" id="hideEnded">終了分を隠す</label>
       <label class="check" for="oshiOnly"><input type="checkbox" id="oshiOnly">★推しのみ</label>
+      <label class="check" for="wantOnly"><input type="checkbox" id="wantOnly">♡気になるのみ</label>
+      <label class="check" for="hideBought"><input type="checkbox" id="hideBought">✓購入済みを隠す</label>
       <label class="check" for="showOpen"><input type="checkbox" id="showOpen">終了日未定の商品も表示 <span class="note-sm" id="openCount"></span></label>
         </div></div>
         <div class="frow"><span class="flabel">タグ</span><div class="chips" id="tagChips"></div></div>
@@ -636,6 +649,9 @@ dl.spec .vn small { color: var(--muted); }
     oshi: new Set(store.get('oshi', [])),
     oshiOnly: !!store.get('oshiOnly', false),
     origins: new Set(),
+    marks: (m => m && typeof m === 'object' && !Array.isArray(m) ? m : {})(store.get('marks', {})),   // { 商品ID: 'want' | 'bought' }
+    wantOnly: !!store.get('wantOnly', false),
+    hideBought: !!store.get('hideBought', false),
     hideEnded: !!store.get('hideEnded', true),
     stat: '',
     showOpen: !!store.get('showOpen', false),
@@ -644,6 +660,29 @@ dl.spec .vn small { color: var(--muted); }
     dayW: Number(store.get('dayW', 24)),
     viewStart: TODAY - 7
   };
+  /* 絞り込み（タグ・期生・メンバー・種別・販売方法・販売元）を端末に覚えておき、次に開いたときも同じ状態にする */
+  const FILTER_SETS = ['tags', 'gens', 'members', 'cats', 'channels', 'origins'];
+  (function restoreFilters() {
+    const saved = store.get('filters', null);
+    if (!saved || typeof saved !== 'object') return;
+    const known = {
+      gens: k => GENS.includes(k), members: k => members.some(m => m.id === k), cats: k => CAT_KEYS.includes(k) && !!D.categories[k],
+      channels: k => k in CH, origins: k => k in ORIGIN, tags: k => typeof k === 'string' && k.length < 40
+    };
+    FILTER_SETS.forEach(n => { if (Array.isArray(saved[n])) saved[n].filter(known[n]).forEach(k => st[n].add(k)); });
+  })();
+  let lastSavedFilters = '';
+  function saveFilters() {
+    const o = {}; FILTER_SETS.forEach(n => { o[n] = [...st[n]]; });
+    const j = JSON.stringify(o);
+    if (j !== lastSavedFilters) { lastSavedFilters = j; store.set('filters', o); }
+  }
+  const markOf = it => st.marks[it.id] || '';
+  function setMark(id, kind) {
+    if (st.marks[id] === kind) delete st.marks[id]; else st.marks[id] = kind;
+    store.set('marks', st.marks);
+  }
+  const markIcon = it => { const m = markOf(it); return m === 'want' ? '<span class="mk want" title="気になる">♡</span>' : m === 'bought' ? '<span class="mk bought" title="購入済み">✓</span>' : ''; };
 
   /* ---------- chips ---------- */
   function chip(attr, key, label, on, catVar) {
@@ -740,6 +779,8 @@ dl.spec .vn small { color: var(--muted); }
     if (st.stat) flags.push(spill('stat', st.stat, { open: '受付中', soon: '3日以内に締切', upcoming: '予定', ended: '終了' }[st.stat], 'var(--accent)'));
     if (st.hideEnded) flags.push(spill('flag', 'hideEnded', '終了分を隠す'));
     if (st.oshiOnly) flags.push(spill('flag', 'oshiOnly', '★推しのみ', 'var(--star)'));
+    if (st.wantOnly) flags.push(spill('flag', 'wantOnly', '♡気になるのみ', 'var(--c-birthday)'));
+    if (st.hideBought) flags.push(spill('flag', 'hideBought', '✓購入済みを隠す'));
     if (st.showOpen) flags.push(spill('flag', 'showOpen', '終了日未定も表示'));
     $('selAll').innerHTML = `<span class="val">${SORT_LBL[st.sort] || ''}・${SPAN_LBL[st.span] || ''}表示・日の幅 ${ZOOM_LBL[st.dayW] || ''}</span>` + flags.join('')
       + (groups.length ? groups.map(([l, ps]) => `<span class="sg"><span class="grp-l">${l}</span>${ps.join('')}</span>`).join('') : '<span class="none">（絞り込みなし）</span>');
@@ -750,7 +791,7 @@ dl.spec .vn small { color: var(--muted); }
   /* ---------- filtering & sorting ---------- */
   function activeCount() {
     return (st.q.trim() ? 1 : 0) + (st.stat ? 1 : 0) + st.tags.size + st.gens.size + st.members.size + st.cats.size + st.channels.size
-      + st.origins.size + (st.oshiOnly ? 1 : 0);
+      + st.origins.size + (st.oshiOnly ? 1 : 0) + (st.wantOnly ? 1 : 0);
   }
   // 件数表示の「受付中」は、3日以内に締切のものも含める
   const statGroup = it => { const s = statusOf(it); return s === 'soon' ? 'open' : s; };
@@ -769,6 +810,8 @@ dl.spec .vn small { color: var(--muted); }
       if (st.tags.size && !it.tagList.some(t => st.tags.has(t))) return false;
       if (who && !(it.members.some(id => st.members.has(id)) || [...it.gens].some(g => st.gens.has(g)))) return false;
       if (st.oshiOnly && !it.members.some(id => st.oshi.has(id))) return false;
+      if (st.wantOnly && markOf(it) !== 'want') return false;
+      if (st.hideBought && markOf(it) === 'bought') return false;
       return terms.every(alts => alts.some(t => it.hay.includes(t)));
     });
     if (st.sort === 'end') list.sort((a, b) => ((statusOf(a) === 'ended') - (statusOf(b) === 'ended')) || (statusOf(a) === 'ended' ? b.e - a.e : a.e - b.e));
@@ -826,8 +869,8 @@ dl.spec .vn small { color: var(--muted); }
       const before = it.e < x0;
       track = `<button type="button" class="offrange ${before ? 'l' : 'r'}" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">${before ? '◀ ' : ''}${range}${before ? '' : ' ▶'}</button>`;
     }
-    return `<div class="row${status === 'soon' ? ' is-soon' : ''}"><div class="lab"><button type="button" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">`
-      + `<span class="ttl">${headBadges(it)}${esc(it.title)}</span>`
+    return `<div class="row${status === 'soon' ? ' is-soon' : ''}${markOf(it) === 'bought' ? ' is-bought' : ''}"><div class="lab"><button type="button" data-open="${esc(it.id)}" data-tip="${esc(it.id)}">`
+      + `<span class="ttl">${markIcon(it)}${headBadges(it)}${esc(it.title)}</span>`
       + `<span class="meta"><span class="${pillCls(it, status)}">${labelOf(it, status)}</span>${officialBadge(it)}<span class="who">${esc(whoText(it))}</span></span>`
       + `</button></div><div class="trk">${track}</div></div>`;
   }
@@ -885,12 +928,14 @@ dl.spec .vn small { color: var(--muted); }
       + sb('soon', 's-soon', '3日以内に締切', '締切が3日以内の商品だけを表示')
       + sb('upcoming', 's-upcoming', '予定', 'これから始まる商品だけを表示')
       + sb('ended', 's-ended', '終了', '終了した商品だけを表示')
+      + `<button type="button" class="stat s-want${st.wantOnly ? ' on' : ''}" data-wantstat aria-pressed="${st.wantOnly}" title="♡気になる の印を付けた商品だけを表示（印はこの端末にだけ保存されます）">♡気になる<strong>${items.filter(it => markOf(it) === 'want').length}</strong></button>`
       + `<span class="stat">表示中<strong>${list.length}</strong>／全${items.length}件</span>`;
   }
 
 
   function render() {
     hideTip();
+    saveFilters();
     renderSel();
     const list = visibleItems();
     renderSummary(list);
@@ -955,6 +1000,12 @@ dl.spec .vn small { color: var(--muted); }
 
   /* ---------- detail drawer ---------- */
   let lastFocus = null;
+  function markButtons(it) {
+    const m = markOf(it), id = esc(it.id);
+    return `<button type="button" class="btn want${m === 'want' ? ' on' : ''}" data-mark="want" data-id="${id}" aria-pressed="${m === 'want'}"><span class="mk want" aria-hidden="true">♡</span>気になる</button>`
+      + `<button type="button" class="btn bought${m === 'bought' ? ' on' : ''}" data-mark="bought" data-id="${id}" aria-pressed="${m === 'bought'}"><span class="mk bought" aria-hidden="true">✓</span>購入済み</button>`
+      + '<span class="note-sm">印はこの端末にだけ保存されます（もう一度押すと外れます）</span>';
+  }
   function openDetail(id) {
     const it = itemById.get(id);
     if (!it) return;
@@ -972,6 +1023,7 @@ dl.spec .vn small { color: var(--muted); }
         <button type="button" class="close" id="dClose" aria-label="閉じる">×</button>
       </div>
       <div class="drawer-bd">
+        <div class="markrow" id="markRow">${markButtons(it)}</div>
         <div class="period">
           <span style="font-size:12px;color:var(--muted)">販売・受注期間</span>
           <span class="range">${it.status ? full(it.s) + ' ' + { soldout: '売り切れを確認', restock: '再入荷予定の表示を確認', resumed: '販売再開を確認' }[it.status] : it.startLabel ? esc(it.startLabel) : it.release ? full(it.s) + ' 発売' : full(it.s) + ' 〜 ' + (it.openEnd ? '終了日未定' : full(it.e))}${it.periodText ? `<br><small style="font-weight:500;color:var(--muted)">${esc(it.periodText)}</small>` : ''}</span>
@@ -1010,6 +1062,7 @@ dl.spec .vn small { color: var(--muted); }
     st.q = ''; $('q').value = '';
     st.gens.clear(); st.members.clear(); st.cats.clear(); st.channels.clear(); st.tags.clear();
     st.oshiOnly = false; $('oshiOnly').checked = false; store.set('oshiOnly', false);
+    st.wantOnly = false; $('wantOnly').checked = false; store.set('wantOnly', false);
     st.origins.clear();
     st.stat = '';
     renderAllChips(); render();
@@ -1035,6 +1088,8 @@ dl.spec .vn small { color: var(--muted); }
   $('showOpen').addEventListener('change', e => { st.showOpen = e.target.checked; store.set('showOpen', st.showOpen); panelChanged(); });
   $('hideEnded').addEventListener('change', e => { st.hideEnded = e.target.checked; store.set('hideEnded', st.hideEnded); panelChanged(); });
   $('oshiOnly').addEventListener('change', e => { st.oshiOnly = e.target.checked; store.set('oshiOnly', st.oshiOnly); panelChanged(); });
+  $('wantOnly').addEventListener('change', e => { st.wantOnly = e.target.checked; store.set('wantOnly', st.wantOnly); panelChanged(); });
+  $('hideBought').addEventListener('change', e => { st.hideBought = e.target.checked; store.set('hideBought', st.hideBought); panelChanged(); });
   $('orChips').addEventListener('click', e => { const b = e.target.closest('[data-or]'); if (!b) return; toggleIn(st.origins, b.dataset.or); renderOrChips(); panelChanged(); });
   $('resetBtn').addEventListener('click', resetFilters);
 
@@ -1042,6 +1097,7 @@ dl.spec .vn small { color: var(--muted); }
   let pending = false;
   function panelChanged() {
     pending = true;
+    saveFilters();
     renderSel();
     $('applyCount').textContent = `（${visibleItems().length}件）`;
     $('applyBtn').classList.add('ready');
@@ -1083,6 +1139,7 @@ dl.spec .vn small { color: var(--muted); }
   $('summary').addEventListener('click', e => {
     const sb = e.target.closest('[data-stat]');
     if (sb) { st.stat = st.stat === sb.dataset.stat ? '' : sb.dataset.stat; render(); return; }
+    if (e.target.closest('[data-wantstat]')) { st.wantOnly = !st.wantOnly; $('wantOnly').checked = st.wantOnly; store.set('wantOnly', st.wantOnly); render(); return; }
     if (!e.target.closest('[data-newstat]')) return; toggleIn(st.tags, 'NEW'); renderTagChips(); render();
   });
   $('genChips').addEventListener('click', e => { const b = e.target.closest('[data-gen]'); if (!b) return; toggleIn(st.gens, b.dataset.gen); renderGenChips(); panelChanged(); });
@@ -1100,7 +1157,17 @@ dl.spec .vn small { color: var(--muted); }
     const t = e.target.closest('[data-open]'); if (t) openDetail(t.dataset.open);
   });
   $('scrim').addEventListener('click', closeDetail);
-  $('drawer').addEventListener('click', e => { if (e.target.closest('#dClose')) closeDetail(); });
+  $('drawer').addEventListener('click', e => {
+    if (e.target.closest('#dClose')) { closeDetail(); return; }
+    const mb = e.target.closest('[data-mark]');
+    if (mb) {
+      const it = itemById.get(mb.dataset.id); if (!it) return;
+      setMark(it.id, mb.dataset.mark);
+      $('markRow').innerHTML = markButtons(it);
+      const again = $('markRow').querySelector(`[data-mark="${mb.dataset.mark}"]`); if (again) again.focus({ preventScroll: true });
+      render();
+    }
+  });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('drawer').hidden) closeDetail(); else hideTip(); } });
 
   /* ---------- manual entries (shared store) ---------- */
@@ -1221,13 +1288,13 @@ dl.spec .vn small { color: var(--muted); }
   if (!$('sort').value) { st.sort = 'start'; $('sort').value = 'start'; }
   if (!$('span').value) { st.span = 61; $('span').value = '61'; }
   if (!$('zoom').value) { st.dayW = 24; $('zoom').value = '24'; }
-  $('hideEnded').checked = st.hideEnded; $('showOpen').checked = st.showOpen; $('oshiOnly').checked = st.oshiOnly;
+  $('hideEnded').checked = st.hideEnded; $('showOpen').checked = st.showOpen; $('oshiOnly').checked = st.oshiOnly; $('wantOnly').checked = st.wantOnly; $('hideBought').checked = st.hideBought;
   $('testBanner').hidden = !D.meta.isTest;
   if (D.meta.submitUrl) { $('submitLink').href = D.meta.submitUrl; $('submitLink').hidden = false; }
   $('updated').textContent = D.meta.updated ? `データ更新日 ${D.meta.updated}` : '';
   $('foot').textContent = D.meta.isTest
     ? '表示中のデータはテスト用です（推しマークのみ実在の情報）。本番データでは各商品に出典（公式ショップ等）を記載します。'
-    : `収録範囲：${(D.meta && D.meta.scope) || ''} 各商品の出典は詳細に記載しています。購入前に必ず元の販売ページで最新情報を確認してください。抜けている商品や誤りに気づいたら、${D.meta.submitUrl ? '「情報提供（Discord）」から' : 'Discordサーバーで'}商品ページのURLを教えてください。`;
+    : `収録範囲：${(D.meta && D.meta.scope) || ''} 各商品の出典は詳細に記載しています。購入前に必ず元の販売ページで最新情報を確認してください。抜けている商品や誤りに気づいたら、${D.meta.submitUrl ? '「情報提供」ボタンのフォームかDiscordサーバーで' : 'Discordサーバーで'}商品ページのURLを教えてください。`;
   renderAllChips(); render();
 })();
 </script>
