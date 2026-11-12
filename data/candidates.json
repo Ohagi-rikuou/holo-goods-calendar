@@ -1,5 +1,24 @@
 [
  {
+  "firstSeen": "2026-11-13",
+  "source": "コラボカフェ（ホロライブの記事一覧）",
+  "title": "ホロライブわちゃわちゃ学園祭 京王アリーナ 11月14日より開催!",
+  "url": "https://collabo-cafe.com/events/collabo/hololive-event-wacha-wacha-gakuensai-keio-arena-2026/",
+  "date": "2026-11-12"
+ },
+ {
+  "firstSeen": "2026-11-13",
+  "source": "アニメ！アニメ！",
+  "title": "「〈物語〉シリーズ」×ホロライブ「秘密結社holoX」体験型展示のキービジュアル公開！グッズ第1弾も明らかに",
+  "url": "https://animeanime.jp/article/2026/11/12/104709.html",
+  "date": "2026-11-12T03:15:03Z",
+  "similar": {
+   "id": "p_x_monogatari",
+   "title": "〈物語〉シリーズ × 秘密結社holoX 体験型展示『X物語 -バツモノガタリ-』オリジナルグッズ",
+   "score": 0.68
+  }
+ },
+ {
   "firstSeen": "2026-11-12",
   "source": "ホロライブ公式サイト 英語版ニュース（海外の展開）",
   "title": "COVER Corporation Announces “EstarEgg × ReGLOSS” Collaboration, Debuting at AGF 2026 Korea November 11th, 2026, Tokyo, JAPAN – COVER Corporation (Minato-ku, Tok",
@@ -21,7 +40,7 @@
  {
   "firstSeen": "2026-11-12",
   "source": "PR TIMES（キーワード：ホロライブ）",
-  "title": "「〈物語〉シリーズ」×「秘密結社holoX」体験型展示『X物語 -バツモノガタリ-』SHAFT描き下… 11時間前",
+  "title": "「〈物語〉シリーズ」×「秘密結社holoX」体験型展示『X物語 -バツモノガタリ-』SHAFT描き下… 2026年11月11日 19時00分",
   "url": "https://prtimes.jp/main/html/rd/p/000000029.000030346.html",
   "date": "",
   "similar": {
