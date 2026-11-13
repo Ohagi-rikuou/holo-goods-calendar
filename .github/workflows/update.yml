@@ -58,12 +58,25 @@ jobs:
       - name: 公開用ファイルを用意
         run: mkdir -p _site/icons && cp index.html data.js manifest.webmanifest sw.js _site/ && cp icon-192.png icon-512.png icon-maskable-512.png apple-touch-icon.png _site/icons/
 
+      - name: カレンダー登録用ファイル（.ics）を作成
+        run: python3 scripts/make_ics.py _site/ics
+
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
       - id: deploy
         uses: actions/deploy-pages@v5
+
+      # Discordのウェブフック（非公開の設定 DISCORD_WEBHOOK_URL）があるときだけ投稿する。
+      # 毎日の自動実行は知らせる商品があるときだけ、手動実行（Run workflow）はテストとして必ず投稿する。
+      - name: Discordへお知らせ
+        if: github.event_name != 'push'
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          NOTIFY_MODE: ${{ github.event_name }}
+        run: python3 scripts/notify_discord.py
 
       - name: 公式ショップの取得に失敗したことを知らせる
         if: steps.shop.outcome == 'failure'
