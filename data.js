@@ -1,11 +1,11 @@
-/* ホロライブ グッズカレンダー データ（2026-11-13 更新）
+/* ホロライブ グッズカレンダー データ（2026-11-14 更新）
  * 出典：hololive production OFFICIAL SHOP 各商品ページ／PR TIMES 各社発表ほか（各商品の source・url を参照）。
  * このファイルは scripts/build.py が data/*.json から自動で作ります。直接編集しないでください。
  */
 window.HOLO_GOODS = {
  "meta": {
   "isTest": false,
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "newDays": 7,
   "genOrder": [
    "0期生",
@@ -1209,54 +1209,6 @@ window.HOLO_GOODS = {
    "changed": "2026-11-09",
    "changeNote": "SOLD OUT",
    "status": "soldout"
-  },
-  {
-   "id": "s_hololive_audiostory_whenwefirstmet",
-   "title": "ホロライブ ユーミートガールボイス",
-   "members": [
-    "AZKi",
-    "こぼ・かなえる",
-    "ときのそら",
-    "アユンダ・リス",
-    "アーニャ・メルフィッサ",
-    "オーロ・クロニー",
-    "クレイジー・オリー",
-    "フワワ・アビスガード",
-    "モココ・アビスガード",
-    "ロボ子さん",
-    "一条莉々華",
-    "博衣こより",
-    "夏色まつり",
-    "宙科そぴあ",
-    "尾丸ポルカ",
-    "桃鈴ねね",
-    "水宮枢",
-    "熱千めら",
-    "猫又おかゆ",
-    "癒月ちょこ",
-    "白銀ノエル",
-    "綺々羅々ヴィヴィ",
-    "赤井はあと",
-    "輪堂千速",
-    "雪花ラミィ"
-   ],
-   "category": "digital",
-   "channel": "online",
-   "origin": "shop",
-   "sale": "在庫販売",
-   "start": "2026-11-06",
-   "end": "",
-   "periodText": "",
-   "ship": "デジタル商品（購入後すぐ利用可）",
-   "price": "¥500〜¥17,500",
-   "shop": "hololive production OFFICIAL SHOP",
-   "url": "https://shop.hololivepro.com/products/hololive_audiostory_whenwefirstmet",
-   "source": "公式ショップ 商品ページ（2026-11-13 確認・自動取得）",
-   "tags": [
-    "デジタル"
-   ],
-   "firstSeen": "2026-11-07",
-   "regularNew": true
   },
   {
    "id": "s_hololiveofficialcardgame_exstreamercup25-26_diceandsposhiskillmarkerset",
