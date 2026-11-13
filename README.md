@@ -29,7 +29,9 @@
 - 情報提供フォームの回答シート：「ホロライブ グッズカレンダー（非公式）情報提供フォーム（回答）」（Googleドライブ、ID 1zrtvLDCImaEOk6VBTim3frraUH2FFjkBlQORUiqtKgw）。新着は公式情報で裏付けを取ってから、管理者の確認後に掲載する。
 - AIの取得を断っているサイト（robots.txt）からは集めない。Xは巡回せず、告知はスクリーンショットや投稿文の共有で反映する。
 - 作業前に必ずGitHubの最新版を取り込み、別の作業での変更を消さないようにする。
-- 後日検討：共有リンク、Discordへの自動お知らせ、カレンダー登録ボタン、アクセス解析（GoatCounter案）。
+- カレンダー登録：商品の詳細に「Googleカレンダー」「iPhone・その他（.ics）」のボタン。.ics は公開時に scripts/make_ics.py で作る（締切・発売日の前日9時に通知）。
+- Discordへのお知らせ：scripts/notify_discord.py。GitHubの Settings → Secrets and variables → Actions に DISCORD_WEBHOOK_URL を入れると、毎日の自動更新のあとに投稿する（新着・締切3日以内・今日から）。Actions の「Run workflow」で手動実行するとテスト投稿。止めるときはシークレットを削除するか、Discord側でウェブフックを削除する。
+- 後日検討：共有リンク、アクセス解析（GoatCounter案）。
 
 ## 掲載範囲（詳細）
 

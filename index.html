@@ -306,6 +306,10 @@ button.stat.s-want.on { border-color: var(--c-birthday); background: color-mix(i
 .markrow .btn.on.want { border-color: var(--c-birthday); background: color-mix(in srgb, var(--c-birthday) 14%, var(--surface)); font-weight: 700; }
 .markrow .btn.on.bought { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, var(--surface)); font-weight: 700; }
 .markrow .note-sm { flex-basis: 100%; }
+.calrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.calrow .calhd { font-size: 12px; color: var(--muted); flex-basis: 100%; }
+.calrow .btn { display: inline-flex; align-items: center; gap: 6px; height: 40px; text-decoration: none; color: var(--ink); }
+.calrow .note-sm { flex-basis: 100%; }
 #tip .more { color: var(--muted); white-space: nowrap; }
 
 /* ---------- board ---------- */
@@ -1007,6 +1011,35 @@ dl.spec .vn small { color: var(--muted); }
       + `<button type="button" class="btn bought${m === 'bought' ? ' on' : ''}" data-mark="bought" data-id="${id}" aria-pressed="${m === 'bought'}"><span class="mk bought" aria-hidden="true">✓</span>購入済み</button>`
       + '<span class="note-sm">印はこの端末にだけ保存されます（もう一度押すと外れます）</span>';
   }
+  /* ---------- カレンダー登録（scripts/calrules.py と同じ決まり） ---------- */
+  const EXACT_DAY = /\d{1,2}\/\d{1,2}|\d{1,2}月\d{1,2}日/;
+  function calEvent(it) {
+    if (it.status) return null;                                   // 在庫のお知らせ（売り切れ等）は登録しない
+    if (!it.openEnd && !it.release) return it.e < TODAY ? null : { kind: 'period', s: it.s, e: it.e };
+    if (it.s >= TODAY && (!it.startLabel || EXACT_DAY.test(it.startLabel))) return { kind: 'day', s: it.s, e: it.s };
+    return null;                                                  // 日付が決まっていない・終わったもの
+  }
+  function calRow(it) {
+    const ev = calEvent(it);
+    if (!ev) return '';
+    const compact = n => ymd(n).replace(/-/g, '');
+    const md = n => { const x = dt(n); return `${x.getUTCMonth() + 1}/${x.getUTCDate()}`; };
+    const title = ev.kind === 'day' ? (it.release ? '【発売】' : '【販売開始】') + it.title : it.title;
+    const when = ev.kind === 'period' ? `販売・受注期間：${md(ev.s)}〜${md(ev.e)}（締切 ${md(ev.e)}）` : (it.release ? '発売日：' : '販売開始：') + md(ev.s);
+    const details = [when, it.price ? '価格：' + it.price : '', it.url ? '商品ページ：' + it.url : '', 'ホロライブ グッズカレンダー（非公式）より：' + location.href.split(/[?#]/)[0], '※購入前に販売ページで最新情報をご確認ください。'].filter(Boolean).join('\n');
+    const loc = it.venues.length === 1 ? `${it.venues[0].place || ''}（${it.venues[0].pref || ''}）` : it.venues.length > 1 ? `${it.venues[0].place || ''} ほか${it.venues.length - 1}か所` : '';
+    const g = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(title)
+      + '&dates=' + compact(ev.s) + '/' + compact(ev.e + 1)
+      + '&details=' + encodeURIComponent(details)
+      + (loc ? '&location=' + encodeURIComponent(loc) : '');
+    const ics = 'ics/' + it.id.replace(/[^A-Za-z0-9_.-]/g, '_') + '.ics';
+    const what = ev.kind === 'period' ? '締切' : it.release ? '発売日' : '販売開始日';
+    return `<div class="calrow" id="calRow"><span class="calhd">カレンダーに登録</span>`
+      + `<a class="btn" href="${esc(g)}" target="_blank" rel="noopener">📅 Googleカレンダー</a>`
+      + `<a class="btn" href="${esc(ics)}">📅 iPhone・その他</a>`
+      + `<span class="note-sm">${ev.kind === 'period' ? '販売期間をまとめて登録します。' : ''}「iPhone・その他」は${what}の前日9時に通知が入ります（Googleはご自身の通知設定に従います）</span></div>`;
+  }
   function openDetail(id) {
     const it = itemById.get(id);
     if (!it) return;
@@ -1030,6 +1063,7 @@ dl.spec .vn small { color: var(--muted); }
           <span class="range">${it.status ? full(it.s) + ' ' + { soldout: '売り切れを確認', restock: '再入荷予定の表示を確認', resumed: '販売再開を確認' }[it.status] : it.startLabel ? esc(it.startLabel) : it.release ? full(it.s) + ' 発売' : full(it.s) + ' 〜 ' + (it.openEnd ? '終了日未定' : full(it.e))}${it.periodText ? `<br><small style="font-weight:500;color:var(--muted)">${esc(it.periodText)}</small>` : ''}</span>
           <span class="left st-${s}">${remainText(it)}</span>
         </div>
+        ${calRow(it)}
         <dl class="spec">
           <dt>メンバー</dt><dd>${esc(it.mem.map(nameWithMark).join('、') || '—')}</dd>
           <dt>販売方法</dt><dd>${esc(CH[it.channel])}</dd>
