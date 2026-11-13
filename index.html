@@ -1295,7 +1295,7 @@ dl.spec .vn small { color: var(--muted); }
   $('updated').textContent = D.meta.updated ? `データ更新日 ${D.meta.updated}` : '';
   $('foot').textContent = D.meta.isTest
     ? '表示中のデータはテスト用です（推しマークのみ実在の情報）。本番データでは各商品に出典（公式ショップ等）を記載します。'
-    : `${(D.meta && D.meta.scope) || ''}出典は各商品の詳細に記載。購入前に販売ページで最新情報をご確認ください。抜け・誤りは${D.meta.submitUrl ? '「情報提供」ボタンのフォームかDiscordサーバー' : 'Discordサーバー'}へ。`;
+    : `${(D.meta && D.meta.scope) || ''}情報の収集・整理にはAI（Claude）を使用しています（AIによる取得を断っているサイトからは収集していません）。出典は各商品の詳細に記載。購入前に販売ページで最新情報をご確認ください。抜け・誤りは${D.meta.submitUrl ? '「情報提供」ボタンのフォームかDiscordサーバー' : 'Discordサーバー'}へ。`;
   renderAllChips(); render();
 })();
 </script>
