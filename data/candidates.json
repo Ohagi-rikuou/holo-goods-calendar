@@ -1,52 +1,52 @@
 [
  {
   "firstSeen": "2026-11-13",
-  "source": "コラボカフェ（ホロライブの記事一覧）",
-  "title": "ホロライブわちゃわちゃ学園祭 京王アリーナ 11月14日より開催!",
-  "url": "https://collabo-cafe.com/events/collabo/hololive-event-wacha-wacha-gakuensai-keio-arena-2026/",
-  "date": "2026-11-12"
+  "source": "公式ショップ お知らせ",
+  "title": "大空スバル活動7周年記念カードケース交換申請フォーム",
+  "url": "https://shop.hololivepro.com/blogs/news/oozorasubaru_anniversary_7th_cardcase_exchange",
+  "date": "2026-11-13T12:00:06+09:00",
+  "similar": {
+   "id": "s_nekomataokayu_anniversary_7th",
+   "title": "猫又おかゆ 活動7周年記念",
+   "score": 0.5
+  }
  },
  {
   "firstSeen": "2026-11-13",
-  "source": "アニメ！アニメ！",
-  "title": "「〈物語〉シリーズ」×ホロライブ「秘密結社holoX」体験型展示のキービジュアル公開！グッズ第1弾も明らかに",
-  "url": "https://animeanime.jp/article/2026/11/12/104709.html",
-  "date": "2026-11-12T03:15:03Z",
+  "source": "コラボカフェ（ホロライブの記事一覧）",
+  "title": "ホロライブプロダクション ウエハースvol.7 11月16日発売!",
+  "url": "https://collabo-cafe.com/events/collabo/hololive-goods-wafers-vol7-2026/",
+  "date": "2026-11-13",
   "similar": {
-   "id": "p_x_monogatari",
-   "title": "〈物語〉シリーズ × 秘密結社holoX 体験型展示『X物語 -バツモノガタリ-』オリジナルグッズ",
-   "score": 0.68
+   "id": "g_wafer_vol7",
+   "title": "ホロライブプロダクション ウエハースvol.7（カード付・全32種）",
+   "score": 0.62
   }
  },
  {
-  "firstSeen": "2026-11-12",
-  "source": "ホロライブ公式サイト 英語版ニュース（海外の展開）",
-  "title": "COVER Corporation Announces “EstarEgg × ReGLOSS” Collaboration, Debuting at AGF 2026 Korea November 11th, 2026, Tokyo, JAPAN – COVER Corporation (Minato-ku, Tok",
-  "url": "https://hololive.hololivepro.com/en/news/20261111-02-25/",
-  "date": "2026-11-11",
-  "similar": {
-   "id": "s_regloss_anniversary_3rd",
-   "title": "ReGLOSS 3周年記念",
-   "score": 0.7
-  }
- },
- {
-  "firstSeen": "2026-11-12",
-  "source": "ホロライブ公式サイト 英語版ニュース（海外の展開）",
-  "title": "hololive production x FiGGYZ Pop Magnet Collectibles Open for Pre-Orders from November 25!",
-  "url": "https://hololive.hololivepro.com/en/news/20261111-01-245/",
-  "date": "2026-11-11"
- },
- {
-  "firstSeen": "2026-11-12",
+  "firstSeen": "2026-11-13",
   "source": "PR TIMES（キーワード：ホロライブ）",
-  "title": "「〈物語〉シリーズ」×「秘密結社holoX」体験型展示『X物語 -バツモノガタリ-』SHAFT描き下… 2026年11月11日 19時00分",
-  "url": "https://prtimes.jp/main/html/rd/p/000000029.000030346.html",
+  "title": "「holo Indie」より、ときのそらと3期生が登場するデスクトップ常駐型ゲーム『HoloCozy… 3時間前",
+  "url": "https://prtimes.jp/main/html/rd/p/000000061.000180618.html",
+  "date": ""
+ },
+ {
+  "firstSeen": "2026-11-13",
+  "source": "PR TIMES（キーワード：ホロライブ）",
+  "title": "ホロライブ所属VTuber『博衣こより』と『PUBG MOBILE』がコラボレーション！ 3時間前",
+  "url": "https://prtimes.jp/main/html/rd/p/000000442.000082433.html",
+  "date": ""
+ },
+ {
+  "firstSeen": "2026-11-13",
+  "source": "PR TIMES（キーワード：ホロライブ）",
+  "title": "カプコンカフェ 池袋店＆梅田店 『ストリートファイター6』×「ホロライブ」コラボ第3弾のカフェメニュ… 4時間前",
+  "url": "https://prtimes.jp/main/html/rd/p/000006165.000013450.html",
   "date": "",
   "similar": {
-   "id": "p_x_monogatari",
-   "title": "〈物語〉シリーズ × 秘密結社holoX 体験型展示『X物語 -バツモノガタリ-』オリジナルグッズ",
-   "score": 0.87
+   "id": "c_sf6_hololive3_prize",
+   "title": "ストリートファイター6 × ホロライブ コラボ第3弾 プライズ景品",
+   "score": 0.67
   }
  }
 ]

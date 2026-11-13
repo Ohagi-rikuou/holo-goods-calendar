@@ -1033,6 +1033,30 @@ window.HOLO_GOODS = {
  ],
  "items": [
   {
+   "id": "s_holoplus_sakuramiko_2ndlive_bloomingparade",
+   "title": "【ホロプラス】Sakura Miko 2nd Live “Blooming Parade!!”さくらみこってこんな子PC壁紙",
+   "members": [
+    "さくらみこ"
+   ],
+   "category": "event",
+   "channel": "online",
+   "origin": "shop",
+   "sale": "在庫販売",
+   "start": "2026-11-13",
+   "end": "",
+   "periodText": "",
+   "ship": "デジタル商品（購入後すぐ利用可）",
+   "price": "無料（ホロプラス特典）",
+   "shop": "hololive production OFFICIAL SHOP",
+   "url": "https://shop.hololivepro.com/products/holoplus_sakuramiko_2ndlive_bloomingparade",
+   "source": "公式ショップ 商品ページ（2026-11-13 確認・自動取得）",
+   "tags": [
+    "デジタル"
+   ],
+   "firstSeen": "2026-11-13",
+   "regularNew": true
+  },
+  {
    "id": "s_flowglow_anniversary_2nd",
    "title": "FLOW GLOW 2周年記念",
    "members": [
