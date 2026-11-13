@@ -32,7 +32,7 @@ window.HOLO_GOODS = {
    "その他"
   ],
   "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdBc-rwZsXTMDaA3aajCSlYGxdHkzB-rWxhZ5GIBgr1x3dW_w/viewform",
-  "scope": "公式ショップ：販売期間・受注期間のある商品。期限のない通常販売（在庫販売・予約販売、hololive friends や Regular Outfit などの定番商品を含む）は、新商品として出たとき（7日間）と、売り切れ（30日間）・再入荷予定・販売再開（7日間）のときだけ掲載。企業・店舗：PR TIMESの発表（2026年8月〜10月）のうち、販売中・販売予定のもの。ホロカ：公式サイトの商品情報のうち発売前のもの。プライズ：バンダイスピリッツ・フリューの公式プライズサイトとタイトー店舗の入荷予定（9月以降の登場分）。くじ・フィギュア：エニマイ公式、一番くじは報道、あみあみの予約受付中商品。コラボ：ローソン・ジョイポリス・カプコンの公式情報。海外：ホロライブ公式サイト（英語版）ニュースと各社の発表から、海外で開催・販売されるもの（「海外」タグ付き）。"
+  "scope": "公式ショップの期限付き商品（期限のない通常販売は、新商品・売り切れ・再入荷予定・販売再開のときのみ）と、公式・各社の発表から集めたコラボ・プライズ・くじ・フィギュア・イベント・海外の情報を掲載しています。"
  },
  "categories": {
   "birthday": {
@@ -3912,7 +3912,7 @@ window.HOLO_GOODS = {
   },
   {
    "id": "p_x_monogatari",
-   "title": "〈物語〉シリーズ × 秘密結社holoX 体験型展示『X物語 -バツモノガタリ-』オリジナルグッズ",
+   "title": "〈物語〉シリーズ × 秘密結社holoX 体験型展示『X物語 -バツモノガタリ-』オリジナルグッズ（第1弾発表・特別チケット限定グッズ付き）",
    "members": [
     "ラプラス・ダークネス",
     "鷹嶺ルイ",
@@ -3920,9 +3920,9 @@ window.HOLO_GOODS = {
     "風真いろは"
    ],
    "category": "event",
-   "channel": "venue",
+   "channel": "both",
    "origin": "licensed",
-   "sale": "会場販売（有料チケット制）",
+   "sale": "会場販売（展示チケットが必要）・公式オンラインストア（12月中公開予定）",
    "start": "2027-01-03",
    "end": "2027-01-22",
    "venues": [
@@ -3932,12 +3932,12 @@ window.HOLO_GOODS = {
      "date": "2027/1/3〜1/22"
     }
    ],
-   "price": "",
+   "price": "Tシャツ ¥6,600、特大アクリルスタンド（12種）各¥4,400、アクリルブロック（12種）各¥7,700、トレーディング缶バッジ 各¥550、トレーディングアクリルキーホルダー 各¥770、B2ポスター ¥3,300 ほか",
    "ship": "",
    "shop": "X物語 展示会場",
-   "url": "https://prtimes.jp/main/html/rd/p/000000025.000030346.html",
-   "source": "PR TIMES 2026-10-08 発表",
-   "note": "チケットは2026年11月頃に発売予定。販売グッズのラインナップは今後発表。",
+   "url": "https://prtimes.jp/main/html/rd/p/000000029.000030346.html",
+   "source": "PR TIMES 2026-11-11 発表（Helixes／maxilla）",
+   "note": "グッズ第1弾はSHAFT描き下ろしキービジュアルを使用。会場のGOODSエリアはチケットを持っている人のみ利用可。チケットは通常¥1,100／特別¥2,750（特別は限定グッズ付き・詳細は11/25公開）。e+で一次抽選 11/25 19:00〜12/3、二次抽選 12/11〜12/16、一般販売 12/23〜。オンラインストアの販売詳細は後日発表。",
    "tags": [
     "会場限定"
    ],
@@ -5852,6 +5852,106 @@ window.HOLO_GOODS = {
     "海外"
    ],
    "firstSeen": "2026-11-11"
+  },
+  {
+   "id": "w_estaregg_regloss",
+   "title": "EstarEgg × ReGLOSS コラボグッズ（AGF 2026 Korea で先行販売 → ソウル・龍山でPOP-UP STORE）",
+   "members": [
+    "音乃瀬奏",
+    "一条莉々華",
+    "儒烏風亭らでん",
+    "轟はじめ"
+   ],
+   "category": "collab",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "会場販売（AGF 2026 Koreaは一部商品のみ。全ラインナップはPOP-UP STOREで販売）",
+   "start": "2026-12-04",
+   "end": "2027-01-11",
+   "venues": [
+    {
+     "pref": "韓国（ソウル）",
+     "place": "AGF 2026 Korea",
+     "date": "2026/12/4〜12/6"
+    },
+    {
+     "pref": "韓国（ソウル）",
+     "place": "龍山駅 Dopamine Station 3F（POP-UP STORE）",
+     "date": "2026/12/29〜2027/1/11"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "EstarEgg",
+   "url": "https://hololive.hololivepro.com/en/news/20261111-02-25/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-11 発表",
+   "note": "新規描き下ろしイラストのグッズ（ランダムフォトカード、ホログラムチケット、アクリルキーホルダー、絵馬キーホルダー、アクリルジオラマ、デスクマット、ムードライトなど）。AGF 2026 Koreaでは購入特典としてイラストカード8種・A3ポスター8種を配布予定（条件は後日発表・なくなり次第終了）。POP-UP STOREでは等身大パネルを展示。",
+   "tags": [
+    "海外",
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-13"
+  },
+  {
+   "id": "w_figgyz_myth_promise",
+   "title": "hololive production × FiGGYZ ポップマグネット コレクティブル（Myth・Promise コレクターズボックス 予約）",
+   "members": [
+    "森カリオペ",
+    "小鳥遊キアラ",
+    "一伊那尓栖",
+    "IRyS",
+    "オーロ・クロニー",
+    "ハコス・ベールズ"
+   ],
+   "category": "figure",
+   "channel": "online",
+   "origin": "licensed",
+   "sale": "受注販売（コレクターズボックスは予約期間のみ）",
+   "start": "2026-11-25",
+   "end": "2026-12-25",
+   "venues": [],
+   "price": "",
+   "ship": "",
+   "shop": "FiGGYZ × hololive 公式サイト（First4Figures）",
+   "url": "https://hololive.hololivepro.com/en/news/20261111-01-245/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-11 発表",
+   "note": "ドット絵風のラバーマグネットに、飾れる金属プレートとスタンドが付属。コレクターズボックス（ナンバー入り）はマスコットの金属プレート3種と記念コイン付きで、予約期間中は10%オフ。予約締切は日本時間 12/26 0:00。単品は12月から別途販売予定（詳細は後日）。",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-13"
+  },
+  {
+   "id": "w_micomet_company",
+   "title": "Fanding「miComet Company」POP-UP STORE（さくらみこ・星街すいせい／ソウル弘大＋オンライン同時販売）",
+   "members": [
+    "さくらみこ",
+    "星街すいせい"
+   ],
+   "category": "event",
+   "channel": "both",
+   "origin": "licensed",
+   "sale": "会場販売・通販（Fanding Online、あみあみ）",
+   "start": "2026-11-20",
+   "end": "2027-01-19",
+   "venues": [
+    {
+     "pref": "韓国（ソウル）",
+     "place": "Fanbase（弘大入口駅周辺）",
+     "date": "2026/11/20〜11/29 11:00〜20:00"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "Fanding（Fanding Online・あみあみ）",
+   "url": "https://hololive.hololivepro.com/en/news/20261112-01-246/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-12 発表",
+   "note": "会場（11/20〜11/29）は入場無料・予約不要。通販はFanding Onlineとあみあみで11/20〜2027/1/19。「新入社員に支給される事務用品」がテーマの描き下ろしグッズで、目玉はボイスキーリング。購入特典は会場で買った人のみ。会場のスタンプラリーを完了すると特典しおり（2種）。商品の詳細は今後発表。",
+   "tags": [
+    "海外",
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-13"
   }
  ]
 };

@@ -234,7 +234,8 @@ details[open] > summary > .fbtn .when-closed { display: none; }
   .qbar .navrow { order: 3; flex: 1 1 100%; }
   .qbar .nav { display: flex; width: 100%; }
   .qbar .nav button { flex: 1 1 0; padding: 0 4px; }
-  .qbar #addBtn, .qbar #submitLink { order: 4; }
+  .qbar #addBtn { order: 4; }
+  .qbar #submitLink { order: 2; padding: 0 10px; }
   /* 件数表示は1行にして横にスクロール */
   .summary { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; margin-right: -16px; padding-right: 16px; }
   .summary::-webkit-scrollbar { display: none; }
@@ -1294,7 +1295,7 @@ dl.spec .vn small { color: var(--muted); }
   $('updated').textContent = D.meta.updated ? `データ更新日 ${D.meta.updated}` : '';
   $('foot').textContent = D.meta.isTest
     ? '表示中のデータはテスト用です（推しマークのみ実在の情報）。本番データでは各商品に出典（公式ショップ等）を記載します。'
-    : `収録範囲：${(D.meta && D.meta.scope) || ''} 各商品の出典は詳細に記載しています。購入前に必ず元の販売ページで最新情報を確認してください。抜けている商品や誤りに気づいたら、${D.meta.submitUrl ? '「情報提供」ボタンのフォームかDiscordサーバーで' : 'Discordサーバーで'}商品ページのURLを教えてください。`;
+    : `${(D.meta && D.meta.scope) || ''}出典は各商品の詳細に記載。購入前に販売ページで最新情報をご確認ください。抜け・誤りは${D.meta.submitUrl ? '「情報提供」ボタンのフォームかDiscordサーバー' : 'Discordサーバー'}へ。`;
   renderAllChips(); render();
 })();
 </script>
