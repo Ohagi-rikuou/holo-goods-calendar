@@ -3677,5 +3677,87 @@
   "note": "スタンプをすべて集めると、ラプラス直筆メッセージと hololive friends with u ラプラス・ダークネスのセットが5名に当たる（ほか、とちぎ和牛・お米・餃子など）。応募期限は2027/2/10。クーポンは応募者全員。公式サイトに出演者のX投稿に関するお知らせあり。",
   "tags": [],
   "firstSeen": "2026-11-17"
+ },
+ {
+  "members": [
+   "星街すいせい"
+  ],
+  "origin": "licensed",
+  "ship": "",
+  "shop": "パルコ「The Stellar Holiday Co.」",
+  "firstSeen": "2026-11-17",
+  "id": "p_stellar_holiday_shibuya",
+  "title": "The Stellar Holiday Co. POP-UP 2026（星街すいせい × パルコ）渋谷PARCO",
+  "category": "event",
+  "channel": "venue",
+  "sale": "会場販売（12/4〜12/6はLivePocketの整理券で入場）",
+  "start": "2026-12-04",
+  "end": "2026-12-13",
+  "venues": [
+   {
+    "pref": "東京都",
+    "place": "渋谷PARCO 5F CORE",
+    "date": "12/4〜12/13 11:00〜21:00"
+   }
+  ],
+  "price": "",
+  "url": "https://art.parco.jp/shibuya/detail/?id=2040",
+  "source": "PARCO ART 渋谷会場ページ（2026-11-17 確認）",
+  "note": "パルコと星街すいせいが共同開発したブランド。クリスマスツリーなどのシーズンアイテムと普段使いのアパレル・小物の全26型。12/4〜12/6は事前予約制の待機列整理券（無料・先着、LivePocketで11/21 20:00から受付、各日前日18:00まで）。12/7以降の入場方法は後日案内。会場で税込10,000円以上の購入で会場限定オリジナルドアタグ（1会計1点・数量限定）。ランダム商品は4点まで、その他は各1点まで。",
+  "tags": [
+   "購入特典"
+  ]
+ },
+ {
+  "members": [
+   "星街すいせい"
+  ],
+  "origin": "licensed",
+  "ship": "",
+  "shop": "パルコ「The Stellar Holiday Co.」",
+  "firstSeen": "2026-11-17",
+  "id": "p_stellar_holiday_shinsaibashi",
+  "title": "The Stellar Holiday Co. POP-UP 2026（星街すいせい × パルコ）心斎橋PARCO",
+  "category": "event",
+  "channel": "venue",
+  "sale": "会場販売（入場方法は後日発表）",
+  "start": "2026-12-18",
+  "end": "2026-12-27",
+  "venues": [
+   {
+    "pref": "大阪府",
+    "place": "心斎橋PARCO 6F EVENT SPACE",
+    "date": "12/18〜12/27 10:00〜20:00"
+   }
+  ],
+  "price": "",
+  "url": "https://art.parco.jp/shinsaibashi/detail/?id=2041",
+  "source": "PARCO ART 心斎橋会場ページ（2026-11-17 確認）",
+  "note": "パルコと星街すいせいが共同開発したブランド。クリスマスツリーなどのシーズンアイテムと普段使いのアパレル・小物の全26型。入場無料。受付方法や当日券の有無は後日案内。会場で税込10,000円以上の購入で会場限定オリジナルドアタグ（1会計1点・数量限定）。",
+  "tags": [
+   "購入特典"
+  ]
+ },
+ {
+  "members": [
+   "星街すいせい"
+  ],
+  "origin": "licensed",
+  "ship": "",
+  "shop": "パルコ「The Stellar Holiday Co.」",
+  "firstSeen": "2026-11-17",
+  "id": "o_stellar_holiday_tree",
+  "title": "The Stellar Holiday Co. クリスマスツリー オンライン抽選販売（星街すいせい × パルコ）",
+  "category": "collab",
+  "channel": "online",
+  "sale": "抽選販売（数量限定・PARCOメンバーズ登録が必要）",
+  "start": "2026-11-13",
+  "end": "2026-11-19",
+  "venues": [],
+  "price": "",
+  "url": "https://art.parco.jp/shibuya/detail/?id=2040",
+  "source": "PARCO ART 渋谷会場ページ（2026-11-17 確認）",
+  "note": "オンライン販売はクリスマスツリーのみ。抽選受付は11/19 23:59まで、当選発表11/20、お届けは12/1以降の予定。商品の詳細は公式特設サイト（stellarholidayco.com）で。",
+  "tags": []
  }
 ]
