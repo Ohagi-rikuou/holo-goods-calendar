@@ -1,5 +1,45 @@
 [
  {
+  "firstSeen": "2026-11-20",
+  "source": "コラボカフェ（ホロライブの記事一覧）",
+  "title": "ホロライブ ししわたクッキングカフェ 11月26日より3店舗で開催!",
+  "url": "https://collabo-cafe.com/events/collabo/hololive-cafe-smile-base-cafe-shishiwata-cooking-2026/",
+  "date": "2026-11-19"
+ },
+ {
+  "firstSeen": "2026-11-20",
+  "source": "インサイド",
+  "title": "ホロライブ公式ショップで約300件個人情報漏えい―出荷委託先への不正アクセスで過去の出荷データが流出",
+  "url": "https://www.inside-games.jp/article/2026/11/19/191252.html",
+  "date": "2026-11-19T09:50:03Z"
+ },
+ {
+  "firstSeen": "2026-11-20",
+  "source": "インサイド",
+  "title": "「ホロライブ」兎田ぺこら、角巻 わためたちの“しっぽ”カラビナマスコット全5種がガシャポンにて発売！可愛らしいお顔のアクリルチャーム付き",
+  "url": "https://www.inside-games.jp/article/2026/11/19/191245.html",
+  "date": "2026-11-19T08:30:03Z",
+  "similar": {
+   "id": "s_tsunomakiwatame_respawn",
+   "title": "角巻わため 『リスポーン!!』",
+   "score": 0.5
+  }
+ },
+ {
+  "firstSeen": "2026-11-20",
+  "source": "インサイド",
+  "title": "友達にいつでも「きｔらあ！」できる『ホロライブ麻雀』公式LINEスタンプが発売！ 37タレントが収録、「立直！」「ロン！」なども",
+  "url": "https://www.inside-games.jp/article/2026/11/19/191240.html",
+  "date": "2026-11-19T07:50:02Z"
+ },
+ {
+  "firstSeen": "2026-11-20",
+  "source": "インサイド",
+  "title": "「ホロライブ」の公式情報番組、第2回が11月20日配信決定！ 新作麻雀ゲーム『ホロじゃん』や「EXPO 2027＆8th fes.」続報が発表へ",
+  "url": "https://www.inside-games.jp/article/2026/11/19/191236.html",
+  "date": "2026-11-19T07:00:03Z"
+ },
+ {
   "firstSeen": "2026-11-19",
   "source": "インサイド",
   "title": "『ホロライブドリームス』が「Google Play ベスト オブ 2026」ベストゲームに！他部門は『NTE』『Pokémon Champions』『ドラクエスマグロ』『幻水SP』など受賞",
