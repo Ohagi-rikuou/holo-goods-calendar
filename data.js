@@ -4131,22 +4131,22 @@ window.HOLO_GOODS = {
    "channel": "venue",
    "origin": "licensed",
    "release": true,
-   "startLabel": "2026年11月発売予定",
+   "startLabel": "2026年11月第3週から発売",
    "sale": "カプセルトイ",
-   "start": "2026-11-01",
+   "start": "2026-11-15",
    "end": "",
    "venues": [
     {
      "pref": "全国各地",
      "place": "ガシャポン取扱店（取扱店はガシャポン公式サイトで検索）",
-     "date": "11月〜"
+     "date": "11月第3週〜"
     }
    ],
    "price": "1回 ¥500",
    "ship": "",
    "shop": "バンダイ（ガシャポン）",
-   "url": "https://collabo-cafe.com/events/collabo/hololive-capsule-toy-mofushippo-mascot-2026/",
-   "source": "コラボカフェ 2026-10-11 記事（ガシャポン公式の情報を紹介）",
+   "url": "https://www.inside-games.jp/article/2026/11/19/191245.html",
+   "source": "インサイド 2026-11-19 記事／コラボカフェ 2026-10-11 記事",
    "note": "発売時期は地域・店舗によって異なる場合あり。",
    "tags": [],
    "firstSeen": "2026-11-02"
@@ -6596,6 +6596,150 @@ window.HOLO_GOODS = {
    "note": "hololive Meet 2026 のアンバサダー4人（角巻わため・アイラニ・イオフィフティーン・ジジ・ムリン・輪堂千速）のリゾート風2ndビジュアルのグッズ。タペストリー・タンブラー・デスクマットは4人集合、アクスタ・マグネット・缶バッジは個人絵柄（記事は輪堂千速分を紹介）。予約は11/22まで。",
    "tags": [],
    "firstSeen": "2026-11-18"
+  },
+  {
+   "members": [
+    "獅白ぼたん",
+    "角巻わため"
+   ],
+   "category": "collab",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "shop": "SMILE BASE CAFE",
+   "url": "https://collabo-cafe.com/events/collabo/hololive-cafe-smile-base-cafe-shishiwata-cooking-2026/",
+   "source": "コラボカフェ 2026-11-19 記事",
+   "tags": [
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-20",
+   "price": "コラボメニュー（ししわた3分間クッキング 各¥1,650 ほか）／グッズ：ランダム缶バッジ 各¥660、トレーディングカード 各¥550、ランダムアクリルミニスタンド 各¥990、アクリルスタンド 各¥1,750、アクリルアートボード ¥3,300 ほか",
+   "note": "ぼたんとわためが監修したメニュー。店内の録り下ろしボイスと一緒に仕上げる「ししわた3分間クッキング」あり（事前予約の人限定）。コラボメニュー1品ごとにコースター（全8種ランダム）、会計3,500円ごとにポストカード（6種＋シークレット）、対象メニューでランチョンマット。各店の初日と土日祝は抽選予約、それ以外は先着予約（11/20 20:00〜）。テイクアウトならドリンクとグッズのみ購入可。",
+   "id": "c_shishiwata_cafe_nagoya",
+   "title": "ししわたクッキングカフェ（獅白ぼたん・角巻わため × SMILE BASE CAFE）名古屋栄店",
+   "sale": "コラボカフェ（予約制）",
+   "start": "2026-11-26",
+   "end": "2026-12-14",
+   "venues": [
+    {
+     "pref": "愛知県",
+     "place": "SMILE BASE CAFE 名古屋栄店",
+     "date": "11/26〜12/14"
+    }
+   ]
+  },
+  {
+   "members": [
+    "獅白ぼたん",
+    "角巻わため"
+   ],
+   "category": "collab",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "shop": "SMILE BASE CAFE",
+   "url": "https://collabo-cafe.com/events/collabo/hololive-cafe-smile-base-cafe-shishiwata-cooking-2026/",
+   "source": "コラボカフェ 2026-11-19 記事",
+   "tags": [
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-20",
+   "price": "コラボメニュー（ししわた3分間クッキング 各¥1,650 ほか）／グッズ：ランダム缶バッジ 各¥660、トレーディングカード 各¥550、ランダムアクリルミニスタンド 各¥990、アクリルスタンド 各¥1,750、アクリルアートボード ¥3,300 ほか",
+   "note": "ぼたんとわためが監修したメニュー。店内の録り下ろしボイスと一緒に仕上げる「ししわた3分間クッキング」あり（事前予約の人限定）。コラボメニュー1品ごとにコースター（全8種ランダム）、会計3,500円ごとにポストカード（6種＋シークレット）、対象メニューでランチョンマット。各店の初日と土日祝は抽選予約、それ以外は先着予約（11/20 20:00〜）。テイクアウトならドリンクとグッズのみ購入可。",
+   "id": "c_shishiwata_cafe_shinsaibashi",
+   "title": "ししわたクッキングカフェ（獅白ぼたん・角巻わため × SMILE BASE CAFE）心斎橋店",
+   "sale": "コラボカフェ（予約制）",
+   "start": "2026-12-26",
+   "end": "2027-01-21",
+   "venues": [
+    {
+     "pref": "大阪府",
+     "place": "SMILE BASE CAFE 心斎橋店",
+     "date": "12/26〜1/21"
+    }
+   ]
+  },
+  {
+   "members": [
+    "獅白ぼたん",
+    "角巻わため"
+   ],
+   "category": "collab",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "shop": "SMILE BASE CAFE",
+   "url": "https://collabo-cafe.com/events/collabo/hololive-cafe-smile-base-cafe-shishiwata-cooking-2026/",
+   "source": "コラボカフェ 2026-11-19 記事",
+   "tags": [
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-20",
+   "price": "コラボメニュー（ししわた3分間クッキング 各¥1,650 ほか）／グッズ：ランダム缶バッジ 各¥660、トレーディングカード 各¥550、ランダムアクリルミニスタンド 各¥990、アクリルスタンド 各¥1,750、アクリルアートボード ¥3,300 ほか",
+   "note": "ぼたんとわためが監修したメニュー。店内の録り下ろしボイスと一緒に仕上げる「ししわた3分間クッキング」あり（事前予約の人限定）。コラボメニュー1品ごとにコースター（全8種ランダム）、会計3,500円ごとにポストカード（6種＋シークレット）、対象メニューでランチョンマット。各店の初日と土日祝は抽選予約、それ以外は先着予約（11/20 20:00〜）。テイクアウトならドリンクとグッズのみ購入可。",
+   "id": "c_shishiwata_cafe_ikebukuro",
+   "title": "ししわたクッキングカフェ（獅白ぼたん・角巻わため × SMILE BASE CAFE）池袋店",
+   "sale": "コラボカフェ（予約制）",
+   "start": "2027-01-27",
+   "end": "2027-02-15",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "SMILE BASE CAFE 池袋店",
+     "date": "1/27〜2/15"
+    }
+   ]
+  },
+  {
+   "members": [
+    "獅白ぼたん",
+    "角巻わため"
+   ],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "ship": "",
+   "shop": "SMILE BASE ONLINE SHOP",
+   "url": "https://collabo-cafe.com/events/collabo/hololive-cafe-smile-base-cafe-shishiwata-cooking-2026/",
+   "source": "コラボカフェ 2026-11-19 記事",
+   "tags": [],
+   "firstSeen": "2026-11-20",
+   "price": "ぼたんのラーメンセット ¥8,800（どんぶり・れんげ・布製ランチョンマット）、わためのエプロン ¥6,600、B1タペストリー ¥7,700",
+   "note": "カフェ会場とは別のオンライン限定販売。販売期間の終わりは記事に記載なし。",
+   "id": "o_shishiwata_online",
+   "title": "ししわたクッキングカフェ オンライン販売グッズ（ぼたんのラーメンセット・わためのエプロン・B1タペストリー）",
+   "sale": "通販（SMILE BASE ONLINE SHOP）",
+   "start": "2026-11-25",
+   "end": "",
+   "release": true,
+   "startLabel": "11/25 19:00 販売開始",
+   "venues": []
+  },
+  {
+   "id": "w_kiara_vogelfrei_vinyl",
+   "title": "小鳥遊キアラ 2nd Album「Vogelfrei」アナログレコード（Black Screen Records・予約受付）",
+   "members": [
+    "小鳥遊キアラ"
+   ],
+   "category": "other",
+   "channel": "online",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "2027年春発売（予約受付中）",
+   "sale": "予約販売",
+   "start": "2027-03-01",
+   "end": "",
+   "venues": [],
+   "price": "",
+   "ship": "2027年春",
+   "shop": "Black Screen Records ほか（日本ではあみあみの限定カラーあり）",
+   "url": "https://hololive.hololivepro.com/en/news/20261117-01-247/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-17 発表",
+   "note": "初のアナログ盤（全13曲・1LP）。ジャケットは John Kafka 氏の描き下ろし。予約は日本時間11/18 2:00から。Black Screen Records 公式ストア限定の Deluxe Edition はTシャツ・スリップマット・キーホルダー・アートプリント付き。Crunchyroll（米国）とあみあみ（日本）に限定カラーあり。",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-20"
   }
  ]
 };
