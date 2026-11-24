@@ -7,7 +7,7 @@
   Actions 画面から手動で実行したとき（workflow_dispatch）は、テストとして必ず投稿する。
 
 お知らせの中身
-  🆕 新しく載った商品 … 公式ショップ分は今日見つかったもの、手入力分は前日に追加したもの
+  🆕 新しく載った情報 … 公式ショップ分は今日見つかったもの、手入力分は前日に追加したもの
   ⏰ 締切が近い商品   … 締切が今日〜3日後
   🛒 今日から         … 今日が販売開始日・発売日
 
@@ -85,6 +85,8 @@ def until_text(it, today):
     s, e = d(it.get('start')), d(it.get('end'))
     if it.get('startLabel'):
         return it['startLabel']
+    if it.get('kind') == 'event' and s:
+        return f'{short_date(s)} 開催' if not e or e == s else f'{short_date(s)}〜{short_date(e)} 開催'
     if it.get('release') and s:
         return f'{short_date(s)} 発売'
     if e:
@@ -118,7 +120,7 @@ def collect(items, today):
         if first and ((is_shop and first == today) or (not is_shop and first == yday)):
             if not (end and end < today):
                 new.append(it)
-        if end and not it.get('release') and not it.get('status') and not it.get('soldOut') \
+        if end and it.get('kind') != 'event' and not it.get('release') and not it.get('status') and not it.get('soldOut') \
                 and today <= end <= today + datetime.timedelta(days=SOON_DAYS):
             soon.append(it)
         if st == today and has_exact_start(it) and not it.get('status'):
@@ -126,12 +128,12 @@ def collect(items, today):
     soon.sort(key=lambda x: x['end'])
     secs = []
     if new:
-        secs.append((f'🆕 新しく載った商品（{len(new)}件）', bucketed(new, lambda i: until_text(i, today))))
+        secs.append((f'🆕 新しく載った情報（{len(new)}件）', bucketed(new, lambda i: until_text(i, today))))
     if soon:
         secs.append((f'⏰ 締切が近い商品（{SOON_DAYS}日以内・{len(soon)}件）', bucketed(soon, lambda i: until_text(i, today))))
     if start:
         secs.append((f'🛒 今日から（{len(start)}件）',
-                     bucketed(start, lambda i: '今日発売' if i.get('release') else '今日から販売開始')))
+                     bucketed(start, lambda i: '今日開催' if i.get('kind') == 'event' else '今日発売' if i.get('release') else '今日から販売開始')))
     return secs
 
 
@@ -159,7 +161,7 @@ def section_text(title, buckets, budget=MSG_MAX - 80):
 
 
 def build_messages(secs, today, test=False):
-    head = f'## 📅 ホロライブ グッズカレンダー（{today.month}/{today.day}）'
+    head = f'## 📅 ホロライブ イベント＆グッズカレンダー（{today.month}/{today.day}）'
     if test:
         head = '【テスト送信】\n' + head
     foot = f'🔗 <{SITE_URL}>\n-# ※購入前に販売ページで最新情報をご確認ください。'
@@ -178,7 +180,7 @@ def build_messages(secs, today, test=False):
             cur = (cur + '\n\n' + b) if cur else b
     msgs.append(cur)
     return [{
-        'username': 'ホログッズカレンダー',
+        'username': 'ホロライブ イベント＆グッズカレンダー',
         'avatar_url': SITE_URL + 'icons/icon-192.png',
         'content': m,
         'flags': SUPPRESS_EMBEDS,               # リンクの大きなプレビューを出さない

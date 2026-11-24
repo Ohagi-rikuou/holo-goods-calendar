@@ -95,7 +95,7 @@ def build(updated=None):
                      'genOrder': meta.pop('genOrder'), **{k: v for k, v in meta.items() if k != 'updated'}},
             'categories': base['categories'], 'members': members, 'items': items}
 
-    js = ('/* ホロライブ グッズカレンダー データ（' + updated + ' 更新）\n'
+    js = ('/* ホロライブ イベント＆グッズカレンダー データ（' + updated + ' 更新）\n'
           ' * 出典：hololive production OFFICIAL SHOP 各商品ページ／PR TIMES 各社発表ほか（各商品の source・url を参照）。\n'
           ' * このファイルは scripts/build.py が data/*.json から自動で作ります。直接編集しないでください。\n'
           ' */\nwindow.HOLO_GOODS = ' + json.dumps(data, ensure_ascii=False, indent=1) + ';\n')

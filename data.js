@@ -1,11 +1,11 @@
-/* ホロライブ グッズカレンダー データ（2026-11-23 更新）
+/* ホロライブ イベント＆グッズカレンダー データ（2026-11-24 更新）
  * 出典：hololive production OFFICIAL SHOP 各商品ページ／PR TIMES 各社発表ほか（各商品の source・url を参照）。
  * このファイルは scripts/build.py が data/*.json から自動で作ります。直接編集しないでください。
  */
 window.HOLO_GOODS = {
  "meta": {
   "isTest": false,
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "newDays": 7,
   "genOrder": [
    "0期生",
@@ -33,7 +33,7 @@ window.HOLO_GOODS = {
    "その他"
   ],
   "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdBc-rwZsXTMDaA3aajCSlYGxdHkzB-rWxhZ5GIBgr1x3dW_w/viewform",
-  "scope": "公式ショップの期限付き商品（期限のない通常販売は、新商品・売り切れ・再入荷予定・販売再開のときのみ）と、公式・各社の発表から集めたコラボ・プライズ・くじ・フィギュア・イベント・海外の情報を掲載しています。"
+  "scope": "公式ショップの期限付き商品（期限のない通常販売は、新商品・売り切れ・再入荷予定・販売再開のときのみ）と、公式・各社の発表から集めたコラボ・プライズ・くじ・フィギュア・海外の情報、ライブ・展示などのイベント（グッズのないものを含む）を掲載しています。"
  },
  "categories": {
   "birthday": {
@@ -831,6 +831,19 @@ window.HOLO_GOODS = {
    "aliases": [
     "Todoroki Hajime",
     "ばんちょー"
+   ]
+  },
+  {
+   "id": "火威青",
+   "name": "火威青",
+   "kana": "ひおどしあお",
+   "mark": "🖋️",
+   "gens": [
+    "ReGLOSS",
+    "卒業生"
+   ],
+   "aliases": [
+    "Hiodoshi Ao"
    ]
   },
   {
@@ -6738,6 +6751,407 @@ window.HOLO_GOODS = {
     "海外"
    ],
    "firstSeen": "2026-11-20"
+  },
+  {
+   "id": "p_grand_reception_osaka",
+   "title": "hololive Grand Reception ～感謝を込めた招待状～ 大阪の陣（なんばパークスミュージアム・限定グッズ）",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "展覧会（チケット制）・会場限定グッズ",
+   "start": "2027-01-08",
+   "end": "2027-01-31",
+   "venues": [
+    {
+     "pref": "大阪府",
+     "place": "なんばパークスミュージアム（なんばパークス7F）",
+     "date": "前半 1/8〜1/17・後半 1/19〜1/31"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "カバー（hololive Grand Reception）",
+   "url": "https://prtimes.jp/main/html/rd/p/000001290.000030268.html",
+   "source": "PR TIMES 2026-11-20 発表（カバー）",
+   "note": "東京会場に続く大阪会場。アソビ★まわり隊！の4名がカクテルドレス姿の描きおろしで合流。全出演タレントの新規ミニキャラ、限定グッズ、なんばパークス館内との連動企画あり。チケットはチケットぴあで先行抽選 11/21〜11/29（結果 12/5）、一般 12/19〜1/7、当日券も予定。",
+   "tags": [
+    "会場限定"
+   ],
+   "firstSeen": "2026-11-24"
+  },
+  {
+   "id": "p_hollodreams_tokyo_ichibangai",
+   "title": "年末年始もホロドリ！東京駅一番街スペシャルコラボレーション（hololive Dreams × JR東海 推し旅・ポップアップストア）",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "ポップアップストア・館内店舗の連動企画・デジタルスタンプラリー",
+   "start": "2026-12-25",
+   "end": "2027-01-07",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "東京駅一番街（東京キャラクターストリートにポップアップストア）",
+     "date": "12/25〜1/7"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "東京駅一番街",
+   "url": "https://prtimes.jp/main/html/rd/p/000001290.000030268.html",
+   "source": "PR TIMES 2026-11-20 発表（カバー）",
+   "note": "オリジナルボイスが聞けるデジタルスタンプラリーなど。各企画の詳細や参加条件は今後発表。",
+   "tags": [],
+   "firstSeen": "2026-11-24"
+  },
+  {
+   "id": "w_taipei_shiki_winter",
+   "title": "hololive四季巡礼トラベルダイアリー『冬の旅』（台北 新光三越南西店・ポップアップストア）",
+   "members": [],
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "sale": "ポップアップストア",
+   "start": "2026-12-17",
+   "end": "2027-02-14",
+   "venues": [
+    {
+     "pref": "台湾（台北）",
+     "place": "新光三越 南西店 一館9F イベントエリア",
+     "date": "12/17〜2/14"
+    }
+   ],
+   "price": "",
+   "ship": "",
+   "shop": "hololive production（台北ポップアップ）",
+   "url": "https://prtimes.jp/main/html/rd/p/000001290.000030268.html",
+   "source": "PR TIMES 2026-11-20 発表（カバー）",
+   "note": "春・夏・秋と続いたシリーズの最終章。推しぬいフォトスポット（期間ごとに異なる特典）、全4季節のスタンプを集めると6名の複製サイン色紙が当たる抽選会、「四季トレーディングカード」の販売、過去グッズの一部再販。",
+   "tags": [
+    "海外",
+    "購入特典"
+   ],
+   "firstSeen": "2026-11-24"
+  },
+  {
+   "id": "w_regloss_shopfanpick",
+   "title": "ReGLOSS × SHOPFANPICK エモートグッズ（韓国・リムーバブルステッカー／ミニアクキー／缶バッジ／LEDキーキャップ）",
+   "members": [
+    "音乃瀬奏",
+    "一条莉々華",
+    "儒烏風亭らでん",
+    "轟はじめ",
+    "火威青"
+   ],
+   "category": "collab",
+   "channel": "online",
+   "origin": "licensed",
+   "release": true,
+   "startLabel": "11/20 販売開始",
+   "sale": "通販（SHOPFANPICK）",
+   "start": "2026-11-20",
+   "end": "",
+   "venues": [],
+   "price": "",
+   "ship": "",
+   "shop": "SHOPFANPICK",
+   "url": "https://hololive.hololivepro.com/en/news/20261120-01-248/",
+   "source": "ホロライブ公式サイト（英語版）ニュース 2026-11-20 発表",
+   "note": "韓国NAVERのOGQ・カカオで使えるReGLOSSのエモート（24種）と、そのデザインのグッズ5種（リムーバブルステッカー32種、ミニアクリルキーホルダー5種、メタルバッジ5種、カードステッカー、LEDキーキャップ5種）。販売の終わりは記載なし。",
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-24"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "",
+     "place": "会場・配信の詳細は公式サイト",
+     "date": "11/29"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2026-11-29",
+   "id": "ev_regloss_xrechord",
+   "title": "ReGLOSS AR LIVE「X-ReCHORD」",
+   "members": [
+    "音乃瀬奏",
+    "一条莉々華",
+    "儒烏風亭らでん",
+    "轟はじめ",
+    "火威青"
+   ],
+   "sale": "ARライブ（チケット制・見逃し配信は12/29まで）",
+   "start": "2026-11-29",
+   "shop": "カバー",
+   "url": "https://x-rechord.hololivepro.com",
+   "source": "ホロタメ イベント一覧（2026-11-24 確認）／公式サイト",
+   "note": "ReGLOSSのARライブ。チケット・会場は公式サイトで確認を。ライブグッズは公式ショップ側の掲載を参照。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "TOKYO DOME CITY HALL",
+     "date": "12/1"
+    }
+   ],
+   "tags": [
+    "海外"
+   ],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2026-12-01",
+   "id": "ev_baelz_regalia",
+   "title": "Hakos Baelz 1st Concert “REGALIA”",
+   "members": [
+    "ハコス・ベールズ"
+   ],
+   "sale": "ライブ（チケット制・見逃し配信は1/8まで）",
+   "start": "2026-12-01",
+   "shop": "カバー",
+   "url": "https://regalia.hololivepro.com/jp/information/",
+   "source": "公式サイト（2026-11-24 確認）",
+   "note": "ゲストは常闇トワ、TeddyLoid。チケットはローチケ電子チケット。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "",
+     "place": "会場は公式サイトで確認",
+     "date": "12/16"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2026-12-16",
+   "id": "ev_lui_rebellion",
+   "title": "鷹嶺ルイ 1st LIVE『REBELLION』",
+   "members": [
+    "鷹嶺ルイ"
+   ],
+   "sale": "ライブ（チケット制・見逃し配信は1/16まで）",
+   "start": "2026-12-16",
+   "shop": "カバー",
+   "url": "https://rebellion.hololivepro.com/",
+   "source": "ホロタメ イベント一覧（2026-11-24 確認）／公式サイト",
+   "note": "ライブグッズは公式ショップ側の掲載を参照。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "",
+     "place": "会場は公式サイトで確認",
+     "date": "12/22"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2026-12-22",
+   "id": "ev_koyori_dreamspark",
+   "title": "博衣こより 1st LIVE “Dream Spark”",
+   "members": [
+    "博衣こより"
+   ],
+   "sale": "ライブ（チケット制・見逃し配信は1/22まで）",
+   "start": "2026-12-22",
+   "shop": "カバー",
+   "url": "https://dream-spark.hololivepro.com/",
+   "source": "ホロタメ イベント一覧（2026-11-24 確認）／公式サイト",
+   "note": "ライブグッズ（デジタルメッセージボード・受注生産・先行発送）は公式ショップ側の掲載を参照。"
+  },
+  {
+   "category": "event",
+   "channel": "online",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2026-12-31",
+   "id": "ev_countdown_2026",
+   "title": "年末ホロライブ ～ゆくホロくるホロ 2026▷2027～＆ hololive production COUNTDOWN LIVE 2026▷2027（全編無料配信）",
+   "members": [],
+   "sale": "YouTube配信（無料）",
+   "start": "2026-12-31",
+   "shop": "カバー（YouTube）",
+   "url": "https://prtimes.jp/main/html/rd/p/000001290.000030268.html",
+   "source": "PR TIMES 2026-11-20 発表（カバー）",
+   "note": "12時間連続の年越し特番。40名以上が出演。カウントダウンライブは22:30頃から。ファン投票「決定！2026年ベストホロライブ楽曲」の一次投票は11/21〜12/6（ホロプラス・大阪梅田店・原宿店）。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "",
+     "place": "会場は公式発表で確認",
+     "date": "1/9〜1/10"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2027-01-10",
+   "id": "ev_music_stage_2027",
+   "title": "hololive RECORDS MUSIC STAGE 2027",
+   "members": [
+    "AZKi",
+    "さくらみこ",
+    "ハコス・ベールズ"
+   ],
+   "sale": "ライブ（チケット制）",
+   "start": "2027-01-09",
+   "shop": "カバー",
+   "url": "https://holotame.com/events/",
+   "source": "ホロタメ イベント一覧（2026-11-24 確認）",
+   "note": "AZKi、さくらみこ、ハコス・ベールズ、ReGLOSS ほか出演。ライブグッズ・デジタルメッセージボードは公式ショップ側の掲載を参照。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "東京都",
+     "place": "有明アリーナ",
+     "date": "2/13（陽花の宴）・2/14（月華の宴）"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2027-02-14",
+   "id": "ev_ayafubumi_1st",
+   "title": "AyaFubuMi 1st Live「百花繚乱あやふぶみ」",
+   "members": [
+    "白上フブキ",
+    "百鬼あやめ",
+    "大神ミオ"
+   ],
+   "sale": "ライブ（チケット制・配信あり）",
+   "start": "2027-02-13",
+   "shop": "カバー",
+   "url": "https://prtimes.jp/main/html/rd/p/000001284.000030268.html",
+   "source": "PR TIMES 2026-11-13 発表（カバー）",
+   "note": "開演18:00。SS席14,300円〜B席8,600円。FC先行は11/23まで（当落 11/27）。ライブグッズは公式ショップ側、JR東海「推し旅」コラボも別掲載。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "千葉県",
+     "place": "幕張メッセ 国際展示場1-3ホール",
+     "date": "3/12〜3/14 9:00〜19:00（最終日18:00）"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "both",
+   "end": "2027-03-14",
+   "id": "ev_super_expo_2027",
+   "title": "hololive SUPER EXPO 2027 Supported By BANDAI",
+   "members": [],
+   "sale": "体験型展示イベント（各日入場券 6,600円・来場特典あり）",
+   "start": "2027-03-12",
+   "shop": "カバー",
+   "url": "https://prtimes.jp/main/html/rd/p/000001287.000030268.html",
+   "source": "PR TIMES 2026-11-20 発表（カバー）",
+   "note": "テーマは「hololive CLIPPING」。イベントオリジナルグッズの販売あり。来場特典はリボンチャーム付きカラビナ。FC先行（抽選）11/20〜11/29、当落12/4。通し券なし。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "千葉県",
+     "place": "幕張メッセ 国際展示場4-6ホール＆幕張イベントホール",
+     "date": "STAGE1 3/12・Dreams STAGE/STAGE2 3/13・STAGE3 3/14"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2027-03-14",
+   "id": "ev_8th_fes",
+   "title": "hololive 8th fes. Brand-New Fanfare Supported By LAWSON",
+   "members": [],
+   "sale": "ライブ（チケット制・配信チケットあり）",
+   "start": "2027-03-12",
+   "shop": "カバー",
+   "url": "https://prtimes.jp/main/html/rd/p/000001287.000030268.html",
+   "source": "PR TIMES 2026-11-20 発表（カバー）",
+   "note": "3つのhololiveステージとhololive Dreamsコラボステージ。配信チケットは通し25,000円・各6,800円（11/20〜2027/4/14、アーカイブは4/14まで）。"
+  },
+  {
+   "category": "event",
+   "channel": "venue",
+   "origin": "licensed",
+   "ship": "",
+   "price": "",
+   "venues": [
+    {
+     "pref": "神奈川県",
+     "place": "箱根ガラスの森美術館",
+     "date": "〜2027/1/11 10:00〜17:30"
+    }
+   ],
+   "tags": [],
+   "firstSeen": "2026-11-24",
+   "kind": "event",
+   "end": "2027-01-11",
+   "id": "ev_hakone_raden_guide",
+   "title": "箱根ガラスの森美術館 特別企画展「描かれたヴェネチアン・グラス」× 儒烏風亭らでん 音声ガイド",
+   "members": [
+    "儒烏風亭らでん"
+   ],
+   "sale": "美術館の展示（入館料が必要・音声ガイドは無料）",
+   "start": "2026-08-25",
+   "shop": "箱根ガラスの森美術館",
+   "url": "https://prtimes.jp/main/html/rd/p/000000096.000113812.html",
+   "source": "PR TIMES 2026-08-25 発表（ダイコク電機）",
+   "note": "らでんがナビゲートする無料の音声ガイド（全10本・約15分）を自分のスマホで聴ける。入館料 大人1,800円。"
   }
  ]
 };

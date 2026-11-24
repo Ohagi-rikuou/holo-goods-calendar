@@ -36,13 +36,17 @@ def safe_name(item_id):
 
 
 def summary(it, ev):
+    if it.get('kind') == 'event':
+        return '【開催】' + it['title']
     if ev['kind'] == 'day':
         return ('【発売】' if it.get('release') else '【販売開始】') + it['title']
     return it['title']
 
 
 def description(it, ev):
-    if ev['kind'] == 'period':
+    if it.get('kind') == 'event':
+        when = f"開催：{short_date(ev['start'])}" + ('' if ev['start'] == ev['end'] else f"〜{short_date(ev['end'])}")
+    elif ev['kind'] == 'period':
         when = f"販売・受注期間：{short_date(ev['start'])}〜{short_date(ev['end'])}（締切 {short_date(ev['end'])}）"
     else:
         when = ('発売日：' if it.get('release') else '販売開始：') + short_date(ev['start'])
@@ -50,8 +54,8 @@ def description(it, ev):
     if it.get('price'):
         lines.append('価格：' + it['price'])
     if it.get('url'):
-        lines.append('商品ページ：' + it['url'])
-    lines.append('ホロライブ グッズカレンダー（非公式）より：' + SITE_URL)
+        lines.append(('公式・詳細ページ：' if it.get('kind') == 'event' else '商品ページ：') + it['url'])
+    lines.append('ホロライブ イベント＆グッズカレンダー（非公式）より：' + SITE_URL)
     lines.append('※購入前に販売ページで最新情報をご確認ください。')
     return '\n'.join(lines)
 
@@ -66,9 +70,10 @@ def location(it):
 
 
 def ics_text(it, ev, now_utc):
-    alarm_day = ev['end'] - datetime.timedelta(days=1)       # 締切・発売日の前日
+    is_event = it.get('kind') == 'event'
+    alarm_day = (ev['start'] if is_event else ev['end']) - datetime.timedelta(days=1)   # 締切・発売日（イベントは開催日）の前日
     alarm = datetime.datetime(alarm_day.year, alarm_day.month, alarm_day.day, 0, 0)  # 0:00 UTC = 9:00 日本時間
-    label = '締切' if ev['kind'] == 'period' else ('発売日' if it.get('release') else '販売開始日')
+    label = '開催日' if is_event else '締切' if ev['kind'] == 'period' else ('発売日' if it.get('release') else '販売開始日')
     rows = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',

@@ -1,7 +1,7 @@
-// ホログッズカレンダー（非公式）のサービスワーカー。
+// ホロライブ イベント＆グッズカレンダー（非公式）のサービスワーカー。
 // 方針：いつも先にネットから最新を取りに行き、つながらないときだけ前回保存した内容を出す。
 // （毎日更新されるカレンダーなので、古い情報が出続けないようにするため）
-const CACHE = 'hgc-v1';
+const CACHE = 'hgc-v2';
 const CORE = ['./', 'data.js', 'manifest.webmanifest', 'icons/icon-192.png'];
 
 self.addEventListener('install', (event) => {
