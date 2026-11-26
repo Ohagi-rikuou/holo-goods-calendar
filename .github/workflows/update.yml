@@ -24,7 +24,7 @@ jobs:
     timeout-minutes: 30
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url || steps.deploy2.outputs.page_url || steps.deploy3.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
 
@@ -65,7 +65,25 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+      # 公開はGitHub側の都合でまれに失敗する（"No artifacts named github-pages"）。
+      # 失敗したときだけ少し待って、最大3回までやり直す。
       - id: deploy
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+      - name: 公開に失敗したので1分待つ
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 60
+      - id: deploy2
+        name: 公開をやり直す（2回目）
+        if: steps.deploy.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+      - name: まだ失敗しているので2分待つ
+        if: steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 120
+      - id: deploy3
+        name: 公開をやり直す（3回目）
+        if: steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
         uses: actions/deploy-pages@v5
 
       # Discordのウェブフック（非公開の設定 DISCORD_WEBHOOK_URL）があるときだけ投稿する。
